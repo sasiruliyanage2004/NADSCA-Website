@@ -16,6 +16,7 @@ import NetworkGlobe3D from "@/components/NetworkGlobe3D";
 import { PROJECTS, BLOG_POSTS } from "@/lib/data";
 import GiantMarquee from "@/components/GiantMarquee";
 import Magnetic from "@/components/Magnetic";
+import HomeCTA from "@/components/HomeCTA";
 
 const WHY_US = [
   {
@@ -24,7 +25,7 @@ const WHY_US = [
   },
   {
     title: "Fixed communication rhythm",
-    detail: "Weekly demos and a shared board, so you always see real, working software ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â not slide decks.",
+    detail: "Weekly demos and a shared board, so you always see real, working software — not slide decks.",
   },
   {
     title: "Built for handover",
@@ -255,28 +256,7 @@ export default function Home() {
       <GiantMarquee />
 
       {/* CTA */}
-      <section className="pt-24 pb-12 bg-transparent relative z-10">
-        <div className="container-content">
-          <Reveal className="rounded-3xl bg-brand-gradient px-8 py-16 lg:px-16 lg:py-20 text-center relative overflow-hidden">
-            <h2 className="font-display text-3xl md:text-5xl text-white max-w-2xl mx-auto leading-tight">
-              Have a product idea worth building well?
-            </h2>
-            <p className="text-white/85 mt-5 max-w-lg mx-auto">
-              Tell us what you&apos;re trying to build. We&apos;ll tell you honestly whether we&apos;re the right fit.
-            </p>
-            <div className="mt-9 flex justify-center">
-              <Magnetic>
-                <Link
-                  href="/contact"
-                  className="inline-block rounded-full bg-ink text-white px-8 py-4 text-[15px] font-semibold hover:bg-ink-soft dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100 transition-colors shadow-xl"
-                >
-                  Start the conversation
-                </Link>
-              </Magnetic>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <HomeCTA />
     </>
   );
 }
