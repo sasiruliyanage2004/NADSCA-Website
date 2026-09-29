@@ -16,7 +16,6 @@ import NetworkGlobe3D from "@/components/NetworkGlobe3D";
 import { PROJECTS, BLOG_POSTS } from "@/lib/data";
 import GiantMarquee from "@/components/GiantMarquee";
 import Magnetic from "@/components/Magnetic";
-import HomeCTA from "@/components/HomeCTA";
 
 const WHY_US = [
   {
@@ -254,9 +253,6 @@ export default function Home() {
 
 
       <GiantMarquee />
-
-      {/* CTA */}
-      <HomeCTA />
     </>
   );
 }
