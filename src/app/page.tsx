@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import Hero3D from "@/components/Hero3D";
 import HeroContent from "@/components/HeroContent";
 import TechMarquee from "@/components/TechMarquee";
@@ -13,7 +13,6 @@ import Testimonials from "@/components/Testimonials";
 import ScrollBackground from "@/components/ScrollBackground";
 import Card3DTilt from "@/components/Card3DTilt";
 import NetworkGlobe3D from "@/components/NetworkGlobe3D";
-import { Tiles } from "@/components/ui/tiles";
 import { PROJECTS, BLOG_POSTS } from "@/lib/data";
 import GiantMarquee from "@/components/GiantMarquee";
 import Magnetic from "@/components/Magnetic";

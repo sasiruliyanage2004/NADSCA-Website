@@ -1,4 +1,4 @@
-﻿import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { display, body } from "./fonts";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -8,7 +8,6 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Preloader from "@/components/Preloader";
 import { cn } from "@/lib/utils";
 import ScrollProgress from "@/components/ScrollProgress";
-import SmoothCursor from "@/components/SmoothCursor";
 
 export const viewport: Viewport = {
   themeColor: [
