@@ -73,11 +73,11 @@ export default function HeroContent() {
       </div>
 
       {/* Main Headline */}
-      <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold text-white max-w-5xl tracking-tight leading-[0.98]">
-        <span data-hero="line" className="block overflow-hidden">
+      <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold text-white max-w-5xl tracking-tight leading-[1.08] sm:leading-[1.04]">
+        <span data-hero="line" className="block pb-1.5 sm:pb-2">
           We engineer
         </span>
-        <span data-hero="line" className="block overflow-hidden text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-teal-400">
+        <span data-hero="line" className="block pb-1.5 sm:pb-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-teal-400">
           what&apos;s next.
         </span>
       </h1>
