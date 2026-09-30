@@ -117,36 +117,32 @@ export default function HeroContent() {
         </div>
       </div>
 
-      {/* Social Proof & Performance Telemetry Metrics */}
-      <div className="mt-14 sm:mt-16 relative">
-        {/* Soft atmospheric gradient divider instead of a harsh solid cut */}
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent mb-8" />
-
-        <div className="flex flex-wrap items-center gap-x-12 gap-y-6">
-        <div data-hero="stat" className="flex flex-col">
+      {/* Performance Telemetry Dock */}
+      <div className="mt-12 sm:mt-16 inline-flex flex-wrap items-center gap-6 sm:gap-10 py-3.5 px-6 sm:px-8 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)]">
+        <div data-hero="stat" className="flex flex-col pr-6 sm:pr-8 sm:border-r border-white/10">
           <div className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
             99.99<span className="text-cyan-400">%</span>
           </div>
-          <div className="text-xs font-mono uppercase tracking-wider text-white/45 mt-1">
-            Production SLA Uptime
+          <div className="text-[11px] font-mono uppercase tracking-wider text-white/50 mt-0.5">
+            Production SLA
           </div>
         </div>
 
-        <div data-hero="stat" className="flex flex-col">
+        <div data-hero="stat" className="flex flex-col pr-6 sm:pr-8 sm:border-r border-white/10">
           <div className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
             120<span className="text-teal-400">+</span>
           </div>
-          <div className="text-xs font-mono uppercase tracking-wider text-white/45 mt-1">
-            Enterprise Platforms Shipped
+          <div className="text-[11px] font-mono uppercase tracking-wider text-white/50 mt-0.5">
+            Platforms Shipped
           </div>
         </div>
 
-        <div data-hero="stat" className="flex flex-col">
+        <div data-hero="stat" className="flex flex-col pr-6 sm:pr-8 sm:border-r border-white/10">
           <div className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
             &lt; 14<span className="text-emerald-400">ms</span>
           </div>
-          <div className="text-xs font-mono uppercase tracking-wider text-white/45 mt-1">
-            Global P99 Edge Latency
+          <div className="text-[11px] font-mono uppercase tracking-wider text-white/50 mt-0.5">
+            P99 Edge Latency
           </div>
         </div>
 
@@ -154,12 +150,11 @@ export default function HeroContent() {
           <div className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
             Zero
           </div>
-          <div className="text-xs font-mono uppercase tracking-wider text-white/45 mt-1">
-            Technical Debt Handover
+          <div className="text-[11px] font-mono uppercase tracking-wider text-white/50 mt-0.5">
+            Tech Debt Handover
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }
