@@ -206,9 +206,9 @@ export async function generateAIResponse(
   const lastUserMessage = messages[messages.length - 1]?.content || "";
   const systemPrompt = buildSystemPrompt(currentPath);
 
-  // 1. Check for Gemini API key
+  // 1. Check for Gemini API key (supports classic AIza... and new AQ.... keys)
   const geminiKey = process.env.GEMINI_API_KEY || process.env.AI_API_KEY;
-  if (geminiKey && geminiKey.startsWith("AIza")) {
+  if (geminiKey && (geminiKey.startsWith("AIza") || geminiKey.startsWith("AQ.") || geminiKey.length > 20)) {
     try {
       const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`;
       const payload = {
