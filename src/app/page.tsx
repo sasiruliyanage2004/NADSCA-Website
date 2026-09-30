@@ -45,8 +45,9 @@ export default function Home() {
       {/* Hero */}
       <section className="relative min-h-[100dvh] flex items-center pt-24 pb-16 lg:pt-28 lg:pb-24 overflow-hidden hero-aurora-bg">
         <Hero3D />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent" />
-        <div className="container-content relative w-full">
+        {/* Atmospheric bottom fade to melt hero smoothly into the next section without an abrupt cut */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-paper dark:from-[#07090E] via-paper/40 dark:via-[#07090E]/40 to-transparent z-[5]" />
+        <div className="container-content relative w-full z-10">
           <HeroContent />
         </div>
       </section>

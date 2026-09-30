@@ -13,8 +13,8 @@ void main() {
   vPosition = position;
   vec3 pos = position;
   
-  pos.z += sin(pos.x * 2.0 + time * 1.5) * 0.15;
-  pos.y += cos(pos.z * 2.0 + time * 1.2) * 0.15;
+  pos.z += sin(uv.x * 6.0 + time * 1.5) * 0.18;
+  pos.y += cos(uv.y * 5.0 + time * 1.2) * 0.15;
 
   gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 }
@@ -69,8 +69,9 @@ void main() {
   finalColor = mix(finalColor, color2, smoothstep(0.0, 1.0, n2));
   finalColor = mix(finalColor, color3, smoothstep(0.2, 1.2, n1 * n2));
   
-  float alpha = smoothstep(0.0, 0.4, uv.y) * smoothstep(1.0, 0.6, uv.y);
-  alpha *= smoothstep(0.0, 0.3, uv.x) * smoothstep(1.0, 0.7, uv.x);
+  // Continuous ambient coverage with soft edge dissipation
+  float alpha = smoothstep(0.0, 0.05, uv.y) * smoothstep(1.0, 0.95, uv.y);
+  alpha *= smoothstep(0.0, 0.05, uv.x) * smoothstep(1.0, 0.95, uv.x);
   
   gl_FragColor = vec4(finalColor, alpha * (isDark > 0.5 ? 0.75 : 0.85));
 }
@@ -95,7 +96,7 @@ export default function Hero3D() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     mount.appendChild(renderer.domElement);
 
-    const geometry = new THREE.PlaneGeometry(2.5, 2.5, 64, 64);
+    const geometry = new THREE.PlaneGeometry(1, 1, 64, 64);
     
     const uniforms = {
       time: { value: 0.0 },
@@ -207,6 +208,9 @@ export default function Hero3D() {
       camera.bottom = -1;
       camera.updateProjectionMatrix();
       
+      // Keep plane dynamically scaled to comfortably cover full viewport on all aspect ratios
+      plane.scale.set(aspect * 2.4, 2.4, 1.0);
+
       renderer.setSize(w, h);
     };
     
@@ -232,7 +236,7 @@ export default function Hero3D() {
   return (
     <div 
       ref={mountRef} 
-      className="absolute right-0 top-0 w-full lg:w-3/4 h-full pointer-events-none opacity-80 mix-blend-multiply dark:mix-blend-screen dark:opacity-75 transition-opacity duration-300" 
+      className="absolute inset-0 w-full h-full pointer-events-none opacity-85 mix-blend-multiply dark:mix-blend-screen dark:opacity-80 transition-opacity duration-300" 
       aria-hidden="true" 
     />
   );
