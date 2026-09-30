@@ -9,7 +9,6 @@ import Preloader from "@/components/Preloader";
 import { cn } from "@/lib/utils";
 import ScrollProgress from "@/components/ScrollProgress";
 import NatleAI from "@/components/ai/NatleAI";
-import CursorSystem from "@/components/CursorSystem";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -99,7 +98,6 @@ export default function RootLayout({
         <NoiseOverlay />
         <Preloader />
         <ScrollProgress />
-        <CursorSystem />
 
         <SmoothScroll>
           <Navbar />
