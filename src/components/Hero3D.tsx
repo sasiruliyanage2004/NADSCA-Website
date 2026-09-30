@@ -13,8 +13,8 @@ void main() {
   vPosition = position;
   vec3 pos = position;
   
-  pos.z += sin(uv.x * 6.0 + time * 1.5) * 0.18;
-  pos.y += cos(uv.y * 5.0 + time * 1.2) * 0.15;
+  pos.z += sin(pos.x * 2.0 + time * 1.5) * 0.15;
+  pos.y += cos(pos.z * 2.0 + time * 1.2) * 0.15;
 
   gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 }
@@ -57,29 +57,22 @@ float snoise(vec2 v) {
 void main() {
   vec2 uv = vUv;
   
-  // Refined Premium Studio Palette: Electric Azure, Luminous Cyan, Deep Indigo (Zero harsh lime green)
-  vec3 color1 = vec3(0.09, 0.44, 0.91); // Clean Azure
-  vec3 color2 = vec3(0.02, 0.68, 0.65); // Luminous Cyan
-  vec3 color3 = vec3(0.06, 0.20, 0.55); // Deep Royal Indigo (smooth architectural depth)
+  vec3 color1 = vec3(0.117, 0.498, 0.909);
+  vec3 color2 = vec3(0.070, 0.721, 0.650);
+  vec3 color3 = vec3(0.435, 0.811, 0.243);
   vec3 color4 = isDark > 0.5 ? vec3(0.0, 0.0, 0.0) : vec3(0.960, 0.972, 0.984);
   
-  float n1 = snoise(uv * 1.5 + time * 0.18 + mouse * 0.4);
-  float n2 = snoise(uv * 1.8 - time * 0.22 - mouse * 0.25);
+  float n1 = snoise(uv * 1.5 + time * 0.2 + mouse * 0.5);
+  float n2 = snoise(uv * 2.0 - time * 0.3 - mouse * 0.3);
   
-  vec3 finalColor = mix(color4, color1, smoothstep(-0.4, 0.7, n1));
-  finalColor = mix(finalColor, color2, smoothstep(0.0, 0.9, n2));
-  finalColor = mix(finalColor, color3, smoothstep(0.1, 1.0, n1 * n2));
+  vec3 finalColor = mix(color4, color1, smoothstep(-0.5, 0.8, n1));
+  finalColor = mix(finalColor, color2, smoothstep(0.0, 1.0, n2));
+  finalColor = mix(finalColor, color3, smoothstep(0.2, 1.2, n1 * n2));
   
-  // Directional organic falloff:
-  // 1. Soft dissolve towards the left (so typography on the left sits on pure dark calm space)
-  float alphaX = smoothstep(0.0, 0.38, uv.x);
+  float alpha = smoothstep(0.0, 0.4, uv.y) * smoothstep(1.0, 0.6, uv.y);
+  alpha *= smoothstep(0.0, 0.3, uv.x) * smoothstep(1.0, 0.7, uv.x);
   
-  // 2. Soft dissipation at top and bottom (zero harsh lines or cuts)
-  float alphaY = smoothstep(0.0, 0.18, uv.y) * smoothstep(1.0, 0.88, uv.y);
-  
-  float alpha = alphaX * alphaY;
-  
-  gl_FragColor = vec4(finalColor, alpha * (isDark > 0.5 ? 0.65 : 0.75));
+  gl_FragColor = vec4(finalColor, alpha * (isDark > 0.5 ? 0.75 : 0.85));
 }
 `;
 
@@ -102,7 +95,7 @@ export default function Hero3D() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     mount.appendChild(renderer.domElement);
 
-    const geometry = new THREE.PlaneGeometry(1, 1, 64, 64);
+    const geometry = new THREE.PlaneGeometry(2.5, 2.5, 64, 64);
     
     const uniforms = {
       time: { value: 0.0 },
@@ -214,9 +207,6 @@ export default function Hero3D() {
       camera.bottom = -1;
       camera.updateProjectionMatrix();
       
-      // Keep plane dynamically scaled to comfortably cover full viewport on all aspect ratios
-      plane.scale.set(aspect * 2.4, 2.4, 1.0);
-
       renderer.setSize(w, h);
     };
     
@@ -242,7 +232,7 @@ export default function Hero3D() {
   return (
     <div 
       ref={mountRef} 
-      className="absolute right-0 top-0 w-full md:w-[75%] lg:w-[65%] h-full pointer-events-none opacity-75 mix-blend-multiply dark:mix-blend-screen dark:opacity-65 transition-opacity duration-500" 
+      className="absolute right-0 top-0 w-full lg:w-3/4 h-full pointer-events-none opacity-80 mix-blend-multiply dark:mix-blend-screen dark:opacity-75 transition-opacity duration-300" 
       aria-hidden="true" 
     />
   );
