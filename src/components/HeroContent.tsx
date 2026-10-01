@@ -77,7 +77,7 @@ export default function HeroContent() {
         <span data-hero="line" className="block pb-1.5 sm:pb-2">
           We engineer
         </span>
-        <span data-hero="line" className="block pb-1.5 sm:pb-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-teal-400">
+        <span data-hero="line" className="block pb-1.5 sm:pb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-400 to-emerald-400">
           what&apos;s next.
         </span>
       </h1>

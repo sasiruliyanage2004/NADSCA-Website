@@ -41,22 +41,21 @@ export default function NatleLogo({
         />
       </div>
 
-      {/* Wordmark & Tagline */}
-      <div className="flex flex-col justify-center">
-        <div className="flex items-center gap-2">
-          <span className="font-display font-extrabold text-lg sm:text-xl tracking-tight text-white leading-none group-hover:text-cyan-100 transition-colors">
-            NADSCA
-          </span>
-          <span className="hidden sm:inline-flex px-1.5 py-0.5 rounded text-[9px] font-mono uppercase tracking-wider bg-white/[0.08] text-white/70 border border-white/10 group-hover:border-cyan-400/40 group-hover:text-cyan-300 transition-colors">
-            STUDIO
-          </span>
-        </div>
-        {showTagline ? (
-          <span className="text-[7.5px] sm:text-[8.5px] font-mono tracking-[0.18em] text-cyan-400/90 font-medium uppercase mt-0.5">
-            INNOVATE • BUILD • TRANSFORM
-          </span>
-        ) : null}
+      {/* Official Stylized Wordmark from the Brand Logo */}
+      <div className="relative h-5 w-[114px] sm:h-6 sm:w-[136px] md:h-6 md:w-[144px] shrink-0 transition-transform duration-300 ease-out group-hover:scale-[1.03]">
+        <Image
+          src="/logo-wordmark-illuminated.png"
+          alt="NADSCA"
+          fill
+          sizes="(max-width: 768px) 136px, 144px"
+          className="object-contain filter drop-shadow-[0_0_16px_rgba(0,163,255,0.25)]"
+          priority
+        />
       </div>
+
+      <span className="hidden sm:inline-flex px-1.5 py-0.5 rounded text-[9px] font-mono uppercase tracking-wider bg-white/[0.08] text-white/70 border border-white/10 group-hover:border-cyan-400/40 group-hover:text-cyan-300 transition-colors">
+        STUDIO
+      </span>
     </div>
   );
 }

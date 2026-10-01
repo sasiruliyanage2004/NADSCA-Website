@@ -94,9 +94,16 @@ export default function Preloader() {
                 priority
               />
             </div>
-            <span className="font-display font-black text-2xl sm:text-3xl tracking-tight text-white">
-              NADSCA
-            </span>
+            <div className="relative w-44 h-8 sm:w-56 sm:h-10 mb-2">
+              <Image
+                src="/logo-wordmark-illuminated.png"
+                alt="NADSCA"
+                fill
+                sizes="224px"
+                className="object-contain drop-shadow-[0_0_20px_rgba(0,163,255,0.35)]"
+                priority
+              />
+            </div>
             <span className="text-[10px] sm:text-xs font-mono tracking-[0.25em] text-cyan-400 font-semibold uppercase mt-1">
               INNOVATE • BUILD • TRANSFORM
             </span>

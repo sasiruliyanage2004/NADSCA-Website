@@ -16,19 +16,20 @@ const config: Config = {
         paper: "rgb(var(--paper) / <alpha-value>)",
         mist: "rgb(var(--mist) / <alpha-value>)",
         azure: {
-          DEFAULT: "#1E7FE8",
-          light: "#5CA8F5",
+          DEFAULT: "#0099FF",
+          light: "#38BDF8",
+          navy: "#0A2051",
         },
         primary: {
-          DEFAULT: "#1E7FE8",
-          hover: "#1565C0",
+          DEFAULT: "#0099FF",
+          hover: "#0070F3",
         },
         teal: {
-          DEFAULT: "#12B8A6",
+          DEFAULT: "#06B6D4",
         },
         lime: {
-          DEFAULT: "#6FCF3E",
-          light: "#9AE85C",
+          DEFAULT: "#22C55E",
+          light: "#4ADE80",
         },
       },
       fontFamily: {
@@ -36,8 +37,9 @@ const config: Config = {
         body: ["var(--font-body)"],
       },
       backgroundImage: {
-        "brand-gradient": "linear-gradient(100deg, #1E7FE8 0%, #12B8A6 55%, #6FCF3E 100%)",
-        "brand-gradient-soft": "linear-gradient(120deg, rgba(30,127,232,0.10) 0%, rgba(18,184,166,0.10) 55%, rgba(111,207,62,0.10) 100%)",
+        "brand-gradient": "linear-gradient(100deg, #0099FF 0%, #06B6D4 45%, #22C55E 100%)",
+        "brand-gradient-soft": "linear-gradient(120deg, rgba(0,153,255,0.12) 0%, rgba(6,182,212,0.10) 45%, rgba(34,197,94,0.12) 100%)",
+        "nadsca-gradient": "linear-gradient(135deg, #00A3FF 0%, #0284C7 40%, #10B981 80%, #22C55E 100%)",
         "ink-gradient": "linear-gradient(160deg, #090A0F 0%, #171922 100%)",
       },
       boxShadow: {
