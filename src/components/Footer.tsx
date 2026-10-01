@@ -127,7 +127,7 @@ export default function Footer() {
       window.dispatchEvent(
         new CustomEvent("open-natle-ai", {
           detail: {
-            prompt: promptText || "I'd like to discuss an engineering engagement with NATLE.",
+            prompt: promptText || "I'd like to discuss an engineering engagement with NADSCA.",
           },
         })
       );
@@ -147,7 +147,7 @@ export default function Footer() {
       <div className="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-r from-azure/15 via-teal/8 to-transparent rounded-full blur-[140px] pointer-events-none z-0" />
       <div className="absolute right-0 bottom-0 w-[500px] h-[400px] bg-gradient-to-tl from-cyan-500/10 via-transparent to-transparent rounded-full blur-[120px] pointer-events-none z-0" />
 
-      {/* ─── MIDGROUND LAYER: GIANT NATLE WORDMARK WITH LIGHT SWEEP ─── */}
+      {/* ─── MIDGROUND LAYER: GIANT NADSCA WORDMARK WITH LIGHT SWEEP ─── */}
       <div className="absolute inset-x-0 bottom-16 sm:bottom-20 lg:bottom-24 z-[1] flex justify-center pointer-events-none overflow-hidden">
         <div
           ref={giantTextRef}
@@ -160,7 +160,7 @@ export default function Footer() {
           }}
           aria-hidden="true"
         >
-          NATLE
+          NADSCA
         </div>
       </div>
 
@@ -172,7 +172,7 @@ export default function Footer() {
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
             <span>SYS // CORE 01</span>
           </div>
-          <span className="hidden sm:inline">NATLE ARCHITECTURAL STUDIO</span>
+          <span className="hidden sm:inline">NADSCA ARCHITECTURAL STUDIO</span>
           <span className="text-white/60">DISCOVERY // 2026</span>
         </div>
 
@@ -208,7 +208,7 @@ export default function Footer() {
                   data-cursor="ask"
                 >
                   <Sparkles className="w-4 h-4 text-cyan-400" />
-                  <span>Ask NATLE AI</span>
+                  <span>Ask NADSCA AI</span>
                 </button>
               </Magnetic>
 
@@ -226,7 +226,7 @@ export default function Footer() {
             <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-8">
               <div>
                 <Link href="/" className="inline-block mb-4 outline-none group">
-                  <NatleLogo className="h-8 w-auto transition-transform duration-300 group-hover:scale-105" showTagline={false} />
+                  <NatleLogo className="h-9 w-auto transition-transform duration-300 group-hover:scale-105" showTagline={true} />
                 </Link>
                 <p className="text-white/65 text-xs sm:text-sm leading-relaxed max-w-md">
                   Empowering ambitious founders and enterprise teams with scalable, production-ready software systems, high-velocity cloud architecture, and production AI.
@@ -243,10 +243,10 @@ export default function Footer() {
                   <p className="flex items-center gap-2.5">
                     <Mail className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                     <a
-                      href="mailto:info@natle.dev"
+                      href="mailto:info@nadsca.dev"
                       className="text-white/80 hover:text-cyan-300 transition-colors underline-offset-4 hover:underline"
                     >
-                      info@natle.dev
+                      info@nadsca.dev
                     </a>
                   </p>
 
@@ -363,7 +363,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Left: Copyright */}
           <div className="text-white/40 text-[11px] font-mono tracking-wider uppercase order-2 sm:order-1 text-center sm:text-left">
-            © {new Date().getFullYear()} NATLE STUDIO. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} NADSCA STUDIO. ALL RIGHTS RESERVED.
           </div>
 
           {/* Center: Live Breathing Status */}

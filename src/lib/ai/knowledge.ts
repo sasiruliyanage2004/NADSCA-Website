@@ -1,5 +1,5 @@
 /**
- * NATLE Knowledge Base — Source of Truth for NATLE AI
+ * NADSCA Knowledge Base — Source of Truth for NADSCA AI
  * Derived strictly from verified company data and architecture standards.
  * Hallucination is strictly forbidden.
  */
@@ -28,18 +28,18 @@ export interface FAQItem {
 }
 
 export const NATLE_COMPANY_PROFILE = {
-  name: "NATLE",
-  legalName: "NATLE Studio",
-  tagline: "Software Engineering Studio — We Engineer What's Next",
+  name: "NADSCA",
+  legalName: "NADSCA Studio",
+  tagline: "INNOVATE • BUILD • TRANSFORM",
   summary:
-    "NATLE is a specialized digital product design and software engineering studio. We partner with ambitious founders and global enterprise teams to architect, build, and scale high-throughput software systems, distributed cloud infrastructure, and production AI platforms.",
+    "NADSCA is a specialized digital product design and software engineering studio. We partner with ambitious founders and global enterprise teams to architect, build, and scale high-throughput software systems, distributed cloud infrastructure, and production AI platforms.",
   headquarters: "No. 283 1/1, Ruwan Mawatha, Colombo 05, Sri Lanka",
   presence: "Colombo, Sri Lanka with global delivery across APAC, Europe, and North America (Remote / Hybrid)",
   contacts: {
-    email: "info@natle.dev",
+    email: "info@nadsca.dev",
     phonePrimary: "+94 11 250 7601",
     phoneSecondary: "+94 70 465 9847",
-    website: "https://natle.dev",
+    website: "https://nadsca.dev",
   },
   leadership: [
     { name: "Ishan Perera", role: "Founder & CEO" },
@@ -217,7 +217,7 @@ export const NATLE_TECH_STACK = {
 export const NATLE_FAQS: FAQItem[] = [
   {
     category: "Engagement",
-    question: "How does NATLE start a new project?",
+    question: "How does NADSCA start a new project?",
     answer:
       "We begin with a focused 1-to-2 week Architecture & Discovery Sprint. We clarify the product vision, define data schemas and system constraints, and establish a milestone delivery plan before starting code.",
   },
@@ -235,14 +235,21 @@ export const NATLE_FAQS: FAQItem[] = [
   },
   {
     category: "AI",
-    question: "What are NATLE's AI capabilities?",
+    question: "What are NADSCA's AI capabilities?",
     answer:
       "We build applied AI solutions: custom fine-tuned LLM agents, retrieval-augmented generation (RAG) over private enterprise documents, recommendation engines, and computer vision / spatial data pipelines.",
   },
   {
     category: "Contact",
-    question: "How can I contact NATLE to discuss a project?",
+    question: "How can I contact NADSCA to discuss a project?",
     answer:
-      "You can email our team directly at info@natle.dev, call our Colombo studio at +94 11 250 7601, or click 'Start a Project' on the navigation bar to submit our brief inquiry form.",
+      "You can email our team directly at info@nadsca.dev, call our Colombo studio at +94 11 250 7601, or click 'Start a Project' on the navigation bar to submit our brief inquiry form.",
   },
 ];
+
+// Aliases for modern naming
+export const NADSCA_COMPANY_PROFILE = NATLE_COMPANY_PROFILE;
+export const NADSCA_SERVICES = NATLE_SERVICES;
+export const NADSCA_PROJECTS = NATLE_PROJECTS;
+export const NADSCA_TECH_STACK = NATLE_TECH_STACK;
+export const NADSCA_FAQS = NATLE_FAQS;

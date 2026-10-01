@@ -25,7 +25,7 @@ interface Message {
 }
 
 const SUGGESTED_PROMPTS = [
-  "What does NATLE build?",
+  "What does NADSCA build?",
   "Show me your capabilities",
   "What technologies do you use?",
   "Tell me about your projects",
@@ -93,14 +93,14 @@ export default function NatleAI() {
           }),
         })
           .then((res) => {
-            if (!res.ok) throw new Error("Failed to reach NATLE AI service.");
+            if (!res.ok) throw new Error("Failed to reach NADSCA AI service.");
             return res.json();
           })
           .then((data) => {
             const assistantMessage: Message = {
               id: `ai-${Date.now()}`,
               role: "assistant",
-              content: data.reply || "I am currently processing requests. Please contact info@natle.dev.",
+              content: data.reply || "I am currently processing requests. Please contact info@nadsca.dev.",
               quickActions: data.quickActions,
               timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
             };
@@ -113,8 +113,8 @@ export default function NatleAI() {
                 id: `ai-err-${Date.now()}`,
                 role: "assistant",
                 content:
-                  "I could not reach the intelligence service right now. You can reach the NATLE team directly at info@natle.dev or call +94 11 250 7601.",
-                quickActions: [{ label: "Contact NATLE", href: "/contact" }],
+                  "I could not reach the intelligence service right now. You can reach the NADSCA team directly at info@nadsca.dev or call +94 11 250 7601.",
+                quickActions: [{ label: "Contact NADSCA", href: "/contact" }],
                 timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
               },
             ]);
@@ -140,7 +140,11 @@ export default function NatleAI() {
     };
 
     window.addEventListener("open-natle-ai", handleOpenEvent);
-    return () => window.removeEventListener("open-natle-ai", handleOpenEvent);
+    window.addEventListener("open-nadsca-ai", handleOpenEvent);
+    return () => {
+      window.removeEventListener("open-natle-ai", handleOpenEvent);
+      window.removeEventListener("open-nadsca-ai", handleOpenEvent);
+    };
   }, [sendMessage]);
 
   const clearChat = () => {
@@ -155,7 +159,7 @@ export default function NatleAI() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="group relative flex items-center gap-3 p-3.5 sm:px-4 sm:py-3 rounded-full bg-black/80 hover:bg-black border border-white/20 hover:border-cyan-400/50 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 outline-none"
-          aria-label={isOpen ? "Close NATLE AI" : "Open NATLE AI"}
+          aria-label={isOpen ? "Close NADSCA AI" : "Open NADSCA AI"}
           data-cursor="ask"
         >
           {/* Ambient Glow */}
@@ -168,7 +172,7 @@ export default function NatleAI() {
 
           {/* Label (Desktop) */}
           <span className="relative hidden sm:inline-flex items-center gap-1.5 text-xs font-mono font-semibold tracking-wider uppercase text-white group-hover:text-cyan-200 transition-colors">
-            <span>NATLE AI</span>
+            <span>NADSCA AI</span>
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
           </span>
         </button>
@@ -193,7 +197,7 @@ export default function NatleAI() {
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-display text-sm font-bold text-white tracking-tight">
-                  NATLE INTELLIGENCE
+                  NADSCA INTELLIGENCE
                 </h3>
                 <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
@@ -237,7 +241,7 @@ export default function NatleAI() {
                   <Bot className="w-6 h-6" />
                 </div>
                 <h4 className="font-display text-xl font-bold text-white tracking-tight">
-                  Hi, I&apos;m NATLE AI.
+                  Hi, I&apos;m NADSCA AI.
                 </h4>
                 <p className="text-white/70 leading-relaxed text-sm">
                   I can help you explore our software engineering practices, review verified client case studies, examine our technology standards, or start your next software project.

@@ -6,8 +6,8 @@ import ContactForm from "@/components/ContactForm";
 import { STUDIO_INFO } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Contact — NATLE",
-  description: "Get in touch with the NATLE team.",
+  title: "Contact — NADSCA",
+  description: "Get in touch with the NADSCA team.",
 };
 
 const CONTACT_DETAILS = [

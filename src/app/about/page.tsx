@@ -6,8 +6,8 @@ import AmbientBackground from "@/components/AmbientBackground";
 import { TEAM, VALUES } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "About — NATLE",
-  description: "The story, mission, and people behind NATLE.",
+  title: "About — NADSCA",
+  description: "The story, mission, and people behind NADSCA.",
 };
 
 const VALUE_ACCENTS: SpotlightAccent[] = ["azure", "teal", "lime", "purple"];
@@ -20,13 +20,13 @@ export default function AboutPage() {
         <div className="container-content relative">
           <Reveal className="max-w-3xl">
             <div className="text-azure text-xs font-mono font-semibold tracking-widest uppercase mb-4">
-              ABOUT NATLE
+              ABOUT NADSCA
             </div>
             <h1 className="font-display text-5xl md:text-6xl text-ink dark:text-white leading-[1.05]">
-              We started NATLE because good software shouldn&apos;t be rare.
+              We started NADSCA because good software shouldn&apos;t be rare.
             </h1>
             <p className="mt-7 text-lg text-ink/60 dark:text-white/60 leading-relaxed max-w-2xl">
-              Founded in Colombo, NATLE builds digital products and internal
+              Founded in Colombo, NADSCA builds digital products and internal
               systems for companies who are tired of choosing between fast and
               well-built. We believe you can have both.
             </p>
@@ -98,7 +98,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.1} className="space-y-5 text-white/70 leading-relaxed">
             <p>
-              NATLE began as a two-person team building a booking system for a
+              NADSCA began as a two-person team building a booking system for a
               local retailer. That first project taught us something we still
               hold onto: the best software is built close to the people who
               use it, not designed in the abstract.
@@ -110,7 +110,7 @@ export default function AboutPage() {
               before, and made the next product better.
             </p>
             <p>
-              Today, NATLE is a full studio of engineers, designers, and
+              Today, NADSCA is a full studio of engineers, designers, and
               delivery leads working with founders and enterprise teams alike
               — still holding to the same principle we started with.
             </p>
@@ -123,7 +123,7 @@ export default function AboutPage() {
           <Reveal className="max-w-xl mb-14">
             <p className="text-azure font-semibold text-sm mb-3">Leadership</p>
             <h2 className="font-display text-4xl text-ink dark:text-white leading-tight">
-              The people steering NATLE.
+              The people steering NADSCA.
             </h2>
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

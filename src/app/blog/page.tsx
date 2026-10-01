@@ -5,8 +5,8 @@ import AmbientBackground from "@/components/AmbientBackground";
 import { BLOG_POSTS } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Blog & News — NATLE",
-  description: "Notes on engineering, design, and building software from the NATLE team.",
+  title: "Blog & News — NADSCA",
+  description: "Notes on engineering, design, and building software from the NADSCA team.",
 };
 
 export default function BlogPage() {

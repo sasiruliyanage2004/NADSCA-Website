@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import NatleLogo from "./NatleLogo";
 
 export default function Preloader() {
@@ -81,14 +82,28 @@ export default function Preloader() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-xs md:max-w-md w-full flex justify-center px-4"
-            style={{ maxHeight: "160px" }}
+            className="flex flex-col items-center justify-center px-4 text-center"
           >
-            <NatleLogo className="h-20 sm:h-24 md:h-28 w-auto" showTagline={true} />
+            <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-4">
+              <Image
+                src="/logo.png"
+                alt="NADSCA"
+                fill
+                sizes="128px"
+                className="object-contain drop-shadow-[0_0_25px_rgba(0,180,255,0.4)]"
+                priority
+              />
+            </div>
+            <span className="font-display font-black text-2xl sm:text-3xl tracking-tight text-white">
+              NADSCA
+            </span>
+            <span className="text-[10px] sm:text-xs font-mono tracking-[0.25em] text-cyan-400 font-semibold uppercase mt-1">
+              INNOVATE • BUILD • TRANSFORM
+            </span>
           </motion.div>
 
           <div className="absolute bottom-10 left-10 right-10 flex justify-between items-end text-xs sm:text-sm font-semibold text-ink/40 dark:text-white/40 uppercase tracking-widest">
-            <span>NATLE STUDIO</span>
+            <span>NADSCA STUDIO</span>
             <span className="flex flex-col items-end gap-1">
               <span>LOADING...</span>
               <span className="text-ink dark:text-white text-2xl md:text-3xl font-display">{counter}%</span>

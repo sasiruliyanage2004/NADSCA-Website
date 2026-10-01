@@ -15,7 +15,7 @@ interface HubNode {
 }
 
 const HUBS: HubNode[] = [
-  { id: "cmbo", name: "Colombo", country: "Sri Lanka", lat: 6.9271, lng: 79.8612, latency: "4ms", status: "PRIMARY LAB", role: "NATLE HQ & Core R&D" },
+  { id: "cmbo", name: "Colombo", country: "Sri Lanka", lat: 6.9271, lng: 79.8612, latency: "4ms", status: "PRIMARY LAB", role: "NADSCA HQ & Core R&D" },
   { id: "sin", name: "Singapore", country: "Singapore", lat: 1.3521, lng: 103.8198, latency: "14ms", status: "ONLINE", role: "APAC Edge Cluster" },
   { id: "tok", name: "Tokyo", country: "Japan", lat: 35.6762, lng: 139.6503, latency: "28ms", status: "ONLINE", role: "East Asia Gateway" },
   { id: "lon", name: "London", country: "United Kingdom", lat: 51.5074, lng: -0.1278, latency: "18ms", status: "ONLINE", role: "Europe West DC" },
@@ -518,7 +518,7 @@ export default function NetworkGlobe3D() {
               Global Anycast Edge &amp; High-Speed Mesh
             </h3>
             <p className="mt-3 text-white/70 text-sm md:text-base leading-relaxed">
-              Every NATLE deployment runs across an ultra-low latency mesh interconnecting 8 worldwide strategic zones. Traffic is routed via anycast BGP to the geographically nearest node with sub-15ms p99 latency.
+              Every NADSCA deployment runs across an ultra-low latency mesh interconnecting 8 worldwide strategic zones. Traffic is routed via anycast BGP to the geographically nearest node with sub-15ms p99 latency.
             </p>
           </div>
 

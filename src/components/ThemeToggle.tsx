@@ -14,7 +14,7 @@ export default function ThemeToggle() {
     // Listen to OS system theme changes in real-time
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleSystemThemeChange = (e: MediaQueryListEvent) => {
-      if (!localStorage.getItem("natle_theme")) {
+      if (!localStorage.getItem("nadsca_theme") && !localStorage.getItem("natle_theme")) {
         if (e.matches) {
           document.documentElement.classList.add("dark");
           setIsDark(true);
@@ -34,9 +34,11 @@ export default function ThemeToggle() {
     setIsDark(nextDark);
     if (nextDark) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("nadsca_theme", "dark");
       localStorage.setItem("natle_theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("nadsca_theme", "light");
       localStorage.setItem("natle_theme", "light");
     }
   };

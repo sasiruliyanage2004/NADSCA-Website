@@ -37,27 +37,28 @@ function queryKnowledgeEngine(query: string, currentPath: string): AIResponsePay
     q.includes("get in touch")
   ) {
     return {
-      reply: `To start an engagement with NATLE, we recommend kicking off with an initial Architecture & Discovery Sprint. You can reach out directly via:
+      reply: `To start an engagement with NADSCA, we recommend kicking off with an initial Architecture & Discovery Sprint. You can reach out directly via:
 
-• Email: info@natle.dev
+• Email: info@nadsca.dev
 • Studio Phone: +94 11 250 7601 (or +94 70 465 9847)
 • Location: No. 283 1/1, Ruwan Mawatha, Colombo 05
 
 Our average time to initial production MVP is 6 weeks. Every engagement is staffed directly by senior staff architects.`,
       quickActions: [
         { label: "Start a Project Form", href: "/contact" },
-        { label: "Email Directly", href: "mailto:info@natle.dev" },
+        { label: "Email Directly", href: "mailto:info@nadsca.dev" },
       ],
       modelUsed: "knowledge-engine",
     };
   }
 
-  // Services / What does NATLE build
+  // Services / What does NADSCA build
   if (
     q.includes("service") ||
     q.includes("what do you build") ||
     q.includes("capabilities") ||
     q.includes("what does natle do") ||
+    q.includes("what does nadsca do") ||
     q.includes("offer")
   ) {
     const servicesSummary = NATLE_SERVICES.map(
@@ -65,7 +66,7 @@ Our average time to initial production MVP is 6 weeks. Every engagement is staff
     ).join("\n");
 
     return {
-      reply: `NATLE engineers high-throughput platforms and custom software architectures across 6 core practices:
+      reply: `NADSCA engineers high-throughput platforms and custom software architectures across 6 core practices:
 
 ${servicesSummary}
 
@@ -92,7 +93,7 @@ Every practice is managed by staff-level engineers with a strict zero-technical-
       .join("\n");
 
     return {
-      reply: `NATLE has engineered 120+ production systems. Key verified client case studies include:
+      reply: `NADSCA has engineered 120+ production systems. Key verified client case studies include:
 
 ${projectsList}
 
@@ -116,7 +117,7 @@ All architectures are engineered for high-availability with zero tech debt hando
     q.includes("next.js")
   ) {
     return {
-      reply: `NATLE's core architectural standards include:
+      reply: `NADSCA's core architectural standards include:
 
 • **Frontend & 3D**: Next.js 14 (App Router), React, TypeScript 5, Tailwind CSS, Three.js & Custom GLSL Shaders, GSAP.
 • **Distributed Backend**: Go (Golang), Python (FastAPI), Node.js, gRPC, Protocol Buffers, GraphQL.
@@ -151,6 +152,7 @@ All architectures are engineered for high-availability with zero tech debt hando
   if (
     q.includes("about") ||
     q.includes("who is natle") ||
+    q.includes("who is nadsca") ||
     q.includes("company") ||
     q.includes("team") ||
     q.includes("location") ||
@@ -158,7 +160,7 @@ All architectures are engineered for high-availability with zero tech debt hando
     q.includes("ceo")
   ) {
     return {
-      reply: `NATLE is an executive digital product studio headquartered at No. 283 1/1, Ruwan Mawatha, Colombo 05, Sri Lanka, operating with a global remote and hybrid delivery model.
+      reply: `NADSCA is an executive digital product studio headquartered at No. 283 1/1, Ruwan Mawatha, Colombo 05, Sri Lanka, operating with a global remote and hybrid delivery model.
 
 Leadership:
 • **Ishan Perera** — Founder & CEO
@@ -168,7 +170,7 @@ Leadership:
 
 We operate with four foundational principles: Senior Squads Only, Zero Tech Debt Handover, Weekly Working Software Demos, and Fast (not rushed) execution.`,
       quickActions: [
-        { label: "About NATLE", href: "/about" },
+        { label: "About NADSCA", href: "/about" },
         { label: "Careers", href: "/careers" },
       ],
       modelUsed: "knowledge-engine",
@@ -177,7 +179,7 @@ We operate with four foundational principles: Senior Squads Only, Zero Tech Debt
 
   // Default context-aware greeting/help
   return {
-    reply: `NATLE is a specialized software engineering studio building high-throughput systems, cloud architectures, and production AI platforms.
+    reply: `NADSCA is a specialized software engineering studio building high-throughput systems, cloud architectures, and production AI platforms.
 
 I can provide verified details on:
 1. Our 6 Core Engineering Practices (/services)

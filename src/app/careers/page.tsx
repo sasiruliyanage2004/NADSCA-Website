@@ -6,8 +6,8 @@ import AmbientBackground from "@/components/AmbientBackground";
 import { OPEN_ROLES, BENEFITS } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Careers — NATLE",
-  description: "Open roles and life at NATLE.",
+  title: "Careers — NADSCA",
+  description: "Open roles and life at NADSCA.",
 };
 
 const BENEFIT_ACCENTS: SpotlightAccent[] = ["azure", "teal", "lime", "purple"];
@@ -26,7 +26,7 @@ export default function CareersPage() {
               Build the tools other teams rely on.
             </h1>
             <p className="mt-6 text-lg text-ink/60 dark:text-white/60 leading-relaxed">
-              NATLE is a small studio doing work most people only get to touch
+              NADSCA is a small studio doing work most people only get to touch
               at much bigger companies. If that sounds interesting, we&apos;d
               like to hear from you.
             </p>
@@ -37,7 +37,7 @@ export default function CareersPage() {
       <section className="py-20 lg:py-24 bg-paper dark:bg-[#090C12] border-t border-ink/5 dark:border-white/10">
         <div className="container-content">
           <Reveal className="max-w-xl mb-12">
-            <h2 className="font-display text-3xl text-ink dark:text-white leading-tight">Life at NATLE</h2>
+            <h2 className="font-display text-3xl text-ink dark:text-white leading-tight">Life at NADSCA</h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {BENEFITS.map((b, i) => (

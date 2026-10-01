@@ -20,25 +20,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://natle.dev"),
-  title: "NATLE | Engineering the Future",
+  metadataBase: new URL("https://nadsca.dev"),
+  title: "NADSCA | Engineering the Future",
   description:
-    "We design and engineer the software that lets ambitious teams innovate, build, and grow faster. Expert custom software development, Web3, and enterprise solutions.",
+    "We design and engineer the software that lets ambitious teams innovate, build, and transform faster. Expert custom software development, Web3, and enterprise solutions.",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
   },
   openGraph: {
-    title: "NATLE | Engineering the Future",
+    title: "NADSCA | Engineering the Future",
     description: "Expert custom software development, Web3, and enterprise solutions.",
-    url: "https://natle.dev",
-    siteName: "NATLE Studio",
+    url: "https://nadsca.dev",
+    siteName: "NADSCA Studio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NATLE | Engineering the Future",
+    title: "NADSCA | Engineering the Future",
     description: "Expert custom software development, Web3, and enterprise solutions.",
   },
   robots: {
@@ -60,14 +60,14 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var saved = localStorage.getItem('natle_theme');
+                  var saved = localStorage.getItem('nadsca_theme') || localStorage.getItem('natle_theme');
                   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                   if (saved === 'dark' || (!saved && prefersDark)) {
                     document.documentElement.classList.add('dark');
                   } else {
                     document.documentElement.classList.remove('dark');
                   }
-                  if (sessionStorage.getItem('natle_preloader_seen')) {
+                  if (sessionStorage.getItem('nadsca_preloader_seen') || sessionStorage.getItem('natle_preloader_seen')) {
                     document.documentElement.classList.add('preloader-seen');
                   }
                 } catch(e) {}

@@ -53,7 +53,7 @@ export default function HeroContent() {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
         new CustomEvent("open-natle-ai", {
-          detail: { prompt: "How can NATLE help architect our next software product?" },
+          detail: { prompt: "How can NADSCA help architect our next software product?" },
         })
       );
     }
@@ -68,7 +68,7 @@ export default function HeroContent() {
           <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
         </span>
         <span className="text-[11px] font-mono tracking-[0.25em] uppercase text-white/80 font-medium">
-          NATLE TECHNOLOGY • SOFTWARE STUDIO
+          NADSCA TECHNOLOGY • SOFTWARE STUDIO
         </span>
       </div>
 
@@ -84,7 +84,7 @@ export default function HeroContent() {
 
       {/* Supporting Copy */}
       <p data-hero="sub" className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
-        NATLE partners with ambitious founders and global enterprise teams to architect,
+        NADSCA partners with ambitious founders and global enterprise teams to architect,
         build, and deploy high-throughput software systems, distributed cloud platforms, and production AI.
       </p>
 
@@ -111,7 +111,7 @@ export default function HeroContent() {
               data-cursor="ask"
             >
               <Sparkles className="w-4 h-4 text-cyan-400" />
-              <span>Ask NATLE AI</span>
+              <span>Ask NADSCA AI</span>
             </button>
           </Magnetic>
         </div>

@@ -109,7 +109,7 @@ export default function Home() {
         <div className="container-content grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <Reveal>
-              <p className="text-lime font-semibold text-sm mb-3">Why NATLE</p>
+              <p className="text-lime font-semibold text-sm mb-3">Why NADSCA</p>
               <h2 className="font-display text-4xl md:text-5xl leading-tight mb-10">
                 We don&apos;t just deliver tickets. We become your engineering partner.
               </h2>
@@ -127,7 +127,7 @@ export default function Home() {
           <Reveal className="lg:sticky lg:top-32">
             <div className="rounded-3xl bg-white/[0.06] border border-white/10 p-8 backdrop-blur-sm">
               <div className="flex items-center justify-between mb-8">
-                <span className="font-display text-lg">NATLE Delivery Metrics</span>
+                <span className="font-display text-lg">NADSCA Delivery Metrics</span>
                 <span className="flex items-center gap-2 text-xs text-lime">
                   <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
                   Live

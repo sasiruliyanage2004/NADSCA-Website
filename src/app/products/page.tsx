@@ -7,8 +7,8 @@ import AmbientBackground from "@/components/AmbientBackground";
 import { PRODUCTS } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Products & Solutions — NATLE",
-  description: "NATLE's suite of ready-to-deploy software products.",
+  title: "Products & Solutions — NADSCA",
+  description: "NADSCA's suite of ready-to-deploy software products.",
 };
 
 const ACCENTS: SpotlightAccent[] = ["azure", "teal", "lime", "purple"];
@@ -28,7 +28,7 @@ export default function ProductsPage() {
             </h1>
             <p className="mt-6 text-lg text-ink/60 dark:text-white/60 leading-relaxed">
               Not every problem needs custom software from scratch. These are
-              NATLE products already running in production, configured to fit
+              NADSCA products already running in production, configured to fit
               your workflow.
             </p>
           </Reveal>
@@ -46,7 +46,7 @@ export default function ProductsPage() {
                       {p.tag}
                     </span>
                     <span className="font-mono text-xs text-ink/30 dark:text-white/40">
-                      NATLE / 0{i + 1}
+                      NADSCA / 0{i + 1}
                     </span>
                   </div>
                   <h2 className="font-display text-2xl text-ink dark:text-white mb-3">{p.name}</h2>

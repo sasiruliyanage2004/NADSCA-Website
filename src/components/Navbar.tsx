@@ -52,15 +52,10 @@ export default function Navbar() {
           {/* Brand Logo */}
           <Link
             href="/"
-            className="relative z-[101] flex items-center gap-2.5 group outline-none"
-            aria-label="NATLE Home"
+            className="relative z-[101] flex items-center group outline-none"
+            aria-label="NADSCA Home"
           >
-            <div className="w-8 h-8 md:w-9 md:h-9 transition-transform duration-300 group-hover:scale-105">
-              <NatleLogo />
-            </div>
-            <span className="font-display font-bold text-lg md:text-xl tracking-tight text-white group-hover:text-white/80 transition-colors">
-              NATLE
-            </span>
+            <NatleLogo showTagline={true} />
           </Link>
 
           {/* Desktop Navigation Links (Title Case) */}

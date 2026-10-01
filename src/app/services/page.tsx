@@ -7,8 +7,8 @@ import AmbientBackground from "@/components/AmbientBackground";
 import { SERVICES } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Services — NATLE",
-  description: "Product engineering, cloud & DevOps, data & AI, design, and consulting services from NATLE.",
+  title: "Services — NADSCA",
+  description: "Product engineering, cloud & DevOps, data & AI, design, and consulting services from NADSCA.",
 };
 
 const ACCENTS: SpotlightAccent[] = ["azure", "teal", "lime", "purple", "blue", "azure"];

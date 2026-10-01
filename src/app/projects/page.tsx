@@ -7,8 +7,8 @@ import AmbientBackground from "@/components/AmbientBackground";
 import { PROJECTS } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Projects — NATLE",
-  description: "Case studies and portfolio of software NATLE has built.",
+  title: "Projects — NADSCA",
+  description: "Case studies and portfolio of software NADSCA has built.",
 };
 
 const ACCENTS: SpotlightAccent[] = ["azure", "teal", "lime", "purple", "blue", "azure"];
@@ -27,7 +27,7 @@ export default function ProjectsPage() {
               Work we&apos;re proud to put our name on.
             </h1>
             <p className="mt-6 text-lg text-ink/60 dark:text-white/60 leading-relaxed">
-              A sample of products and platforms NATLE has designed, built,
+              A sample of products and platforms NADSCA has designed, built,
               and shipped across industries.
             </p>
           </Reveal>

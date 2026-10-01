@@ -367,7 +367,7 @@ export default function ArchitecturePipeline() {
             <div className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
               <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/90 font-semibold">
-                NATLE® ARCHITECTURE STACK // BUILT IN LAYERS
+                NADSCA® ARCHITECTURE STACK // BUILT IN LAYERS
               </span>
             </div>
 
@@ -566,7 +566,7 @@ export default function ArchitecturePipeline() {
 
                 {/* Visual Bottom Footer */}
                 <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[9px] font-mono text-white/40">
-                  <span>ENGINEERED BY NATLE</span>
+                  <span>ENGINEERED BY NADSCA</span>
                   <span style={{ color: card.accent }}>SPEC VERIFIED</span>
                 </div>
               </div>

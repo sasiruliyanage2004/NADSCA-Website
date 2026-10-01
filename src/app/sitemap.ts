@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://natle.dev";
+  const baseUrl = "https://nadsca.dev";
   const currentDate = new Date().toISOString();
 
   const routes = [

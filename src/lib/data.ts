@@ -51,25 +51,25 @@ export const SERVICES = [
 
 export const PRODUCTS = [
   {
-    name: "NATLE Ops",
+    name: "NADSCA Ops",
     tag: "Operations Platform",
     description:
       "A unified operations workspace for inventory, orders, and multi-branch reporting, built for retail and distribution teams.",
   },
   {
-    name: "NATLE Insight",
+    name: "NADSCA Insight",
     tag: "Analytics",
     description:
       "Self-serve dashboards and forecasting for teams who need answers from their data without waiting on an analyst.",
   },
   {
-    name: "NATLE Flow",
+    name: "NADSCA Flow",
     tag: "Workflow Automation",
     description:
       "Turns manual approval chains and repetitive back-office work into automated, auditable workflows.",
   },
   {
-    name: "NATLE Connect",
+    name: "NADSCA Connect",
     tag: "Customer Platform",
     description:
       "A lightweight CRM and support hub for growing teams that have outgrown spreadsheets but aren't ready for enterprise software.",
@@ -176,7 +176,7 @@ export const BENEFITS = [
 
 export const STUDIO_INFO = {
   address: "No. 283 1/1, Ruwan Mawatha, Colombo 05, Sri Lanka",
-  email: "info@natle.dev",
+  email: "info@nadsca.dev",
   phonePrimary: "+94 11 250 7601",
   phoneSecondary: "+94 70 465 9847",
 };

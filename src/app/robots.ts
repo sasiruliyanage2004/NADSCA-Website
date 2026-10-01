@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://natle.dev/sitemap.xml",
+    sitemap: "https://nadsca.dev/sitemap.xml",
   };
 }

@@ -27,11 +27,11 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(result);
   } catch (error) {
-    console.error("NATLE AI API error:", error);
+    console.error("NADSCA AI API error:", error);
     return NextResponse.json(
       {
         reply:
-          "I encountered an unexpected system error. You can reach the NATLE engineering team directly at info@natle.dev.",
+          "I encountered an unexpected system error. You can reach the NADSCA engineering team directly at info@nadsca.dev.",
         modelUsed: "knowledge-engine",
       },
       { status: 500 }

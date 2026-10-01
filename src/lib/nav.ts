@@ -17,7 +17,7 @@ export const FOOTER_SERVICES = [
 ];
 
 export const FOOTER_COMPANY = [
-  { href: "/about", label: "About NATLE" },
+  { href: "/about", label: "About NADSCA" },
   { href: "/projects", label: "Projects" },
   { href: "/blog", label: "Blog & News" },
   { href: "/careers", label: "Careers" },

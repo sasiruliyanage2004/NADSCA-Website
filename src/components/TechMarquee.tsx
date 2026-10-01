@@ -153,7 +153,7 @@ export default function TechMarquee() {
   return (
     <div
       className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
-      aria-label="Technologies and frameworks used by NATLE"
+      aria-label="Technologies and frameworks used by NADSCA"
     >
       <div className="flex w-max animate-marquee gap-5 py-3 hover:[animation-play-state:paused]">
         {loop.map((tech, i) => (

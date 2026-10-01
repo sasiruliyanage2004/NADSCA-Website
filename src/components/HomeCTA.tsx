@@ -11,7 +11,7 @@ export default function HomeCTA() {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
         new CustomEvent("open-natle-ai", {
-          detail: { prompt: "I'd like to discuss building a project with NATLE." },
+          detail: { prompt: "I'd like to discuss building a project with NADSCA." },
         })
       );
     }
@@ -58,7 +58,7 @@ export default function HomeCTA() {
                   data-cursor="ask"
                 >
                   <Sparkles className="w-4 h-4 text-cyan-400" />
-                  <span>Ask NATLE AI</span>
+                  <span>Ask NADSCA AI</span>
                 </button>
               </Magnetic>
             </div>

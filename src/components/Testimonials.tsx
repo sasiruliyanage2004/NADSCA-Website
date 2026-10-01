@@ -8,7 +8,7 @@ import Reveal from "./Reveal";
 const TESTIMONIALS = [
   {
     quote:
-      "NATLE re-architected our transaction processing engine from the ground up. P99 latency dropped by 84% on day one, effortlessly handling our annual high-volume surge with zero incidents.",
+      "NADSCA re-architected our transaction processing engine from the ground up. P99 latency dropped by 84% on day one, effortlessly handling our annual high-volume surge with zero incidents.",
     author: "Marcus Vance",
     role: "VP of Engineering",
     company: "SynthCore Global",
