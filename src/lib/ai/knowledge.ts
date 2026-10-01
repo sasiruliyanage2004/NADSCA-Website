@@ -30,9 +30,9 @@ export interface FAQItem {
 export const NATLE_COMPANY_PROFILE = {
   name: "NADSCA",
   legalName: "NADSCA Studio",
-  tagline: "INNOVATE • BUILD • TRANSFORM",
+  tagline: "We engineer software for what's next.",
   summary:
-    "NADSCA is a specialized digital product design and software engineering studio. We partner with ambitious founders and global enterprise teams to architect, build, and scale high-throughput software systems, distributed cloud infrastructure, and production AI platforms.",
+    "Founded in 2026, NADSCA is a software engineering company focused on building intelligent, scalable, and practical software solutions for modern businesses. From custom business applications and enterprise systems to AI-driven solutions and automation, we turn complex business challenges into technology that works. We believe great software should not only be well-built, it should create measurable value for the people and businesses that use it.",
   headquarters: "No. 283 1/1, Ruwan Mawatha, Colombo 05, Sri Lanka",
   presence: "Colombo, Sri Lanka with global delivery across APAC, Europe, and North America (Remote / Hybrid)",
   contacts: {

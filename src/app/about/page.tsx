@@ -7,7 +7,7 @@ import { TEAM, VALUES } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About — NADSCA",
-  description: "The story, mission, and people behind NADSCA.",
+  description: "We engineer software for what's next. Founded in 2026, NADSCA builds intelligent, scalable, and practical software solutions.",
 };
 
 const VALUE_ACCENTS: SpotlightAccent[] = ["azure", "teal", "lime", "purple"];
@@ -23,31 +23,37 @@ export default function AboutPage() {
               ABOUT NADSCA
             </div>
             <h1 className="font-display text-5xl md:text-6xl text-ink dark:text-white leading-[1.05]">
-              We started NADSCA because good software shouldn&apos;t be rare.
+              We engineer software for what&apos;s next.
             </h1>
-            <p className="mt-7 text-lg text-ink/60 dark:text-white/60 leading-relaxed max-w-2xl">
-              Founded in Colombo, NADSCA builds digital products and internal
-              systems for companies who are tired of choosing between fast and
-              well-built. We believe you can have both.
-            </p>
+            <div className="mt-7 space-y-4 text-lg text-ink/70 dark:text-white/70 leading-relaxed max-w-2xl">
+              <p>
+                Founded in <strong className="text-ink dark:text-white font-semibold">2026</strong>, NADSCA is a software engineering company focused on building intelligent, scalable, and practical software solutions for modern businesses.
+              </p>
+              <p>
+                From custom business applications and enterprise systems to AI-driven solutions and automation, we turn complex business challenges into technology that works.
+              </p>
+              <p>
+                We believe great software should not only be well-built, it should create measurable value for the people and businesses that use it.
+              </p>
+            </div>
           </Reveal>
 
           <Reveal delay={0.1} className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 border-t border-ink/10 dark:border-white/10 pt-10">
             <div>
               <div className="font-display text-3xl text-ink dark:text-white"><Counter to={120} suffix="+" /></div>
-              <div className="text-sm text-ink/50 dark:text-white/50 mt-1">Projects delivered</div>
+              <div className="text-sm text-ink/50 dark:text-white/50 mt-1">Systems architected</div>
             </div>
             <div>
-              <div className="font-display text-3xl text-ink dark:text-white"><Counter to={60} suffix="+" /></div>
-              <div className="text-sm text-ink/50 dark:text-white/50 mt-1">Clients served</div>
+              <div className="font-display text-3xl text-ink dark:text-white"><Counter to={100} suffix="%" /></div>
+              <div className="text-sm text-ink/50 dark:text-white/50 mt-1">IP &amp; code ownership</div>
             </div>
             <div>
-              <div className="font-display text-3xl text-ink dark:text-white"><Counter to={8} /></div>
-              <div className="text-sm text-ink/50 dark:text-white/50 mt-1">Industries</div>
+              <div className="font-display text-3xl text-ink dark:text-white"><Counter to={6} suffix=" wks" /></div>
+              <div className="text-sm text-ink/50 dark:text-white/50 mt-1">Avg. MVP turnaround</div>
             </div>
             <div>
-              <div className="font-display text-3xl text-ink dark:text-white"><Counter to={7} /></div>
-              <div className="text-sm text-ink/50 dark:text-white/50 mt-1">Years building</div>
+              <div className="font-display text-3xl text-ink dark:text-white"><Counter to={99.9} decimals={1} suffix="%" /></div>
+              <div className="text-sm text-ink/50 dark:text-white/50 mt-1">Production SLA</div>
             </div>
           </Reveal>
         </div>
