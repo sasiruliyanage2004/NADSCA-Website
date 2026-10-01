@@ -84,12 +84,12 @@ export default function Preloader() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center justify-center px-4 text-center"
           >
-            <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-4">
+            <div className="relative w-28 h-20 sm:w-36 sm:h-24 mb-4">
               <Image
-                src="/logo.png"
+                src="/logo-mark.png"
                 alt="NADSCA"
                 fill
-                sizes="128px"
+                sizes="144px"
                 className="object-contain drop-shadow-[0_0_25px_rgba(0,180,255,0.4)]"
                 priority
               />
