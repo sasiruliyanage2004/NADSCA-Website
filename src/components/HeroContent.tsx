@@ -67,8 +67,8 @@ export default function HeroContent() {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
         </span>
-        <span className="text-[11px] font-mono tracking-[0.25em] uppercase text-white/80 font-medium">
-          NADSCA TECHNOLOGY • SOFTWARE STUDIO
+        <span className="text-[11px] font-mono tracking-[0.22em] uppercase text-white/90 font-medium">
+          NADSCA STUDIO // INNOVATE • BUILD • TRANSFORM
         </span>
       </div>
 
