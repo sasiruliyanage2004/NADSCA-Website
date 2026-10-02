@@ -229,7 +229,7 @@ export default function Footer() {
                   <NatleLogo className="h-9 w-auto transition-transform duration-300 group-hover:scale-105" showTagline={true} />
                 </Link>
                 <p className="text-white/65 text-xs sm:text-sm leading-relaxed max-w-md">
-                  Empowering ambitious founders and enterprise teams with scalable, production-ready software systems, high-velocity cloud architecture, and production AI.
+                  Building intelligent, scalable, and practical software solutions for modern businesses. We turn complex business challenges into technology that works.
                 </p>
               </div>
 

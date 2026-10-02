@@ -21,16 +21,17 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nadsca.dev"),
-  title: "NADSCA | Engineering the Future",
+  title: "NADSCA — We Engineer Software for What's Next",
   description:
-    "We design and engineer the software that lets ambitious teams innovate, build, and transform faster. Expert custom software development, Web3, and enterprise solutions.",
+    "Founded in 2026, NADSCA is a software engineering company focused on building intelligent, scalable, and practical software solutions for modern businesses.",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
   },
   openGraph: {
-    title: "NADSCA | Engineering the Future",
-    description: "Expert custom software development, Web3, and enterprise solutions.",
+    title: "NADSCA — We Engineer Software for What's Next",
+    description:
+      "Intelligent, scalable, and practical software solutions for modern businesses. Custom software, enterprise systems, and AI-driven automation.",
     url: "https://nadsca.dev",
     siteName: "NADSCA Studio",
     locale: "en_US",
@@ -38,8 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NADSCA | Engineering the Future",
-    description: "Expert custom software development, Web3, and enterprise solutions.",
+    title: "NADSCA — We Engineer Software for What's Next",
+    description:
+      "Intelligent, scalable, and practical software solutions for modern businesses.",
   },
   robots: {
     index: true,
