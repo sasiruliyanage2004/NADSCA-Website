@@ -60,31 +60,52 @@ export default function AboutPage() {
             </Reveal>
           </div>
 
-          {/* Metrics Row Underneath */}
-          <Reveal delay={0.15} className="mt-16 sm:mt-20 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 border-t border-ink/10 dark:border-white/10 pt-10">
-            <div>
-              <div className="font-display text-3xl sm:text-4xl text-ink dark:text-white font-bold">
-                <Counter to={120} suffix="+" />
+          {/* Track Record Section (Vertical Stack / Pahalata) */}
+          <Reveal delay={0.15} className="mt-16 sm:mt-20 max-w-xl">
+            <div className="rounded-3xl p-7 sm:p-9 bg-white/70 dark:bg-white/[0.03] border border-ink/10 dark:border-white/10 backdrop-blur-md shadow-sm">
+              {/* Header */}
+              <div className="pb-6 border-b border-ink/8 dark:border-white/10">
+                <h2 className="text-xs sm:text-sm font-mono tracking-[0.22em] uppercase font-bold text-ink dark:text-white">
+                  OUR TRACK RECORD
+                </h2>
+                <p className="text-sm sm:text-base text-cyan-600 dark:text-cyan-400 font-medium mt-1.5">
+                  Built with purpose. Designed for real-world use.
+                </p>
               </div>
-              <div className="text-xs sm:text-sm text-ink/50 dark:text-white/50 mt-1">Systems architected</div>
-            </div>
-            <div>
-              <div className="font-display text-3xl sm:text-4xl text-ink dark:text-white font-bold">
-                <Counter to={100} suffix="%" />
+
+              {/* Vertical list of metrics (pahalata) */}
+              <div className="mt-6 space-y-6">
+                <div>
+                  <div className="font-display text-4xl sm:text-5xl text-ink dark:text-white font-extrabold tracking-tight">
+                    <Counter to={2} />
+                  </div>
+                  <div className="text-sm sm:text-base text-ink/70 dark:text-white/70 mt-1 font-medium">
+                    Software solutions built
+                  </div>
+                </div>
+
+                <div className="h-px w-full bg-ink/6 dark:bg-white/8" />
+
+                <div>
+                  <div className="font-display text-4xl sm:text-5xl text-ink dark:text-white font-extrabold tracking-tight">
+                    <Counter to={2} suffix="+" />
+                  </div>
+                  <div className="text-sm sm:text-base text-ink/70 dark:text-white/70 mt-1 font-medium">
+                    Organizations served
+                  </div>
+                </div>
+
+                <div className="h-px w-full bg-ink/6 dark:bg-white/8" />
+
+                <div>
+                  <div className="font-display text-3xl sm:text-4xl text-ink dark:text-white font-extrabold tracking-tight">
+                    AI-DRIVEN
+                  </div>
+                  <div className="text-sm sm:text-base text-ink/70 dark:text-white/70 mt-1 font-medium">
+                    Engineering approach
+                  </div>
+                </div>
               </div>
-              <div className="text-xs sm:text-sm text-ink/50 dark:text-white/50 mt-1">IP &amp; code ownership</div>
-            </div>
-            <div>
-              <div className="font-display text-3xl sm:text-4xl text-ink dark:text-white font-bold">
-                <Counter to={6} suffix=" wks" />
-              </div>
-              <div className="text-xs sm:text-sm text-ink/50 dark:text-white/50 mt-1">Avg. MVP turnaround</div>
-            </div>
-            <div>
-              <div className="font-display text-3xl sm:text-4xl text-ink dark:text-white font-bold">
-                <Counter to={99.9} decimals={1} suffix="%" />
-              </div>
-              <div className="text-xs sm:text-sm text-ink/50 dark:text-white/50 mt-1">Production SLA</div>
             </div>
           </Reveal>
         </div>
