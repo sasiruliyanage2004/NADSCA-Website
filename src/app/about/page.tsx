@@ -60,47 +60,51 @@ export default function AboutPage() {
             </Reveal>
           </div>
 
-          {/* Track Record Section (Seamless Editorial Flow / No Card Box) */}
-          <Reveal delay={0.15} className="mt-16 sm:mt-20 pt-10 border-t border-ink/10 dark:border-white/10 max-w-2xl">
+          {/* Track Record Section (Seamless World-Class Editorial Flow) */}
+          <Reveal delay={0.15} className="mt-16 sm:mt-24 pt-12 sm:pt-16 border-t border-ink/10 dark:border-white/10 max-w-3xl">
             {/* Header */}
-            <div className="mb-8">
-              <h2 className="text-xs sm:text-sm font-mono tracking-[0.25em] uppercase font-bold text-cyan-500 dark:text-cyan-400">
+            <div className="mb-10 sm:mb-12">
+              <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.25em] uppercase font-bold text-cyan-500 dark:text-cyan-400 mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
                 OUR TRACK RECORD
+              </div>
+              <h2 className="text-2xl sm:text-3xl text-ink dark:text-white font-bold tracking-tight">
+                Built with purpose.{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-emerald-400">
+                  Designed for real-world use.
+                </span>
               </h2>
-              <p className="text-base sm:text-lg text-ink/80 dark:text-white/80 font-medium mt-1.5">
-                Built with purpose. Designed for real-world use.
-              </p>
             </div>
 
             {/* Vertical list of metrics (pahalata) */}
-            <div className="space-y-7">
+            <div className="space-y-8 sm:space-y-9">
               <div>
-                <div className="font-display text-4xl sm:text-5xl text-ink dark:text-white font-extrabold tracking-tight">
+                <div className="font-display text-5xl sm:text-6xl text-ink dark:text-white font-extrabold tracking-tight">
                   <Counter to={2} />
                 </div>
-                <div className="text-sm sm:text-base text-ink/60 dark:text-white/60 mt-1 font-medium">
+                <div className="text-sm sm:text-base text-ink/70 dark:text-white/70 mt-1.5 font-medium">
                   Software solutions built
                 </div>
               </div>
 
-              <div className="h-px w-20 bg-gradient-to-r from-cyan-400/50 to-transparent" />
+              <div className="h-px w-28 bg-gradient-to-r from-cyan-400/60 via-sky-400/30 to-transparent" />
 
               <div>
-                <div className="font-display text-4xl sm:text-5xl text-ink dark:text-white font-extrabold tracking-tight">
+                <div className="font-display text-5xl sm:text-6xl text-ink dark:text-white font-extrabold tracking-tight">
                   <Counter to={2} suffix="+" />
                 </div>
-                <div className="text-sm sm:text-base text-ink/60 dark:text-white/60 mt-1 font-medium">
+                <div className="text-sm sm:text-base text-ink/70 dark:text-white/70 mt-1.5 font-medium">
                   Organizations served
                 </div>
               </div>
 
-              <div className="h-px w-20 bg-gradient-to-r from-cyan-400/50 to-transparent" />
+              <div className="h-px w-28 bg-gradient-to-r from-cyan-400/60 via-sky-400/30 to-transparent" />
 
               <div>
                 <div className="font-display text-3xl sm:text-4xl text-ink dark:text-white font-extrabold tracking-tight">
                   AI-DRIVEN
                 </div>
-                <div className="text-sm sm:text-base text-ink/60 dark:text-white/60 mt-1 font-medium">
+                <div className="text-sm sm:text-base text-ink/70 dark:text-white/70 mt-1.5 font-medium">
                   Engineering approach
                 </div>
               </div>
