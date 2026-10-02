@@ -51,16 +51,16 @@ export const SERVICES = [
 
 export const PRODUCTS = [
   {
-    name: "NADSCA Ops",
-    tag: "Operations Platform",
+    name: "OHRMS",
+    tag: "HR Management Solution",
     description:
-      "A unified operations workspace for inventory, orders, and multi-branch reporting, built for retail and distribution teams.",
+      "A comprehensive human resource management solution built for operational visibility, attendance tracking, leave workflows, and personnel records.",
   },
   {
-    name: "NADSCA Insight",
-    tag: "Analytics",
+    name: "Security Patrolling Solution",
+    tag: "Security Operations",
     description:
-      "Self-serve dashboards and forecasting for teams who need answers from their data without waiting on an analyst.",
+      "An intelligent operations platform designed to bring real-time visibility, checkpoint verification, control, and efficiency to security teams.",
   },
   {
     name: "NADSCA Flow",
@@ -72,7 +72,7 @@ export const PRODUCTS = [
     name: "NADSCA Connect",
     tag: "Customer Platform",
     description:
-      "A lightweight CRM and support hub for growing teams that have outgrown spreadsheets but aren't ready for enterprise software.",
+      "A lightweight CRM and operations hub for growing teams that have outgrown spreadsheets.",
   },
 ];
 

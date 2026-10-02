@@ -114,65 +114,82 @@ export default function AboutPage() {
       </section>
 
       <section className="py-24 lg:py-28 bg-paper dark:bg-[#090C12] border-t border-ink/5 dark:border-white/10">
-        <div className="container-content grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="container-content grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           <Reveal>
             <SpotlightCard accent="azure" className="h-full">
-              <div className="p-9">
-                <div className="text-azure text-xs font-mono font-semibold tracking-widest uppercase mb-4">
+              <div className="p-8 sm:p-10 flex flex-col h-full">
+                <div className="text-cyan-500 dark:text-cyan-400 text-xs font-mono font-bold tracking-[0.25em] uppercase mb-3">
                   MISSION
                 </div>
-                <h2 className="font-display text-2xl text-ink dark:text-white mb-4">Our mission</h2>
-                <p className="text-ink/60 dark:text-white/60 leading-relaxed">
-                  To give growing companies access to the same quality of
-                  software engineering and design that only large enterprises
-                  could previously afford — without the enterprise overhead.
-                </p>
+                <h2 className="font-display text-2xl sm:text-3xl text-ink dark:text-white mb-6 font-bold tracking-tight">
+                  Our mission
+                </h2>
+                <div className="space-y-4 text-ink/70 dark:text-white/70 leading-relaxed text-base">
+                  <p>
+                    To engineer intelligent and reliable software solutions that help businesses operate smarter, automate better, and grow with confidence.
+                  </p>
+                  <p>
+                    We combine strong software engineering with modern technologies and artificial intelligence to turn real business challenges into practical digital solutions.
+                  </p>
+                </div>
               </div>
             </SpotlightCard>
           </Reveal>
           <Reveal delay={0.08}>
-            <SpotlightCard accent="lime" className="h-full">
-              <div className="p-9">
-                <div className="text-lime-600 dark:text-lime-400 text-xs font-mono font-semibold tracking-widest uppercase mb-4">
+            <SpotlightCard accent="teal" className="h-full">
+              <div className="p-8 sm:p-10 flex flex-col h-full">
+                <div className="text-emerald-500 dark:text-emerald-400 text-xs font-mono font-bold tracking-[0.25em] uppercase mb-3">
                   VISION
                 </div>
-                <h2 className="font-display text-2xl text-ink dark:text-white mb-4">Our vision</h2>
-                <p className="text-ink/60 dark:text-white/60 leading-relaxed">
-                  A future where every ambitious team, regardless of size or
-                  location, can turn a good idea into reliable, well-designed
-                  software.
-                </p>
+                <h2 className="font-display text-2xl sm:text-3xl text-ink dark:text-white mb-6 font-bold tracking-tight">
+                  Our vision
+                </h2>
+                <div className="space-y-4 text-ink/70 dark:text-white/70 leading-relaxed text-base">
+                  <p>
+                    To become a trusted technology partner for businesses seeking to transform ideas, processes, and challenges into intelligent software solutions.
+                  </p>
+                  <p>
+                    We envision a future where businesses of every size can access thoughtfully engineered technology that is scalable, adaptable, and built for what comes next.
+                  </p>
+                </div>
               </div>
             </SpotlightCard>
           </Reveal>
         </div>
       </section>
 
-      <section className="py-24 lg:py-28 bg-ink-gradient text-white">
-        <div className="container-content grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 items-center">
+      <section className="py-24 lg:py-28 bg-ink-gradient text-white relative overflow-hidden">
+        <div className="container-content grid grid-cols-1 lg:grid-cols-[1fr_1.25fr] gap-12 lg:gap-16 items-start">
           <Reveal>
-            <p className="text-lime font-semibold text-sm mb-4">Our story</p>
-            <h2 className="font-display text-4xl leading-tight mb-6">
-              From one client to a full studio.
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.25em] uppercase font-bold text-cyan-400 mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              OUR STORY
+            </div>
+            <h2 className="font-display text-4xl sm:text-5xl leading-tight font-extrabold mb-4">
+              Built from real{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-emerald-400">
+                business challenges.
+              </span>
             </h2>
           </Reveal>
-          <Reveal delay={0.1} className="space-y-5 text-white/70 leading-relaxed">
+          <Reveal delay={0.1} className="space-y-5 text-white/75 leading-relaxed text-base sm:text-lg">
             <p>
-              NADSCA began as a two-person team building a booking system for a
-              local retailer. That first project taught us something we still
-              hold onto: the best software is built close to the people who
-              use it, not designed in the abstract.
+              NADSCA was founded in <strong className="text-white font-semibold">2026</strong> with a clear belief: businesses deserve software that is not only functional, but thoughtfully engineered, intelligent, and built around the way they actually work.
             </p>
             <p>
-              From that first engagement, we grew one referral at a time —
-              into retail, healthcare, agriculture, and financial services.
-              Each new industry brought constraints we hadn&apos;t seen
-              before, and made the next product better.
+              Our journey began by building solutions for real operational needs including <strong className="text-cyan-300 font-semibold">OHRMS</strong>, our human resource management solution, and a <strong className="text-cyan-300 font-semibold">Security Patrolling Solution</strong> designed to bring greater visibility, control, and efficiency to security operations.
             </p>
             <p>
-              Today, NADSCA is a full studio of engineers, designers, and
-              delivery leads working with founders and enterprise teams alike
-              — still holding to the same principle we started with.
+              These solutions shaped the way we approach software: <strong className="text-white font-semibold">start with the problem, understand the people, and engineer the technology around the business.</strong>
+            </p>
+            <p>
+              Today, NADSCA focuses on building <strong className="text-white font-semibold">custom software, enterprise systems, AI-driven applications, and intelligent automation</strong> for organizations looking to improve how they operate and grow.
+            </p>
+            <p>
+              We are building NADSCA with a long-term vision to become a trusted technology partner for businesses that want to turn ambitious ideas and complex challenges into reliable digital solutions.
+            </p>
+            <p className="text-white font-semibold text-lg sm:text-xl pt-4 border-t border-white/10">
+              We may be at the beginning of our journey, but we are building for what comes next.
             </p>
           </Reveal>
         </div>
