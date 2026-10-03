@@ -61,20 +61,34 @@ export const NADSCA_COMPANY_PROFILE = {
   ],
   workingPrinciples: [
     {
-      title: "Senior Squads Only",
-      description: "No junior or trainee-led projects. Every engagement is staffed directly by staff-level engineers and principal designers.",
+      title: "Built for the long term",
+      description:
+        "We don't build software just to launch it. We engineer solutions with scalability, security, maintainability, and future growth in mind so your technology remains valuable as your business evolves.",
     },
     {
-      title: "Zero Tech Debt Handover",
-      description: "Strict TypeScript, automated CI/CD verification pipelines, and comprehensive documentation your internal team can adopt on day one.",
+      title: "Business first, technology second",
+      description:
+        "We start by understanding your goals, challenges, and processes. Then we choose the technology that makes sense. Our goal is not to build more software—it's to build the right solution.",
     },
     {
-      title: "Fixed Communication Rhythm",
-      description: "Weekly live demos, shared task boards, and direct Slack access — you always see real working software, never slide decks.",
+      title: "Clear at every step",
+      description:
+        "You should never have to wonder what is happening with your project. We communicate clearly, explain technical decisions in practical terms, and keep you informed from the first conversation to deployment and beyond.",
     },
     {
-      title: "Fast, Not Rushed",
-      description: "Rapid iteration on customer-facing features, with deliberate precision on foundational architectural decisions that are costly to reverse.",
+      title: "Engineering with intelligence",
+      description:
+        "We combine proven software engineering with modern technologies and AI where they create genuine value from automation and intelligent workflows to data-driven applications and smarter user experiences.",
+    },
+    {
+      title: "We take ownership",
+      description:
+        "We don't see our role as simply completing a list of requirements. We take responsibility for the solution as a whole—its quality, usability, performance, and ability to deliver real business value.",
+    },
+    {
+      title: "Built to evolve",
+      description:
+        "Your business will change. Your software should be ready for it. We design solutions that can adapt, integrate, scale, and evolve as your requirements grow.",
     },
   ],
   benchmarks: {

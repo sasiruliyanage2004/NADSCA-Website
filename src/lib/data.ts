@@ -160,10 +160,36 @@ export const PARTNERS = [
 ];
 
 export const VALUES = [
-  { title: "Built to last", detail: "We write software we'd be comfortable maintaining ourselves, five years from now." },
-  { title: "Clear communication", detail: "No jargon, no surprises. You always know where a project stands." },
-  { title: "Design and code together", detail: "Designers and engineers sit in the same room from day one." },
-  { title: "Own the outcome", detail: "We measure success by your metrics, not just delivered tickets." },
+  {
+    title: "Built for the long term",
+    detail:
+      "We don't build software just to launch it. We engineer solutions with scalability, security, maintainability, and future growth in mind so your technology remains valuable as your business evolves.",
+  },
+  {
+    title: "Business first, technology second",
+    detail:
+      "We start by understanding your goals, challenges, and processes. Then we choose the technology that makes sense. Our goal is not to build more software—it's to build the right solution.",
+  },
+  {
+    title: "Clear at every step",
+    detail:
+      "You should never have to wonder what is happening with your project. We communicate clearly, explain technical decisions in practical terms, and keep you informed from the first conversation to deployment and beyond.",
+  },
+  {
+    title: "Engineering with intelligence",
+    detail:
+      "We combine proven software engineering with modern technologies and AI where they create genuine value from automation and intelligent workflows to data-driven applications and smarter user experiences.",
+  },
+  {
+    title: "We take ownership",
+    detail:
+      "We don't see our role as simply completing a list of requirements. We take responsibility for the solution as a whole—its quality, usability, performance, and ability to deliver real business value.",
+  },
+  {
+    title: "Built to evolve",
+    detail:
+      "Your business will change. Your software should be ready for it. We design solutions that can adapt, integrate, scale, and evolve as your requirements grow.",
+  },
 ];
 
 export const OPEN_ROLES = [
