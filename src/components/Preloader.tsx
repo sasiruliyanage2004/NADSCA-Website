@@ -12,7 +12,7 @@ export default function Preloader() {
   useEffect(() => {
     // Check if user already saw preloader in this session (e.g. Page Refresh)
     try {
-      if (sessionStorage.getItem("natle_preloader_seen")) {
+      if (sessionStorage.getItem("nadsca_preloader_seen") || sessionStorage.getItem("natle_preloader_seen")) {
         setIsLoading(false);
         document.body.style.overflow = "";
         return;
@@ -40,7 +40,7 @@ export default function Preloader() {
         clearInterval(interval);
         timeoutId = setTimeout(() => {
           try {
-            sessionStorage.setItem("natle_preloader_seen", "true");
+            sessionStorage.setItem("nadsca_preloader_seen", "true");
           } catch {}
           setIsLoading(false);
           document.body.style.overflow = "";

@@ -1,25 +1,25 @@
 import {
-  NATLE_COMPANY_PROFILE,
-  NATLE_SERVICES,
-  NATLE_PROJECTS,
-  NATLE_TECH_STACK,
-  NATLE_FAQS,
+  NADSCA_COMPANY_PROFILE,
+  NADSCA_SERVICES,
+  NADSCA_PROJECTS,
+  NADSCA_TECH_STACK,
+  NADSCA_FAQS,
 } from "./knowledge";
 
 export function buildSystemPrompt(currentPath: string = "/"): string {
-  const servicesList = NATLE_SERVICES.map(
+  const servicesList = NADSCA_SERVICES.map(
     (s) => `- ${s.name}: ${s.short} (Points: ${s.points.join(", ")})`
   ).join("\n");
 
-  const projectsList = NATLE_PROJECTS.map(
+  const projectsList = NADSCA_PROJECTS.map(
     (p) => `- ${p.name} (${p.category}): ${p.result} | Tech: ${p.techStack.join(", ")}`
   ).join("\n");
 
-  const principlesList = NATLE_COMPANY_PROFILE.workingPrinciples
+  const principlesList = NADSCA_COMPANY_PROFILE.workingPrinciples
     .map((p) => `- ${p.title}: ${p.description}`)
     .join("\n");
 
-  const faqsList = NATLE_FAQS.map(
+  const faqsList = NADSCA_FAQS.map(
     (f) => `Q: ${f.question}\nA: ${f.answer}`
   ).join("\n\n");
 
@@ -35,12 +35,12 @@ CRITICAL RULES OF ENGAGEMENT:
 5. FALLBACK HONESTY: If a question falls outside verified NADSCA facts (e.g. internal financial records, unlisted partnerships, personal staff info), respond politely: "I do not have verified documentation on that topic. I would recommend speaking directly with the NADSCA engineering leadership at info@nadsca.dev."
 
 VERIFIED NADSCA COMPANY DATA:
-Company Name: ${NATLE_COMPANY_PROFILE.name} (${NATLE_COMPANY_PROFILE.legalName})
-Tagline: ${NATLE_COMPANY_PROFILE.tagline}
-Summary: ${NATLE_COMPANY_PROFILE.summary}
-HQ Studio: ${NATLE_COMPANY_PROFILE.headquarters}
-Contact: Email: ${NATLE_COMPANY_PROFILE.contacts.email} | Phone: ${NATLE_COMPANY_PROFILE.contacts.phonePrimary}
-Metrics: Production SLA: ${NATLE_COMPANY_PROFILE.benchmarks.productionUptimeSLA} | Avg MVP Time: ${NATLE_COMPANY_PROFILE.benchmarks.avgTimeToMVP} | Platforms Shipped: ${NATLE_COMPANY_PROFILE.benchmarks.productsShipped} | P99 Latency: ${NATLE_COMPANY_PROFILE.benchmarks.globalEdgeLatency}
+Company Name: ${NADSCA_COMPANY_PROFILE.name} (${NADSCA_COMPANY_PROFILE.legalName})
+Tagline: ${NADSCA_COMPANY_PROFILE.tagline}
+Summary: ${NADSCA_COMPANY_PROFILE.summary}
+HQ Studio: ${NADSCA_COMPANY_PROFILE.headquarters}
+Contact: Email: ${NADSCA_COMPANY_PROFILE.contacts.email} | Phone: ${NADSCA_COMPANY_PROFILE.contacts.phonePrimary}
+Metrics: Production SLA: ${NADSCA_COMPANY_PROFILE.benchmarks.productionUptimeSLA} | Avg MVP Time: ${NADSCA_COMPANY_PROFILE.benchmarks.avgTimeToMVP} | Platforms Shipped: ${NADSCA_COMPANY_PROFILE.benchmarks.productsShipped} | P99 Latency: ${NADSCA_COMPANY_PROFILE.benchmarks.globalEdgeLatency}
 
 CORE SERVICES:
 ${servicesList}
@@ -52,11 +52,11 @@ ENGINEERING WORKING PRINCIPLES:
 ${principlesList}
 
 TECHNOLOGY ECOSYSTEM:
-- Frontend: ${NATLE_TECH_STACK.frontend.join(", ")}
-- Distributed Backend: ${NATLE_TECH_STACK.backend.join(", ")}
-- Persistence & Stream: ${NATLE_TECH_STACK.dataStorage.join(", ")}
-- Cloud & Infrastructure: ${NATLE_TECH_STACK.cloudDevOps.join(", ")}
-- AI & Applied ML: ${NATLE_TECH_STACK.aiMl.join(", ")}
+- Frontend: ${NADSCA_TECH_STACK.frontend.join(", ")}
+- Distributed Backend: ${NADSCA_TECH_STACK.backend.join(", ")}
+- Persistence & Stream: ${NADSCA_TECH_STACK.dataStorage.join(", ")}
+- Cloud & Infrastructure: ${NADSCA_TECH_STACK.cloudDevOps.join(", ")}
+- AI & Applied ML: ${NADSCA_TECH_STACK.aiMl.join(", ")}
 
 COMMON INQUIRIES & ANSWERS:
 ${faqsList}

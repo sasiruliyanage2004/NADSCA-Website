@@ -1,10 +1,10 @@
 import { buildSystemPrompt } from "./prompts";
 import {
-  NATLE_COMPANY_PROFILE,
-  NATLE_SERVICES,
-  NATLE_PROJECTS,
-  NATLE_TECH_STACK,
-  NATLE_FAQS,
+  NADSCA_COMPANY_PROFILE,
+  NADSCA_SERVICES,
+  NADSCA_PROJECTS,
+  NADSCA_TECH_STACK,
+  NADSCA_FAQS,
 } from "./knowledge";
 
 export interface ChatMessage {
@@ -79,7 +79,7 @@ Our average time to initial production MVP is 6 weeks. Every engagement is staff
     q.includes("what does nadsca do") ||
     q.includes("offer")
   ) {
-    const servicesSummary = NATLE_SERVICES.map(
+    const servicesSummary = NADSCA_SERVICES.map(
       (s, i) => `0${i + 1}. **${s.name}** — ${s.short}`
     ).join("\n");
 
@@ -106,7 +106,7 @@ Every practice is managed by staff-level engineers with a strict zero-technical-
     q.includes("case stud") ||
     q.includes("track record")
   ) {
-    const projectsList = NATLE_PROJECTS.slice(0, 3)
+    const projectsList = NADSCA_PROJECTS.slice(0, 3)
       .map((p) => `• **${p.name}** (${p.category}): ${p.result}`)
       .join("\n");
 

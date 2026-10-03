@@ -27,7 +27,7 @@ export interface FAQItem {
   category: string;
 }
 
-export const NATLE_COMPANY_PROFILE = {
+export const NADSCA_COMPANY_PROFILE = {
   name: "NADSCA",
   legalName: "NADSCA Studio",
   tagline: "We engineer software for what's next.",
@@ -86,7 +86,7 @@ export const NATLE_COMPANY_PROFILE = {
   },
 };
 
-export const NATLE_SERVICES: ServiceDetail[] = [
+export const NADSCA_SERVICES: ServiceDetail[] = [
   {
     slug: "product-engineering",
     name: "Product Engineering",
@@ -161,7 +161,7 @@ export const NATLE_SERVICES: ServiceDetail[] = [
   },
 ];
 
-export const NATLE_PROJECTS: ProjectDetail[] = [
+export const NADSCA_PROJECTS: ProjectDetail[] = [
   {
     name: "Harborline Retail",
     client: "Harborline Corporation",
@@ -218,7 +218,7 @@ export const NATLE_PROJECTS: ProjectDetail[] = [
   },
 ];
 
-export const NATLE_TECH_STACK = {
+export const NADSCA_TECH_STACK = {
   frontend: ["Next.js 14", "React", "TypeScript", "Tailwind CSS", "Three.js", "WebGL / Custom Shaders", "GSAP", "Framer Motion"],
   backend: ["Go (Golang)", "Python / FastAPI", "Node.js", "GraphQL", "gRPC", "Protocol Buffers", "RESTful APIs"],
   dataStorage: ["PostgreSQL", "Redis", "TimescaleDB", "Vector Databases (pgvector, Pinecone)", "Kafka", "RabbitMQ"],
@@ -226,7 +226,7 @@ export const NATLE_TECH_STACK = {
   aiMl: ["PyTorch", "Hugging Face Transformers", "Custom LLM Fine-tuning", "Retrieval-Augmented Generation (RAG)", "Vector Embeddings"],
 };
 
-export const NATLE_FAQS: FAQItem[] = [
+export const NADSCA_FAQS: FAQItem[] = [
   {
     category: "Engagement",
     question: "How does NADSCA start a new project?",
@@ -259,9 +259,9 @@ export const NATLE_FAQS: FAQItem[] = [
   },
 ];
 
-// Aliases for modern naming
-export const NADSCA_COMPANY_PROFILE = NATLE_COMPANY_PROFILE;
-export const NADSCA_SERVICES = NATLE_SERVICES;
-export const NADSCA_PROJECTS = NATLE_PROJECTS;
-export const NADSCA_TECH_STACK = NATLE_TECH_STACK;
-export const NADSCA_FAQS = NATLE_FAQS;
+// Backward compatibility aliases
+export const NATLE_COMPANY_PROFILE = NADSCA_COMPANY_PROFILE;
+export const NATLE_SERVICES = NADSCA_SERVICES;
+export const NATLE_PROJECTS = NADSCA_PROJECTS;
+export const NATLE_TECH_STACK = NADSCA_TECH_STACK;
+export const NATLE_FAQS = NADSCA_FAQS;

@@ -52,7 +52,7 @@ export default function HeroContent() {
   const openAI = () => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
-        new CustomEvent("open-natle-ai", {
+        new CustomEvent("open-awora-ai", {
           detail: { prompt: "How can NADSCA help architect our next software product?" },
         })
       );

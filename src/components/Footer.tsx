@@ -40,7 +40,7 @@ export default function Footer() {
     if (typeof window === "undefined" || !footerContainerRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Parallax upward float for giant NATLE wordmark
+      // Parallax upward float for giant NADSCA wordmark
       if (giantTextRef.current) {
         gsap.fromTo(
           giantTextRef.current,
@@ -125,7 +125,7 @@ export default function Footer() {
   const triggerAI = (promptText?: string) => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
-        new CustomEvent("open-natle-ai", {
+        new CustomEvent("open-awora-ai", {
           detail: {
             prompt: promptText || "I'd like to discuss an engineering engagement with NADSCA.",
           },

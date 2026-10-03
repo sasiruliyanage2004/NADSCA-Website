@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="public/logo.png" alt="NATLE Studio" width="120" style="margin-bottom: 20px" />
-  <h1>NATLE Studio</h1>
-  <p><b>Next-Generation Software Engineering Studio</b></p>
+  <img src="public/logo.png" alt="NADSCA Studio" width="120" style="margin-bottom: 20px" />
+  <h1>NADSCA Studio</h1>
+  <p><b>We engineer software for what&apos;s next.</b></p>
   
   [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
   [![Three.js](https://img.shields.io/badge/WebGL-Three.js-black?style=for-the-badge&logo=three.js)](https://threejs.org/)
@@ -14,7 +14,7 @@
 
 ## ✦ Overview
 
-This is the core repository for **NATLE Studio's** official web platform (V2 Premium Redesign). It is engineered to reflect world-class Silicon Valley aesthetics—featuring a minimalist Pitch-Black theme, cinematic Film Grain noise, and high-performance WebGL animations.
+This is the core repository for **NADSCA Studio's** official web platform. Founded in 2026, NADSCA is a software engineering company focused on building intelligent, scalable, and practical software solutions for modern businesses. From custom business applications and enterprise systems to AI-driven solutions and automation, we turn complex business challenges into technology that works.
 
 ## ✦ Technical Architecture
 
@@ -22,15 +22,17 @@ We prioritize extreme performance, hardware acceleration, and security.
 
 * **Framework:** Next.js 14 (App Router)
 * **Styling:** Tailwind CSS (Strictly typed with `cn` utility)
-* **Typography:** Inter (Unified unified premium typeface for Display & Body)
+* **Typography:** Inter (Display & Body typography)
 * **3D & WebGL:** Three.js with custom GLSL Shaders (Hero Aurora & Interactive Globe)
 * **Scroll Animations:** GSAP (ScrollTrigger) & Lenis (Smooth Scroll)
+* **AI Engine:** Awora AI (Embedded deterministic & LLM-powered studio assistant)
 * **Security:** Cloudflare Turnstile (Anti-bot protection on Contact Forms)
 * **Icons:** Lucide React
 
 ## ✦ Key Features
 
-* **Cinematic Dark Theme:** Forced dark mode with SVG fractal noise overlays for a premium studio feel.
+* **Cinematic Dark Theme:** Tailored dark mode with SVG fractal noise overlays for a premium studio feel.
+* **Awora AI Assistant:** Interactive digital studio assistant with verified knowledge grounding.
 * **Hardware-Accelerated Layouts:** Horizontal GSAP execution pipelines and spotlight bento grids.
 * **Magnetic Interactions:** Floating UI elements that react dynamically to cursor movement.
 * **Uncompromised Security:** Form submissions protected by non-intrusive CAPTCHA.
@@ -53,10 +55,11 @@ npm install
 ```
 
 ### 3. Environment Variables
-Create a `.env.local` file in the root directory. You will need your Cloudflare Turnstile keys:
+Create a `.env.local` file in the root directory:
 ```env
 NEXT_PUBLIC_TURNSTILE_SITE_KEY="your_cloudflare_site_key"
 TURNSTILE_SECRET_KEY="your_cloudflare_secret_key"
+GEMINI_API_KEY="your_gemini_api_key_optional"
 ```
 
 ### 4. Run Development Server
@@ -77,5 +80,5 @@ This project is fully optimized for **Vercel**.
 
 <br/>
 <div align="center">
-  <p>Engineered with precision by NATLE Studio.</p>
+  <p>Engineered with precision by NADSCA Studio.</p>
 </div>

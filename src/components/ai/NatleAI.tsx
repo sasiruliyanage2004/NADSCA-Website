@@ -139,11 +139,13 @@ export default function NatleAI() {
       }
     };
 
-    window.addEventListener("open-natle-ai", handleOpenEvent);
+    window.addEventListener("open-awora-ai", handleOpenEvent);
     window.addEventListener("open-nadsca-ai", handleOpenEvent);
+    window.addEventListener("open-natle-ai", handleOpenEvent);
     return () => {
-      window.removeEventListener("open-natle-ai", handleOpenEvent);
+      window.removeEventListener("open-awora-ai", handleOpenEvent);
       window.removeEventListener("open-nadsca-ai", handleOpenEvent);
+      window.removeEventListener("open-natle-ai", handleOpenEvent);
     };
   }, [sendMessage]);
 

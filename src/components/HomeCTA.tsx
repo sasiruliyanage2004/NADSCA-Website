@@ -10,7 +10,7 @@ export default function HomeCTA() {
   const triggerAI = () => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
-        new CustomEvent("open-natle-ai", {
+        new CustomEvent("open-awora-ai", {
           detail: { prompt: "I'd like to discuss building a project with NADSCA." },
         })
       );

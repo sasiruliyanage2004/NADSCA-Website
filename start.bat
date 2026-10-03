@@ -1,8 +1,8 @@
 @echo off
-TITLE NATLE Website Server
+TITLE NADSCA Website Server
 
 echo ===================================================
-echo            NATLE Website - Local Server
+echo            NADSCA Website - Local Server
 echo ===================================================
 
 :: Ensure port 3000 is free
