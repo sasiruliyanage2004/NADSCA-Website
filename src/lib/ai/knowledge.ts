@@ -48,10 +48,16 @@ export const NATLE_COMPANY_PROFILE = {
     website: "https://nadsca.dev",
   },
   leadership: [
-    { name: "Ishan Perera", role: "Founder & CEO" },
-    { name: "Amaya Silva", role: "Head of Engineering" },
-    { name: "Ruwan Fernando", role: "Head of Product Design" },
-    { name: "Nadeesha Rathnayake", role: "Head of Client Delivery" },
+    { name: "Nilantha Perera", role: "Founder Chairman & CEO" },
+    { name: "Saman Kumara", role: "Vice Chairman & Operation" },
+    { name: "Buddhika Dhananjaya", role: "Chief Technology Officer" },
+    { name: "Dilan Hewage", role: "Head of Business Development" },
+    { name: "Dileepa Haripriya", role: "Chief Solution Architect" },
+  ],
+  partners: [
+    { name: "Ramani Jayasekara", role: "Head of Delivery" },
+    { name: "Hans Pradeep", role: "International Business Affairs" },
+    { name: "Commander Aruna", role: "Shilpa - Global HR Solutions" },
   ],
   workingPrinciples: [
     {

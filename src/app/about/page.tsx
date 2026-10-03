@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import SpotlightCard, { SpotlightAccent } from "@/components/SpotlightCard";
 import AmbientBackground from "@/components/AmbientBackground";
-import { TEAM, VALUES } from "@/lib/data";
+import { TEAM, PARTNERS, VALUES } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About — NADSCA",
@@ -197,26 +197,95 @@ export default function AboutPage() {
 
       <section className="py-24 lg:py-28 bg-paper dark:bg-[#090C12]">
         <div className="container-content">
+          {/* Leadership Header */}
           <Reveal className="max-w-xl mb-14">
-            <p className="text-azure font-semibold text-sm mb-3">Leadership</p>
-            <h2 className="font-display text-4xl text-ink dark:text-white leading-tight">
+            <p className="text-cyan-500 dark:text-cyan-400 font-semibold text-xs font-mono tracking-widest uppercase mb-3">
+              LEADERSHIP
+            </p>
+            <h2 className="font-display text-4xl text-ink dark:text-white leading-tight font-extrabold">
               The people steering NADSCA.
             </h2>
           </Reveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {TEAM.map((person, i) => (
+
+          {/* Row 1: Executive Directors (4 cols) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {TEAM.slice(0, 4).map((person, i) => (
               <Reveal key={person.name} delay={i * 0.06}>
-                <div className="group rounded-3xl border border-ink/8 dark:border-white/10 bg-white dark:bg-[#0D1118] p-5 hover:shadow-card hover:border-ink/15 dark:hover:border-white/20 transition-all">
-                  <div className="aspect-square rounded-2xl bg-brand-gradient-soft mb-4 flex items-center justify-center overflow-hidden relative">
-                    <span className="font-display text-3xl text-ink/30 dark:text-white/40 group-hover:scale-110 transition-transform duration-300">
-                      {person.name.split(" ").map((n) => n[0]).join("")}
-                    </span>
+                <div className="group rounded-3xl border border-ink/8 dark:border-white/10 bg-white dark:bg-[#0D1118] p-6 hover:shadow-card hover:border-cyan-400/30 transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="aspect-square rounded-2xl bg-brand-gradient-soft mb-4 flex items-center justify-center overflow-hidden relative">
+                      <span className="font-display text-3xl text-ink/30 dark:text-white/40 group-hover:scale-110 transition-transform duration-300 font-bold">
+                        {person.name.split(" ").map((n) => n[0]).join("")}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-base sm:text-lg text-ink dark:text-white font-bold">
+                      {person.name}
+                    </h3>
                   </div>
-                  <h3 className="font-display text-base text-ink dark:text-white">{person.name}</h3>
-                  <p className="text-ink/50 dark:text-white/50 text-sm">{person.role}</p>
+                  <p className="text-cyan-600 dark:text-cyan-400 text-xs sm:text-sm font-medium mt-2">
+                    {person.role}
+                  </p>
                 </div>
               </Reveal>
             ))}
+          </div>
+
+          {/* Row 2: Chief Solution Architect (Centered) */}
+          {TEAM[4] && (
+            <div className="mt-6 flex justify-center">
+              <Reveal delay={0.24} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+                <div className="group rounded-3xl border border-ink/8 dark:border-white/10 bg-white dark:bg-[#0D1118] p-6 hover:shadow-card hover:border-cyan-400/30 transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="aspect-square rounded-2xl bg-brand-gradient-soft mb-4 flex items-center justify-center overflow-hidden relative">
+                      <span className="font-display text-3xl text-ink/30 dark:text-white/40 group-hover:scale-110 transition-transform duration-300 font-bold">
+                        {TEAM[4].name.split(" ").map((n) => n[0]).join("")}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-base sm:text-lg text-ink dark:text-white font-bold">
+                      {TEAM[4].name}
+                    </h3>
+                  </div>
+                  <p className="text-cyan-600 dark:text-cyan-400 text-xs sm:text-sm font-medium mt-2">
+                    {TEAM[4].role}
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+          )}
+
+          {/* Partners Section */}
+          <div className="mt-20 pt-16 border-t border-ink/8 dark:border-white/10">
+            <Reveal className="max-w-xl mb-12">
+              <div className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.25em] uppercase font-bold text-cyan-500 dark:text-cyan-400 mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                OUR PARTNERS
+              </div>
+              <h2 className="font-display text-3xl sm:text-4xl text-ink dark:text-white leading-tight font-extrabold">
+                Strategic partners &amp; advisors.
+              </h2>
+            </Reveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {PARTNERS.map((person, i) => (
+                <Reveal key={person.name} delay={i * 0.08}>
+                  <div className="group rounded-3xl border border-ink/8 dark:border-white/10 bg-white dark:bg-[#0D1118] p-6 hover:shadow-card hover:border-cyan-400/30 transition-all duration-300 h-full flex flex-col justify-between">
+                    <div>
+                      <div className="aspect-square rounded-2xl bg-brand-gradient-soft mb-4 flex items-center justify-center overflow-hidden relative">
+                        <span className="font-display text-3xl text-ink/30 dark:text-white/40 group-hover:scale-110 transition-transform duration-300 font-bold">
+                          {person.name.split(" ").map((n) => n[0]).join("")}
+                        </span>
+                      </div>
+                      <h3 className="font-display text-base sm:text-lg text-ink dark:text-white font-bold">
+                        {person.name}
+                      </h3>
+                    </div>
+                    <p className="text-cyan-600 dark:text-cyan-400 text-xs sm:text-sm font-medium mt-2">
+                      {person.role}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>

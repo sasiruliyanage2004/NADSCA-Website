@@ -117,7 +117,7 @@ export const BLOG_POSTS = [
     excerpt:
       "The pipeline, feature flags, and rollback habits that let small teams ship daily without breaking production.",
     readTime: "7 min read",
-    author: "Ishan Perera",
+    author: "Nilantha Perera",
     image:
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
   },
@@ -146,10 +146,17 @@ export const BLOG_POSTS = [
 ];
 
 export const TEAM = [
-  { name: "Ishan Perera", role: "Founder & CEO" },
-  { name: "Amaya Silva", role: "Head of Engineering" },
-  { name: "Ruwan Fernando", role: "Head of Product Design" },
-  { name: "Nadeesha Rathnayake", role: "Head of Client Delivery" },
+  { name: "Nilantha Perera", role: "Founder Chairman & CEO" },
+  { name: "Saman Kumara", role: "Vice Chairman & Operation" },
+  { name: "Buddhika Dhananjaya", role: "Chief Technology Officer" },
+  { name: "Dilan Hewage", role: "Head of Business Development" },
+  { name: "Dileepa Haripriya", role: "Chief Solution Architect" },
+];
+
+export const PARTNERS = [
+  { name: "Ramani Jayasekara", role: "Head of Delivery" },
+  { name: "Hans Pradeep", role: "International Business Affairs" },
+  { name: "Commander Aruna", role: "Shilpa - Global HR Solutions" },
 ];
 
 export const VALUES = [

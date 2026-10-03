@@ -162,11 +162,17 @@ All architectures are engineered for high-availability with zero tech debt hando
     return {
       reply: `NADSCA is an executive digital product studio headquartered at No. 283 1/1, Ruwan Mawatha, Colombo 05, Sri Lanka, operating with a global remote and hybrid delivery model.
 
-Leadership:
-• **Ishan Perera** — Founder & CEO
-• **Amaya Silva** — Head of Engineering
-• **Ruwan Fernando** — Head of Product Design
-• **Nadeesha Rathnayake** — Head of Client Delivery
+Leadership & Key Executives:
+• **Nilantha Perera** — Founder Chairman & CEO
+• **Saman Kumara** — Vice Chairman & Operation
+• **Buddhika Dhananjaya** — Chief Technology Officer
+• **Dilan Hewage** — Head of Business Development
+• **Dileepa Haripriya** — Chief Solution Architect
+
+Strategic Partners:
+• **Ramani Jayasekara** — Head of Delivery
+• **Hans Pradeep** — International Business Affairs
+• **Commander Aruna** — Shilpa - Global HR Solutions
 
 We operate with four foundational principles: Senior Squads Only, Zero Tech Debt Handover, Weekly Working Software Demos, and Fast (not rushed) execution.`,
       quickActions: [
