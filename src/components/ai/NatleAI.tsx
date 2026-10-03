@@ -172,7 +172,7 @@ export default function NatleAI() {
 
           {/* Label (Desktop) */}
           <span className="relative hidden sm:inline-flex items-center gap-1.5 text-xs font-mono font-semibold tracking-wider uppercase text-white group-hover:text-cyan-200 transition-colors">
-            <span>Ask Awora AI</span>
+            <span>Awora</span>
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
           </span>
         </button>
