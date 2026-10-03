@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(result);
   } catch (error) {
-    console.error("NADSCA AI API error:", error);
+    console.error("Awora AI API error:", error);
     return NextResponse.json(
       {
         reply:

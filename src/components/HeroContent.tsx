@@ -111,7 +111,7 @@ export default function HeroContent() {
               data-cursor="ask"
             >
               <Sparkles className="w-4 h-4 text-cyan-400" />
-              <span>Ask NADSCA AI</span>
+              <span>Ask Awora AI</span>
             </button>
           </Magnetic>
         </div>

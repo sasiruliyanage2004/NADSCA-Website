@@ -93,7 +93,7 @@ export default function NatleAI() {
           }),
         })
           .then((res) => {
-            if (!res.ok) throw new Error("Failed to reach NADSCA AI service.");
+            if (!res.ok) throw new Error("Failed to reach Awora AI service.");
             return res.json();
           })
           .then((data) => {
@@ -159,7 +159,7 @@ export default function NatleAI() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="group relative flex items-center gap-3 p-3.5 sm:px-4 sm:py-3 rounded-full bg-black/80 hover:bg-black border border-white/20 hover:border-cyan-400/50 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 outline-none"
-          aria-label={isOpen ? "Close NADSCA AI" : "Open NADSCA AI"}
+          aria-label={isOpen ? "Close Awora AI" : "Open Awora AI"}
           data-cursor="ask"
         >
           {/* Ambient Glow */}
@@ -172,7 +172,7 @@ export default function NatleAI() {
 
           {/* Label (Desktop) */}
           <span className="relative hidden sm:inline-flex items-center gap-1.5 text-xs font-mono font-semibold tracking-wider uppercase text-white group-hover:text-cyan-200 transition-colors">
-            <span>NADSCA AI</span>
+            <span>Ask Awora AI</span>
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
           </span>
         </button>
@@ -197,7 +197,7 @@ export default function NatleAI() {
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-display text-sm font-bold text-white tracking-tight">
-                  NADSCA INTELLIGENCE
+                  AWORA // NADSCA AI
                 </h3>
                 <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
@@ -241,10 +241,10 @@ export default function NatleAI() {
                   <Bot className="w-6 h-6" />
                 </div>
                 <h4 className="font-display text-xl font-bold text-white tracking-tight">
-                  Hi, I&apos;m NADSCA AI.
+                  Hi, I&apos;m Awora.
                 </h4>
                 <p className="text-white/70 leading-relaxed text-sm">
-                  I can help you explore our software engineering practices, review verified client case studies, examine our technology standards, or start your next software project.
+                  I&apos;m NADSCA&apos;s intelligent AI assistant. I can help you explore our software engineering practices, review verified client case studies, examine our technology standards, or start your next software project.
                 </p>
               </div>
 

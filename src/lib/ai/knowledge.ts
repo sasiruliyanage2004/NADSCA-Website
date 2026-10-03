@@ -1,5 +1,5 @@
 /**
- * NADSCA Knowledge Base — Source of Truth for NADSCA AI
+ * NADSCA Knowledge Base — Source of Truth for Awora AI
  * Derived strictly from verified company data and architecture standards.
  * Hallucination is strictly forbidden.
  */

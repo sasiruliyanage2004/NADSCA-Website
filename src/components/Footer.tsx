@@ -208,12 +208,12 @@ export default function Footer() {
                   data-cursor="ask"
                 >
                   <Sparkles className="w-4 h-4 text-cyan-400" />
-                  <span>Ask NADSCA AI</span>
+                  <span>Ask Awora AI</span>
                 </button>
               </Magnetic>
 
               <span className="text-xs font-mono text-white/40 pl-2 hidden md:inline">
-                Not sure where to start? Click to consult our AI guide.
+                Not sure where to start? Click to consult Awora AI.
               </span>
             </div>
           </div>
