@@ -68,7 +68,7 @@ export default function HeroContent() {
           <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
         </span>
         <span className="text-[11px] font-mono tracking-[0.22em] uppercase text-white/90 font-medium">
-          NADSCA STUDIO // INNOVATE • BUILD • TRANSFORM
+          NADSCA // INNOVATE • BUILD • TRANSFORM
         </span>
       </div>
 

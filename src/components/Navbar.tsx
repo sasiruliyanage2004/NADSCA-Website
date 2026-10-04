@@ -55,7 +55,7 @@ export default function Navbar() {
             className="relative z-[101] flex items-center group outline-none"
             aria-label="NADSCA Home"
           >
-            <NatleLogo showTagline={false} />
+            <NatleLogo showTagline={true} />
           </Link>
 
           {/* Desktop Navigation Links (Title Case) */}

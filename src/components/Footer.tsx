@@ -172,7 +172,7 @@ export default function Footer() {
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
             <span>SYS // CORE 01</span>
           </div>
-          <span className="hidden sm:inline">NADSCA ARCHITECTURAL STUDIO</span>
+          <span className="hidden sm:inline">NADSCA SOFTWARE ENGINEERING</span>
           <span className="text-white/60">DISCOVERY // 2026</span>
         </div>
 
@@ -296,7 +296,7 @@ export default function Footer() {
             {/* Column 3: Studio (lg:col-span-2) */}
             <div className="lg:col-span-2">
               <h4 className="text-[11px] font-mono font-bold tracking-[0.2em] uppercase text-white/50 mb-5">
-                STUDIO
+                COMPANY
               </h4>
               <ul className="space-y-3">
                 {FOOTER_COMPANY.map((item) => (
@@ -363,7 +363,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Left: Copyright */}
           <div className="text-white/40 text-[11px] font-mono tracking-wider uppercase order-2 sm:order-1 text-center sm:text-left">
-            © {new Date().getFullYear()} NADSCA STUDIO. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} NADSCA. ALL RIGHTS RESERVED.
           </div>
 
           {/* Center: Live Breathing Status */}

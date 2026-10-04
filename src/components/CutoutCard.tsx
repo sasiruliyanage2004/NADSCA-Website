@@ -43,7 +43,7 @@ export default function CutoutCard({
   title,
   description,
   image,
-  authorName = "NADSCA Studio",
+  authorName = "NADSCA",
   authorAvatar,
   metaText = "5 min read",
 }: CutoutCardProps) {

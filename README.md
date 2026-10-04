@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="public/logo.png" alt="NADSCA Studio" width="120" style="margin-bottom: 20px" />
-  <h1>NADSCA Studio</h1>
+  <img src="public/logo.png" alt="NADSCA" width="120" style="margin-bottom: 20px" />
+  <h1>NADSCA</h1>
   <p><b>We engineer software for what&apos;s next.</b></p>
   
   [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
@@ -14,7 +14,7 @@
 
 ## ✦ Overview
 
-This is the core repository for **NADSCA Studio's** official web platform. Founded in 2026, NADSCA is a software engineering company focused on building intelligent, scalable, and practical software solutions for modern businesses. From custom business applications and enterprise systems to AI-driven solutions and automation, we turn complex business challenges into technology that works.
+This is the core repository for **NADSCA's** official web platform. Founded in 2026, NADSCA is a software engineering company focused on building intelligent, scalable, and practical software solutions for modern businesses. From custom business applications and enterprise systems to AI-driven solutions and automation, we turn complex business challenges into technology that works.
 
 ## ✦ Technical Architecture
 
@@ -80,5 +80,5 @@ This project is fully optimized for **Vercel**.
 
 <br/>
 <div align="center">
-  <p>Engineered with precision by NADSCA Studio.</p>
+  <p>Engineered with precision by NADSCA.</p>
 </div>

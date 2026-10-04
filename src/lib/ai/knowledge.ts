@@ -29,7 +29,7 @@ export interface FAQItem {
 
 export const NADSCA_COMPANY_PROFILE = {
   name: "NADSCA",
-  legalName: "NADSCA Studio",
+  legalName: "NADSCA",
   tagline: "We engineer software for what's next.",
   summary:
     "Founded in 2026, NADSCA is a software engineering company focused on building intelligent, scalable, and practical software solutions for modern businesses. From custom business applications and enterprise systems to AI-driven solutions and automation, we turn complex business challenges into technology that works. We believe great software should not only be well-built, it should create measurable value for the people and businesses that use it.",

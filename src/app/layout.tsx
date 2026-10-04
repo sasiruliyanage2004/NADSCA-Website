@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description:
       "Intelligent, scalable, and practical software solutions for modern businesses. Custom software, enterprise systems, and AI-driven automation.",
     url: "https://nadsca.dev",
-    siteName: "NADSCA Studio",
+    siteName: "NADSCA",
     locale: "en_US",
     type: "website",
   },

@@ -90,7 +90,7 @@ export default function Preloader() {
                 alt="NADSCA"
                 fill
                 sizes="144px"
-                className="object-contain drop-shadow-[0_0_25px_rgba(0,180,255,0.4)]"
+                className="object-contain"
                 priority
               />
             </div>
@@ -104,13 +104,17 @@ export default function Preloader() {
                 priority
               />
             </div>
-            <span className="text-[10px] sm:text-xs font-mono tracking-[0.25em] text-cyan-400 font-semibold uppercase mt-1">
-              INNOVATE • BUILD • TRANSFORM
-            </span>
+            <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono tracking-[0.22em] text-white/90 font-bold uppercase mt-1">
+              <span>INNOVATE</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0099FF] shrink-0 shadow-[0_0_8px_#0099FF]" />
+              <span>BUILD</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] shrink-0 shadow-[0_0_8px_#22C55E]" />
+              <span>TRANSFORM</span>
+            </div>
           </motion.div>
 
           <div className="absolute bottom-10 left-10 right-10 flex justify-between items-end text-xs sm:text-sm font-semibold text-ink/40 dark:text-white/40 uppercase tracking-widest">
-            <span>NADSCA STUDIO</span>
+            <span>NADSCA</span>
             <span className="flex flex-col items-end gap-1">
               <span>LOADING...</span>
               <span className="text-ink dark:text-white text-2xl md:text-3xl font-display">{counter}%</span>
