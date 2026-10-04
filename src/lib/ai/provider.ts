@@ -192,13 +192,14 @@ Strategic Partners:
 • **Hans Pradeep** — International Business Affairs
 • **Commander Aruna** — Shilpa - Global HR Solutions
 
-Our 6 core operating principles are:
+Our 7 core operating principles are:
 1. **Built for the long term** — Engineering for scalability, security, and future growth.
 2. **Business first, technology second** — Understanding business goals first, then picking the right solution.
 3. **Clear at every step** — Transparent communication with no jargon or surprises.
 4. **Engineering with intelligence** — Modern software combined with pragmatic AI and automation.
 5. **We take ownership** — Responsibility for complete product usability, quality, and business value.
-6. **Built to evolve** — Modular solutions designed to adapt and scale as your business grows.`,
+6. **Built to evolve** — Modular solutions designed to adapt and scale as your business grows.
+7. **Your challenge. Our engineering. One solution.** — Turning business problems into software that works to deliver real value.`,
       quickActions: [
         { label: "About NADSCA", href: "/about" },
         { label: "Careers", href: "/careers" },

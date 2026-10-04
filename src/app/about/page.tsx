@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import SpotlightCard, { SpotlightAccent } from "@/components/SpotlightCard";
@@ -310,7 +308,11 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {VALUES.map((v, i) => (
-              <Reveal key={v.title} delay={i * 0.06}>
+              <Reveal 
+                key={v.title} 
+                delay={i * 0.05}
+                className={i === VALUES.length - 1 ? "md:col-span-2" : ""}
+              >
                 <SpotlightCard accent={VALUE_ACCENTS[i % VALUE_ACCENTS.length]} className="h-full">
                   <div className="p-7 sm:p-8 flex gap-5 h-full">
                     <div className="w-1.5 shrink-0 rounded-full bg-brand-gradient" />
@@ -327,32 +329,6 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
-
-          {/* Concluding Highlight Banner */}
-          <Reveal delay={0.3} className="mt-8">
-            <div className="relative overflow-hidden rounded-3xl border border-azure/20 dark:border-cyan-500/20 bg-gradient-to-br from-white via-white/80 to-cyan-50/50 dark:from-[#0D1118] dark:via-[#090D14] dark:to-cyan-950/20 p-8 sm:p-10 lg:p-12 shadow-card backdrop-blur-xl">
-              <div className="absolute -top-24 -right-24 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                <div className="max-w-2xl">
-                  <h3 className="font-display text-2xl sm:text-3xl text-ink dark:text-white font-extrabold tracking-tight mb-2.5">
-                    Your challenge. Our engineering. One solution.
-                  </h3>
-                  <p className="text-ink/70 dark:text-white/70 text-base sm:text-lg leading-relaxed">
-                    Tell us what you&apos;re trying to solve, and we&apos;ll help turn it into technology that works to deliver measurable business value.
-                  </p>
-                </div>
-                <div className="flex items-center gap-4 shrink-0">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-gradient-to-r from-azure to-teal text-white font-semibold text-sm hover:opacity-95 transition-all duration-300 shadow-md hover:shadow-cyan-500/25 group"
-                  >
-                    <span>Start a Project</span>
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Reveal>
         </div>
       </section>
     </>

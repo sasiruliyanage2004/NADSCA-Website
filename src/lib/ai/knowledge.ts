@@ -90,6 +90,11 @@ export const NADSCA_COMPANY_PROFILE = {
       description:
         "Your business will change. Your software should be ready for it. We design solutions that can adapt, integrate, scale, and evolve as your requirements grow.",
     },
+    {
+      title: "Your challenge. Our engineering. One solution.",
+      description:
+        "Tell us what you're trying to solve, and we'll help turn it into technology that works to deliver real business value.",
+    },
   ],
   benchmarks: {
     productionUptimeSLA: "99.99%",
