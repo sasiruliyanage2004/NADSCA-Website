@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Reveal from "./Reveal";
 import Magnetic from "./Magnetic";
-import { ArrowRight, Sparkles, Clock, ShieldCheck } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function HomeCTA() {
   const triggerAI = () => {
@@ -28,16 +28,16 @@ export default function HomeCTA() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
               <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-white/80 font-semibold">
-                ENGAGEMENT OPEN FOR Q4
+                LET&apos;S BUILD SOMETHING THAT MATTERS
               </span>
             </div>
 
             <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-white max-w-3xl mx-auto leading-tight">
-              Ready to build what&apos;s next?
+              WHAT&apos;S THE CHALLENGE?
             </h2>
 
-            <p className="text-white/70 mt-5 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              Tell us what you&apos;re trying to build. We&apos;ll tell you honestly whether we&apos;re the right fit, with verified architectures and zero technical debt.
+            <p className="text-white/75 mt-5 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+              Tell us what is slowing your business down, what you want to improve, or what you want to build. We&apos;ll help turn the challenge into a practical software solution.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
@@ -63,18 +63,14 @@ export default function HomeCTA() {
               </Magnetic>
             </div>
 
-            <div className="mt-12 pt-8 border-t border-white/5 flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-white/40">
-              <span className="flex items-center gap-2">
-                <Clock className="w-3.5 h-3.5 text-cyan-400" />
-                Direct response within 24 hours
-              </span>
-              <span>•</span>
-              <span className="flex items-center gap-2">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                Strict NDA on day one
-              </span>
-              <span>•</span>
-              <span>Senior staff architects only</span>
+            <div className="mt-10 pt-6 border-t border-white/5 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-xs sm:text-sm text-white/50 italic font-body">
+              <span>Custom software</span>
+              <span className="w-1 h-1 rounded-full bg-cyan-400/60 not-italic shrink-0" />
+              <span>AI solutions</span>
+              <span className="w-1 h-1 rounded-full bg-cyan-400/60 not-italic shrink-0" />
+              <span>Automation</span>
+              <span className="w-1 h-1 rounded-full bg-cyan-400/60 not-italic shrink-0" />
+              <span>Enterprise systems</span>
             </div>
           </div>
         </Reveal>

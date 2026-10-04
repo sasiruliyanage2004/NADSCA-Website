@@ -170,13 +170,13 @@ export default function Footer() {
         <div ref={ctaBlockRef} className="mb-24 sm:mb-32">
           <div className="max-w-4xl">
             <span className="text-[11px] font-mono tracking-[0.25em] uppercase text-cyan-400 font-semibold block mb-4">
-              READY TO SCALE
+              LET&apos;S BUILD SOMETHING THAT MATTERS
             </span>
             <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.02] mb-6">
-              LET&apos;S BUILD WHAT&apos;S NEXT.
+              WHAT&apos;S THE CHALLENGE?
             </h2>
-            <p className="text-base sm:text-xl text-white/70 max-w-2xl leading-relaxed font-normal mb-10">
-              Have an ambitious product, complex engineering challenge, or transformation initiative? Let&apos;s talk.
+            <p className="text-base sm:text-xl text-white/75 max-w-2xl leading-relaxed font-normal mb-10">
+              Tell us what is slowing your business down, what you want to improve, or what you want to build. We&apos;ll help turn the challenge into a practical software solution.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -186,14 +186,14 @@ export default function Footer() {
                   className="group inline-flex items-center gap-2.5 rounded-full bg-white text-black px-8 py-4 text-[15px] font-bold shadow-[0_0_35px_rgba(255,255,255,0.25)] hover:bg-slate-100 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
                   data-cursor="view"
                 >
-                  <span>Start a project</span>
+                  <span>Start a Conversation</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </Magnetic>
 
               <Magnetic>
                 <button
-                  onClick={() => triggerAI()}
+                  onClick={() => triggerAI("Tell us what is slowing your business down, what you want to improve, or what you want to build.")}
                   className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.04] text-white px-7 py-3.5 text-[15px] font-medium hover:border-cyan-400/40 hover:bg-white/[0.08] backdrop-blur-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
                   data-cursor="ask"
                 >
@@ -201,10 +201,17 @@ export default function Footer() {
                   <span>Ask Awora AI</span>
                 </button>
               </Magnetic>
+            </div>
 
-              <span className="text-xs font-mono text-white/40 pl-2 hidden md:inline">
-                Not sure where to start? Click to consult Awora AI.
-              </span>
+            {/* Service Focus Highlight Line */}
+            <div className="mt-8 flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs sm:text-sm text-white/50 italic font-body">
+              <span>Custom software</span>
+              <span className="w-1 h-1 rounded-full bg-cyan-400/60 not-italic shrink-0" />
+              <span>AI solutions</span>
+              <span className="w-1 h-1 rounded-full bg-cyan-400/60 not-italic shrink-0" />
+              <span>Automation</span>
+              <span className="w-1 h-1 rounded-full bg-cyan-400/60 not-italic shrink-0" />
+              <span>Enterprise systems</span>
             </div>
           </div>
         </div>
