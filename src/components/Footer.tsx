@@ -166,16 +166,6 @@ export default function Footer() {
 
       {/* ─── FOREGROUND CONTENT LAYER ─── */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-20 sm:pt-28 pb-12">
-        {/* STAGE 00: TECHNICAL TOP DIVIDER */}
-        <div className="flex items-center justify-between pb-8 mb-16 border-b border-white/10 text-[10px] sm:text-[11px] font-mono tracking-[0.25em] text-white/40 uppercase">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-            <span>SYS // CORE 01</span>
-          </div>
-          <span className="hidden sm:inline">NADSCA SOFTWARE ENGINEERING</span>
-          <span className="text-white/60">DISCOVERY // 2026</span>
-        </div>
-
         {/* STAGE 01: FINAL CALL TO ACTION (CTA) */}
         <div ref={ctaBlockRef} className="mb-24 sm:mb-32">
           <div className="max-w-4xl">
