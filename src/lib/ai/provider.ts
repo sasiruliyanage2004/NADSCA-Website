@@ -57,14 +57,14 @@ function queryKnowledgeEngine(query: string, currentPath: string): AIResponsePay
     return {
       reply: `To start an engagement with NADSCA, we recommend kicking off with an initial Architecture & Discovery Sprint. You can reach out directly via:
 
-• Email: info@nadsca.dev
-• Studio Phone: +94 11 250 7601 (or +94 70 465 9847)
-• Location: No. 283 1/1, Ruwan Mawatha, Colombo 05
+• Email: info@nadsca.com
+• Phone: +94 76 538 3500 (or +94 70 465 9847)
+• Location: # 60/17, “White Whales”, Malalage Mawatha, Dharmarama Road, Malamulla West, Panadura, Sri Lanka
 
 Our average time to initial production MVP is 6 weeks. Every engagement is staffed directly by senior staff architects.`,
       quickActions: [
-        { label: "Start a Project Form", href: "/contact" },
-        { label: "Email Directly", href: "mailto:info@nadsca.dev" },
+        { label: "Start a Conversation", href: "/contact" },
+        { label: "Email Directly", href: "mailto:info@nadsca.com" },
       ],
       modelUsed: "knowledge-engine",
     };
@@ -178,7 +178,7 @@ All architectures are engineered for high-availability with zero tech debt hando
     q.includes("ceo")
   ) {
     return {
-      reply: `NADSCA is an executive digital product studio headquartered at No. 283 1/1, Ruwan Mawatha, Colombo 05, Sri Lanka, operating with a global remote and hybrid delivery model.
+      reply: `NADSCA is an executive digital product studio headquartered at # 60/17, “White Whales”, Malalage Mawatha, Dharmarama Road, Malamulla West, Panadura, Sri Lanka, operating with a global remote and hybrid delivery model.
 
 Leadership & Key Executives:
 • **Nilantha Perera** — Founder Chairman & CEO

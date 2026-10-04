@@ -29,7 +29,7 @@ export interface FAQItem {
 
 export const NADSCA_COMPANY_PROFILE = {
   name: "NADSCA",
-  legalName: "NADSCA",
+  legalName: "NADSCA (PVT) LTD",
   tagline: "We engineer software for what's next.",
   summary:
     "Founded in 2026, NADSCA is a software engineering company focused on building intelligent, scalable, and practical software solutions for modern businesses. From custom business applications and enterprise systems to AI-driven solutions and automation, we turn complex business challenges into technology that works. We believe great software should not only be well-built, it should create measurable value for the people and businesses that use it.",
@@ -39,13 +39,13 @@ export const NADSCA_COMPANY_PROFILE = {
     "To become a trusted technology partner for businesses seeking to transform ideas, processes, and challenges into intelligent software solutions. We envision a future where businesses of every size can access thoughtfully engineered technology that is scalable, adaptable, and built for what comes next.",
   story:
     "NADSCA was founded in 2026 with a clear belief: businesses deserve software that is not only functional, but thoughtfully engineered, intelligent, and built around the way they actually work. Our journey began by building solutions for real operational needs including OHRMS, our human resource management solution, and a Security Patrolling Solution designed to bring greater visibility, control, and efficiency to security operations. Today, NADSCA focuses on building custom software, enterprise systems, AI-driven applications, and intelligent automation for organizations looking to improve how they operate and grow. We may be at the beginning of our journey, but we are building for what comes next.",
-  headquarters: "No. 283 1/1, Ruwan Mawatha, Colombo 05, Sri Lanka",
-  presence: "Colombo, Sri Lanka with global delivery across APAC, Europe, and North America (Remote / Hybrid)",
+  headquarters: '# 60/17, “White Whales”, Malalage Mawatha, Dharmarama Road, Malamulla West, Panadura, Sri Lanka',
+  presence: "Panadura & Colombo, Sri Lanka with global delivery across APAC, Europe, and North America (Remote / Hybrid)",
   contacts: {
-    email: "info@nadsca.dev",
-    phonePrimary: "+94 11 250 7601",
+    email: "info@nadsca.com",
+    phonePrimary: "+94 76 538 3500",
     phoneSecondary: "+94 70 465 9847",
-    website: "https://nadsca.dev",
+    website: "https://nadsca.com",
   },
   leadership: [
     { name: "Nilantha Perera", role: "Founder Chairman & CEO" },
@@ -274,7 +274,7 @@ export const NADSCA_FAQS: FAQItem[] = [
     category: "Contact",
     question: "How can I contact NADSCA to discuss a project?",
     answer:
-      "You can email our team directly at info@nadsca.dev, call our Colombo studio at +94 11 250 7601, or click 'Start a Project' on the navigation bar to submit our brief inquiry form.",
+      "You can email our team directly at info@nadsca.com, call us at +94 76 538 3500 or +94 70 465 9847, or click 'Start a Conversation' / 'Contact' to submit our brief inquiry form.",
   },
 ];
 

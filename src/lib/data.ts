@@ -213,8 +213,8 @@ export const BENEFITS = [
 ];
 
 export const STUDIO_INFO = {
-  address: "No. 283 1/1, Ruwan Mawatha, Colombo 05, Sri Lanka",
-  email: "info@nadsca.dev",
-  phonePrimary: "+94 11 250 7601",
+  address: '# 60/17, “White Whales”, Malalage Mawatha, Dharmarama Road, Malamulla West, Panadura, Sri Lanka',
+  email: "info@nadsca.com",
+  phonePrimary: "+94 76 538 3500",
   phoneSecondary: "+94 70 465 9847",
 };

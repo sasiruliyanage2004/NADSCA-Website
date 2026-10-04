@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         reply:
-          "I encountered an unexpected system error. You can reach the NADSCA engineering team directly at info@nadsca.dev.",
+          "I encountered an unexpected system error. You can reach the NADSCA engineering team directly at info@nadsca.com.",
         modelUsed: "knowledge-engine",
       },
       { status: 500 }

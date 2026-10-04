@@ -5,7 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FOOTER_SERVICES, FOOTER_COMPANY } from "@/lib/nav";
+import { FOOTER_SERVICES, FOOTER_INDUSTRY_SOLUTIONS, FOOTER_COMPANY } from "@/lib/nav";
+import { STUDIO_INFO } from "@/lib/data";
 import NatleLogo from "./NatleLogo";
 import Magnetic from "./Magnetic";
 import FooterNetworkCanvas from "./FooterNetworkCanvas";
@@ -219,14 +220,14 @@ export default function Footer() {
         {/* STAGE 02: MAIN FOOTER DIRECTORY (Asymmetric Editorial Grid) */}
         <div ref={directoryRef} className="pt-16 border-t border-white/10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-14 items-start pb-16">
-            {/* Left Brand Section (Dominant: lg:col-span-5) */}
-            <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-8">
+            {/* Left Brand Section (lg:col-span-4) */}
+            <div className="lg:col-span-4 flex flex-col justify-between h-full space-y-8">
               <div>
                 <Link href="/" className="inline-block mb-4 outline-none group">
                   <NatleLogo className="h-9 w-auto transition-transform duration-300 group-hover:scale-105" showTagline={true} />
                 </Link>
-                <p className="text-white/65 text-xs sm:text-sm leading-relaxed max-w-md">
-                  Building intelligent, scalable, and practical software solutions for modern businesses. We turn complex business challenges into technology that works.
+                <p className="text-white/70 text-xs sm:text-sm leading-relaxed max-w-md">
+                  We build scalable software, resilient cloud infrastructure, and production-ready AI that helps ambitious companies move faster and scale with confidence.
                 </p>
               </div>
 
@@ -236,68 +237,93 @@ export default function Footer() {
                   DIRECT CHANNELS
                 </span>
 
-                <div className="space-y-2 text-xs font-mono">
+                <div className="space-y-2.5 text-xs font-mono">
                   <p className="flex items-center gap-2.5">
                     <Mail className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                     <a
-                      href="mailto:info@nadsca.dev"
-                      className="text-white/80 hover:text-cyan-300 transition-colors underline-offset-4 hover:underline"
+                      href={`mailto:${STUDIO_INFO.email}`}
+                      className="text-white/85 hover:text-cyan-300 transition-colors underline-offset-4 hover:underline"
                     >
-                      info@nadsca.dev
+                      {STUDIO_INFO.email}
                     </a>
                   </p>
 
-                  <p className="flex flex-wrap items-center gap-2 text-white/80">
+                  <p className="flex flex-wrap items-center gap-2 text-white/85">
                     <Phone className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                    <a href="tel:+94112507601" className="hover:text-cyan-300 transition-colors">
-                      +94 11 250 7601
+                    <a href={`tel:${STUDIO_INFO.phonePrimary.replace(/\s+/g, "")}`} className="hover:text-cyan-300 transition-colors">
+                      {STUDIO_INFO.phonePrimary}
                     </a>
                     <span className="text-white/20">•</span>
-                    <a href="tel:+94704659847" className="hover:text-cyan-300 transition-colors">
-                      +94 70 465 9847
+                    <a href={`tel:${STUDIO_INFO.phoneSecondary.replace(/\s+/g, "")}`} className="hover:text-cyan-300 transition-colors">
+                      {STUDIO_INFO.phoneSecondary}
                     </a>
                   </p>
 
-                  <p className="flex items-start gap-2.5 text-white/50 text-[11px] pt-1 leading-snug">
+                  <p className="flex items-start gap-2.5 text-white/55 text-[11px] pt-1 leading-snug">
                     <MapPin className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>No. 283 1/1, Ruwan Mawatha, Colombo 05, Sri Lanka</span>
+                    <span>{STUDIO_INFO.address}</span>
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Column 2: Capabilities (lg:col-span-2) */}
-            <div className="lg:col-span-2">
-              <h4 className="text-[11px] font-mono font-bold tracking-[0.2em] uppercase text-white/50 mb-5">
-                CAPABILITIES
-              </h4>
-              <ul className="space-y-3">
-                {FOOTER_SERVICES.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="text-xs sm:text-sm text-white/70 hover:text-cyan-300 transition-all inline-flex items-center gap-1.5 group"
-                    >
-                      <span className="text-cyan-400 text-xs opacity-0 -translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">
-                        »
-                      </span>
-                      <span className="group-hover:translate-x-1 transition-transform duration-200">
-                        {item.label}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+            {/* Column 2: Capabilities & Industry Solutions (lg:col-span-3) */}
+            <div className="lg:col-span-3 space-y-8">
+              <div>
+                <h4 className="text-[11px] font-mono font-bold tracking-[0.2em] uppercase text-white/50 mb-4">
+                  CAPABILITIES
+                </h4>
+                <ul className="space-y-2.5">
+                  {FOOTER_SERVICES.map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
+                        className="text-xs sm:text-sm text-white/70 hover:text-cyan-300 transition-all inline-flex items-center gap-1.5 group"
+                      >
+                        <span className="text-cyan-400 text-xs opacity-0 -translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">
+                          »
+                        </span>
+                        <span className="group-hover:translate-x-1 transition-transform duration-200">
+                          {item.label}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-[11px] font-mono font-bold tracking-[0.2em] uppercase text-white/50 mb-4">
+                  INDUSTRY SOLUTIONS
+                </h4>
+                <ul className="space-y-2.5">
+                  {FOOTER_INDUSTRY_SOLUTIONS.map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
+                        className="text-xs sm:text-sm text-white/70 hover:text-cyan-300 transition-all inline-flex items-center gap-1.5 group"
+                      >
+                        <span className="text-cyan-400 text-xs opacity-0 -translate-x-1.5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">
+                          »
+                        </span>
+                        <span className="group-hover:translate-x-1 transition-transform duration-200">
+                          {item.label}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            {/* Column 3: Studio (lg:col-span-2) */}
+            {/* Column 3: What NADSCA is all about? (lg:col-span-2) */}
             <div className="lg:col-span-2">
-              <h4 className="text-[11px] font-mono font-bold tracking-[0.2em] uppercase text-white/50 mb-5">
-                COMPANY
+              <h4 className="text-[11px] font-mono font-bold tracking-[0.2em] uppercase text-white/50 mb-4 leading-relaxed">
+                What NADSCA is all about?
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {FOOTER_COMPANY.map((item) => (
-                  <li key={item.href}>
+                  <li key={item.label}>
                     <Link
                       href={item.href}
                       className="text-xs sm:text-sm text-white/70 hover:text-cyan-300 transition-all inline-flex items-center gap-1.5 group"
@@ -314,13 +340,13 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 4: Newsletter / "The Letter" (lg:col-span-3) */}
+            {/* Column 4: Newsletter / "THE LETTER" (lg:col-span-3) */}
             <div className="lg:col-span-3">
               <h4 className="text-[11px] font-mono font-bold tracking-[0.2em] uppercase text-white/50 mb-4">
                 THE LETTER
               </h4>
               <p className="text-white/60 text-xs leading-relaxed mb-4">
-                Monthly technical briefings on AI systems, scalable infrastructure, and product engineering.
+                The engineering brief for ambitious teams — monthly insights across AI systems, scalable infrastructure, and product engineering.
               </p>
 
               <form onSubmit={handleSubscribe} className="space-y-2.5">
@@ -336,20 +362,20 @@ export default function Footer() {
                   <button
                     type="submit"
                     disabled={subscribed}
-                    className="px-4 py-2 rounded-lg bg-white text-black font-semibold text-xs hover:bg-slate-100 transition-all shrink-0 flex items-center gap-1 shadow-sm"
+                    className="px-4 py-2 rounded-lg bg-white text-black font-semibold text-xs hover:bg-slate-100 transition-all shrink-0 flex items-center gap-1 shadow-sm font-mono tracking-wider uppercase"
                   >
                     {subscribed ? (
                       <>
                         <Check className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>Joined</span>
+                        <span>JOINED</span>
                       </>
                     ) : (
-                      <span>Join</span>
+                      <span>JOIN</span>
                     )}
                   </button>
                 </div>
-                <span className="text-[10px] font-mono text-white/35 block">
-                  {subscribed ? "You're on the list. Verification link sent." : "Zero spam. Unsubscribe anytime."}
+                <span className="text-[10px] font-mono text-white/40 block">
+                  Zero Spam. Unsubscribe Anytime
                 </span>
               </form>
             </div>
@@ -360,7 +386,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Left: Copyright */}
           <div className="text-white/40 text-[11px] font-mono tracking-wider uppercase order-2 sm:order-1 text-center sm:text-left">
-            © {new Date().getFullYear()} NADSCA. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} NADSCA (PVT) LTD. ALL RIGHTS RESERVED
           </div>
 
           {/* Center: Live Breathing Status */}
@@ -369,16 +395,16 @@ export default function Footer() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
             </span>
-            <span>SYSTEMS 100% OPERATIONAL</span>
+            <span>ZERO DOWN TIME</span>
           </div>
 
           {/* Right: Legal & Back to Top (With pr-0 sm:pr-36 safe clearance for floating widget) */}
           <div className="order-3 flex items-center gap-6 text-white/40 text-[11px] font-mono uppercase tracking-wider pr-0 sm:pr-36">
             <Link href="/about" className="hover:text-white transition-colors">
-              Privacy Policy
+              PRIVACY POLICY
             </Link>
             <Link href="/about" className="hover:text-white transition-colors">
-              Terms of Service
+              TOS
             </Link>
 
             <Magnetic>

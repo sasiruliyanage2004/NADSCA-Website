@@ -100,7 +100,7 @@ export default function NatleAI() {
             const assistantMessage: Message = {
               id: `ai-${Date.now()}`,
               role: "assistant",
-              content: data.reply || "I am currently processing requests. Please contact info@nadsca.dev.",
+              content: data.reply || "I am currently processing requests. Please contact info@nadsca.com.",
               quickActions: data.quickActions,
               timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
             };
@@ -113,7 +113,7 @@ export default function NatleAI() {
                 id: `ai-err-${Date.now()}`,
                 role: "assistant",
                 content:
-                  "I could not reach the intelligence service right now. You can reach the NADSCA team directly at info@nadsca.dev or call +94 11 250 7601.",
+                  "I could not reach the intelligence service right now. You can reach the NADSCA team directly at info@nadsca.com or call +94 76 538 3500.",
                 quickActions: [{ label: "Contact NADSCA", href: "/contact" }],
                 timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
               },
