@@ -521,10 +521,30 @@ export const OPEN_ROLES = [
 ];
 
 export const BENEFITS = [
-  { title: "Flexible hours", detail: "Work when you're most effective, not just 9 to 5." },
-  { title: "Learning budget", detail: "Annual budget for courses, books, and conferences." },
-  { title: "Health cover", detail: "Comprehensive health insurance for you and your family." },
-  { title: "Remote friendly", detail: "Work from our Colombo studio, home, or a mix of both." },
+  {
+    title: "Work With Freedom",
+    detail: "Flexible working hours that give you the autonomy to do your best work.",
+  },
+  {
+    title: "Keep Growing",
+    detail: "An annual learning budget for courses, books, certifications, and conferences.",
+  },
+  {
+    title: "Take Care of Yourself",
+    detail: "Health coverage designed to support you and your family.",
+  },
+  {
+    title: "Work Where You Work Best",
+    detail: "Choose from our Colombo studio, home, or a flexible hybrid mix.",
+  },
+  {
+    title: "Build With Great People",
+    detail: "Work alongside engineers, designers, and technology leaders who care about craft.",
+  },
+  {
+    title: "Own Your Work",
+    detail: "Take responsibility, make decisions, and see your work become part of real products.",
+  },
 ];
 
 export const STUDIO_INFO = {
