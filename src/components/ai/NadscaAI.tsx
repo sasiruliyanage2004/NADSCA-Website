@@ -40,32 +40,19 @@ export default function NadscaAI() {
   const [isLoading, setIsLoading] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Auto-scroll on new message or loading, but reset to top when empty
+  // Auto-scroll on new message
   useEffect(() => {
     if (isOpen) {
-      if (messages.length > 0 || isLoading) {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-      } else if (messagesContainerRef.current) {
-        messagesContainerRef.current.scrollTop = 0;
-      }
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages, isLoading, isOpen]);
 
-  // Autofocus input when opened (desktop only, with preventScroll) & handle Escape key
+  // Autofocus input when opened & handle Escape key
   useEffect(() => {
-    let focusTimer: NodeJS.Timeout | undefined;
     if (isOpen) {
-      if (messages.length === 0 && messagesContainerRef.current) {
-        messagesContainerRef.current.scrollTop = 0;
-      }
-      focusTimer = setTimeout(() => {
-        if (typeof window !== "undefined" && window.innerWidth >= 768) {
-          inputRef.current?.focus({ preventScroll: true });
-        }
-      }, 150);
+      setTimeout(() => inputRef.current?.focus(), 150);
     }
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -74,11 +61,8 @@ export default function NadscaAI() {
       }
     };
     window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      if (focusTimer) clearTimeout(focusTimer);
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOpen, messages.length]);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
 
   const sendMessage = React.useCallback(
     async (textToSend?: string) => {
@@ -223,7 +207,7 @@ export default function NadscaAI() {
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-display text-sm font-bold text-white tracking-tight">
-                  AWORA — NADSCA AI
+                  AWORA // NADSCA AI
                 </h3>
                 <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
@@ -258,13 +242,10 @@ export default function NadscaAI() {
         </div>
 
         {/* Panel Message Area */}
-        <div
-          ref={messagesContainerRef}
-          className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5 text-sm overscroll-contain"
-        >
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5 text-sm">
           {/* Welcome Screen when no interaction */}
           {!hasInteracted && messages.length === 0 && (
-            <div className="pt-1 pb-4 space-y-5 animate-fadeIn">
+            <div className="py-4 space-y-6 animate-fadeIn">
               <div className="space-y-3">
                 <div className="inline-block p-2.5 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
                   <Bot className="w-6 h-6" />

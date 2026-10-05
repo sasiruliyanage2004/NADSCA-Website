@@ -7,42 +7,25 @@ interface NadscaLogoProps {
   className?: string;
   showTagline?: boolean;
   layout?: "horizontal" | "stacked";
-  size?: "sm" | "md" | "lg";
 }
 
 export default function NadscaLogo({ 
   className = "",
   showTagline = true,
-  layout = "horizontal",
-  size = "md",
+  layout = "horizontal"
 }: NadscaLogoProps) {
   if (layout === "stacked") {
-    const sizeClasses =
-      size === "sm"
-        ? "w-14 sm:w-16 md:w-[72px]"
-        : size === "lg"
-        ? "w-52 sm:w-60"
-        : "w-44 sm:w-48";
-
     return (
       <div 
         className={`group relative inline-flex flex-col items-start select-none cursor-pointer ${className}`}
       >
-        <div className={`relative ${sizeClasses} aspect-[945/845] transition-transform duration-300 ease-out group-hover:scale-105`}>
+        <div className="relative w-44 sm:w-48 aspect-[937/833] transition-transform duration-300 ease-out group-hover:scale-105">
           <Image
             src="/logo-stacked-dark.png"
             alt="NADSCA — Innovate • Build • Transform"
             fill
-            sizes="(max-width: 768px) 80px, 240px"
-            className="object-contain object-left dark:block hidden"
-            priority
-          />
-          <Image
-            src="/logo-stacked-light.png"
-            alt="NADSCA — Innovate • Build • Transform"
-            fill
-            sizes="(max-width: 768px) 80px, 240px"
-            className="object-contain object-left dark:hidden block"
+            sizes="192px"
+            className="object-contain object-left"
             priority
           />
         </div>

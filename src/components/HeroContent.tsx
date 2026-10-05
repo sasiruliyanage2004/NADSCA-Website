@@ -81,13 +81,13 @@ export default function HeroContent() {
   return (
     <div ref={rootRef} className="relative z-10 pt-4 sm:pt-6">
       {/* Main Headline */}
-      <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[6.25rem] font-bold text-ink dark:text-white max-w-5xl tracking-tight leading-[1.08] sm:leading-[1.04]">
+      <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[6.25rem] font-bold text-white max-w-5xl tracking-tight leading-[1.08] sm:leading-[1.04]">
         <span data-hero="line" className="block pb-1 sm:pb-2">
           We Engineer
         </span>
         <span
           data-hero="line"
-          className="block pb-1.5 sm:pb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-sky-500 to-emerald-500 dark:from-cyan-300 dark:via-sky-400 dark:to-emerald-400"
+          className="block pb-1.5 sm:pb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-400 to-emerald-400"
         >
           What&apos;s Next.
         </span>
@@ -96,14 +96,14 @@ export default function HeroContent() {
       {/* Supporting Copy */}
       <div
         data-hero="sub"
-        className="mt-6 sm:mt-8 space-y-4 text-base sm:text-lg md:text-xl text-ink/75 dark:text-white/75 max-w-3xl leading-relaxed"
+        className="mt-6 sm:mt-8 space-y-4 text-base sm:text-lg md:text-xl text-white/75 max-w-3xl leading-relaxed"
       >
         <p>
-          <strong className="text-ink dark:text-white font-semibold">NADSCA</strong> partners with ambitious founders and enterprise teams to design, build, and scale high-performance software, cloud platforms, and production-ready AI.
+          <strong className="text-white font-semibold">NADSCA</strong> partners with ambitious founders and enterprise teams to design, build, and scale high-performance software, cloud platforms, and production-ready AI.
         </p>
-        <p className="text-ink/70 dark:text-white/70">
+        <p className="text-white/70">
           From complex business systems to intelligent digital products, we combine{" "}
-          <strong className="text-ink dark:text-white font-semibold">
+          <strong className="text-white font-semibold">
             engineering, design, cloud, data, and AI
           </strong>{" "}
           to turn ambitious ideas into technology that performs in the real world.
@@ -116,7 +116,7 @@ export default function HeroContent() {
           <Magnetic>
             <Link
               href="/projects"
-              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-ink text-white dark:bg-white dark:text-black px-8 py-4 text-[15px] font-bold shadow-[0_0_35px_-5px_rgba(0,0,0,0.25)] dark:shadow-[0_0_35px_-5px_rgba(255,255,255,0.3)] hover:bg-slate-850 dark:hover:bg-slate-100 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-black px-8 py-4 text-[15px] font-bold shadow-[0_0_35px_-5px_rgba(255,255,255,0.3)] hover:bg-slate-100 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
               data-cursor="view"
             >
               <span>Explore Our Work</span>
@@ -129,10 +129,10 @@ export default function HeroContent() {
           <Magnetic>
             <button
               onClick={openAI}
-              className="inline-flex items-center justify-center gap-2.5 rounded-full border border-ink/15 dark:border-white/15 bg-black/5 dark:bg-white/[0.04] text-ink dark:text-white px-7 py-3.5 text-[15px] font-medium hover:border-cyan-500/50 dark:hover:border-cyan-400/40 hover:bg-black/10 dark:hover:bg-white/[0.08] backdrop-blur-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2.5 rounded-full border border-white/15 bg-white/[0.04] text-white px-7 py-3.5 text-[15px] font-medium hover:border-cyan-400/40 hover:bg-white/[0.08] backdrop-blur-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
               data-cursor="ask"
             >
-              <Sparkles className="w-4 h-4 text-cyan-500 dark:text-cyan-400" />
+              <Sparkles className="w-4 h-4 text-cyan-400" />
               <span>Ask AWORA AI</span>
             </button>
           </Magnetic>
@@ -140,12 +140,12 @@ export default function HeroContent() {
       </div>
 
       {/* BUILT FOR PERFORMANCE & 4 Feature Cards */}
-      <div className="mt-14 sm:mt-16 pt-8 border-t border-ink/10 dark:border-white/10">
+      <div className="mt-14 sm:mt-16 pt-8 border-t border-white/10">
         <div
           data-hero="tag"
-          className="inline-flex items-center gap-2 text-cyan-600 dark:text-cyan-400 text-xs font-mono font-bold tracking-[0.25em] uppercase mb-6"
+          className="inline-flex items-center gap-2 text-cyan-400 text-xs font-mono font-bold tracking-[0.25em] uppercase mb-6"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
           BUILT FOR PERFORMANCE
         </div>
 
@@ -154,12 +154,12 @@ export default function HeroContent() {
             <div
               key={feat.title}
               data-hero="card"
-              className="rounded-2xl p-5 sm:p-6 bg-white/75 dark:bg-white/[0.03] hover:bg-white/95 dark:hover:bg-white/[0.06] border border-ink/10 dark:border-white/10 hover:border-cyan-500/40 dark:hover:border-cyan-400/40 shadow-sm dark:shadow-none transition-all duration-300 backdrop-blur-sm group"
+              className="rounded-2xl p-5 sm:p-6 bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-cyan-400/40 transition-all duration-300 backdrop-blur-sm group"
             >
-              <h3 className="font-display text-lg sm:text-xl font-bold text-ink dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors mb-1.5">
+              <h3 className="font-display text-lg sm:text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-1.5">
                 {feat.title}
               </h3>
-              <p className="text-sm text-ink/65 dark:text-white/65 leading-relaxed font-body">
+              <p className="text-sm text-white/65 leading-relaxed font-body">
                 {feat.desc}
               </p>
             </div>

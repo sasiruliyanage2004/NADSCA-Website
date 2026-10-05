@@ -12,12 +12,6 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const isTouch =
-      typeof window !== "undefined" &&
-      ("ontouchstart" in window ||
-        navigator.maxTouchPoints > 0 ||
-        window.matchMedia("(pointer: coarse)").matches);
-
     const lenis = new Lenis({
       duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -25,8 +19,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       gestureOrientation: "vertical",
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 1,
-      syncTouch: false,
+      touchMultiplier: 2,
     });
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -36,8 +29,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     }
     
     gsap.ticker.add(raf);
-    // Smooth frame jitter on lower-powered devices instead of stuttering
-    gsap.ticker.lagSmoothing(500, 33);
+    gsap.ticker.lagSmoothing(0);
 
     (window as any).__lenis = lenis;
 
