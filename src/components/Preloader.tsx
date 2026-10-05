@@ -98,96 +98,28 @@ export default function Preloader() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="relative flex flex-col items-center justify-center px-4"
           >
-            {/* Center Stage Container precisely sized to fit the emblem assembly */}
-            <div
-              className="relative w-72 h-64 sm:w-88 sm:h-72 md:w-[420px] md:h-80 flex items-center justify-center select-none"
-              style={{ perspective: "1200px" }}
-            >
+            {/* Center Stage Container precisely sized to fit the emblem assembly (aspect ratio 839/663 ≈ 1.265) */}
+            <div className="relative w-64 h-[202px] sm:w-80 sm:h-[253px] md:w-96 md:h-[303px] flex items-center justify-center select-none">
               {/* Ambient Core Radial Glow behind the N */}
               <div
                 className="absolute inset-0 m-auto w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full bg-gradient-to-tr from-[#0099FF]/30 via-[#00F0FF]/25 to-[#22C55E]/30 blur-3xl pointer-events-none"
                 style={{ animation: "orbital-pulse-glow 3s ease-in-out infinite" }}
               />
 
-              {/* ── 1. DUAL 3D ORBITAL ENERGY BEAMS (Tracing continuously along the swoosh's elliptical axis) ── */}
-              {/* Aligned along the exact 3D elliptical plane of the swoosh lines (72deg / -19deg) */}
-              <div
-                className="absolute inset-0 m-auto pointer-events-none flex items-center justify-center"
-                style={{
-                  transform: "rotateX(72deg) rotateZ(-19deg)",
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                {/* 1A. Subtle Luminous Orbital Guide Track */}
-                <div
-                  className="absolute rounded-full border border-cyan-400/20 shadow-[0_0_20px_rgba(0,153,255,0.2)]"
-                  style={{
-                    width: "92%",
-                    height: "92%",
-                  }}
-                />
-
-                {/* 1B. Rotating Energy Carrier 1 (Neon Cyan & Blue Photon Beam) */}
-                <div
-                  className="absolute rounded-full"
-                  style={{
-                    width: "92%",
-                    height: "92%",
-                    animation: "orbital-spin-cw 2.6s linear infinite",
-                  }}
-                >
-                  {/* Photon Head 1 */}
-                  <div
-                    className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white flex items-center justify-center shadow-[0_0_15px_#ffffff,0_0_30px_#00F0FF,0_0_50px_#0099FF]"
-                    style={{ animation: "photon-flare 1.3s ease-in-out infinite" }}
-                  >
-                    <div className="w-2 h-2 rounded-full bg-cyan-300 animate-ping" />
-                  </div>
-                  {/* Photon Comet Trail 1 */}
-                  <div className="absolute -top-1.5 left-[38%] w-14 h-3 bg-gradient-to-r from-transparent via-[#0099FF] to-[#00F0FF] blur-[1px] rounded-full opacity-80" />
-                </div>
-
-                {/* 1C. Rotating Energy Carrier 2 (Neon Emerald & Lime Photon Beam - 180° Offset) */}
-                <div
-                  className="absolute rounded-full"
-                  style={{
-                    width: "92%",
-                    height: "92%",
-                    animation: "orbital-spin-cw 2.6s linear infinite",
-                    animationDelay: "-1.3s",
-                  }}
-                >
-                  {/* Photon Head 2 */}
-                  <div
-                    className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white flex items-center justify-center shadow-[0_0_15px_#ffffff,0_0_30px_#22C55E,0_0_50px_#00F0FF]"
-                    style={{ animation: "photon-flare 1.3s ease-in-out infinite" }}
-                  >
-                    <div className="w-2 h-2 rounded-full bg-emerald-300 animate-ping" />
-                  </div>
-                  {/* Photon Comet Trail 2 */}
-                  <div className="absolute -top-1.5 left-[38%] w-14 h-3 bg-gradient-to-r from-transparent via-[#22C55E] to-[#00F0FF] blur-[1px] rounded-full opacity-80" />
-                </div>
-              </div>
-
-              {/* ── 2. UNIFIED 3D "N" EMBLEM (100% Intact Original Master Graphic, Zero Seams/Boxes) ── */}
+              {/* ── 1. THE 3D "N" EMBLEM CORE (Centered & Floating) ── */}
               <motion.div
                 animate={{
-                  y: [0, -8, 0],
-                  rotateY: [-4, 4, -4],
-                  rotateX: [2, -2, 2],
+                  y: [0, -6, 0],
                   scale: counter === 100 ? [1, 1.05, 1] : 1,
                 }}
                 transition={{
-                  y: { duration: 3.2, repeat: Infinity, ease: "easeInOut" },
-                  rotateY: { duration: 4.8, repeat: Infinity, ease: "easeInOut" },
-                  rotateX: { duration: 4.2, repeat: Infinity, ease: "easeInOut" },
+                  y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
                   scale: { duration: 0.4, ease: "easeOut" },
                 }}
-                className="relative z-10 w-64 h-[202px] sm:w-80 sm:h-[253px] md:w-96 md:h-[303px] flex items-center justify-center select-none"
-                style={{ transformStyle: "preserve-3d" }}
+                className="relative z-10 w-full h-full flex items-center justify-center select-none"
               >
                 <Image
-                  src="/logo-mark.png"
+                  src="/logo-n-core.png"
                   alt="NADSCA Emblem"
                   fill
                   sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
@@ -195,7 +127,7 @@ export default function Preloader() {
                   priority
                 />
 
-                {/* Floating Cybernetic Data Cubes (Complementing the logo's top pixel dissolution) */}
+                {/* Floating Cybernetic Data Cubes (Rising from top-right of the N) */}
                 <div className="absolute top-2 right-8 sm:top-3 sm:right-12 md:top-4 md:right-16 pointer-events-none">
                   <motion.div
                     animate={{ y: [-2, -14, -2], opacity: [0.3, 0.95, 0.3] }}
@@ -213,6 +145,29 @@ export default function Preloader() {
                     className="absolute left-6 -top-1 w-2 h-2 bg-[#0099FF] shadow-[0_0_10px_#0099FF] rounded-[1px]"
                   />
                 </div>
+              </motion.div>
+
+              {/* ── 2. THE EXACT TWO 3D CURVED SWOOSH LINES ROTATING 360° AROUND THE "N" ── */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute inset-0 z-20 pointer-events-none select-none"
+                style={{
+                  transformOrigin: "49.65% 60.4%", // Exact mathematical center (416.6, 400.5) of the swooshes
+                }}
+              >
+                <Image
+                  src="/logo-swooshes-ring.png"
+                  alt="NADSCA Orbital Swooshes"
+                  fill
+                  sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
+                  className="object-contain filter drop-shadow-[0_0_20px_rgba(0,240,255,0.65)] drop-shadow-[0_0_35px_rgba(34,197,94,0.45)]"
+                  priority
+                />
               </motion.div>
             </div>
 
