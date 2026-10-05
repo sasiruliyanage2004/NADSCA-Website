@@ -3,17 +3,17 @@
 import React from "react";
 import Image from "next/image";
 
-interface NatleLogoProps {
+interface NadscaLogoProps {
   className?: string;
   showTagline?: boolean;
   layout?: "horizontal" | "stacked";
 }
 
-export default function NatleLogo({ 
+export default function NadscaLogo({ 
   className = "",
   showTagline = true,
   layout = "horizontal"
-}: NatleLogoProps) {
+}: NadscaLogoProps) {
   if (layout === "stacked") {
     return (
       <div 

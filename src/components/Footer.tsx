@@ -7,7 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FOOTER_SERVICES, FOOTER_INDUSTRY_SOLUTIONS, FOOTER_COMPANY } from "@/lib/nav";
 import { STUDIO_INFO } from "@/lib/data";
-import NatleLogo from "./NatleLogo";
+import NadscaLogo from "./NadscaLogo";
 import Magnetic from "./Magnetic";
 import FooterNetworkCanvas from "./FooterNetworkCanvas";
 import {
@@ -229,7 +229,7 @@ export default function Footer() {
             <div className="lg:col-span-4 flex flex-col justify-between h-full space-y-8">
               <div>
                 <Link href="/" className="inline-block mb-3 outline-none group">
-                  <NatleLogo layout="stacked" className="transition-transform duration-300 group-hover:scale-105" />
+                  <NadscaLogo layout="stacked" className="transition-transform duration-300 group-hover:scale-105" />
                 </Link>
                 <p className="text-white/70 text-xs sm:text-sm leading-relaxed max-w-md">
                   We build scalable software, resilient cloud infrastructure, and production-ready AI that helps ambitious companies move faster and scale with confidence.

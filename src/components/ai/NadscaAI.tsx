@@ -14,7 +14,6 @@ import {
   ExternalLink,
   ChevronDown,
 } from "lucide-react";
-import NatleLogo from "@/components/NatleLogo";
 
 interface Message {
   id: string;
@@ -33,7 +32,7 @@ const SUGGESTED_PROMPTS = [
   "How do I start a project?",
 ];
 
-export default function NatleAI() {
+export default function NadscaAI() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { NAV_LINKS } from "@/lib/nav";
-import NatleLogo from "./NatleLogo";
+import NadscaLogo from "./NadscaLogo";
 import Magnetic from "./Magnetic";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
@@ -55,7 +55,7 @@ export default function Navbar() {
             className="relative z-[101] flex items-center group outline-none"
             aria-label="NADSCA Home"
           >
-            <NatleLogo showTagline={true} />
+            <NadscaLogo showTagline={true} />
           </Link>
 
           {/* Desktop Navigation Links (Title Case) */}

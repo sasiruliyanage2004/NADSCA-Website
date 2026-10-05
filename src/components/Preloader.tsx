@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import NatleLogo from "./NatleLogo";
 
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);

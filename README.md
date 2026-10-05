@@ -49,8 +49,8 @@ Ensure you have the following installed:
 ### 2. Installation
 Clone the repository and install dependencies:
 ```bash
-git clone https://github.com/sasiruliyanage2004/Natle-Website.git
-cd Natle-Website
+git clone https://github.com/sasiruliyanage2004/nadsca-website.git
+cd nadsca-website
 npm install
 ```
 

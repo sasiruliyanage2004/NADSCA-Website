@@ -8,7 +8,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Preloader from "@/components/Preloader";
 import { cn } from "@/lib/utils";
 import ScrollProgress from "@/components/ScrollProgress";
-import NatleAI from "@/components/ai/NatleAI";
+import NadscaAI from "@/components/ai/NadscaAI";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -109,7 +109,7 @@ export default function RootLayout({
           <Footer />
         </SmoothScroll>
 
-        <NatleAI />
+        <NadscaAI />
       </body>
     </html>
   );
