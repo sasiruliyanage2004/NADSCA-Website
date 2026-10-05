@@ -91,86 +91,65 @@ export default function Preloader() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,153,255,0.08)_0%,transparent_70%)] pointer-events-none" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
-          {/* ─── MAIN STAGE: 3D "N" EMBLEM WITH 2 ROTATING ORBITAL RING LINES ─── */}
+          {/* ─── MAIN STAGE: THE EXACT 3D "N" WITH THE TWO ANIMATED SWOOSH ARCS ─── */}
           <motion.div
-            initial={{ scale: 0.85, opacity: 0 }}
+            initial={{ scale: 0.88, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="relative flex flex-col items-center justify-center px-4"
           >
-            {/* Center Stage Container holding N and its 2 rotating lines */}
+            {/* Center Stage Container precisely sized to fit the emblem assembly */}
             <div
-              className="relative flex items-center justify-center w-72 h-64 sm:w-88 sm:h-76 md:w-96 md:h-84"
+              className="relative w-72 h-56 sm:w-84 sm:h-64 md:w-96 md:h-72 flex items-center justify-center select-none"
               style={{ perspective: "1000px" }}
             >
               {/* Ambient Core Radial Glow behind the N */}
               <div
-                className="absolute inset-0 m-auto w-40 h-40 sm:w-52 sm:h-52 rounded-full bg-gradient-to-tr from-[#0099FF]/30 via-[#00F0FF]/25 to-[#22C55E]/30 blur-3xl pointer-events-none"
+                className="absolute inset-0 m-auto w-44 h-44 sm:w-56 sm:h-56 rounded-full bg-gradient-to-tr from-[#0099FF]/30 via-[#00F0FF]/25 to-[#22C55E]/30 blur-3xl pointer-events-none"
                 style={{ animation: "orbital-pulse-glow 3s ease-in-out infinite" }}
               />
 
-              {/* ── LAYER A: BACK HALF OF THE 2 ORBITAL RING LINES (z-index: 5, BEHIND N) ── */}
-              <div
-                className="absolute inset-0 m-auto pointer-events-none z-[5]"
+              {/* ── 1. SWOOSH ARC 1: LEFT BLUE CURVED LINE (Image 2) ── */}
+              {/* Positioned on the left, diving behind the left upright pillar */}
+              <motion.div
+                animate={{
+                  x: [0, -3, 0],
+                  y: [0, 2, 0],
+                  rotateZ: [0, -1.5, 0],
+                  filter: [
+                    "drop-shadow(0 0 10px rgba(0,153,255,0.5))",
+                    "drop-shadow(0 0 22px rgba(0,210,255,0.9))",
+                    "drop-shadow(0 0 10px rgba(0,153,255,0.5))",
+                  ],
+                }}
+                transition={{
+                  duration: 2.4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute z-[5] pointer-events-none"
                 style={{
-                  clipPath: "polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%)",
+                  left: "7.5%",
+                  top: "47%",
+                  width: "18.5%",
+                  height: "46%",
                 }}
               >
-                {/* 3D Tilted Plane (72deg / -18deg to match the swoosh) */}
-                <div
-                  className="relative w-full h-full flex items-center justify-center"
-                  style={{
-                    transform: "rotateX(72deg) rotateZ(-18deg)",
-                    transformStyle: "preserve-3d",
-                  }}
-                >
-                  {/* Rotating Ring Container */}
-                  <div
-                    className="relative w-56 h-56 sm:w-68 sm:h-68 md:w-76 md:h-76 rounded-full"
-                    style={{
-                      animation: "orbital-spin-cw 2.6s linear infinite",
-                    }}
-                  >
-                    {/* Ring Line 1 (Outer Ring Line): Azure -> Cyan -> Emerald */}
-                    <div
-                      className="absolute inset-0 rounded-full"
-                      style={{
-                        background:
-                          "conic-gradient(from 0deg, transparent 0%, rgba(0,153,255,0.2) 20%, #0099FF 45%, #00F0FF 75%, #22C55E 96%, transparent 100%)",
-                        WebkitMask:
-                          "radial-gradient(farthest-side, transparent calc(100% - 3.5px), #fff calc(100% - 3px))",
-                        mask:
-                          "radial-gradient(farthest-side, transparent calc(100% - 3.5px), #fff calc(100% - 3px))",
-                        filter:
-                          "drop-shadow(0 0 10px rgba(0, 240, 255, 0.9)) drop-shadow(0 0 20px rgba(34, 197, 94, 0.6))",
-                      }}
-                    />
-                    {/* Glowing Leading Head Node on Line 1 */}
-                    <div
-                      className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_12px_#fff,0_0_22px_#00F0FF,0_0_35px_#22C55E]"
-                      style={{ animation: "photon-flare 1.2s ease-in-out infinite" }}
-                    />
-
-                    {/* Ring Line 2 (Inner Ring Line): Nested concentric line creating the dual-line look */}
-                    <div
-                      className="absolute inset-3 sm:inset-4 rounded-full"
-                      style={{
-                        background:
-                          "conic-gradient(from 180deg, transparent 0%, rgba(0,210,255,0.15) 25%, #00D2FF 60%, #0099FF 92%, transparent 100%)",
-                        WebkitMask:
-                          "radial-gradient(farthest-side, transparent calc(100% - 2.5px), #fff calc(100% - 2px))",
-                        mask:
-                          "radial-gradient(farthest-side, transparent calc(100% - 2.5px), #fff calc(100% - 2px))",
-                        filter: "drop-shadow(0 0 8px rgba(0, 210, 255, 0.85))",
-                      }}
-                    />
-                    {/* Companion Node on Line 2 */}
-                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-cyan-200 shadow-[0_0_10px_#00F0FF]" />
-                  </div>
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/swoosh-left.png"
+                    alt="Left Blue Arc"
+                    fill
+                    sizes="80px"
+                    className="object-contain"
+                    priority
+                  />
+                  {/* Subtle electric sheen along the curve */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-transparent via-cyan-400/30 to-transparent opacity-75 blur-[1px] animate-pulse" />
                 </div>
-              </div>
+              </motion.div>
 
-              {/* ── LAYER B: THE CLEAN 3D "N" EMBLEM (z-index: 10, IN THE CENTER) ── */}
+              {/* ── 2. THE 3D "N" EMBLEM (Center) ── */}
               <motion.div
                 animate={{
                   y: [0, -5, 0],
@@ -180,76 +159,82 @@ export default function Preloader() {
                   y: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
                   scale: { duration: 0.4, ease: "easeOut" },
                 }}
-                className="relative z-10 w-32 h-[146px] sm:w-40 sm:h-[182px] md:w-46 md:h-[210px] flex items-center justify-center select-none"
+                className="relative z-10 w-36 h-[162px] sm:w-44 sm:h-[198px] md:w-50 md:h-[225px] flex items-center justify-center select-none"
               >
                 <Image
                   src="/logo-n-clean.png"
                   alt="NADSCA Emblem"
                   fill
-                  sizes="(max-width: 640px) 160px, 200px"
+                  sizes="(max-width: 640px) 180px, 220px"
                   className="object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.85)] filter contrast-105"
                   priority
                 />
               </motion.div>
 
-              {/* ── LAYER C: FRONT HALF OF THE 2 ORBITAL RING LINES (z-index: 15, IN FRONT OF N) ── */}
-              <div
-                className="absolute inset-0 m-auto pointer-events-none z-[15]"
+              {/* ── 3. SWOOSH ARC 2: RIGHT CYAN/GREEN CURVED LINE (Image 3) ── */}
+              {/* Positioned on the right, crossing in front of the N diagonal and pillar */}
+              <motion.div
+                animate={{
+                  x: [0, 3, 0],
+                  y: [0, -2, 0],
+                  rotateZ: [0, 1.5, 0],
+                  filter: [
+                    "drop-shadow(0 0 12px rgba(34,197,94,0.5))",
+                    "drop-shadow(0 0 25px rgba(0,240,255,0.95))",
+                    "drop-shadow(0 0 12px rgba(34,197,94,0.5))",
+                  ],
+                }}
+                transition={{
+                  duration: 2.4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute z-[15] pointer-events-none"
                 style={{
-                  clipPath: "polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%)",
+                  left: "64.5%",
+                  top: "36.5%",
+                  width: "29%",
+                  height: "36%",
                 }}
               >
-                {/* 3D Tilted Plane (72deg / -18deg to match the swoosh) */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/swoosh-right.png"
+                    alt="Right Cyan/Green Arc"
+                    fill
+                    sizes="120px"
+                    className="object-contain"
+                    priority
+                  />
+                  {/* Subtle electric flare on the green curve */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-emerald-400/40 to-cyan-300/40 opacity-80 blur-[1px] animate-pulse" />
+                </div>
+              </motion.div>
+
+              {/* ── 4. CONTINUOUS ORBITAL PHOTON BEACON RACING THROUGH BOTH LINES ── */}
+              {/* Aligned along the exact 3D elliptical plane of the swoosh (72deg / -18deg) */}
+              <div
+                className="absolute inset-0 m-auto pointer-events-none z-[12]"
+                style={{
+                  transform: "rotateX(72deg) rotateZ(-18deg)",
+                  transformStyle: "preserve-3d",
+                }}
+              >
                 <div
-                  className="relative w-full h-full flex items-center justify-center"
+                  className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 m-auto rounded-full"
                   style={{
-                    transform: "rotateX(72deg) rotateZ(-18deg)",
-                    transformStyle: "preserve-3d",
+                    animation: "orbital-spin-cw 2.4s linear infinite",
                   }}
                 >
-                  {/* Rotating Ring Container (Exact identical animation to Layer A for continuous seamless motion) */}
+                  {/* Luminous Photon Spark tracing through the two swoosh curves */}
                   <div
-                    className="relative w-56 h-56 sm:w-68 sm:h-68 md:w-76 md:h-76 rounded-full"
-                    style={{
-                      animation: "orbital-spin-cw 2.6s linear infinite",
-                    }}
+                    className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white flex items-center justify-center shadow-[0_0_15px_#fff,0_0_25px_#00F0FF,0_0_40px_#22C55E]"
+                    style={{ animation: "photon-flare 1.2s ease-in-out infinite" }}
                   >
-                    {/* Ring Line 1 (Outer Ring Line): Azure -> Cyan -> Emerald */}
-                    <div
-                      className="absolute inset-0 rounded-full"
-                      style={{
-                        background:
-                          "conic-gradient(from 0deg, transparent 0%, rgba(0,153,255,0.2) 20%, #0099FF 45%, #00F0FF 75%, #22C55E 96%, transparent 100%)",
-                        WebkitMask:
-                          "radial-gradient(farthest-side, transparent calc(100% - 3.5px), #fff calc(100% - 3px))",
-                        mask:
-                          "radial-gradient(farthest-side, transparent calc(100% - 3.5px), #fff calc(100% - 3px))",
-                        filter:
-                          "drop-shadow(0 0 10px rgba(0, 240, 255, 0.9)) drop-shadow(0 0 20px rgba(34, 197, 94, 0.6))",
-                      }}
-                    />
-                    {/* Glowing Leading Head Node on Line 1 */}
-                    <div
-                      className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_12px_#fff,0_0_22px_#00F0FF,0_0_35px_#22C55E]"
-                      style={{ animation: "photon-flare 1.2s ease-in-out infinite" }}
-                    />
-
-                    {/* Ring Line 2 (Inner Ring Line): Nested concentric line creating the dual-line look */}
-                    <div
-                      className="absolute inset-3 sm:inset-4 rounded-full"
-                      style={{
-                        background:
-                          "conic-gradient(from 180deg, transparent 0%, rgba(0,210,255,0.15) 25%, #00D2FF 60%, #0099FF 92%, transparent 100%)",
-                        WebkitMask:
-                          "radial-gradient(farthest-side, transparent calc(100% - 2.5px), #fff calc(100% - 2px))",
-                        mask:
-                          "radial-gradient(farthest-side, transparent calc(100% - 2.5px), #fff calc(100% - 2px))",
-                        filter: "drop-shadow(0 0 8px rgba(0, 210, 255, 0.85))",
-                      }}
-                    />
-                    {/* Companion Node on Line 2 */}
-                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-cyan-200 shadow-[0_0_10px_#00F0FF]" />
+                    <div className="w-2 h-2 rounded-full bg-cyan-300 animate-ping" />
                   </div>
+                  <div className="absolute -top-1.5 left-[46%] w-2.5 h-2.5 rounded-full bg-cyan-400 opacity-80 blur-[0.5px] shadow-[0_0_10px_#00F0FF]" />
+                  <div className="absolute -top-1 left-[41%] w-1.5 h-1.5 rounded-full bg-[#0099FF] opacity-60" />
                 </div>
               </div>
             </div>
