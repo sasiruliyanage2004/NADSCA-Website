@@ -379,37 +379,84 @@ export const PROJECTS = [
 
 export const BLOG_POSTS = [
   {
-    slug: "shipping-without-fear",
-    category: "Engineering",
-    title: "Shipping Without Fear: How We Structure Releases",
+    slug: "ai-in-hr-better-decisions",
+    category: "AI & HR Tech",
+    title: "AI in HR: From Employee Data to Better Decisions",
     excerpt:
-      "The pipeline, feature flags, and rollback habits that let small teams ship daily without breaking production.",
-    readTime: "7 min read",
-    author: "Nilantha Perera",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    slug: "design-engineering-handoff",
-    category: "Design",
-    title: "The Handoff Doesn't Have to Hurt",
-    excerpt:
-      "Why we stopped treating design and engineering as separate stages, and started building both at once.",
+      "How AI-powered performance insights can help organizations understand workforce trends, improve productivity, and make better people decisions.",
     readTime: "5 min read",
-    author: "Sarah Chen",
-    image:
-      "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=800&auto=format&fit=crop",
+    author: "NADSCA Engineering",
+    image: "/images/blogs/ai-hr-decisions.jpg",
   },
   {
-    slug: "data-before-ai",
-    category: "Data & AI",
-    title: "Fix Your Data Before You Buy an AI Feature",
+    slug: "beyond-surveillance-ai-security",
+    category: "Computer Vision",
+    title: "Beyond Surveillance: The Rise of AI-Powered Security",
     excerpt:
-      "Most 'AI problems' we get called in for are actually data pipeline problems wearing a trench coat.",
+      "How intelligent camera systems can help security teams detect potential risks earlier, understand situations in real time, and respond more effectively.",
     readTime: "6 min read",
-    author: "Devon Vance",
-    image:
-      "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=800&auto=format&fit=crop",
+    author: "AI Research Team",
+    image: "/images/blogs/ai-security-vision.jpg",
+  },
+  {
+    slug: "future-of-retail-predictive-pos",
+    category: "Retail Intelligence",
+    title: "The Future of Retail: When Your POS Starts Predicting",
+    excerpt:
+      "How AI-powered sales forecasting can help supermarkets anticipate demand, plan smarter, and gain real-time visibility into profitability.",
+    readTime: "4 min read",
+    author: "Solutions Team",
+    image: "/images/blogs/retail-predictive-pos.jpg",
+  },
+  {
+    slug: "smarter-inventory-visibility",
+    category: "Supply Chain",
+    title: "Smarter Inventory Starts With Better Visibility",
+    excerpt:
+      "How connected inventory and distribution systems can reduce operational complexity, improve stock visibility, and keep businesses moving efficiently.",
+    readTime: "5 min read",
+    author: "Enterprise Squad",
+    image: "/images/blogs/smarter-inventory-visibility.jpg",
+  },
+  {
+    slug: "building-ai-in-production",
+    category: "AI Engineering",
+    title: "Building AI That Actually Works in Production",
+    excerpt:
+      "What it takes to turn AI from an impressive demo into a reliable, scalable system that delivers measurable business value.",
+    readTime: "7 min read",
+    author: "Core Architecture",
+    image: "/images/blogs/building-ai-production.jpg",
+  },
+  {
+    slug: "spreadsheets-to-intelligent-systems",
+    category: "Digital Transformation",
+    title: "From Spreadsheets to Intelligent Business Systems",
+    excerpt:
+      "How businesses can replace fragmented manual processes with connected platforms that simplify operations and improve productivity.",
+    readTime: "6 min read",
+    author: "Product Engineering",
+    image: "/images/blogs/spreadsheets-to-systems.jpg",
+  },
+  {
+    slug: "scalable-enterprise-software-principles",
+    category: "Enterprise Architecture",
+    title: "What Makes Enterprise Software Truly Scalable?",
+    excerpt:
+      "The key architectural principles behind business systems designed to handle growing users, data, locations, and operational demands.",
+    readTime: "8 min read",
+    author: "System Architects",
+    image: "/images/blogs/scalable-enterprise-software.jpg",
+  },
+  {
+    slug: "business-data-competitive-advantage",
+    category: "Data & Analytics",
+    title: "Turning Business Data Into a Competitive Advantage",
+    excerpt:
+      "How businesses can transform everyday operational data into actionable insights for better forecasting, planning, and decision-making.",
+    readTime: "5 min read",
+    author: "Data Intelligence",
+    image: "/images/blogs/business-data-advantage.jpg",
   },
 ];
 
