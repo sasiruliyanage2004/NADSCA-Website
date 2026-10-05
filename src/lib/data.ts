@@ -548,7 +548,7 @@ export const BENEFITS = [
 ];
 
 export const STUDIO_INFO = {
-  address: '# 60/17, “White Whales”, Malalage Mawatha, Dharmarama Road, Malamulla West, Panadura, Sri Lanka',
+  address: '#16/17, “White Whales”, Malalage Mawatha, Dharmarama Road, Malamulla West, Panadura, Sri Lanka',
   email: "info@nadsca.com",
   phonePrimary: "+94 76 538 3500",
   phoneSecondary: "+94 70 465 9847",
