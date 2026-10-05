@@ -431,41 +431,41 @@ export default function FeaturedProductsList() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/85 backdrop-blur-md transition-all duration-300 animate-in fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 bg-slate-950/85 backdrop-blur-md transition-all duration-300 animate-in fade-in"
           onClick={() => setActiveModalProduct(null)}
         >
           <div
-            className="relative w-full max-w-4xl rounded-3xl bg-[#0B0F17] border border-white/20 text-white p-6 sm:p-8 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col"
+            className="relative w-full max-w-3xl rounded-2xl sm:rounded-3xl bg-[#0B0F17] border border-white/20 text-white p-5 sm:p-6 shadow-2xl overflow-hidden max-h-[85vh] flex flex-col my-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Radial Glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-cyan-500/20 blur-3xl pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-cyan-500/15 blur-3xl pointer-events-none" />
 
             {/* Modal Header */}
-            <div className="flex items-start justify-between gap-4 pb-5 border-b border-white/10 relative z-10 shrink-0">
+            <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/10 relative z-10 shrink-0">
               <div>
-                <span className="font-mono text-xs font-bold text-cyan-400 tracking-wider uppercase mb-1 block">
-                  {activeModalProduct.number} &middot; VIDEO DEMO &amp; SYSTEM OVERVIEW
+                <span className="font-mono text-[11px] font-bold text-cyan-400 tracking-wider uppercase mb-0.5 block">
+                  {activeModalProduct.number} &middot; VIDEO DEMO
                 </span>
-                <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                <h3 className="font-display text-lg sm:text-xl md:text-2xl font-extrabold text-white tracking-tight">
                   {activeModalProduct.headline}
                 </h3>
               </div>
               <button
                 type="button"
                 onClick={() => setActiveModalProduct(null)}
-                className="rounded-full p-2 text-white/50 hover:text-white hover:bg-white/10 transition-colors"
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white flex items-center justify-center transition-colors shrink-0"
                 aria-label="Close demo modal"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             </div>
 
             {/* Modal Body */}
-            <div className="py-6 overflow-y-auto space-y-6 relative z-10 pr-1">
+            <div className="py-4 overflow-y-auto space-y-4 relative z-10 pr-1">
               {/* VIDEO PLAYER SCREEN */}
               {activeModalProduct.videoUrl ? (
-                <div className="relative rounded-2xl overflow-hidden bg-black border border-white/20 aspect-video shadow-2xl flex items-center justify-center">
+                <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-white/15 aspect-video max-h-[46vh] w-full mx-auto shadow-xl flex items-center justify-center">
                   <video
                     src={activeModalProduct.videoUrl}
                     poster={activeModalProduct.thumbnailImage}
@@ -477,7 +477,7 @@ export default function FeaturedProductsList() {
                 </div>
               ) : (
                 /* VIDEO PLAYER SCREEN SIMULATOR */
-                <div className="relative rounded-2xl overflow-hidden bg-slate-950 border border-white/15 aspect-video flex flex-col justify-between shadow-2xl group/player">
+                <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-slate-950 border border-white/15 aspect-video max-h-[46vh] w-full mx-auto flex flex-col justify-between shadow-xl group/player">
                   {/* Background visualizer */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${activeModalProduct.thumbnailGradient} opacity-90`}
@@ -576,16 +576,16 @@ export default function FeaturedProductsList() {
             </div>
 
             {/* Modal Footer / CTAs */}
-            <div className="pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 relative z-10 shrink-0">
-              <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+            <div className="pt-3.5 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 relative z-10 shrink-0">
+              <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
                 <Magnetic>
                   <Link
                     href={`/contact?product=${activeModalProduct.slug}&type=demo`}
                     onClick={() => setActiveModalProduct(null)}
-                    className="inline-flex items-center gap-2 rounded-full bg-white text-slate-950 font-bold px-6 py-3 text-sm shadow-md hover:bg-slate-100 transition-all"
+                    className="inline-flex items-center gap-2 rounded-full bg-white text-slate-950 font-bold px-5 py-2.5 text-xs sm:text-sm shadow-md hover:bg-slate-100 transition-all"
                   >
                     <span>Schedule Live Demo</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </Magnetic>
 
@@ -593,9 +593,9 @@ export default function FeaturedProductsList() {
                   <button
                     type="button"
                     onClick={() => handleLaunchAIDemo(activeModalProduct)}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] text-white px-5 py-3 text-sm font-semibold hover:border-cyan-400/40 hover:bg-white/[0.1] transition-all"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] text-white px-4 py-2.5 text-xs sm:text-sm font-semibold hover:border-cyan-400/40 hover:bg-white/[0.1] transition-all"
                   >
-                    <Sparkles className="w-4 h-4 text-cyan-400" />
+                    <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
                     <span>Explore with Awora AI</span>
                   </button>
                 </Magnetic>
