@@ -26,10 +26,10 @@ export default function SpotlightBento() {
       onMouseMove={handleMouseMove}
       className="relative w-full"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
         
-        {/* CARD 1: FLAGSHIP - Product Engineering & High-Throughput Architecture (Col-span-2) */}
-        <Card3DTilt className="col-span-1 md:col-span-2 h-full rounded-3xl" maxTilt={6} scale={1.012}>
+        {/* CARD 1: FLAGSHIP - Product Engineering & High-Throughput Architecture (Col-span-7 on lg) */}
+        <Card3DTilt className="col-span-1 md:col-span-2 lg:col-span-7 h-full rounded-3xl" maxTilt={6} scale={1.012}>
           <div className="spotlight-card group relative h-full rounded-3xl p-[1px] overflow-hidden transition-all duration-300">
             {/* Spotlight Border illumination */}
             <div
@@ -115,8 +115,8 @@ export default function SpotlightBento() {
           </div>
         </Card3DTilt>
 
-        {/* CARD 2: Applied AI & Neural Pipelines */}
-        <Card3DTilt className="col-span-1 h-full rounded-3xl" maxTilt={7} scale={1.015}>
+        {/* CARD 2: Applied AI & Neural Pipelines (Col-span-5 on lg) */}
+        <Card3DTilt className="col-span-1 md:col-span-2 lg:col-span-5 h-full rounded-3xl" maxTilt={7} scale={1.015}>
           <div className="spotlight-card group relative h-full rounded-3xl p-[1px] overflow-hidden transition-all duration-300">
             <div
               className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -176,8 +176,8 @@ export default function SpotlightBento() {
           </div>
         </Card3DTilt>
 
-        {/* CARD 3: Cloud & Auto-Scaling DevOps */}
-        <Card3DTilt className="col-span-1 h-full rounded-3xl" maxTilt={7} scale={1.015}>
+        {/* CARD 3: Cloud & Auto-Scaling DevOps (Col-span-6 on lg) */}
+        <Card3DTilt className="col-span-1 md:col-span-1 lg:col-span-6 h-full rounded-3xl" maxTilt={7} scale={1.015}>
           <div className="spotlight-card group relative h-full rounded-3xl p-[1px] overflow-hidden transition-all duration-300">
             <div
               className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -238,8 +238,8 @@ export default function SpotlightBento() {
           </div>
         </Card3DTilt>
 
-        {/* CARD 4: Zero-Trust Enterprise Systems */}
-        <Card3DTilt className="col-span-1 h-full rounded-3xl" maxTilt={7} scale={1.015}>
+        {/* CARD 4: Zero-Trust Enterprise Systems (Col-span-6 on lg) */}
+        <Card3DTilt className="col-span-1 md:col-span-1 lg:col-span-6 h-full rounded-3xl" maxTilt={7} scale={1.015}>
           <div className="spotlight-card group relative h-full rounded-3xl p-[1px] overflow-hidden transition-all duration-300">
             <div
               className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -287,137 +287,6 @@ export default function SpotlightBento() {
 
               <div className="mt-8 pt-6 border-t border-ink/5 dark:border-white/10 flex flex-wrap gap-2">
                 {["Legacy Migration", "ERP Systems", "Role-Based ACL", "Audit Logging"].map((t) => (
-                  <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-ink/[0.04] dark:bg-white/[0.06] text-ink/70 dark:text-white/80 border border-ink/5 dark:border-white/10">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Card3DTilt>
-
-        {/* CARD 5: Product Design & Interaction Systems (Col-span-1 md:col-span-2) */}
-        <Card3DTilt className="col-span-1 md:col-span-2 h-full rounded-3xl" maxTilt={6} scale={1.012}>
-          <div className="spotlight-card group relative h-full rounded-3xl p-[1px] overflow-hidden transition-all duration-300">
-            <div
-              className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style={{
-                background: `radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(168, 85, 247, 0.4), transparent 60%)`,
-              }}
-            />
-            <div className="relative h-full w-full rounded-[23px] bg-white dark:bg-[#0D1118] border border-ink/8 dark:border-white/10 p-8 md:p-10 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-card transition-shadow">
-              <div
-                className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{
-                  background: `radial-gradient(750px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(168, 85, 247, 0.04), transparent 50%)`,
-                }}
-              />
-
-              <div>
-                <div className="text-purple-600 dark:text-purple-400 text-xs font-mono font-semibold tracking-widest uppercase mb-4">
-                  PRODUCT DESIGN
-                </div>
-
-                <h3 className="font-display text-2xl md:text-3xl text-ink dark:text-white mb-4">
-                  Product Design &amp; Cohesive Design Systems
-                </h3>
-                <p className="text-ink/65 dark:text-white/70 text-[15px] md:text-base leading-relaxed max-w-2xl mb-8">
-                  Great software feels effortless. Our design engineering team creates unified Figma design tokens, micro-interactions, and accessible component architectures that translate directly into clean production code without handover loss.
-                </p>
-
-                {/* Design System Foundations Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="rounded-2xl border border-ink/5 dark:border-white/10 bg-mist/80 dark:bg-white/[0.04] p-5">
-                    <div className="font-mono text-xs text-purple-600 dark:text-purple-400 font-semibold mb-2">DESIGN TOKENS</div>
-                    <div className="text-ink dark:text-white text-sm font-semibold mb-1">Single Source of Truth</div>
-                    <p className="text-ink/60 dark:text-white/60 text-xs leading-relaxed">
-                      Synchronized color, typography, and spacing variables exported directly to Tailwind and CSS modules.
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl border border-ink/5 dark:border-white/10 bg-mist/80 dark:bg-white/[0.04] p-5">
-                    <div className="font-mono text-xs text-azure dark:text-azure-light font-semibold mb-2">MICRO-INTERACTIONS</div>
-                    <div className="text-ink dark:text-white text-sm font-semibold mb-1">Intentional Motion</div>
-                    <p className="text-ink/60 dark:text-white/60 text-xs leading-relaxed">
-                      GPU-accelerated transforms and physics springs that guide user focus without causing layout delay.
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl border border-ink/5 dark:border-white/10 bg-mist/80 dark:bg-white/[0.04] p-5">
-                    <div className="font-mono text-xs text-emerald-600 dark:text-emerald-400 font-semibold mb-2">ACCESSIBILITY</div>
-                    <div className="text-ink dark:text-white text-sm font-semibold mb-1">WCAG AAA Certified</div>
-                    <p className="text-ink/60 dark:text-white/60 text-xs leading-relaxed">
-                      Semantic DOM hierarchy, keyboard navigation, and high-contrast color balance validated by automated audits.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-ink/5 dark:border-white/10 flex flex-wrap gap-2">
-                {["Figma Tokens", "Micro-Interactions", "WCAG AAA", "Component Libraries", "UX Research"].map((t) => (
-                  <span key={t} className="text-xs px-3 py-1 rounded-full bg-ink/[0.04] dark:bg-white/[0.06] text-ink/70 dark:text-white/80 border border-ink/5 dark:border-white/10">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Card3DTilt>
-
-        {/* CARD 6: Fractional CTO & Strategic Advisory */}
-        <Card3DTilt className="col-span-1 h-full rounded-3xl" maxTilt={7} scale={1.015}>
-          <div className="spotlight-card group relative h-full rounded-3xl p-[1px] overflow-hidden transition-all duration-300">
-            <div
-              className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style={{
-                background: `radial-gradient(450px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(59, 130, 246, 0.4), transparent 60%)`,
-              }}
-            />
-            <div className="relative h-full w-full rounded-[23px] bg-white dark:bg-[#0D1118] border border-ink/8 dark:border-white/10 p-8 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-card transition-shadow">
-              <div
-                className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{
-                  background: `radial-gradient(550px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(59, 130, 246, 0.04), transparent 50%)`,
-                }}
-              />
-
-              <div>
-                <div className="text-blue-600 dark:text-blue-400 text-xs font-mono font-semibold tracking-widest uppercase mb-4">
-                  EXECUTIVE ADVISORY
-                </div>
-
-                <h3 className="font-display text-2xl text-ink dark:text-white mb-3">
-                  Fractional CTO &amp; Strategic Architecture
-                </h3>
-                <p className="text-ink/65 dark:text-white/70 text-[14px] leading-relaxed mb-6">
-                  Senior engineering direction for tech roadmaps, vendor evaluations, security audits, and institutional fundraising due diligence.
-                </p>
-
-                {/* Concrete Advisory Deliverables */}
-                <div className="rounded-2xl border border-ink/5 dark:border-white/10 bg-mist/80 dark:bg-white/[0.04] p-5 font-mono text-xs space-y-2.5">
-                  <div className="flex items-center justify-between text-ink/50 dark:text-white/50 pb-2 border-b border-ink/5 dark:border-white/10">
-                    <span>ENG VELOCITY IMPACT</span>
-                    <span className="text-azure dark:text-azure-light font-bold">+3.8x</span>
-                  </div>
-                  <div className="space-y-2 text-ink/80 dark:text-white/80 text-[11px]">
-                    <div className="flex items-center gap-2">
-                      <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span>
-                      <span>Zero Tech-Debt Codebase Handover</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span>
-                      <span>Investor Technical Due Diligence</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span>
-                      <span>Full Documentation &amp; Team Mentorship</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-ink/5 dark:border-white/10 flex flex-wrap gap-2">
-                {["Tech Diligence", "Roadmap Scoping", "Vendor Audit", "Team Mentorship"].map((t) => (
                   <span key={t} className="text-[11px] px-2.5 py-1 rounded-full bg-ink/[0.04] dark:bg-white/[0.06] text-ink/70 dark:text-white/80 border border-ink/5 dark:border-white/10">
                     {t}
                   </span>
