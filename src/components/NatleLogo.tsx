@@ -1,15 +1,38 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
+
+interface NatleLogoProps {
+  className?: string;
+  showTagline?: boolean;
+  layout?: "horizontal" | "stacked";
+}
 
 export default function NatleLogo({ 
   className = "",
-  showTagline = true 
-}: { 
-  className?: string;
-  showTagline?: boolean;
-}) {
+  showTagline = true,
+  layout = "horizontal"
+}: NatleLogoProps) {
+  if (layout === "stacked") {
+    return (
+      <div 
+        className={`group relative inline-flex flex-col items-start select-none cursor-pointer ${className}`}
+      >
+        <div className="relative w-44 sm:w-48 aspect-[937/833] transition-transform duration-300 ease-out group-hover:scale-105">
+          <Image
+            src="/logo-stacked-dark.png"
+            alt="NADSCA — Innovate • Build • Transform"
+            fill
+            sizes="192px"
+            className="object-contain object-left"
+            priority
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div 
       className={`group relative inline-flex items-center gap-2.5 sm:gap-3 select-none cursor-pointer ${className}`}
@@ -30,7 +53,7 @@ export default function NatleLogo({
       <div className="flex flex-col justify-center">
         <div className="relative h-[19px] w-[114px] sm:h-[22px] sm:w-[130px] md:h-6 md:w-[138px] shrink-0 transition-transform duration-300 ease-out group-hover:scale-[1.02]">
           <Image
-            src="/logo-wordmark-illuminated.png"
+            src="/logo-wordmark-dark.png"
             alt="NADSCA"
             fill
             sizes="(max-width: 768px) 130px, 138px"
@@ -39,14 +62,17 @@ export default function NatleLogo({
           />
         </div>
 
-        {/* 3 Core Tagline Parts: INNOVATE • BUILD • TRANSFORM */}
+        {/* 3 Core Tagline Parts & Gradient Accent Bar */}
         {showTagline && (
-          <div className="flex items-center gap-1 sm:gap-1.5 text-[6.5px] sm:text-[7.5px] md:text-[8px] font-mono tracking-[0.16em] sm:tracking-[0.18em] font-bold uppercase text-white/85 group-hover:text-white transition-colors mt-0.5">
-            <span>INNOVATE</span>
-            <span className="w-1 h-1 rounded-full bg-[#0099FF] shrink-0 shadow-[0_0_6px_#0099FF]" />
-            <span>BUILD</span>
-            <span className="w-1 h-1 rounded-full bg-[#22C55E] shrink-0 shadow-[0_0_6px_#22C55E]" />
-            <span>TRANSFORM</span>
+          <div className="flex flex-col mt-0.5">
+            <div className="flex items-center gap-1 sm:gap-1.5 text-[6.5px] sm:text-[7.5px] md:text-[8px] font-mono tracking-[0.16em] sm:tracking-[0.18em] font-bold uppercase text-white/85 group-hover:text-white transition-colors">
+              <span>INNOVATE</span>
+              <span className="w-1 h-1 rounded-full bg-[#0099FF] shrink-0 shadow-[0_0_6px_#0099FF]" />
+              <span>BUILD</span>
+              <span className="w-1 h-1 rounded-full bg-[#22C55E] shrink-0 shadow-[0_0_6px_#22C55E]" />
+              <span>TRANSFORM</span>
+            </div>
+            <div className="mt-1 h-[1.5px] w-16 sm:w-20 rounded-full bg-gradient-to-r from-[#0099FF] to-[#22C55E] opacity-85 group-hover:opacity-100 transition-opacity" />
           </div>
         )}
       </div>

@@ -223,8 +223,8 @@ export default function Footer() {
             {/* Left Brand Section (lg:col-span-4) */}
             <div className="lg:col-span-4 flex flex-col justify-between h-full space-y-8">
               <div>
-                <Link href="/" className="inline-block mb-4 outline-none group">
-                  <NatleLogo className="h-9 w-auto transition-transform duration-300 group-hover:scale-105" showTagline={true} />
+                <Link href="/" className="inline-block mb-3 outline-none group">
+                  <NatleLogo layout="stacked" className="transition-transform duration-300 group-hover:scale-105" />
                 </Link>
                 <p className="text-white/70 text-xs sm:text-sm leading-relaxed max-w-md">
                   We build scalable software, resilient cloud infrastructure, and production-ready AI that helps ambitious companies move faster and scale with confidence.
@@ -382,40 +382,54 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* STAGE 04: SYSTEM & LEGAL BAR (Safe zone on right for floating AI button) */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
-          {/* Left: Copyright */}
-          <div className="text-white/40 text-[11px] font-mono tracking-wider uppercase order-2 sm:order-1 text-center sm:text-left">
-            © {new Date().getFullYear()} NADSCA (PVT) LTD. ALL RIGHTS RESERVED
-          </div>
+        {/* STAGE 04: SYSTEM & LEGAL BAR (Aligned to the 4 Directory Columns) */}
+        <div className="pt-8 border-t border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-14 items-center">
+            {/* Column 1 (lg:col-span-4): Copyright */}
+            <div className="lg:col-span-4 text-white/40 text-[11px] font-mono tracking-wider uppercase text-center sm:text-left">
+              © {new Date().getFullYear()} NADSCA (PVT) LTD. ALL RIGHTS RESERVED
+            </div>
 
-          {/* Center: Live Breathing Status */}
-          <div className="order-1 sm:order-2 flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[10px] font-mono text-emerald-400 tracking-wider uppercase">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span>ZERO DOWN TIME</span>
-          </div>
+            {/* Column 2 (lg:col-span-3): Zero Down Time Status */}
+            <div className="lg:col-span-3 flex items-center justify-center sm:justify-start">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[10px] font-mono text-emerald-400 tracking-wider uppercase">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+                <span>ZERO DOWN TIME</span>
+              </div>
+            </div>
 
-          {/* Right: Legal & Back to Top (With pr-0 sm:pr-36 safe clearance for floating widget) */}
-          <div className="order-3 flex items-center gap-6 text-white/40 text-[11px] font-mono uppercase tracking-wider pr-0 sm:pr-36">
-            <Link href="/about" className="hover:text-white transition-colors">
-              PRIVACY POLICY
-            </Link>
-            <Link href="/about" className="hover:text-white transition-colors">
-              TOS
-            </Link>
-
-            <Magnetic>
-              <button
-                onClick={scrollToTop}
-                className="w-8 h-8 rounded-full border border-white/10 bg-white/[0.04] hover:bg-white/10 flex items-center justify-center text-white/60 hover:text-white transition-all group"
-                aria-label="Scroll to top"
+            {/* Column 3 (lg:col-span-2): Privacy Policy */}
+            <div className="lg:col-span-2 text-center sm:text-left">
+              <Link
+                href="/about"
+                className="text-white/40 hover:text-white text-[11px] font-mono uppercase tracking-wider transition-colors inline-block"
               >
-                <ChevronUp className="w-3.5 h-3.5 transform group-hover:-translate-y-0.5 transition-transform" />
-              </button>
-            </Magnetic>
+                PRIVACY POLICY
+              </Link>
+            </div>
+
+            {/* Column 4 (lg:col-span-3): TOS & Back to Top */}
+            <div className="lg:col-span-3 flex items-center justify-between pr-0 sm:pr-32">
+              <Link
+                href="/about"
+                className="text-white/40 hover:text-white text-[11px] font-mono uppercase tracking-wider transition-colors inline-block"
+              >
+                TOS
+              </Link>
+
+              <Magnetic>
+                <button
+                  onClick={scrollToTop}
+                  className="w-8 h-8 rounded-full border border-white/10 bg-white/[0.04] hover:bg-white/10 flex items-center justify-center text-white/60 hover:text-white transition-all group"
+                  aria-label="Scroll to top"
+                >
+                  <ChevronUp className="w-3.5 h-3.5 transform group-hover:-translate-y-0.5 transition-transform" />
+                </button>
+              </Magnetic>
+            </div>
           </div>
         </div>
       </div>
