@@ -460,7 +460,13 @@ export const BLOG_POSTS = [
   },
 ];
 
-export const TEAM = [
+export interface MemberItem {
+  name: string;
+  role: string;
+  image?: string;
+}
+
+export const TEAM: MemberItem[] = [
   { name: "Nilantha Perera", role: "Founder Chairman & CEO" },
   { name: "Saman Kumara", role: "Vice Chairman & Operation" },
   { name: "Buddhika Dhananjaya", role: "Chief Technology Officer" },
@@ -468,10 +474,10 @@ export const TEAM = [
   { name: "Dileepa Haripriya", role: "Chief Solution Architect" },
 ];
 
-export const PARTNERS = [
+export const PARTNERS: MemberItem[] = [
   { name: "Ramani Jayasekara", role: "Head of Delivery" },
   { name: "Hans Pradeep", role: "International Business Affairs" },
-  { name: "Commander Aruna", role: "Shilpa - Global HR Solutions" },
+  { name: "Commander Aruna", role: "Shilpa - Global HR Solutions", image: "/partners/commander-aruna.jpg" },
 ];
 
 export const VALUES = [

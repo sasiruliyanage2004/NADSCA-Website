@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import SpotlightCard, { SpotlightAccent } from "@/components/SpotlightCard";
@@ -209,9 +210,19 @@ export default function AboutPage() {
                 <div className="group rounded-3xl border border-ink/8 dark:border-white/10 bg-white dark:bg-[#0D1118] p-6 hover:shadow-card hover:border-cyan-400/30 transition-all duration-300 h-full flex flex-col justify-between">
                   <div>
                     <div className="aspect-square rounded-2xl bg-brand-gradient-soft mb-4 flex items-center justify-center overflow-hidden relative">
-                      <span className="font-display text-3xl text-ink/30 dark:text-white/40 group-hover:scale-110 transition-transform duration-300 font-bold">
-                        {person.name.split(" ").map((n) => n[0]).join("")}
-                      </span>
+                      {person.image ? (
+                        <Image
+                          src={person.image}
+                          alt={person.name}
+                          fill
+                          className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        />
+                      ) : (
+                        <span className="font-display text-3xl text-ink/30 dark:text-white/40 group-hover:scale-110 transition-transform duration-300 font-bold">
+                          {person.name.split(" ").map((n) => n[0]).join("")}
+                        </span>
+                      )}
                     </div>
                     <h3 className="font-display text-base sm:text-lg text-ink dark:text-white font-bold">
                       {person.name}
@@ -232,9 +243,19 @@ export default function AboutPage() {
                 <div className="group rounded-3xl border border-ink/8 dark:border-white/10 bg-white dark:bg-[#0D1118] p-6 hover:shadow-card hover:border-cyan-400/30 transition-all duration-300 h-full flex flex-col justify-between">
                   <div>
                     <div className="aspect-square rounded-2xl bg-brand-gradient-soft mb-4 flex items-center justify-center overflow-hidden relative">
-                      <span className="font-display text-3xl text-ink/30 dark:text-white/40 group-hover:scale-110 transition-transform duration-300 font-bold">
-                        {TEAM[4].name.split(" ").map((n) => n[0]).join("")}
-                      </span>
+                      {TEAM[4].image ? (
+                        <Image
+                          src={TEAM[4].image}
+                          alt={TEAM[4].name}
+                          fill
+                          className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        />
+                      ) : (
+                        <span className="font-display text-3xl text-ink/30 dark:text-white/40 group-hover:scale-110 transition-transform duration-300 font-bold">
+                          {TEAM[4].name.split(" ").map((n) => n[0]).join("")}
+                        </span>
+                      )}
                     </div>
                     <h3 className="font-display text-base sm:text-lg text-ink dark:text-white font-bold">
                       {TEAM[4].name}
@@ -266,9 +287,19 @@ export default function AboutPage() {
                   <div className="group rounded-3xl border border-ink/8 dark:border-white/10 bg-white dark:bg-[#0D1118] p-6 hover:shadow-card hover:border-cyan-400/30 transition-all duration-300 h-full flex flex-col justify-between">
                     <div>
                       <div className="aspect-square rounded-2xl bg-brand-gradient-soft mb-4 flex items-center justify-center overflow-hidden relative">
-                        <span className="font-display text-3xl text-ink/30 dark:text-white/40 group-hover:scale-110 transition-transform duration-300 font-bold">
-                          {person.name.split(" ").map((n) => n[0]).join("")}
-                        </span>
+                        {person.image ? (
+                          <Image
+                            src={person.image}
+                            alt={person.name}
+                            fill
+                            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                        ) : (
+                          <span className="font-display text-3xl text-ink/30 dark:text-white/40 group-hover:scale-110 transition-transform duration-300 font-bold">
+                            {person.name.split(" ").map((n) => n[0]).join("")}
+                          </span>
+                        )}
                       </div>
                       <h3 className="font-display text-base sm:text-lg text-ink dark:text-white font-bold">
                         {person.name}
