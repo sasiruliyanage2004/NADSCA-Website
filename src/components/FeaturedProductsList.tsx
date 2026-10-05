@@ -2,7 +2,21 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Play, X, Sparkles, CheckCircle2, MonitorPlay } from "lucide-react";
+import {
+  ArrowRight,
+  Play,
+  Pause,
+  X,
+  Sparkles,
+  CheckCircle2,
+  MonitorPlay,
+  Maximize2,
+  Volume2,
+  Activity,
+  ShieldCheck,
+  TrendingUp,
+  Boxes,
+} from "lucide-react";
 import SpotlightCard, { SpotlightAccent } from "@/components/SpotlightCard";
 import Reveal from "@/components/Reveal";
 import Magnetic from "@/components/Magnetic";
@@ -15,6 +29,17 @@ interface FeaturedProduct {
   description: string;
   slug: string;
   accent: SpotlightAccent;
+  videoDuration: string;
+  categoryTag: string;
+  thumbnailGradient: string;
+  icon: React.ElementType;
+  mockupContent: {
+    stat1: string;
+    stat1Label: string;
+    stat2: string;
+    stat2Label: string;
+    highlightPill: string;
+  };
   demoHighlights: {
     title: string;
     description: string;
@@ -35,6 +60,17 @@ const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "An end-to-end HR platform covering payroll, attendance, employee management, and AI-powered performance insights.",
     slug: "ohrms",
     accent: "azure",
+    videoDuration: "03:42",
+    categoryTag: "ENTERPRISE HR",
+    thumbnailGradient: "from-sky-950/80 via-[#0A1628] to-[#040914]",
+    icon: Activity,
+    mockupContent: {
+      stat1: "99.4%",
+      stat1Label: "Attendance Accuracy",
+      stat2: "1-Click",
+      stat2Label: "Payroll Execution",
+      highlightPill: "Biometric & Shift Sync Active",
+    },
     demoHighlights: [
       {
         title: "Unified Workforce Directory",
@@ -68,6 +104,17 @@ const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "AI-powered camera intelligence that detects potential risks and helps security teams respond with greater awareness.",
     slug: "ai-security-patrolling",
     accent: "teal",
+    videoDuration: "04:15",
+    categoryTag: "COMPUTER VISION",
+    thumbnailGradient: "from-teal-950/80 via-[#081B1E] to-[#030B0D]",
+    icon: ShieldCheck,
+    mockupContent: {
+      stat1: "< 200ms",
+      stat1Label: "Threat Detection Latency",
+      stat2: "24/7",
+      stat2Label: "Autonomous Perimeter Guard",
+      highlightPill: "Live Edge Vision Stream",
+    },
     demoHighlights: [
       {
         title: "Computer Vision Stream Analytics",
@@ -101,6 +148,17 @@ const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "A modern POS with AI-powered sales prediction and real-time profitability forecasting.",
     slug: "ai-powered-pos",
     accent: "lime",
+    videoDuration: "03:10",
+    categoryTag: "RETAIL INTELLIGENCE",
+    thumbnailGradient: "from-emerald-950/80 via-[#0A1A14] to-[#030B07]",
+    icon: TrendingUp,
+    mockupContent: {
+      stat1: "+28.4%",
+      stat1Label: "Forecast Accuracy",
+      stat2: "Real-time",
+      stat2Label: "Profitability Margin Tracking",
+      highlightPill: "Offline-First Sync Ready",
+    },
     demoHighlights: [
       {
         title: "Predictive Sales & Demand Forecast",
@@ -134,6 +192,17 @@ const FEATURED_PRODUCTS: FeaturedProduct[] = [
       "A smart platform for inventory, wholesale distribution, and streamlined day-to-day operations.",
     slug: "smart-inventory-distribution",
     accent: "purple",
+    videoDuration: "04:30",
+    categoryTag: "SUPPLY CHAIN",
+    thumbnailGradient: "from-indigo-950/80 via-[#101026] to-[#060612]",
+    icon: Boxes,
+    mockupContent: {
+      stat1: "Multi-Hub",
+      stat1Label: "Warehouse Visibility",
+      stat2: "Automated",
+      stat2Label: "Purchase Reorder Triggers",
+      highlightPill: "B2B Wholesale Portal Active",
+    },
     demoHighlights: [
       {
         title: "Multi-Warehouse Stock Ledger",
@@ -162,6 +231,7 @@ const FEATURED_PRODUCTS: FeaturedProduct[] = [
 
 export default function FeaturedProductsList() {
   const [activeModalProduct, setActiveModalProduct] = useState<FeaturedProduct | null>(null);
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
 
   // Close modal on escape key
   useEffect(() => {
@@ -173,6 +243,7 @@ export default function FeaturedProductsList() {
     if (activeModalProduct) {
       window.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
+      setIsPlaying(true);
     } else {
       document.body.style.overflow = "unset";
     }
@@ -218,83 +289,135 @@ export default function FeaturedProductsList() {
             </p>
           </Reveal>
 
-          {/* 4 Featured Products 2x2 Grid */}
+          {/* 4 Featured Products 2x2 Grid with Video Thumbnails */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            {FEATURED_PRODUCTS.map((prod, idx) => (
-              <Reveal key={prod.id} delay={(idx % 2) * 0.08}>
-                <SpotlightCard
-                  accent={prod.accent}
-                  className="h-full rounded-3xl border border-ink/8 dark:border-white/10 bg-white dark:bg-[#0D1118] hover:border-cyan-400/30 transition-all duration-300"
-                >
-                  <div className="p-8 sm:p-10 flex flex-col h-full justify-between">
-                    <div>
-                      {/* Number badge */}
-                      <div className="font-mono text-sm sm:text-base font-bold text-azure dark:text-cyan-400 tracking-wider mb-3">
-                        {prod.number}
+            {FEATURED_PRODUCTS.map((prod, idx) => {
+              const Icon = prod.icon;
+              return (
+                <Reveal key={prod.id} delay={(idx % 2) * 0.08}>
+                  <SpotlightCard
+                    accent={prod.accent}
+                    className="h-full rounded-3xl border border-ink/8 dark:border-white/10 bg-white dark:bg-[#0D1118] hover:border-cyan-400/40 transition-all duration-300 overflow-hidden flex flex-col group shadow-md hover:shadow-2xl"
+                  >
+                    {/* VIDEO / DASHBOARD THUMBNAIL TOP CONTAINER */}
+                    <div
+                      onClick={() => setActiveModalProduct(prod)}
+                      className={`relative h-52 sm:h-60 w-full overflow-hidden bg-gradient-to-br ${prod.thumbnailGradient} cursor-pointer border-b border-ink/8 dark:border-white/10`}
+                    >
+                      {/* Ambient Radial Glow */}
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(14,165,233,0.25),transparent_70%)] pointer-events-none" />
+
+                      {/* Tech Grid Lines */}
+                      <div className="absolute inset-0 opacity-[0.07] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:1.75rem_1.75rem]" />
+
+                      {/* Top Badges (Category & Video Duration) */}
+                      <div className="absolute top-4 inset-x-4 flex items-center justify-between z-10">
+                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/70 border border-white/15 text-[11px] font-mono font-bold text-cyan-400 backdrop-blur-md">
+                          <Icon className="w-3 h-3 text-cyan-400" />
+                          <span>{prod.categoryTag}</span>
+                        </div>
+
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-950/70 border border-white/15 text-[11px] font-mono font-medium text-white/90 backdrop-blur-md">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          <span>{prod.videoDuration}</span>
+                        </div>
                       </div>
 
-                      {/* Main Title / Headline */}
-                      <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-ink dark:text-white tracking-tight leading-snug mb-4">
-                        {prod.headline}
-                      </h3>
+                      {/* Mockup Interactive Dashboard Visual */}
+                      <div className="absolute inset-0 flex items-center justify-center p-6">
+                        {/* Central Play Button */}
+                        <div className="relative z-10 flex flex-col items-center">
+                          <div className="w-16 h-16 rounded-full bg-cyan-400/20 border-2 border-cyan-400/70 backdrop-blur-md flex items-center justify-center text-cyan-300 shadow-[0_0_35px_rgba(14,165,233,0.45)] group-hover:scale-110 group-hover:bg-cyan-400 group-hover:text-slate-950 group-hover:border-cyan-300 transition-all duration-300">
+                            <Play className="w-6 h-6 fill-current ml-1" />
+                          </div>
+                          <span className="mt-2 text-xs font-mono font-bold text-white/90 uppercase tracking-widest drop-shadow group-hover:text-cyan-300 transition-colors">
+                            Watch Video Demo
+                          </span>
+                        </div>
+                      </div>
 
-                      {/* Description */}
-                      <p className="text-ink/70 dark:text-white/75 text-[15px] sm:text-base leading-relaxed mb-8">
-                        {prod.description}
-                      </p>
+                      {/* Bottom Thumbnail Telemetry Pill */}
+                      <div className="absolute bottom-3 inset-x-4 flex items-center justify-between text-xs text-white/60 font-mono z-10 pointer-events-none">
+                        <span className="px-2.5 py-0.5 rounded bg-black/40 backdrop-blur-sm border border-white/10 text-[10px]">
+                          {prod.mockupContent.highlightPill}
+                        </span>
+                        <span className="px-2 py-0.5 rounded bg-black/40 backdrop-blur-sm border border-white/10 text-[10px] text-cyan-400 font-bold">
+                          HD 1080P
+                        </span>
+                      </div>
                     </div>
 
-                    {/* Bottom Action Area */}
-                    <div className="pt-6 border-t border-ink/8 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
-                      <button
-                        type="button"
-                        onClick={() => setActiveModalProduct(prod)}
-                        className="group inline-flex items-center gap-2.5 font-bold text-[15px] sm:text-base text-ink dark:text-white hover:text-azure dark:hover:text-cyan-400 transition-colors"
-                      >
-                        <span className="flex items-center justify-center w-7 h-7 rounded-full bg-cyan-400/10 text-cyan-500 dark:text-cyan-400 group-hover:bg-cyan-400/20 group-hover:scale-110 transition-all">
-                          <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
-                        </span>
-                        <span>Watch Demo</span>
-                        <span className="transition-transform duration-300 group-hover:translate-x-1 font-mono text-lg">
-                          →
-                        </span>
-                      </button>
+                    {/* CARD CONTENT BODY */}
+                    <div className="p-7 sm:p-9 flex-1 flex flex-col justify-between">
+                      <div>
+                        {/* Number badge */}
+                        <div className="font-mono text-sm sm:text-base font-bold text-azure dark:text-cyan-400 tracking-wider mb-2.5">
+                          {prod.number}
+                        </div>
 
-                      <Link
-                        href={`/products#${prod.slug}`}
-                        className="text-xs font-mono font-medium text-ink/40 dark:text-white/40 hover:text-ink dark:hover:text-white transition-colors"
-                      >
-                        View Full Specs
-                      </Link>
+                        {/* Headline */}
+                        <h3 className="font-display text-2xl sm:text-[26px] font-extrabold text-ink dark:text-white tracking-tight leading-snug mb-3">
+                          {prod.headline}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-ink/70 dark:text-white/75 text-[15px] leading-relaxed mb-6">
+                          {prod.description}
+                        </p>
+                      </div>
+
+                      {/* Bottom Action Area */}
+                      <div className="pt-6 border-t border-ink/8 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
+                        <button
+                          type="button"
+                          onClick={() => setActiveModalProduct(prod)}
+                          className="group/btn inline-flex items-center gap-2 font-bold text-[15px] sm:text-base text-ink dark:text-white hover:text-azure dark:hover:text-cyan-400 transition-colors"
+                        >
+                          <span className="flex items-center justify-center w-7 h-7 rounded-full bg-cyan-400/15 text-cyan-500 dark:text-cyan-400 group-hover/btn:bg-cyan-400 group-hover/btn:text-slate-950 transition-all">
+                            <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
+                          </span>
+                          <span>Watch Demo</span>
+                          <span className="transition-transform duration-300 group-hover/btn:translate-x-1 font-mono text-lg">
+                            →
+                          </span>
+                        </button>
+
+                        <Link
+                          href={`/products#${prod.slug}`}
+                          className="text-xs font-mono font-medium text-ink/40 dark:text-white/40 hover:text-ink dark:hover:text-white transition-colors"
+                        >
+                          View Full Specs
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                </SpotlightCard>
-              </Reveal>
-            ))}
+                  </SpotlightCard>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Interactive Demo Walkthrough Modal */}
+      {/* Interactive Demo Video Player Modal */}
       {activeModalProduct && (
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md transition-all duration-300 animate-in fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/85 backdrop-blur-md transition-all duration-300 animate-in fade-in"
           onClick={() => setActiveModalProduct(null)}
         >
           <div
-            className="relative w-full max-w-3xl rounded-3xl bg-[#0B0F17] border border-white/15 text-white p-6 sm:p-10 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
+            className="relative w-full max-w-4xl rounded-3xl bg-[#0B0F17] border border-white/20 text-white p-6 sm:p-8 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Top Glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-cyan-500/15 blur-3xl pointer-events-none" />
+            {/* Top Radial Glow */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-cyan-500/20 blur-3xl pointer-events-none" />
 
-            {/* Header */}
-            <div className="flex items-start justify-between gap-4 pb-6 border-b border-white/10 relative z-10 shrink-0">
+            {/* Modal Header */}
+            <div className="flex items-start justify-between gap-4 pb-5 border-b border-white/10 relative z-10 shrink-0">
               <div>
                 <span className="font-mono text-xs font-bold text-cyan-400 tracking-wider uppercase mb-1 block">
-                  {activeModalProduct.number} &middot; INTERACTIVE DEMO PREVIEW
+                  {activeModalProduct.number} &middot; VIDEO DEMO &amp; SYSTEM OVERVIEW
                 </span>
                 <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                   {activeModalProduct.headline}
@@ -311,26 +434,81 @@ export default function FeaturedProductsList() {
             </div>
 
             {/* Modal Body */}
-            <div className="py-6 overflow-y-auto space-y-6 relative z-10 pr-2">
+            <div className="py-6 overflow-y-auto space-y-6 relative z-10 pr-1">
+              {/* VIDEO PLAYER SCREEN SIMULATOR */}
+              <div className="relative rounded-2xl overflow-hidden bg-slate-950 border border-white/15 aspect-video flex flex-col justify-between shadow-2xl group/player">
+                {/* Background visualizer */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${activeModalProduct.thumbnailGradient} opacity-90`}
+                />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(14,165,233,0.2),transparent_70%)]" />
+                <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:2rem_2rem]" />
+
+                {/* Top Video Overlay Bar */}
+                <div className="relative z-10 p-4 flex items-center justify-between text-xs font-mono bg-gradient-to-b from-black/80 to-transparent">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="font-bold text-white">LIVE DEMO STREAM</span>
+                    <span className="text-white/40">&middot;</span>
+                    <span className="text-cyan-400">{activeModalProduct.title}</span>
+                  </div>
+                  <span className="px-2 py-0.5 rounded bg-white/10 text-white/80 font-bold">1080P 60FPS</span>
+                </div>
+
+                {/* Center Big Play / Walkthrough Trigger */}
+                <div className="relative z-10 flex flex-col items-center justify-center p-6 text-center">
+                  <button
+                    type="button"
+                    onClick={() => setIsPlaying(!isPlaying)}
+                    className="w-20 h-20 rounded-full bg-cyan-400 text-slate-950 flex items-center justify-center shadow-[0_0_40px_rgba(14,165,233,0.6)] hover:scale-110 active:scale-95 transition-all duration-300"
+                  >
+                    {isPlaying ? (
+                      <Pause className="w-8 h-8 fill-current" />
+                    ) : (
+                      <Play className="w-8 h-8 fill-current ml-1" />
+                    )}
+                  </button>
+                  <p className="mt-4 text-sm font-medium text-white/90 max-w-md">
+                    {isPlaying
+                      ? "Demo walkthrough active. Reviewing system architecture and modules."
+                      : "Walkthrough paused. Click to resume video stream."}
+                  </p>
+                </div>
+
+                {/* Bottom Video Controls Bar */}
+                <div className="relative z-10 p-4 bg-gradient-to-t from-black/90 via-black/60 to-transparent space-y-2">
+                  {/* Progress bar */}
+                  <div className="w-full h-1.5 rounded-full bg-white/20 overflow-hidden relative cursor-pointer">
+                    <div className="absolute left-0 top-0 bottom-0 w-2/5 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-full" />
+                  </div>
+
+                  <div className="flex items-center justify-between text-xs font-mono text-white/70 pt-1">
+                    <div className="flex items-center gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setIsPlaying(!isPlaying)}
+                        className="text-white hover:text-cyan-400 transition-colors"
+                      >
+                        {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                      </button>
+                      <Volume2 className="w-4 h-4 text-white/60" />
+                      <span>01:28 / {activeModalProduct.videoDuration}</span>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <span className="text-cyan-400 font-bold">{activeModalProduct.categoryTag}</span>
+                      <Maximize2 className="w-4 h-4 text-white/60" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Product Description */}
               <p className="text-white/80 text-base sm:text-lg leading-relaxed">
                 {activeModalProduct.description}
               </p>
 
-              {/* Stats pill row */}
-              <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-white/[0.03] border border-white/8 text-center">
-                {activeModalProduct.demoStats.map((stat) => (
-                  <div key={stat.label}>
-                    <div className="text-xs font-mono text-cyan-400 font-semibold uppercase">
-                      {stat.label}
-                    </div>
-                    <div className="text-sm sm:text-base font-bold text-white mt-0.5">
-                      {stat.value}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Demo Capabilities */}
+              {/* Key System Highlights */}
               <div>
                 <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400 mb-3 flex items-center gap-2">
                   <MonitorPlay className="w-4 h-4" />
@@ -356,7 +534,7 @@ export default function FeaturedProductsList() {
             </div>
 
             {/* Modal Footer / CTAs */}
-            <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 relative z-10 shrink-0">
+            <div className="pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 relative z-10 shrink-0">
               <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
                 <Magnetic>
                   <Link
