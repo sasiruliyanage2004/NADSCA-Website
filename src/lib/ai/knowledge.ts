@@ -178,6 +178,30 @@ export const NADSCA_SERVICES: ServiceDetail[] = [
       "Fractional CTO advisory & roadmap planning",
     ],
   },
+  {
+    slug: "hr-technology",
+    name: "HR Technology Solutions",
+    short: "Technology for better people operations.",
+    detail:
+      "We help organizations improve the way they manage people, processes, and workforce operations through technology-led HR solutions such as OHRMS.",
+    points: [
+      "OHRMS core platform integration",
+      "Attendance, leave & payroll automation",
+      "Workforce analytics & compliance workflows",
+    ],
+  },
+  {
+    slug: "agritech",
+    name: "Agritech Solutions",
+    short: "Technology for smarter, more connected agriculture.",
+    detail:
+      "We help agriculture businesses turn operational data, connected systems, and intelligent automation into practical digital solutions.",
+    points: [
+      "IoT telemetry & field data tracking",
+      "Supply chain & harvest management",
+      "Predictive yield analytics & smart automation",
+    ],
+  },
 ];
 
 export const NADSCA_PROJECTS: ProjectDetail[] = [

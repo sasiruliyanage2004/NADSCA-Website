@@ -1,55 +1,98 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import Magnetic from "@/components/Magnetic";
 import SpotlightCard, { SpotlightAccent } from "@/components/SpotlightCard";
 import AmbientBackground from "@/components/AmbientBackground";
+import ServicesCTA from "@/components/ServicesCTA";
 import { SERVICES } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Services — NADSCA",
-  description: "Product engineering, cloud & DevOps, data & AI, design, and consulting services from NADSCA.",
+  description:
+    "Product engineering, data & AI, product design, cloud & infrastructure, enterprise systems, and technology consulting services from NADSCA.",
 };
 
-const ACCENTS: SpotlightAccent[] = ["azure", "teal", "lime", "purple", "blue", "azure"];
+const ACCENTS: SpotlightAccent[] = [
+  "azure",
+  "teal",
+  "purple",
+  "blue",
+  "azure",
+  "teal",
+  "purple",
+  "blue",
+];
 
 export default function ServicesPage() {
   return (
     <>
+      {/* Hero Header Section */}
       <section className="pt-40 pb-20 bg-mist dark:bg-[#07090E] relative overflow-hidden">
         <AmbientBackground />
         <div className="container-content relative">
-          <Reveal className="max-w-2xl">
-            <div className="text-azure text-xs font-mono font-semibold tracking-widest uppercase mb-4">
+          <Reveal className="max-w-3xl">
+            <div className="text-azure dark:text-cyan-400 text-xs font-mono font-semibold tracking-widest uppercase mb-4">
               SERVICES
             </div>
-            <h1 className="font-display text-5xl md:text-6xl text-ink dark:text-white leading-[1.05]">
-              Six ways we help you build.
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-ink dark:text-white leading-[1.08] tracking-tight">
+              Technology built around your business.
             </h1>
-            <p className="mt-6 text-lg text-ink/60 dark:text-white/60 leading-relaxed">
-              Whichever stage you&apos;re at — first product, scaling pains,
-              or a legacy system holding you back — we plug in where you need
-              us most.
-            </p>
+            <div className="mt-6 space-y-4 text-base sm:text-lg text-ink/70 dark:text-white/70 leading-relaxed max-w-2xl">
+              <p>
+                Whether you&apos;re launching a new product, scaling an existing
+                platform, modernizing legacy technology, or looking to unlock
+                new opportunities with AI we bring the engineering expertise,
+                product thinking, and technical leadership to move you forward.
+              </p>
+              <p>
+                We integrate where you need us most from strategy and
+                architecture to design, development, cloud, and long-term product
+                evolution.
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
 
+      {/* 8-Card Services Grid */}
       <section className="py-20 lg:py-24 bg-paper dark:bg-[#07090E] relative overflow-hidden border-t border-ink/5 dark:border-white/10">
         <div className="container-content grid grid-cols-1 md:grid-cols-2 gap-6">
           {SERVICES.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 2) * 0.06}>
-              <SpotlightCard accent={ACCENTS[i]} id={s.slug} className="h-full">
+              <SpotlightCard
+                accent={ACCENTS[i % ACCENTS.length]}
+                id={s.slug}
+                className="h-full"
+              >
                 <div className="p-8 md:p-9 flex flex-col h-full">
                   <div className="flex items-center justify-between gap-4 mb-6">
-                    <span className="font-mono text-xs text-ink/40 dark:text-white/40">0{i + 1}</span>
-                    <div className="w-10 h-10 rounded-full bg-brand-gradient" />
+                    <span className="font-mono text-xs text-ink/40 dark:text-white/40 tracking-wider">
+                      0{i + 1}
+                    </span>
+                    <div className="w-9 h-9 rounded-full bg-brand-gradient/15 border border-brand-gradient/25 flex items-center justify-center">
+                      <span className="w-2 h-2 rounded-full bg-cyan-400" />
+                    </div>
                   </div>
-                  <h2 className="font-display text-2xl text-ink dark:text-white mb-3">{s.name}</h2>
-                  <p className="text-ink/60 dark:text-white/60 leading-relaxed mb-7">{s.detail}</p>
+
+                  <h2 className="font-display text-2xl font-bold tracking-tight text-ink dark:text-white mb-2 uppercase">
+                    {s.name}
+                  </h2>
+
+                  {s.subtitle && (
+                    <p className="text-[15px] font-semibold text-azure dark:text-cyan-400 mb-4 leading-snug">
+                      {s.subtitle}
+                    </p>
+                  )}
+
+                  <p className="text-ink/65 dark:text-white/70 leading-relaxed text-[15px] mb-6">
+                    {s.detail}
+                  </p>
+
                   <ul className="space-y-3 mt-auto pt-6 border-t border-ink/5 dark:border-white/10">
                     {s.points.map((p) => (
-                      <li key={p} className="flex items-start gap-3 text-ink/75 dark:text-white/80 text-[15px]">
+                      <li
+                        key={p}
+                        className="flex items-start gap-3 text-ink/75 dark:text-white/80 text-[14px]"
+                      >
                         <span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal shrink-0" />
                         <span>{p}</span>
                       </li>
@@ -62,29 +105,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-ink-gradient text-white">
-        <div className="container-content text-center">
-          <Reveal>
-            <h2 className="font-display text-4xl md:text-5xl max-w-2xl mx-auto leading-tight">
-              Not sure which service fits your problem?
-            </h2>
-            <p className="text-white/70 mt-5 max-w-lg mx-auto">
-              That&apos;s fine — most projects touch more than one. Tell us
-              what you&apos;re working on and we&apos;ll map it out together.
-            </p>
-            <div className="mt-9 flex justify-center">
-              <Magnetic>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-brand-gradient text-slate-950 font-bold hover:brightness-105 px-8 py-4 text-[15px] shadow-md transition-all"
-                >
-                  Book a discovery call
-                </Link>
-              </Magnetic>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      {/* Bottom Conversion Banner */}
+      <ServicesCTA />
     </>
   );
 }

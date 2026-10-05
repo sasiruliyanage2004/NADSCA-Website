@@ -2,50 +2,106 @@ export const SERVICES = [
   {
     slug: "product-engineering",
     name: "Product Engineering",
-    short: "Full-stack web and mobile apps built for speed, reliability, and scale.",
+    subtitle: "From idea to production — engineered to scale.",
+    short: "From idea to production — engineered to scale.",
     detail:
-      "From the first line of code to production infrastructure, we design and build software your users trust. React, Next.js, and native mobile stacks, backed by pragmatic architecture.",
-    points: ["Web & mobile applications", "API & systems architecture", "Design systems & UI engineering"],
-  },
-  {
-    slug: "cloud-devops",
-    name: "Cloud & DevOps",
-    short: "Infrastructure that scales quietly in the background while you focus on the product.",
-    detail:
-      "We set up cloud infrastructure, CI/CD pipelines, and observability so releases are boring in the best way — predictable, fast, and safe to roll back.",
-    points: ["AWS / GCP / Azure architecture", "CI/CD & release automation", "Monitoring & incident response"],
+      "We turn product ideas into reliable, production-ready software. From the first architectural decisions to full-stack implementation, we build systems designed for performance, resilience, and long-term maintainability.",
+    points: [
+      "Custom web & mobile applications",
+      "API & systems architecture",
+      "Design systems & UI engineering",
+    ],
   },
   {
     slug: "data-ai",
     name: "Data & AI",
-    short: "Turning raw data into decisions, and repetitive work into automation.",
+    subtitle: "Turn your data into an advantage.",
+    short: "Turn your data into an advantage.",
     detail:
-      "We build data pipelines, analytics dashboards, and applied AI features — recommendation engines, document intelligence, and workflow automation tailored to your data.",
-    points: ["Data pipelines & warehousing", "Applied machine learning", "Analytics & reporting dashboards"],
+      "We help businesses move beyond dashboards and experiments to deploy AI and data systems that solve real operational problems.",
+    points: [
+      "Applied machine learning & GenAI",
+      "Data pipelines & warehousing",
+      "Operational intelligence & analytics dashboards",
+    ],
   },
   {
     slug: "product-design",
     name: "Product Design",
-    short: "Interfaces people enjoy using, grounded in research and real constraints.",
+    subtitle: "Design that gets built and gets used.",
+    short: "Design that gets built and gets used.",
     detail:
-      "Our designers work alongside engineers from day one, so what gets designed is what ships — validated with users, not just stakeholders.",
-    points: ["UX research & flows", "Interface & interaction design", "Design systems"],
+      "Great products happen when design and engineering work together from the beginning. Our designers work alongside engineers to create intuitive, practical user experiences that solve real problems without unnecessary complexity.",
+    points: [
+      "UX research & user journey flows",
+      "Interface & interaction design",
+      "Production-ready design systems",
+    ],
+  },
+  {
+    slug: "cloud-infrastructure",
+    name: "Cloud & Infrastructure",
+    subtitle: "Resilient infrastructure that scales quietly.",
+    short: "Resilient infrastructure that scales quietly.",
+    detail:
+      "We set up cloud infrastructure, CI/CD pipelines, and observability so releases are predictable, secure, and fast — backed by AWS, GCP, and Azure best practices.",
+    points: [
+      "AWS, GCP & Cloud architecture",
+      "CI/CD & release automation",
+      "Monitoring, distributed tracing & incident response",
+    ],
   },
   {
     slug: "enterprise-systems",
     name: "Enterprise Systems",
-    short: "Modernizing the internal tools that keep a business running.",
+    subtitle: "Replace operational complexity with systems that work.",
+    short: "Replace operational complexity with systems that work.",
     detail:
-      "We replace spreadsheets and legacy tools with internal platforms for inventory, HR, POS, and operations — built around how your teams actually work.",
-    points: ["Custom internal platforms", "Legacy system modernization", "Systems integration"],
+      "Disconnected spreadsheets, aging software, and manual processes slow teams down. We design and build modern internal platforms that give you control, visibility, and operational efficiency.",
+    points: [
+      "Custom internal operations workspaces",
+      "Legacy system modernization",
+      "Systems integration & automated workflows",
+    ],
   },
   {
-    slug: "consulting",
+    slug: "technology-consulting",
     name: "Technology Consulting",
-    short: "An outside team to pressure-test your roadmap and architecture.",
+    subtitle: "Senior technical thinking when it matters most.",
+    short: "Senior technical thinking when it matters most.",
     detail:
-      "Technical due diligence, architecture reviews, and fractional CTO support for teams that need senior judgment without a full-time hire.",
-    points: ["Architecture & code review", "Technical due diligence", "Fractional CTO support"],
+      "Not every business needs a full-time CTO or a large consulting team. Sometimes you need experienced technical judgment at the right moments — whether that's an architecture review, vendor evaluation, or technology roadmap planning.",
+    points: [
+      "Architecture & code review",
+      "Technical due diligence",
+      "Fractional CTO support & roadmap planning",
+    ],
+  },
+  {
+    slug: "hr-technology",
+    name: "HR Technology Solutions",
+    subtitle: "Technology for better people operations.",
+    short: "Technology for better people operations.",
+    detail:
+      "We help organizations improve the way they manage people, processes, and workforce operations through technology-led HR solutions.",
+    points: [
+      "OHRMS core platform integration",
+      "Attendance, leave & personnel workflows",
+      "Workforce visibility & compliance tracking",
+    ],
+  },
+  {
+    slug: "agritech",
+    name: "Agritech Solutions",
+    subtitle: "Technology for smarter, more connected agriculture.",
+    short: "Technology for smarter, more connected agriculture.",
+    detail:
+      "We help agriculture businesses turn operational data, connected systems, and intelligent automation into practical digital solutions.",
+    points: [
+      "Field & telemetry data tracking",
+      "Supply chain & harvest management",
+      "Intelligent analytics & smart automation",
+    ],
   },
 ];
 
