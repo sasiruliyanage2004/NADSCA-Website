@@ -180,13 +180,22 @@ export default function NatleAI() {
         </button>
       </div>
 
+      {/* ─── BACKDROP OVERLAY ON MOBILE & CLICK-OUTSIDE DISMISS ─── */}
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[190] sm:bg-transparent sm:backdrop-blur-none transition-opacity"
+          aria-hidden="true"
+        />
+      )}
+
       {/* ─── FLOATING AI ASSISTANT PANEL ─── */}
       <div
-        className={`fixed z-[95] transition-all duration-300 ease-out ${
+        className={`fixed z-[200] transition-all duration-300 ease-out ${
           isOpen
             ? "opacity-100 scale-100 pointer-events-auto"
             : "opacity-0 scale-95 pointer-events-none"
-        } inset-x-0 bottom-0 sm:inset-x-auto sm:right-6 sm:bottom-24 w-full sm:w-[460px] h-[92vh] sm:h-[620px] max-h-[92vh] sm:max-h-[85vh] flex flex-col rounded-t-3xl sm:rounded-3xl bg-black/95 sm:bg-black/90 border border-white/15 backdrop-blur-3xl shadow-[0_30px_90px_-20px_rgba(0,0,0,0.95)] overflow-hidden`}
+        } inset-x-0 bottom-0 sm:inset-x-auto sm:right-6 sm:bottom-20 w-full sm:w-[460px] h-[85vh] sm:h-[min(580px,calc(100dvh-6.5rem))] max-h-[85vh] sm:max-h-[calc(100dvh-6.5rem)] flex flex-col rounded-t-3xl sm:rounded-3xl bg-black/95 sm:bg-black/90 border border-white/15 backdrop-blur-3xl shadow-[0_30px_90px_-20px_rgba(0,0,0,0.95)] overflow-hidden`}
       >
         {/* Panel Header */}
         <div className="p-4 sm:px-6 sm:py-4 border-b border-white/10 bg-white/[0.02] flex items-center justify-between shrink-0">
