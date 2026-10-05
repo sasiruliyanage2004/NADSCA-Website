@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Play,
@@ -31,6 +32,7 @@ interface FeaturedProduct {
   accent: SpotlightAccent;
   videoDuration: string;
   videoUrl?: string;
+  thumbnailImage?: string;
   categoryTag: string;
   thumbnailGradient: string;
   icon: React.ElementType;
@@ -63,6 +65,7 @@ const FEATURED_PRODUCTS: FeaturedProduct[] = [
     accent: "azure",
     videoDuration: "03:42",
     videoUrl: "/videos/ohrms-demo.mp4",
+    thumbnailImage: "/images/ohrms-thumbnail.jpg",
     categoryTag: "ENTERPRISE HR",
     thumbnailGradient: "from-sky-950/80 via-[#0A1628] to-[#040914]",
     icon: Activity,
@@ -306,8 +309,20 @@ export default function FeaturedProductsList() {
                       onClick={() => setActiveModalProduct(prod)}
                       className={`relative h-52 sm:h-60 w-full overflow-hidden bg-gradient-to-br ${prod.thumbnailGradient} cursor-pointer border-b border-ink/8 dark:border-white/10`}
                     >
-                      {/* Real Video preview if available */}
-                      {prod.videoUrl && (
+                      {/* Real Video Thumbnail Image if available */}
+                      {prod.thumbnailImage ? (
+                        <>
+                          <Image
+                            src={prod.thumbnailImage}
+                            alt={prod.headline}
+                            fill
+                            className="object-cover object-top opacity-75 group-hover:opacity-95 group-hover:scale-105 transition-all duration-500"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            priority
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent" />
+                        </>
+                      ) : prod.videoUrl ? (
                         <video
                           src={`${prod.videoUrl}#t=2`}
                           muted
@@ -315,7 +330,7 @@ export default function FeaturedProductsList() {
                           preload="metadata"
                           className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
                         />
-                      )}
+                      ) : null}
 
                       {/* Ambient Radial Glow */}
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(14,165,233,0.25),transparent_70%)] pointer-events-none" />
@@ -453,6 +468,7 @@ export default function FeaturedProductsList() {
                 <div className="relative rounded-2xl overflow-hidden bg-black border border-white/20 aspect-video shadow-2xl flex items-center justify-center">
                   <video
                     src={activeModalProduct.videoUrl}
+                    poster={activeModalProduct.thumbnailImage}
                     controls
                     autoPlay
                     playsInline
