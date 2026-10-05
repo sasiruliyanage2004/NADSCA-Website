@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import Magnetic from "@/components/Magnetic";
 import SpotlightCard, { SpotlightAccent } from "@/components/SpotlightCard";
 import AmbientBackground from "@/components/AmbientBackground";
+import ProductsCTA from "@/components/ProductsCTA";
 import { PRODUCTS } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -153,37 +153,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Bottom Conversion Section */}
-      <section className="py-24 bg-mist dark:bg-[#07090E] border-t border-ink/5 dark:border-white/10">
-        <div className="container-content">
-          <Reveal className="rounded-3xl bg-brand-gradient-soft border border-ink/8 dark:border-white/10 px-8 py-16 lg:px-16 text-center">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-ink dark:text-white max-w-xl mx-auto leading-tight">
-              Need something none of these quite cover?
-            </h2>
-            <p className="text-ink/65 dark:text-white/70 mt-4 max-w-lg mx-auto text-base">
-              We also engineer bespoke, full-stack software systems — from ground-up
-              architecture to production deployment.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Magnetic>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center rounded-full bg-ink text-white px-8 py-4 text-[15px] font-semibold hover:bg-ink-soft dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100 transition-colors shadow-sm"
-                >
-                  See custom services
-                </Link>
-              </Magnetic>
-              <Magnetic>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-ink/15 dark:border-white/20 px-8 py-4 text-[15px] font-semibold text-ink dark:text-white hover:bg-ink/5 dark:hover:bg-white/5 transition-colors"
-                >
-                  Start a conversation
-                </Link>
-              </Magnetic>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <ProductsCTA />
     </>
   );
 }
