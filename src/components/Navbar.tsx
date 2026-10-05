@@ -44,8 +44,8 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
           scrolled
-            ? "bg-white/85 dark:bg-black/80 backdrop-blur-2xl border-b border-ink/10 dark:border-white/[0.08] py-4 shadow-[0_10px_35px_-10px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_35px_-10px_rgba(0,0,0,0.8)]"
-            : "bg-transparent py-6"
+            ? "bg-white/85 dark:bg-black/80 backdrop-blur-2xl border-b border-ink/10 dark:border-white/[0.08] py-2.5 sm:py-3 shadow-[0_10px_35px_-10px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_35px_-10px_rgba(0,0,0,0.8)]"
+            : "bg-transparent py-3.5 sm:py-4"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -55,7 +55,7 @@ export default function Navbar() {
             className="relative z-[101] flex items-center group outline-none"
             aria-label="NADSCA Home"
           >
-            <NadscaLogo showTagline={true} />
+            <NadscaLogo layout="stacked" size="sm" />
           </Link>
 
           {/* Desktop Navigation Links (Title Case) */}
