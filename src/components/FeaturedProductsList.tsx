@@ -238,23 +238,37 @@ export default function FeaturedProductsList() {
   const [activeModalProduct, setActiveModalProduct] = useState<FeaturedProduct | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
 
-  // Close modal on escape key
+  // Close modal on escape key and lock all background scrolling (including Lenis)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setActiveModalProduct(null);
       }
     };
+
     if (activeModalProduct) {
       window.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+      if (typeof window !== "undefined" && (window as any).__lenis) {
+        (window as any).__lenis.stop();
+      }
       setIsPlaying(true);
     } else {
       document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
+      if (typeof window !== "undefined" && (window as any).__lenis) {
+        (window as any).__lenis.start();
+      }
     }
+
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
+      if (typeof window !== "undefined" && (window as any).__lenis) {
+        (window as any).__lenis.start();
+      }
     };
   }, [activeModalProduct]);
 
@@ -431,12 +445,14 @@ export default function FeaturedProductsList() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 bg-slate-950/85 backdrop-blur-md transition-all duration-300 animate-in fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 bg-slate-950/85 backdrop-blur-md transition-all duration-300 animate-in fade-in overscroll-contain"
           onClick={() => setActiveModalProduct(null)}
+          onWheel={(e) => e.stopPropagation()}
         >
           <div
-            className="relative w-full max-w-3xl rounded-2xl sm:rounded-3xl bg-[#0B0F17] border border-white/20 text-white p-5 sm:p-6 shadow-2xl overflow-hidden max-h-[85vh] flex flex-col my-auto"
+            className="relative w-full max-w-3xl rounded-2xl sm:rounded-3xl bg-[#0B0F17] border border-white/20 text-white p-5 sm:p-6 shadow-2xl overflow-hidden max-h-[85vh] flex flex-col my-auto overscroll-contain"
             onClick={(e) => e.stopPropagation()}
+            onWheel={(e) => e.stopPropagation()}
           >
             {/* Top Radial Glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-cyan-500/15 blur-3xl pointer-events-none" />
