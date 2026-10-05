@@ -204,6 +204,119 @@ export const NADSCA_SERVICES: ServiceDetail[] = [
   },
 ];
 
+export interface ProductDetail {
+  slug: string;
+  number: string;
+  name: string;
+  displayTitle: string;
+  tagline: string;
+  tag: string;
+  capabilitiesTitle: string;
+  capabilities: string[];
+  intelligenceTitle: string;
+  intelligenceText: string;
+  punchline: string;
+}
+
+export const NADSCA_PRODUCTS: ProductDetail[] = [
+  {
+    slug: "ohrms",
+    number: "01",
+    name: "OHRMS",
+    displayTitle: "01 - OHRMS",
+    tagline: "One intelligent platform for your entire workforce.",
+    tag: "HR Management Platform",
+    capabilitiesTitle: "Built to manage the complete employee lifecycle",
+    capabilities: [
+      "Employee & workforce management",
+      "Attendance & shift management",
+      "Payroll processing",
+      "Leave & HR administration",
+      "Employee performance management",
+      "AI-powered performance metrics",
+      "Workforce analytics & reporting",
+      "Multi-department & multi-location operations",
+    ],
+    intelligenceTitle: "Intelligent HR. Better decisions.",
+    intelligenceText:
+      "AI-powered performance insights help management identify patterns, understand workforce productivity, and make more informed decisions.",
+    punchline: "One workforce. One system. One source of truth.",
+  },
+  {
+    slug: "ai-security-patrolling",
+    number: "02",
+    name: "AI SECURITY PATROLLING",
+    displayTitle: "02 - AI SECURITY PATROLLING",
+    tagline: "See more. Respond faster. Prevent risks before they escalate.",
+    tag: "Security Operations",
+    capabilitiesTitle: "Intelligent security operations",
+    capabilities: [
+      "AI-powered camera monitoring",
+      "Risk & anomaly detection",
+      "Automated security alerts",
+      "Patrol & incident management",
+      "Real-time situational awareness",
+      "AI-assisted human action prediction",
+      "Security performance analytics",
+      "Centralized monitoring & reporting",
+    ],
+    intelligenceTitle: "From surveillance to intelligence.",
+    intelligenceText:
+      "Instead of treating cameras as passive recording devices, transform your security infrastructure into an intelligent layer that helps your team detect, understand, and respond to potential threats.",
+    punchline: "Turn every camera into a smarter security asset.",
+  },
+  {
+    slug: "ai-powered-pos",
+    number: "03",
+    name: "AI-POWERED POS",
+    displayTitle: "03 AI-POWERED POS",
+    tagline: "Sell smarter. Forecast demand. Know your profitability.",
+    tag: "Retail Intelligence",
+    capabilitiesTitle: "More than checkout.",
+    capabilities: [
+      "Point-of-sale management",
+      "Product & pricing management",
+      "Inventory integration",
+      "Real-time sales analytics",
+      "AI-powered sales forecasting",
+      "Demand prediction",
+      "Real-time profitability forecasting",
+      "Business performance dashboards",
+      "Multi-store & multi-terminal support",
+    ],
+    intelligenceTitle: "From transactions to business intelligence.",
+    intelligenceText:
+      "AI analyzes sales patterns and operational data to help predict future demand and provide real-time visibility into profitability. So your POS becomes a decision-making system for your business.",
+    punchline: "It becomes a decision-making system for your business.",
+  },
+  {
+    slug: "smart-inventory-distribution",
+    number: "04",
+    name: "SMART INVENTORY & DISTRIBUTION",
+    displayTitle: "04 - SMART INVENTORY & DISTRIBUTION",
+    tagline: "Take control of inventory. Simplify distribution. Move faster.",
+    tag: "Distribution & Logistics",
+    capabilitiesTitle: "Built for fast-moving operations",
+    capabilities: [
+      "Inventory management",
+      "Wholesale & distributor management",
+      "Stock movement & tracking",
+      "Purchasing & sales management",
+      "Order management",
+      "Smart operational sheets",
+      "Supplier & customer management",
+      "Real-time inventory visibility",
+      "Business reporting & analytics",
+    ],
+    intelligenceTitle: "Replace operational complexity with clarity.",
+    intelligenceText:
+      "Smart workflows and structured operational data help teams reduce manual work, improve visibility, and keep products moving efficiently from supplier to warehouse to customer.",
+    punchline: "Less spreadsheet dependency. More control. Better productivity.",
+  },
+];
+
+export const NATLE_PRODUCTS = NADSCA_PRODUCTS;
+
 export const NADSCA_PROJECTS: ProjectDetail[] = [
   {
     name: "Harborline Retail",
