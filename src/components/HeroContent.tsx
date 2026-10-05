@@ -87,7 +87,7 @@ export default function HeroContent() {
         </span>
         <span
           data-hero="line"
-          className="block pb-1.5 sm:pb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-sky-500 to-emerald-500 dark:from-cyan-300 dark:via-sky-400 dark:to-emerald-400"
+          className="block pb-1.5 sm:pb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 via-[#0099FF] via-[#10B981] to-cyan-300 animate-hero-gradient filter drop-shadow-[0_0_25px_rgba(0,210,255,0.25)]"
         >
           What&apos;s Next.
         </span>
@@ -140,7 +140,7 @@ export default function HeroContent() {
       </div>
 
       {/* BUILT FOR PERFORMANCE & 4 Feature Cards */}
-      <div className="mt-14 sm:mt-16 pt-8 border-t border-ink/10 dark:border-white/10">
+      <div className="mt-14 sm:mt-16">
         <div
           data-hero="tag"
           className="inline-flex items-center gap-2 text-cyan-600 dark:text-cyan-400 text-xs font-mono font-bold tracking-[0.25em] uppercase mb-6"
