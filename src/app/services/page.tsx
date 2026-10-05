@@ -67,14 +67,6 @@ export default function ServicesPage() {
                 className="h-full"
               >
                 <div className="p-8 md:p-9 flex flex-col h-full">
-                  <div className="flex items-center justify-between gap-4 mb-6">
-                    <span className="font-mono text-xs text-ink/40 dark:text-white/40 tracking-wider">
-                      0{i + 1}
-                    </span>
-                    <div className="w-9 h-9 rounded-full bg-brand-gradient/15 border border-brand-gradient/25 flex items-center justify-center">
-                      <span className="w-2 h-2 rounded-full bg-cyan-400" />
-                    </div>
-                  </div>
 
                   <h2 className="font-display text-2xl font-bold tracking-tight text-ink dark:text-white mb-2 uppercase">
                     {s.name}
