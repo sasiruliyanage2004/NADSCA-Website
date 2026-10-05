@@ -30,6 +30,7 @@ interface FeaturedProduct {
   slug: string;
   accent: SpotlightAccent;
   videoDuration: string;
+  videoUrl?: string;
   categoryTag: string;
   thumbnailGradient: string;
   icon: React.ElementType;
@@ -61,6 +62,7 @@ const FEATURED_PRODUCTS: FeaturedProduct[] = [
     slug: "ohrms",
     accent: "azure",
     videoDuration: "03:42",
+    videoUrl: "/videos/ohrms-demo.mp4",
     categoryTag: "ENTERPRISE HR",
     thumbnailGradient: "from-sky-950/80 via-[#0A1628] to-[#040914]",
     icon: Activity,
@@ -304,6 +306,17 @@ export default function FeaturedProductsList() {
                       onClick={() => setActiveModalProduct(prod)}
                       className={`relative h-52 sm:h-60 w-full overflow-hidden bg-gradient-to-br ${prod.thumbnailGradient} cursor-pointer border-b border-ink/8 dark:border-white/10`}
                     >
+                      {/* Real Video preview if available */}
+                      {prod.videoUrl && (
+                        <video
+                          src={`${prod.videoUrl}#t=2`}
+                          muted
+                          playsInline
+                          preload="metadata"
+                          className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
+                        />
+                      )}
+
                       {/* Ambient Radial Glow */}
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(14,165,233,0.25),transparent_70%)] pointer-events-none" />
 
@@ -435,73 +448,86 @@ export default function FeaturedProductsList() {
 
             {/* Modal Body */}
             <div className="py-6 overflow-y-auto space-y-6 relative z-10 pr-1">
-              {/* VIDEO PLAYER SCREEN SIMULATOR */}
-              <div className="relative rounded-2xl overflow-hidden bg-slate-950 border border-white/15 aspect-video flex flex-col justify-between shadow-2xl group/player">
-                {/* Background visualizer */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${activeModalProduct.thumbnailGradient} opacity-90`}
-                />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(14,165,233,0.2),transparent_70%)]" />
-                <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:2rem_2rem]" />
-
-                {/* Top Video Overlay Bar */}
-                <div className="relative z-10 p-4 flex items-center justify-between text-xs font-mono bg-gradient-to-b from-black/80 to-transparent">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="font-bold text-white">LIVE DEMO STREAM</span>
-                    <span className="text-white/40">&middot;</span>
-                    <span className="text-cyan-400">{activeModalProduct.title}</span>
-                  </div>
-                  <span className="px-2 py-0.5 rounded bg-white/10 text-white/80 font-bold">1080P 60FPS</span>
+              {/* VIDEO PLAYER SCREEN */}
+              {activeModalProduct.videoUrl ? (
+                <div className="relative rounded-2xl overflow-hidden bg-black border border-white/20 aspect-video shadow-2xl flex items-center justify-center">
+                  <video
+                    src={activeModalProduct.videoUrl}
+                    controls
+                    autoPlay
+                    playsInline
+                    className="w-full h-full object-contain bg-black"
+                  />
                 </div>
+              ) : (
+                /* VIDEO PLAYER SCREEN SIMULATOR */
+                <div className="relative rounded-2xl overflow-hidden bg-slate-950 border border-white/15 aspect-video flex flex-col justify-between shadow-2xl group/player">
+                  {/* Background visualizer */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${activeModalProduct.thumbnailGradient} opacity-90`}
+                  />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(14,165,233,0.2),transparent_70%)]" />
+                  <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:2rem_2rem]" />
 
-                {/* Center Big Play / Walkthrough Trigger */}
-                <div className="relative z-10 flex flex-col items-center justify-center p-6 text-center">
-                  <button
-                    type="button"
-                    onClick={() => setIsPlaying(!isPlaying)}
-                    className="w-20 h-20 rounded-full bg-cyan-400 text-slate-950 flex items-center justify-center shadow-[0_0_40px_rgba(14,165,233,0.6)] hover:scale-110 active:scale-95 transition-all duration-300"
-                  >
-                    {isPlaying ? (
-                      <Pause className="w-8 h-8 fill-current" />
-                    ) : (
-                      <Play className="w-8 h-8 fill-current ml-1" />
-                    )}
-                  </button>
-                  <p className="mt-4 text-sm font-medium text-white/90 max-w-md">
-                    {isPlaying
-                      ? "Demo walkthrough active. Reviewing system architecture and modules."
-                      : "Walkthrough paused. Click to resume video stream."}
-                  </p>
-                </div>
-
-                {/* Bottom Video Controls Bar */}
-                <div className="relative z-10 p-4 bg-gradient-to-t from-black/90 via-black/60 to-transparent space-y-2">
-                  {/* Progress bar */}
-                  <div className="w-full h-1.5 rounded-full bg-white/20 overflow-hidden relative cursor-pointer">
-                    <div className="absolute left-0 top-0 bottom-0 w-2/5 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-full" />
+                  {/* Top Video Overlay Bar */}
+                  <div className="relative z-10 p-4 flex items-center justify-between text-xs font-mono bg-gradient-to-b from-black/80 to-transparent">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="font-bold text-white">LIVE DEMO STREAM</span>
+                      <span className="text-white/40">&middot;</span>
+                      <span className="text-cyan-400">{activeModalProduct.title}</span>
+                    </div>
+                    <span className="px-2 py-0.5 rounded bg-white/10 text-white/80 font-bold">1080P 60FPS</span>
                   </div>
 
-                  <div className="flex items-center justify-between text-xs font-mono text-white/70 pt-1">
-                    <div className="flex items-center gap-3">
-                      <button
-                        type="button"
-                        onClick={() => setIsPlaying(!isPlaying)}
-                        className="text-white hover:text-cyan-400 transition-colors"
-                      >
-                        {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-                      </button>
-                      <Volume2 className="w-4 h-4 text-white/60" />
-                      <span>01:28 / {activeModalProduct.videoDuration}</span>
+                  {/* Center Big Play / Walkthrough Trigger */}
+                  <div className="relative z-10 flex flex-col items-center justify-center p-6 text-center">
+                    <button
+                      type="button"
+                      onClick={() => setIsPlaying(!isPlaying)}
+                      className="w-20 h-20 rounded-full bg-cyan-400 text-slate-950 flex items-center justify-center shadow-[0_0_40px_rgba(14,165,233,0.6)] hover:scale-110 active:scale-95 transition-all duration-300"
+                    >
+                      {isPlaying ? (
+                        <Pause className="w-8 h-8 fill-current" />
+                      ) : (
+                        <Play className="w-8 h-8 fill-current ml-1" />
+                      )}
+                    </button>
+                    <p className="mt-4 text-sm font-medium text-white/90 max-w-md">
+                      {isPlaying
+                        ? "Demo walkthrough active. Reviewing system architecture and modules."
+                        : "Walkthrough paused. Click to resume video stream."}
+                    </p>
+                  </div>
+
+                  {/* Bottom Video Controls Bar */}
+                  <div className="relative z-10 p-4 bg-gradient-to-t from-black/90 via-black/60 to-transparent space-y-2">
+                    {/* Progress bar */}
+                    <div className="w-full h-1.5 rounded-full bg-white/20 overflow-hidden relative cursor-pointer">
+                      <div className="absolute left-0 top-0 bottom-0 w-2/5 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-full" />
                     </div>
 
-                    <div className="flex items-center gap-3">
-                      <span className="text-cyan-400 font-bold">{activeModalProduct.categoryTag}</span>
-                      <Maximize2 className="w-4 h-4 text-white/60" />
+                    <div className="flex items-center justify-between text-xs font-mono text-white/70 pt-1">
+                      <div className="flex items-center gap-3">
+                        <button
+                          type="button"
+                          onClick={() => setIsPlaying(!isPlaying)}
+                          className="text-white hover:text-cyan-400 transition-colors"
+                        >
+                          {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                        </button>
+                        <Volume2 className="w-4 h-4 text-white/60" />
+                        <span>01:28 / {activeModalProduct.videoDuration}</span>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <span className="text-cyan-400 font-bold">{activeModalProduct.categoryTag}</span>
+                        <Maximize2 className="w-4 h-4 text-white/60" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
 
               {/* Product Description */}
               <p className="text-white/80 text-base sm:text-lg leading-relaxed">
