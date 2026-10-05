@@ -74,8 +74,9 @@ export default function NetworkGlobe3D() {
       alpha: true,
       powerPreference: "high-performance",
     });
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
     renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
     mount.appendChild(renderer.domElement);
@@ -93,7 +94,7 @@ export default function NetworkGlobe3D() {
       document.documentElement.classList.contains("dark");
 
     // --- 1. Holographic Dot Matrix Sphere (Fibonacci Sphere) ---
-    const dotCount = 850;
+    const dotCount = isMobile ? 380 : 850;
     const dotPositions = new Float32Array(dotCount * 3);
     const dotSizes = new Float32Array(dotCount);
 

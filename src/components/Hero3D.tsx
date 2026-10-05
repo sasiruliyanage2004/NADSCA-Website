@@ -90,12 +90,13 @@ export default function Hero3D() {
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
     camera.position.z = 1;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+    const renderer = new THREE.WebGLRenderer({ antialias: !isMobile, alpha: true });
     renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
     mount.appendChild(renderer.domElement);
 
-    const geometry = new THREE.PlaneGeometry(2.5, 2.5, 64, 64);
+    const geometry = new THREE.PlaneGeometry(2.5, 2.5, isMobile ? 24 : 64, isMobile ? 24 : 64);
     
     const uniforms = {
       time: { value: 0.0 },

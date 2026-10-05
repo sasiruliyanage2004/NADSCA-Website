@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   compress: true,
   images: {
-    unoptimized: true,
+    formats: ["image/avif", "image/webp"],
   },
   async headers() {
     return [

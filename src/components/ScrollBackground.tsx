@@ -173,7 +173,7 @@ export default function ScrollBackground() {
       {/* AURORA STREAM: Smooth elliptical radial aura (100% rounded falloff, zero lines, zero yellow) */}
       <div
         ref={auroraWaveRef}
-        className="absolute -top-[15vh] -left-[20vw] w-[140vw] h-[65vh] rounded-[100%] opacity-[0.24] blur-[95px] md:blur-[135px] will-change-transform"
+        className="absolute -top-[15vh] -left-[20vw] w-[140vw] h-[65vh] rounded-[100%] opacity-[0.24] blur-[45px] md:blur-[135px] will-change-transform"
         style={{
           background:
             "radial-gradient(ellipse 75% 55% at 50% 50%, rgba(30,127,232,0.65) 0%, rgba(6,182,212,0.5) 40%, rgba(99,102,241,0.35) 75%, transparent 100%)",
@@ -183,31 +183,31 @@ export default function ScrollBackground() {
       {/* NODE 1: Azure Blue Core (#1E7FE8) - Top Right drifting across to Left */}
       <div
         ref={node1Ref}
-        className="absolute -top-[12vw] right-[8vw] w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] bg-[#1E7FE8]/24 blur-[80px] md:blur-[115px] animate-liquid-1 will-change-transform"
+        className="absolute -top-[12vw] right-[8vw] w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] bg-[#1E7FE8]/24 blur-[40px] md:blur-[115px] animate-liquid-1 will-change-transform"
       />
 
       {/* NODE 2: Electric Teal Flow (#0D9488) - Mid Left drifting across to Right */}
       <div
         ref={node2Ref}
-        className="absolute top-[28vh] -left-[10vw] w-[46vw] h-[46vw] max-w-[650px] max-h-[650px] bg-[#0D9488]/22 blur-[80px] md:blur-[115px] animate-liquid-2 will-change-transform"
+        className="absolute top-[28vh] -left-[10vw] w-[46vw] h-[46vw] max-w-[650px] max-h-[650px] bg-[#0D9488]/22 blur-[40px] md:blur-[115px] animate-liquid-2 will-change-transform"
       />
 
-      {/* NODE 3: Fresh Emerald / Mint Flow (#10B981) - Lower center S-curve */}
+      {/* NODE 3: Fresh Emerald / Mint Flow (#10B981) - Hidden on mobile for GPU savings */}
       <div
         ref={node3Ref}
-        className="absolute top-[70vh] left-[20vw] w-[44vw] h-[44vw] max-w-[600px] max-h-[600px] bg-[#10B981]/18 blur-[85px] md:blur-[120px] animate-liquid-3 will-change-transform"
+        className="hidden md:block absolute top-[70vh] left-[20vw] w-[44vw] h-[44vw] max-w-[600px] max-h-[600px] bg-[#10B981]/18 blur-[85px] md:blur-[120px] animate-liquid-3 will-change-transform"
       />
 
-      {/* NODE 4: Royal Violet / Orchid (#8B5CF6) - Lower right ascending */}
+      {/* NODE 4: Royal Violet / Orchid (#8B5CF6) - Hidden on mobile for GPU savings */}
       <div
         ref={node4Ref}
-        className="absolute top-[110vh] right-[12vw] w-[48vw] h-[48vw] max-w-[660px] max-h-[660px] bg-[#8B5CF6]/20 blur-[90px] md:blur-[125px] animate-liquid-1 will-change-transform"
+        className="hidden md:block absolute top-[110vh] right-[12vw] w-[48vw] h-[48vw] max-w-[660px] max-h-[660px] bg-[#8B5CF6]/20 blur-[90px] md:blur-[125px] animate-liquid-1 will-change-transform"
       />
 
-      {/* NODE 5: Electric Sky Cyan (#00B4D8) - High-tech flare (Zero yellow) */}
+      {/* NODE 5: Electric Sky Cyan (#00B4D8) - Hidden on mobile for GPU savings */}
       <div
         ref={node5Ref}
-        className="absolute top-[50vh] left-[40vw] w-[34vw] h-[34vw] max-w-[460px] max-h-[460px] bg-[#00B4D8]/22 blur-[75px] md:blur-[105px] animate-liquid-2 will-change-transform"
+        className="hidden md:block absolute top-[50vh] left-[40vw] w-[34vw] h-[34vw] max-w-[460px] max-h-[460px] bg-[#00B4D8]/22 blur-[75px] md:blur-[105px] animate-liquid-2 will-change-transform"
       />
 
       {/* Blueprint Dot Grid Texture Overlay */}
