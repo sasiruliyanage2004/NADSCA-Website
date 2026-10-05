@@ -57,7 +57,7 @@ export const NADSCA_COMPANY_PROFILE = {
   partners: [
     { name: "Ramani Jayasekara", role: "Head of Delivery" },
     { name: "Hans Pradeep", role: "International Business Affairs" },
-    { name: "Commander Aruna", role: "Shilpa - Global HR Solutions" },
+    { name: "Commander Aruna", role: "CEO, Shilpa Global HR Solutions" },
   ],
   workingPrinciples: [
     {

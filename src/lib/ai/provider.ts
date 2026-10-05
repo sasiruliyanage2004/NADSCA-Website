@@ -190,7 +190,7 @@ Leadership & Key Executives:
 Strategic Partners:
 • **Ramani Jayasekara** — Head of Delivery
 • **Hans Pradeep** — International Business Affairs
-• **Commander Aruna** — Shilpa - Global HR Solutions
+• **Commander Aruna** — CEO, Shilpa Global HR Solutions
 
 Our 7 core operating principles are:
 1. **Built for the long term** — Engineering for scalability, security, and future growth.

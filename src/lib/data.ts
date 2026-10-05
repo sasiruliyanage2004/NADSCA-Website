@@ -477,7 +477,7 @@ export const TEAM: MemberItem[] = [
 export const PARTNERS: MemberItem[] = [
   { name: "Ramani Jayasekara", role: "Head of Delivery" },
   { name: "Hans Pradeep", role: "International Business Affairs" },
-  { name: "Commander Aruna", role: "Shilpa - Global HR Solutions", image: "/partners/commander-aruna.jpg" },
+  { name: "Commander Aruna", role: "CEO, Shilpa Global HR Solutions", image: "/partners/commander-aruna.jpg" },
 ];
 
 export const VALUES = [
