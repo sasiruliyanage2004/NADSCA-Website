@@ -98,15 +98,15 @@ export default function CutoutCard({
 
           {/* Card Body Content */}
           <div className="flex-1 flex flex-col p-4 pt-5 text-ink dark:text-white">
-            <h3 className="font-display font-bold text-xl leading-snug tracking-tight mb-2.5 group-hover:text-azure transition-colors">
+            <h3 className="font-display font-bold text-lg sm:text-xl leading-snug tracking-tight mb-2.5 group-hover:text-azure transition-colors">
               {title}
             </h3>
-            <p className="text-ink/65 dark:text-white/60 text-sm leading-relaxed line-clamp-2 flex-1 mb-6">
+            <p className="text-ink/65 dark:text-white/60 text-sm leading-relaxed mb-6">
               {description}
             </p>
 
             {/* Card Footer: Author & Meta */}
-            <div className="flex items-center justify-between pt-4 border-t border-ink/8 dark:border-white/[0.08] text-xs">
+            <div className="mt-auto flex items-center justify-between pt-4 border-t border-ink/8 dark:border-white/[0.08] text-xs">
               <div className="flex items-center gap-2.5">
                 <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-[#1E7FE8] via-[#12B8A6] to-[#6FCF3E] flex items-center justify-center text-[10px] font-bold text-white shadow-sm">
                   {authorName.charAt(0)}

@@ -61,7 +61,7 @@ export default function ProductsPage() {
                   className="inline-flex items-center gap-2 font-bold text-azure dark:text-cyan-400 hover:underline group text-base"
                 >
                   <span>Explore our solutions</span>
-                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                  <span className="transition-transform group-hover:translate-y-1 font-mono">↓</span>
                 </a>
               </div>
             </div>

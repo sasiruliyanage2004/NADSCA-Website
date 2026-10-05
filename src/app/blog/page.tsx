@@ -52,7 +52,7 @@ export default function BlogPage() {
                   className="inline-flex items-center gap-2 font-bold text-azure dark:text-cyan-400 hover:underline group text-base"
                 >
                   <span>Explore our insights</span>
-                  <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
+                  <span className="transition-transform group-hover:translate-y-1 font-mono">↓</span>
                 </a>
               </div>
             </div>

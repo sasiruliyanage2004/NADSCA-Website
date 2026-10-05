@@ -230,7 +230,7 @@ export default function Home() {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {BLOG_POSTS.map((post, i) => (
+            {BLOG_POSTS.slice(0, 3).map((post, i) => (
               <Reveal key={post.slug} delay={i * 0.08}>
                 <CutoutCard
                   href="/blog"
