@@ -25,11 +25,8 @@ export default function HomeCTA() {
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-azure/20 via-teal/10 to-transparent rounded-full blur-[120px] pointer-events-none" />
 
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-white/80 font-semibold">
-                LET&apos;S BUILD SOMETHING THAT MATTERS
-              </span>
+            <div className="text-cyan-400 text-xs font-mono font-semibold tracking-widest uppercase mb-4">
+              LET&apos;S BUILD SOMETHING THAT MATTERS
             </div>
 
             <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-white max-w-3xl mx-auto leading-tight">

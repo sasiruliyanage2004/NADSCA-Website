@@ -26,11 +26,8 @@ export default function ServicesCTA() {
 
       <div className="container-content text-center relative z-10">
         <Reveal>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/10 backdrop-blur-md mb-6">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-[11px] font-mono tracking-[0.25em] uppercase text-white/90 font-semibold">
-              END-TO-END EXECUTION
-            </span>
+          <div className="text-cyan-400 text-xs font-mono font-semibold tracking-widest uppercase mb-4">
+            END-TO-END EXECUTION
           </div>
 
           <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight max-w-4xl mx-auto leading-[1.12]">

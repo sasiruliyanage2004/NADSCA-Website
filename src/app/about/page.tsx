@@ -21,15 +21,9 @@ export default function AboutPage() {
         <div className="container-content relative">
           <div className="max-w-4xl">
             <Reveal>
-              {/* Eyebrow Badge */}
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] dark:bg-white/[0.06] border border-cyan-400/25 backdrop-blur-md mb-8 shadow-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
-                </span>
-                <span className="text-[11px] font-mono tracking-[0.22em] uppercase text-cyan-500 dark:text-cyan-300 font-semibold">
-                  ABOUT NADSCA
-                </span>
+              {/* Eyebrow Label */}
+              <div className="text-azure dark:text-cyan-400 text-xs font-mono font-semibold tracking-widest uppercase mb-4">
+                ABOUT NADSCA
               </div>
 
               {/* Main Headline */}

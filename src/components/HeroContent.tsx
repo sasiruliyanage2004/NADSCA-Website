@@ -62,14 +62,11 @@ export default function HeroContent() {
   return (
     <div ref={rootRef} className="relative z-10">
       {/* Eyebrow Label */}
-      <div data-hero="eyebrow" className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md mb-6">
-        <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
-        </span>
-        <span className="text-[11px] font-mono tracking-[0.22em] uppercase text-white/90 font-medium">
-          NADSCA // INNOVATE • BUILD • TRANSFORM
-        </span>
+      <div
+        data-hero="eyebrow"
+        className="text-cyan-400 text-xs font-mono font-semibold tracking-widest uppercase mb-5"
+      >
+        NADSCA // INNOVATE • BUILD • TRANSFORM
       </div>
 
       {/* Main Headline */}
