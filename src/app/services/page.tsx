@@ -34,7 +34,10 @@ export default function ServicesPage() {
               SERVICES
             </div>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-ink dark:text-white leading-[1.08] tracking-tight">
-              Technology built around your business.
+              Technology built around{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-emerald-400">
+                your business.
+              </span>
             </h1>
             <div className="mt-6 space-y-4 text-base sm:text-lg text-ink/70 dark:text-white/70 leading-relaxed max-w-2xl">
               <p>

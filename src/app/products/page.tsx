@@ -23,8 +23,11 @@ export default function ProductsPage() {
             <div className="text-azure text-xs font-mono font-semibold tracking-widest uppercase mb-4">
               PRODUCTS &amp; SOLUTIONS
             </div>
-            <h1 className="font-display text-5xl md:text-6xl text-ink dark:text-white leading-[1.05]">
-              Software we&apos;ve already built, ready to adapt.
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-ink dark:text-white leading-[1.08] tracking-tight">
+              Software we&apos;ve already built,{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-emerald-400">
+                ready to adapt.
+              </span>
             </h1>
             <p className="mt-6 text-lg text-ink/60 dark:text-white/60 leading-relaxed">
               Not every problem needs custom software from scratch. These are

@@ -22,8 +22,11 @@ export default function CareersPage() {
             <div className="text-azure text-xs font-mono font-semibold tracking-widest uppercase mb-4">
               CAREERS
             </div>
-            <h1 className="font-display text-5xl md:text-6xl text-ink dark:text-white leading-[1.05]">
-              Build the tools other teams rely on.
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-ink dark:text-white leading-[1.08] tracking-tight">
+              Build the tools{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-emerald-400">
+                other teams rely on.
+              </span>
             </h1>
             <p className="mt-6 text-lg text-ink/60 dark:text-white/60 leading-relaxed">
               NADSCA is a small studio doing work most people only get to touch

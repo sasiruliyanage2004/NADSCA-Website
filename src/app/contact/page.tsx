@@ -25,8 +25,11 @@ export default function ContactPage() {
           <div className="text-azure text-xs font-mono font-semibold tracking-widest uppercase mb-4">
             CONTACT
           </div>
-          <h1 className="font-display text-4xl md:text-5xl text-ink dark:text-white leading-[1.05] mb-6">
-            Let&apos;s talk about what you&apos;re building.
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-ink dark:text-white leading-[1.08] mb-6 tracking-tight">
+            Let&apos;s talk about{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-emerald-400">
+              what you&apos;re building.
+            </span>
           </h1>
           <p className="text-ink/60 dark:text-white/60 leading-relaxed mb-10 max-w-sm">
             Tell us a little about your project and a member of our team will

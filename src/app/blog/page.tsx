@@ -19,8 +19,11 @@ export default function BlogPage() {
             <div className="text-azure text-xs font-mono font-semibold tracking-widest uppercase mb-4">
               BLOG &amp; NEWS
             </div>
-            <h1 className="font-display text-5xl md:text-6xl text-ink dark:text-white leading-[1.05]">
-              Notes from the studio floor.
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-ink dark:text-white leading-[1.08] tracking-tight">
+              Notes from the{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-emerald-400">
+                studio floor.
+              </span>
             </h1>
             <p className="mt-6 text-lg text-ink/60 dark:text-white/60 leading-relaxed">
               What we&apos;re learning while building software for clients
