@@ -184,6 +184,37 @@ export const NADSCA_SERVICES: ServiceDetail[] = [
       "Fractional CTO support",
     ],
   },
+  {
+    slug: "hr-technology",
+    name: "HR Technology Solutions",
+    short: "Technology for better people operations.",
+    detail:
+      "We help organizations improve the way they manage people, processes, and workforce operations through technology-led HR solutions. From process optimization to custom HR platforms, we combine business understanding with technical execution to create systems that are easier to manage and better for employees.",
+    points: [
+      "HR process optimization",
+      "HR platform strategy",
+      "Employee management systems",
+      "Workflow automation",
+      "Workforce analytics",
+      "Custom HR technology solutions",
+    ],
+  },
+  {
+    slug: "agritech",
+    name: "Agritech Solutions",
+    short: "Technology for smarter, more connected agriculture.",
+    detail:
+      "We help agriculture businesses turn operational data, connected systems, and intelligent automation into better decisions and more efficient operations. From farm management to supply-chain visibility, we design technology around the realities of modern agriculture.",
+    points: [
+      "Farm & field management systems",
+      "Agricultural data platforms",
+      "Supply-chain & inventory systems",
+      "IoT & connected agriculture",
+      "Analytics & reporting",
+      "AI-powered agricultural insights",
+      "Custom Agritech platforms",
+    ],
+  },
 ];
 
 export interface ProductDetail {

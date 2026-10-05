@@ -154,6 +154,66 @@ export const SERVICES = [
     bottomNote:
       "Bring us the difficult technical decision. We'll help you make it with confidence.",
   },
+  {
+    slug: "hr-technology",
+    name: "HR TECHNOLOGY SOLUTIONS",
+    subtitle: "Technology for better people operations.",
+    short: "Technology for better people operations.",
+    detail:
+      "We help organizations improve the way they manage people, processes, and workforce operations through technology-led HR solutions. From process optimization to custom HR platforms, we combine business understanding with technical execution to create systems that are easier to manage and better for employees.",
+    narrative: [
+      "We help organizations improve the way they manage people, processes, and workforce operations through technology-led HR solutions.",
+      "From process optimization to custom HR platforms, we combine business understanding with technical execution to create systems that are easier to manage and better for employees.",
+    ],
+    deliverablesTitle: "What we deliver",
+    deliverables: [
+      "HR process optimization",
+      "HR platform strategy",
+      "Employee management systems",
+      "Workflow automation",
+      "Workforce analytics",
+      "Custom HR technology solutions",
+    ],
+    points: [
+      "HR process optimization",
+      "HR platform strategy",
+      "Employee management systems",
+      "Workflow automation",
+      "Workforce analytics",
+      "Custom HR technology solutions",
+    ],
+  },
+  {
+    slug: "agritech",
+    name: "AGRITECH SOLUTIONS",
+    subtitle: "Technology for smarter, more connected agriculture.",
+    short: "Technology for smarter, more connected agriculture.",
+    detail:
+      "We help agriculture businesses turn operational data, connected systems, and intelligent automation into better decisions and more efficient operations. From farm management to supply-chain visibility, we design technology around the realities of modern agriculture.",
+    narrative: [
+      "We help agriculture businesses turn operational data, connected systems, and intelligent automation into better decisions and more efficient operations.",
+      "From farm management to supply-chain visibility, we design technology around the realities of modern agriculture.",
+    ],
+    deliverablesTitle: "What we deliver",
+    deliverables: [
+      "Farm & field management systems",
+      "Agricultural data platforms",
+      "Supply-chain & inventory systems",
+      "IoT & connected agriculture",
+      "Analytics & reporting",
+      "AI-powered agricultural insights",
+      "Custom Agritech platforms",
+    ],
+    points: [
+      "Farm & field management systems",
+      "Agricultural data platforms",
+      "Supply-chain & inventory systems",
+      "IoT & connected agriculture",
+      "Analytics & reporting",
+      "AI-powered agricultural insights",
+      "Custom Agritech platforms",
+    ],
+  },
 ];
 
 export const PRODUCTS = [

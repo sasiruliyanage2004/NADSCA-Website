@@ -34,9 +34,20 @@ export default function ServicesCTA() {
             ONE PARTNER. FROM STRATEGY TO SCALE.
           </h2>
 
-          <p className="text-white/75 mt-6 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed">
-            You don&apos;t need to assemble five different teams to build and evolve your technology.
-          </p>
+          <div className="mt-6 space-y-4 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed text-white/80">
+            <p>
+              You don&apos;t need to assemble five different teams to build and evolve your technology.
+            </p>
+            <p className="font-bold text-white text-lg sm:text-xl tracking-tight">
+              Product. Design. Cloud. Data. AI. Engineering.
+            </p>
+            <p className="text-white/70">
+              We bring them together under one team — aligned around the outcome you&apos;re trying to achieve.
+            </p>
+            <p className="font-bold text-cyan-400 text-base sm:text-lg pt-1">
+              Have a complex technology problem? Let&apos;s solve it.
+            </p>
+          </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Magnetic>
