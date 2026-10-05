@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -53,11 +53,28 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setErrorMessage("");
 
-    // Simulate enterprise form submission network roundtrip
-    await new Promise((resolve) => setTimeout(resolve, 900));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          captchaToken,
+          honeypot: (document.getElementById("hp_company_field") as HTMLInputElement)?.value || "",
+        }),
+      });
 
-    setIsSubmitting(false);
-    setIsSuccess(true);
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send inquiry. Please try again.");
+      }
+
+      setIsSuccess(true);
+    } catch (err: any) {
+      setErrorMessage(err.message || "Failed to connect to the server. Please email info@nadsca.com directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -121,6 +138,17 @@ export default function ContactForm() {
                 {errorMessage}
               </div>
             )}
+
+            {/* Honeypot Anti-Bot Field (Hidden from humans, trapped for scrapers/bots) */}
+            <div className="hidden" aria-hidden="true" style={{ display: "none" }}>
+              <input
+                id="hp_company_field"
+                type="text"
+                name="hp_company_field"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
