@@ -347,3 +347,33 @@ body { -ms-overflow-style: none; scrollbar-width: none; }
   background-size: 250% auto;
   animation: hero-gradient-flow 6s ease-in-out infinite;
 }
+
+/* NADSCA Living Energy Flow along Swoosh Curves */
+@keyframes energy-flow-cw {
+  0% {
+    stroke-dashoffset: 600;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes energy-flow-ccw {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 600;
+  }
+}
+
+@keyframes swoosh-pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(0, 153, 255, 0.4)) drop-shadow(0 0 18px rgba(34, 197, 94, 0.35));
+    opacity: 0.88;
+  }
+  50% {
+    filter: drop-shadow(0 0 22px rgba(0, 240, 255, 0.95)) drop-shadow(0 0 35px rgba(34, 197, 94, 0.85));
+    opacity: 1;
+  }
+}

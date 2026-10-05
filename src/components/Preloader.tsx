@@ -98,7 +98,7 @@ export default function Preloader() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="relative flex flex-col items-center justify-center px-4"
           >
-            {/* Center Stage Container precisely sized to fit the emblem assembly (aspect ratio 839/663 ≈ 1.265) */}
+            {/* Center Stage Container with exact aspect ratio of logo-mark (839/663 ≈ 1.265) */}
             <div className="relative w-64 h-[202px] sm:w-80 sm:h-[253px] md:w-96 md:h-[303px] flex items-center justify-center select-none">
               {/* Ambient Core Radial Glow behind the N */}
               <div
@@ -106,7 +106,7 @@ export default function Preloader() {
                 style={{ animation: "orbital-pulse-glow 3s ease-in-out infinite" }}
               />
 
-              {/* ── 1. THE 3D "N" EMBLEM CORE (Centered & Floating) ── */}
+              {/* ── 1. UNIFIED 3D EMBLEM (Pristine Master Graphic with Dynamic Living Pulse) ── */}
               <motion.div
                 animate={{
                   y: [0, -6, 0],
@@ -117,9 +117,10 @@ export default function Preloader() {
                   scale: { duration: 0.4, ease: "easeOut" },
                 }}
                 className="relative z-10 w-full h-full flex items-center justify-center select-none"
+                style={{ animation: "swoosh-pulse-glow 2.5s ease-in-out infinite" }}
               >
                 <Image
-                  src="/logo-n-core.png"
+                  src="/logo-mark.png"
                   alt="NADSCA Emblem"
                   fill
                   sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
@@ -145,29 +146,103 @@ export default function Preloader() {
                     className="absolute left-6 -top-1 w-2 h-2 bg-[#0099FF] shadow-[0_0_10px_#0099FF] rounded-[1px]"
                   />
                 </div>
-              </motion.div>
 
-              {/* ── 2. THE EXACT TWO 3D CURVED SWOOSH LINES ROTATING 360° AROUND THE "N" ── */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className="absolute inset-0 z-20 pointer-events-none select-none"
-                style={{
-                  transformOrigin: "49.65% 60.4%", // Exact mathematical center (416.6, 400.5) of the swooshes
-                }}
-              >
-                <Image
-                  src="/logo-swooshes-ring.png"
-                  alt="NADSCA Orbital Swooshes"
-                  fill
-                  sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
-                  className="object-contain filter drop-shadow-[0_0_20px_rgba(0,240,255,0.65)] drop-shadow-[0_0_35px_rgba(34,197,94,0.45)]"
-                  priority
-                />
+                {/* ── 2. LIVING ENERGY STREAMS FLOWING ALONG THE EXACT NATURAL PATH OF THE 2 SWOOSH CURVES ── */}
+                <svg
+                  viewBox="0 0 839 663"
+                  className="absolute inset-0 w-full h-full pointer-events-none z-20 overflow-visible"
+                >
+                  <defs>
+                    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="4" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                    <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="4" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+
+                    <linearGradient id="grad-blue-arc" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#0099FF" stopOpacity="0.2" />
+                      <stop offset="40%" stopColor="#00D2FF" stopOpacity="0.9" />
+                      <stop offset="100%" stopColor="#ffffff" stopOpacity="1" />
+                    </linearGradient>
+
+                    <linearGradient id="grad-green-arc" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#00F0FF" stopOpacity="0.2" />
+                      <stop offset="50%" stopColor="#22C55E" stopOpacity="0.9" />
+                      <stop offset="100%" stopColor="#ffffff" stopOpacity="1" />
+                    </linearGradient>
+                  </defs>
+
+                  {/* ── ARC 1: LEFT BLUE SWOOSH ENERGY FLOW (Flows naturally along the curve) ── */}
+                  <path
+                    d="M 380 510 C 180 545, 60 530, 35 510 C 70 430, 115 385, 180 365"
+                    fill="none"
+                    stroke="#0099FF"
+                    strokeWidth="4"
+                    strokeOpacity="0.35"
+                    filter="url(#glow-cyan)"
+                  />
+                  <path
+                    d="M 380 510 C 180 545, 60 530, 35 510 C 70 430, 115 385, 180 365"
+                    fill="none"
+                    stroke="url(#grad-blue-arc)"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                    strokeDasharray="140 340"
+                    filter="url(#glow-cyan)"
+                    style={{ animation: "energy-flow-cw 1.8s linear infinite" }}
+                  />
+                  <path
+                    d="M 380 510 C 180 545, 60 530, 35 510 C 70 430, 115 385, 180 365"
+                    fill="none"
+                    stroke="#00F0FF"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeDasharray="60 420"
+                    filter="url(#glow-cyan)"
+                    style={{ animation: "energy-flow-cw 1.8s linear infinite", animationDelay: "-0.9s" }}
+                  />
+
+                  {/* ── ARC 2: RIGHT GREEN SWOOSH ENERGY FLOW (Flows naturally along the curve) ── */}
+                  <path
+                    d="M 540 580 C 640 500, 755 425, 805 315 C 775 260, 690 255, 605 260"
+                    fill="none"
+                    stroke="#22C55E"
+                    strokeWidth="4"
+                    strokeOpacity="0.35"
+                    filter="url(#glow-green)"
+                  />
+                  <path
+                    d="M 540 580 C 640 500, 755 425, 805 315 C 775 260, 690 255, 605 260"
+                    fill="none"
+                    stroke="url(#grad-green-arc)"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                    strokeDasharray="160 380"
+                    filter="url(#glow-green)"
+                    style={{ animation: "energy-flow-cw 1.8s linear infinite", animationDelay: "-0.9s" }}
+                  />
+                  <path
+                    d="M 540 580 C 640 500, 755 425, 805 315 C 775 260, 690 255, 605 260"
+                    fill="none"
+                    stroke="#84CC16"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeDasharray="70 470"
+                    filter="url(#glow-green)"
+                    style={{ animation: "energy-flow-cw 1.8s linear infinite" }}
+                  />
+                </svg>
               </motion.div>
             </div>
 
