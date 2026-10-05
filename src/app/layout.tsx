@@ -63,8 +63,8 @@ export default function RootLayout({
               (function() {
                 try {
                   var saved = localStorage.getItem('nadsca_theme') || localStorage.getItem('natle_theme');
-                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (saved === 'dark' || (!saved && prefersDark)) {
+                  // NADSCA default is dark mode for optimal cyberpunk & WebGL contrast
+                  if (saved !== 'light') {
                     document.documentElement.classList.add('dark');
                   } else {
                     document.documentElement.classList.remove('dark');

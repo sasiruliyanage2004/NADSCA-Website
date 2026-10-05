@@ -44,7 +44,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
           scrolled
-            ? "bg-black/80 backdrop-blur-2xl border-b border-white/[0.08] py-4 shadow-[0_10px_35px_-10px_rgba(0,0,0,0.8)]"
+            ? "bg-white/85 dark:bg-black/80 backdrop-blur-2xl border-b border-ink/10 dark:border-white/[0.08] py-4 shadow-[0_10px_35px_-10px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_35px_-10px_rgba(0,0,0,0.8)]"
             : "bg-transparent py-6"
         }`}
       >
@@ -66,8 +66,8 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative text-sm font-medium transition-colors hover:text-white py-1 ${
-                    isActive ? "text-white font-semibold" : "text-white/65"
+                  className={`relative text-sm font-medium transition-colors hover:text-ink dark:hover:text-white py-1 ${
+                    isActive ? "text-ink dark:text-white font-semibold" : "text-ink/75 dark:text-white/65"
                   }`}
                 >
                   <span>{link.label}</span>
@@ -85,7 +85,7 @@ export default function Navbar() {
               <Magnetic>
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-2 rounded-full bg-white text-black px-6 py-2.5 text-sm font-bold whitespace-nowrap shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
+                  className="group inline-flex items-center gap-2 rounded-full bg-ink text-white dark:bg-white dark:text-black px-6 py-2.5 text-sm font-bold whitespace-nowrap shadow-[0_0_20px_-5px_rgba(0,0,0,0.2)] dark:shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
                 >
                   <span>Start a project</span>
                   <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -95,7 +95,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2.5 rounded-xl border border-white/10 bg-white/[0.04] text-white/80 hover:text-white transition-colors outline-none"
+              className="lg:hidden p-2.5 rounded-xl border border-ink/15 dark:border-white/10 bg-black/5 dark:bg-white/[0.04] text-ink/80 dark:text-white/80 hover:text-ink dark:hover:text-white transition-colors outline-none"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
