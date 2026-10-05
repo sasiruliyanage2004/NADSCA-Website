@@ -15,6 +15,7 @@ import Card3DTilt from "@/components/Card3DTilt";
 import NetworkGlobe3D from "@/components/NetworkGlobe3D";
 import { PROJECTS, BLOG_POSTS } from "@/lib/data";
 import GiantMarquee from "@/components/GiantMarquee";
+import PartnersStrip from "@/components/PartnersStrip";
 import Magnetic from "@/components/Magnetic";
 
 const WHY_US = [
@@ -251,6 +252,8 @@ export default function Home() {
       {/* Client Testimonials Carousel */}
       <Testimonials />
 
+      {/* Trusted Partners */}
+      <PartnersStrip />
 
       <GiantMarquee />
     </>
