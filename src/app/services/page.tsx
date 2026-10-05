@@ -8,19 +8,58 @@ import { SERVICES } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Services — NADSCA",
   description:
-    "Product engineering, data & AI, product design, cloud & infrastructure, enterprise systems, and technology consulting services from NADSCA.",
+    "Product engineering, data & AI, product design, enterprise systems, and technology consulting services from NADSCA.",
 };
 
-const ACCENTS: SpotlightAccent[] = [
-  "azure",
-  "teal",
-  "purple",
-  "blue",
-  "azure",
-  "teal",
-  "purple",
-  "blue",
-];
+const ACCENTS: SpotlightAccent[] = ["azure", "teal", "purple", "blue", "azure"];
+
+function renderBottomNote(note: string) {
+  if (note.startsWith("Technology:")) {
+    return (
+      <p className="text-xs sm:text-[13px] font-mono text-ink/70 dark:text-white/70">
+        <span className="font-bold text-ink dark:text-white font-sans">Technology:</span>{" "}
+        {note.replace("Technology:", "").trim()}
+      </p>
+    );
+  }
+  if (note.startsWith("The focus:")) {
+    return (
+      <p className="text-xs sm:text-[13.5px] text-ink/75 dark:text-white/75">
+        <span className="font-bold text-ink dark:text-white">The focus:</span>{" "}
+        {note.replace("The focus:", "").trim()}
+      </p>
+    );
+  }
+  if (note.startsWith("One team. One process.")) {
+    return (
+      <p className="text-xs sm:text-[13.5px] text-ink/75 dark:text-white/75">
+        <span className="font-bold text-ink dark:text-white">One team. One process.</span>{" "}
+        {note.replace("One team. One process.", "").trim()}
+      </p>
+    );
+  }
+  if (note.startsWith("Built around how your people actually work")) {
+    return (
+      <p className="text-xs sm:text-[13.5px] text-ink/75 dark:text-white/75">
+        <span className="font-bold text-ink dark:text-white">
+          Built around how your people actually work
+        </span>{" "}
+        {note.replace("Built around how your people actually work", "").trim()}
+      </p>
+    );
+  }
+  if (note.startsWith("Bring us the difficult technical decision.")) {
+    return (
+      <p className="text-xs sm:text-[13.5px] text-ink/75 dark:text-white/75">
+        <span className="font-bold text-ink dark:text-white">
+          Bring us the difficult technical decision.
+        </span>{" "}
+        {note.replace("Bring us the difficult technical decision.", "").trim()}
+      </p>
+    );
+  }
+  return <p className="text-xs sm:text-[13.5px] text-ink/75 dark:text-white/75">{note}</p>;
+}
 
 export default function ServicesPage() {
   return (
@@ -56,47 +95,97 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 8-Card Services Grid */}
+      {/* 5 Core Engineering Services Grid */}
       <section className="py-20 lg:py-24 bg-paper dark:bg-[#07090E] relative overflow-hidden border-t border-ink/5 dark:border-white/10">
-        <div className="container-content grid grid-cols-1 md:grid-cols-2 gap-6">
-          {SERVICES.map((s, i) => (
-            <Reveal key={s.slug} delay={(i % 2) * 0.06}>
-              <SpotlightCard
-                accent={ACCENTS[i % ACCENTS.length]}
-                id={s.slug}
-                className="h-full"
+        <div className="container-content grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          {SERVICES.map((s, i) => {
+            const isLast = i === SERVICES.length - 1; // 5th card spans 2 columns on lg for symmetrical balance
+            return (
+              <Reveal
+                key={s.slug}
+                delay={(i % 2) * 0.06}
+                className={isLast ? "lg:col-span-2" : ""}
               >
-                <div className="p-8 md:p-9 flex flex-col h-full">
+                <SpotlightCard
+                  accent={ACCENTS[i % ACCENTS.length]}
+                  id={s.slug}
+                  className="h-full"
+                >
+                  <div
+                    className={`p-8 sm:p-10 flex flex-col h-full ${
+                      isLast ? "lg:grid lg:grid-cols-2 lg:gap-12" : ""
+                    }`}
+                  >
+                    {/* Left Column (or Top on standard cards) */}
+                    <div className="flex flex-col">
+                      <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-ink dark:text-white mb-2 uppercase">
+                        {s.name}
+                      </h2>
 
-                  <h2 className="font-display text-2xl font-bold tracking-tight text-ink dark:text-white mb-2 uppercase">
-                    {s.name}
-                  </h2>
+                      {s.subtitle && (
+                        <p className="text-[15px] sm:text-base font-semibold text-azure dark:text-cyan-400 mb-5 leading-snug">
+                          {s.subtitle}
+                        </p>
+                      )}
 
-                  {s.subtitle && (
-                    <p className="text-[15px] font-semibold text-azure dark:text-cyan-400 mb-4 leading-snug">
-                      {s.subtitle}
-                    </p>
-                  )}
+                      <div className="space-y-3.5 text-ink/70 dark:text-white/75 leading-relaxed text-[15px] mb-6">
+                        {s.narrative.map((para, pIdx) => (
+                          <p key={pIdx}>{para}</p>
+                        ))}
+                      </div>
 
-                  <p className="text-ink/65 dark:text-white/70 leading-relaxed text-[15px] mb-6">
-                    {s.detail}
-                  </p>
+                      {/* On wide 5th card, bottom note sits on left column */}
+                      {isLast && s.bottomNote && (
+                        <div className="hidden lg:block mt-auto pt-6 border-t border-ink/8 dark:border-white/10">
+                          {renderBottomNote(s.bottomNote)}
+                        </div>
+                      )}
+                    </div>
 
-                  <ul className="space-y-3 mt-auto pt-6 border-t border-ink/5 dark:border-white/10">
-                    {s.points.map((p) => (
-                      <li
-                        key={p}
-                        className="flex items-start gap-3 text-ink/75 dark:text-white/80 text-[14px]"
+                    {/* Right Column / Deliverables Section */}
+                    <div className="flex flex-col mt-6 lg:mt-0">
+                      <div
+                        className={`pt-6 border-t border-ink/8 dark:border-white/10 ${
+                          isLast ? "lg:pt-0 lg:border-t-0" : ""
+                        }`}
                       >
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal shrink-0" />
-                        <span>{p}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </SpotlightCard>
-            </Reveal>
-          ))}
+                        <h3 className="font-bold text-ink dark:text-white text-base mb-4 tracking-tight">
+                          {s.deliverablesTitle}
+                        </h3>
+
+                        <ul
+                          className={`space-y-2.5 mb-6 ${
+                            isLast ? "sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-2.5 sm:space-y-0" : ""
+                          }`}
+                        >
+                          {s.deliverables.map((item) => (
+                            <li
+                              key={item}
+                              className="flex items-start gap-2.5 text-ink/80 dark:text-white/85 text-[14px]"
+                            >
+                              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Standard card bottom note (or mobile view of 5th card) */}
+                      {s.bottomNote && (
+                        <div
+                          className={`mt-auto pt-6 border-t border-ink/8 dark:border-white/10 ${
+                            isLast ? "lg:hidden" : ""
+                          }`}
+                        >
+                          {renderBottomNote(s.bottomNote)}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </SpotlightCard>
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 

@@ -1,107 +1,158 @@
 export const SERVICES = [
   {
     slug: "product-engineering",
-    name: "Product Engineering",
+    name: "PRODUCT ENGINEERING",
     subtitle: "From idea to production — engineered to scale.",
     short: "From idea to production — engineered to scale.",
     detail:
-      "We turn product ideas into reliable, production-ready software. From the first architectural decisions to full-stack implementation, we build systems designed for performance, resilience, and long-term maintainability.",
-    points: [
-      "Custom web & mobile applications",
+      "We turn product ideas into reliable, production-ready software. From the first architectural decision to the systems supporting thousands of users, we build products that are fast, maintainable, and designed for long-term growth.",
+    narrative: [
+      "We turn product ideas into reliable, production-ready software. From the first architectural decision to the systems supporting thousands of users, we build products that are fast, maintainable, and designed for long-term growth.",
+    ],
+    deliverablesTitle: "What we deliver",
+    deliverables: [
+      "Web & mobile applications",
+      "Product platforms & SaaS systems",
       "API & systems architecture",
       "Design systems & UI engineering",
+      "Scalable backend systems",
+      "Product modernization",
     ],
+    points: [
+      "Web & mobile applications",
+      "Product platforms & SaaS systems",
+      "API & systems architecture",
+      "Design systems & UI engineering",
+      "Scalable backend systems",
+      "Product modernization",
+    ],
+    bottomNote: "Technology: React · Next.js · Node.js · Native Mobile · Modern Cloud Architecture",
   },
   {
     slug: "data-ai",
-    name: "Data & AI",
+    name: "DATA & AI",
     subtitle: "Turn your data into an advantage.",
     short: "Turn your data into an advantage.",
     detail:
+      "We help businesses move beyond dashboards and experiments to deploy AI and data systems that solve real operational problems. From intelligent automation to predictive models and data platforms, we build solutions around your workflows, your data, and your business goals.",
+    narrative: [
       "We help businesses move beyond dashboards and experiments to deploy AI and data systems that solve real operational problems.",
-    points: [
-      "Applied machine learning & GenAI",
-      "Data pipelines & warehousing",
-      "Operational intelligence & analytics dashboards",
+      "From intelligent automation to predictive models and data platforms, we build solutions around your workflows, your data, and your business goals.",
     ],
+    deliverablesTitle: "What we deliver",
+    deliverables: [
+      "Data pipelines & modern data platforms",
+      "Analytics & executive dashboards",
+      "Applied machine learning",
+      "AI-powered workflows",
+      "Document intelligence",
+      "Recommendation & decision systems",
+      "Production AI integrations",
+    ],
+    points: [
+      "Data pipelines & modern data platforms",
+      "Analytics & executive dashboards",
+      "Applied machine learning",
+      "AI-powered workflows",
+      "Document intelligence",
+      "Recommendation & decision systems",
+      "Production AI integrations",
+    ],
+    bottomNote: "The focus: practical AI that creates measurable value — not AI for the sake of AI.",
   },
   {
     slug: "product-design",
-    name: "Product Design",
+    name: "PRODUCT DESIGN",
     subtitle: "Design that gets built and gets used.",
     short: "Design that gets built and gets used.",
     detail:
-      "Great products happen when design and engineering work together from the beginning. Our designers work alongside engineers to create intuitive, practical user experiences that solve real problems without unnecessary complexity.",
-    points: [
-      "UX research & user journey flows",
+      "Great products happen when design and engineering work together from the beginning. Our designers work alongside engineers to create experiences that are intuitive, technically achievable, and validated with real users.",
+    narrative: [
+      "Great products happen when design and engineering work together from the beginning. Our designers work alongside engineers to create experiences that are intuitive, technically achievable, and validated with real users.",
+    ],
+    deliverablesTitle: "What we deliver",
+    deliverables: [
+      "UX research & product discovery",
+      "User journeys & interaction flows",
       "Interface & interaction design",
-      "Production-ready design systems",
+      "Prototyping & validation",
+      "Design systems",
+      "UI engineering",
     ],
-  },
-  {
-    slug: "cloud-infrastructure",
-    name: "Cloud & Infrastructure",
-    subtitle: "Resilient infrastructure that scales quietly.",
-    short: "Resilient infrastructure that scales quietly.",
-    detail:
-      "We set up cloud infrastructure, CI/CD pipelines, and observability so releases are predictable, secure, and fast — backed by AWS, GCP, and Azure best practices.",
     points: [
-      "AWS, GCP & Cloud architecture",
-      "CI/CD & release automation",
-      "Monitoring, distributed tracing & incident response",
+      "UX research & product discovery",
+      "User journeys & interaction flows",
+      "Interface & interaction design",
+      "Prototyping & validation",
+      "Design systems",
+      "UI engineering",
     ],
+    bottomNote: "One team. One process. From first concept to shipped product.",
   },
   {
     slug: "enterprise-systems",
-    name: "Enterprise Systems",
+    name: "ENTERPRISE SYSTEMS",
     subtitle: "Replace operational complexity with systems that work.",
     short: "Replace operational complexity with systems that work.",
     detail:
-      "Disconnected spreadsheets, aging software, and manual processes slow teams down. We design and build modern internal platforms that give you control, visibility, and operational efficiency.",
-    points: [
-      "Custom internal operations workspaces",
-      "Legacy system modernization",
-      "Systems integration & automated workflows",
+      "Disconnected spreadsheets, aging software, and manual processes slow teams down. We design and modernize internal platforms that bring your operations into one reliable, connected system.",
+    narrative: [
+      "Disconnected spreadsheets, aging software, and manual processes slow teams down. We design and modernize internal platforms that bring your operations into one reliable, connected system.",
     ],
+    deliverablesTitle: "What we deliver",
+    deliverables: [
+      "Custom internal platforms",
+      "ERP & operational systems",
+      "HR & workforce platforms",
+      "Inventory & POS systems",
+      "Legacy system modernization",
+      "Third-party systems integration",
+      "Workflow automation",
+    ],
+    points: [
+      "Custom internal platforms",
+      "ERP & operational systems",
+      "HR & workforce platforms",
+      "Inventory & POS systems",
+      "Legacy system modernization",
+      "Third-party systems integration",
+      "Workflow automation",
+    ],
+    bottomNote:
+      "Built around how your people actually work not how a generic software package expects them to.",
   },
   {
     slug: "technology-consulting",
-    name: "Technology Consulting",
+    name: "TECHNOLOGY CONSULTING",
     subtitle: "Senior technical thinking when it matters most.",
     short: "Senior technical thinking when it matters most.",
     detail:
-      "Not every business needs a full-time CTO or a large consulting team. Sometimes you need experienced technical judgment at the right moments — whether that's an architecture review, vendor evaluation, or technology roadmap planning.",
-    points: [
-      "Architecture & code review",
+      "Not every business needs a full-time CTO or a large consulting team. Sometimes you need experienced technical judgment at the right moment. We work with founders, leadership teams, and engineering organizations to make better technology decisions — with clarity, evidence, and a focus on business outcomes.",
+    narrative: [
+      "Not every business needs a full-time CTO or a large consulting team. Sometimes you need experienced technical judgment at the right moment.",
+      "We work with founders, leadership teams, and engineering organizations to make better technology decisions — with clarity, evidence, and a focus on business outcomes.",
+    ],
+    deliverablesTitle: "What we deliver",
+    deliverables: [
+      "Architecture reviews",
       "Technical due diligence",
-      "Fractional CTO support & roadmap planning",
+      "Technology strategy",
+      "Code & engineering reviews",
+      "Scalability assessments",
+      "Technical roadmaps",
+      "Fractional CTO support",
     ],
-  },
-  {
-    slug: "hr-technology",
-    name: "HR Technology Solutions",
-    subtitle: "Technology for better people operations.",
-    short: "Technology for better people operations.",
-    detail:
-      "We help organizations improve the way they manage people, processes, and workforce operations through technology-led HR solutions.",
     points: [
-      "OHRMS core platform integration",
-      "Attendance, leave & personnel workflows",
-      "Workforce visibility & compliance tracking",
+      "Architecture reviews",
+      "Technical due diligence",
+      "Technology strategy",
+      "Code & engineering reviews",
+      "Scalability assessments",
+      "Technical roadmaps",
+      "Fractional CTO support",
     ],
-  },
-  {
-    slug: "agritech",
-    name: "Agritech Solutions",
-    subtitle: "Technology for smarter, more connected agriculture.",
-    short: "Technology for smarter, more connected agriculture.",
-    detail:
-      "We help agriculture businesses turn operational data, connected systems, and intelligent automation into practical digital solutions.",
-    points: [
-      "Field & telemetry data tracking",
-      "Supply chain & harvest management",
-      "Intelligent analytics & smart automation",
-    ],
+    bottomNote:
+      "Bring us the difficult technical decision. We'll help you make it with confidence.",
   },
 ];
 
