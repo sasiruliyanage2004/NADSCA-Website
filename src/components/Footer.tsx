@@ -45,10 +45,10 @@ export default function Footer() {
       if (giantTextRef.current) {
         gsap.fromTo(
           giantTextRef.current,
-          { y: 80, opacity: 0.3 },
+          { y: 35, opacity: 0.2 },
           {
             y: 0,
-            opacity: 1,
+            opacity: 0.8,
             ease: "power2.out",
             scrollTrigger: {
               trigger: footerContainerRef.current,
@@ -148,15 +148,17 @@ export default function Footer() {
       <div className="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-r from-azure/15 via-teal/8 to-transparent rounded-full blur-[140px] pointer-events-none z-0" />
       <div className="absolute right-0 bottom-0 w-[500px] h-[400px] bg-gradient-to-tl from-cyan-500/10 via-transparent to-transparent rounded-full blur-[120px] pointer-events-none z-0" />
 
-      {/* ─── MIDGROUND LAYER: GIANT NADSCA WORDMARK WITH LIGHT SWEEP ─── */}
-      <div className="absolute inset-x-0 bottom-16 sm:bottom-20 lg:bottom-24 z-[1] flex justify-center pointer-events-none overflow-hidden">
+      {/* ─── MIDGROUND LAYER: ARCHITECTURAL NADSCA BRAND WATERMARK ─── */}
+      <div className="absolute inset-x-0 bottom-6 sm:bottom-8 lg:bottom-10 z-[1] flex justify-center pointer-events-none overflow-hidden px-8">
         <div
           ref={giantTextRef}
-          className="whitespace-nowrap text-[20vw] font-black tracking-[0.14em] leading-none text-center select-none transition-transform duration-300"
+          className="whitespace-nowrap font-display font-black leading-none text-center select-none transition-transform duration-300"
           style={{
+            fontSize: "clamp(3.5rem, 11vw, 9.5rem)",
+            letterSpacing: "-0.02em",
             color: "transparent",
-            WebkitTextStroke: "1.5px rgba(255, 255, 255, 0.08)",
-            backgroundImage: `radial-gradient(circle 350px at ${mousePos.x}% ${mousePos.y}%, rgba(34, 211, 238, 0.25), transparent 70%)`,
+            WebkitTextStroke: "1px rgba(255, 255, 255, 0.05)",
+            backgroundImage: `radial-gradient(circle 320px at ${mousePos.x}% ${mousePos.y}%, rgba(34, 211, 238, 0.16), transparent 70%)`,
             WebkitBackgroundClip: "text",
           }}
           aria-hidden="true"
