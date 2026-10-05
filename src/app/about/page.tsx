@@ -4,6 +4,7 @@ import Counter from "@/components/Counter";
 import SpotlightCard, { SpotlightAccent } from "@/components/SpotlightCard";
 import AmbientBackground from "@/components/AmbientBackground";
 import { TEAM, PARTNERS, VALUES } from "@/lib/data";
+import AboutCTA from "@/components/AboutCTA";
 
 export const metadata: Metadata = {
   title: "About — NADSCA",
@@ -325,6 +326,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Bottom Conversion Section */}
+      <AboutCTA />
     </>
   );
 }
