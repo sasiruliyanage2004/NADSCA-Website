@@ -128,23 +128,26 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Open Roles Section */}
+      {/* Open Roles / Positions Section */}
       <section
         id="open-roles"
         className="py-20 lg:py-28 bg-mist dark:bg-[#07090E] relative overflow-hidden border-t border-ink/5 dark:border-white/10 scroll-mt-20"
       >
         <AmbientBackground variant="reversed" />
         <div className="container-content relative">
-          <Reveal className="max-w-xl mb-12">
+          <Reveal className="max-w-2xl mb-12">
             <div className="inline-flex items-center gap-2 text-azure dark:text-cyan-400 text-xs font-mono font-bold tracking-[0.2em] uppercase mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-              OPEN ROLES
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              OPEN POSITIONS
             </div>
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink dark:text-white tracking-tight leading-snug">
-              Current openings
+              Build what&apos;s next{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-emerald-400">
+                with us.
+              </span>
             </h2>
-            <p className="mt-3 text-ink/70 dark:text-white/70 text-base">
-              Find your next role building mission-critical enterprise systems.
+            <p className="mt-4 text-ink/70 dark:text-white/70 text-base sm:text-lg leading-relaxed">
+              We&apos;re looking for talented people who enjoy solving meaningful problems, working with modern technology, and building products that make a real difference.
             </p>
           </Reveal>
 
@@ -174,17 +177,28 @@ export default function CareersPage() {
             ))}
           </div>
 
-          <Reveal className="mt-10 text-center">
-            <p className="text-ink/60 dark:text-white/60 text-sm sm:text-base">
-              Don&apos;t see a fit?{" "}
+          {/* Don't see the right role callout box */}
+          <Reveal className="mt-10 sm:mt-12">
+            <div className="rounded-2xl p-7 sm:p-8 border border-ink/8 dark:border-white/10 bg-white/70 dark:bg-[#0D1118]/80 backdrop-blur-md flex flex-col sm:flex-row sm:items-center justify-between gap-5 shadow-sm">
+              <div>
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-ink dark:text-white mb-1.5">
+                  Don&apos;t see the right role?
+                </h3>
+                <p className="text-ink/70 dark:text-white/70 text-[15px] sm:text-base">
+                  We&apos;re always interested in meeting talented people.
+                </p>
+              </div>
+
               <Link
                 href="/contact?type=general-cv"
-                className="text-ink dark:text-white font-semibold border-b-2 border-lime pb-0.5 hover:text-azure dark:hover:text-cyan-400 transition-colors"
+                className="group inline-flex items-center gap-2 font-bold text-base text-azure dark:text-cyan-400 hover:underline shrink-0"
               >
-                Send us your CV anyway
+                <span>Send us your CV</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1 font-mono text-lg">
+                  →
+                </span>
               </Link>
-              .
-            </p>
+            </div>
           </Reveal>
         </div>
       </section>
