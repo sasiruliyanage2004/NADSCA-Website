@@ -22,6 +22,7 @@ import {
 import SpotlightCard, { SpotlightAccent } from "@/components/SpotlightCard";
 import Reveal from "@/components/Reveal";
 import Magnetic from "@/components/Magnetic";
+import { Backlight } from "@/registry/magicui/backlight";
 
 interface FeaturedProduct {
   id: string;
@@ -506,18 +507,20 @@ export default function FeaturedProductsList() {
 
             {/* Modal Body */}
             <div className="py-4 overflow-y-auto space-y-4 relative z-10 pr-1">
-              {/* VIDEO PLAYER SCREEN */}
+              {/* VIDEO PLAYER SCREEN WITH MAGIC UI BACKLIGHT */}
               {activeModalProduct.videoUrl ? (
-                <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-white/15 aspect-video max-h-[46vh] w-full mx-auto shadow-xl flex items-center justify-center">
-                  <video
-                    src={activeModalProduct.videoUrl}
-                    poster={activeModalProduct.thumbnailImage}
-                    controls
-                    autoPlay
-                    playsInline
-                    className="w-full h-full object-contain bg-black"
-                  />
-                </div>
+                <Backlight blur={40} className="w-full my-2">
+                  <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-white/20 aspect-video max-h-[46vh] w-full mx-auto shadow-2xl flex items-center justify-center">
+                    <video
+                      src={activeModalProduct.videoUrl}
+                      poster={activeModalProduct.thumbnailImage}
+                      controls
+                      autoPlay
+                      playsInline
+                      className="w-full h-full object-contain bg-black"
+                    />
+                  </div>
+                </Backlight>
               ) : (
                 /* VIDEO PLAYER SCREEN SIMULATOR */
                 <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-slate-950 border border-white/15 aspect-video max-h-[46vh] w-full mx-auto flex flex-col justify-between shadow-xl group/player">
