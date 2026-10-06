@@ -41,6 +41,5 @@ next-env.d.ts
 .vercel
 .turbo
 
-# Local scripts
-# (start.bat and start-prod.bat are tracked for convenience)
-
+# Root media files
+/*.mp4
