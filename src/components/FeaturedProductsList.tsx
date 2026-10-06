@@ -321,33 +321,10 @@ export default function FeaturedProductsList() {
                     accent={prod.accent}
                     className="h-full rounded-[28px] border border-ink/8 dark:border-white/10 bg-white dark:bg-[#0B0F17] hover:border-cyan-400/40 transition-all duration-500 overflow-hidden flex flex-col group shadow-lg hover:shadow-2xl"
                   >
-                    {/* MACOS / LINUX TECH BROWSER WINDOW BAR */}
-                    <div className="px-5 py-3 border-b border-ink/8 dark:border-white/10 bg-black/40 flex items-center justify-between z-10 shrink-0">
-                      <div className="flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full bg-rose-500/70" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-amber-500/70" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
-                        <span className="ml-2 text-[10px] font-mono tracking-wider text-white/40 uppercase hidden sm:inline">
-                          app.nadsca.io/{prod.slug}
-                        </span>
-                      </div>
-
-                      <div className="flex items-center gap-2">
-                        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/[0.06] border border-white/10 text-[10px] font-mono font-bold text-cyan-400">
-                          <Icon className="w-3 h-3 text-cyan-400" />
-                          <span>{prod.categoryTag}</span>
-                        </div>
-                        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-mono font-medium text-emerald-400">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                          <span>{prod.videoDuration}</span>
-                        </div>
-                      </div>
-                    </div>
-
                     {/* VIDEO / DASHBOARD THUMBNAIL CONTAINER WITH SKELETON SHIMMER */}
                     <div
                       onClick={() => setActiveModalProduct(prod)}
-                      className="relative h-56 sm:h-64 w-full overflow-hidden bg-slate-950 cursor-pointer border-b border-ink/8 dark:border-white/10 group/preview"
+                      className="relative h-60 sm:h-72 w-full overflow-hidden bg-slate-950 cursor-pointer border-b border-ink/8 dark:border-white/10 group/preview"
                     >
                       {/* Background Skeleton Shimmer Base */}
                       <div className="absolute inset-0 skeleton-shimmer z-0" />
@@ -378,6 +355,33 @@ export default function FeaturedProductsList() {
                         </>
                       ) : null}
 
+                      {/* Subtle Dark Vignette */}
+                      <div className="absolute inset-0 bg-black/25 group-hover/preview:bg-black/15 transition-colors z-[2]" />
+
+                      {/* Top-Left Category Tag */}
+                      <div className="absolute top-4 left-4 z-[4] pointer-events-none">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-cyan-400 shadow-md">
+                          <Icon className="w-3 h-3 text-cyan-400" />
+                          <span>{prod.categoryTag}</span>
+                        </span>
+                      </div>
+
+                      {/* Bottom-Right Video Duration Badge */}
+                      <div className="absolute bottom-4 right-4 z-[4] pointer-events-none">
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono font-bold text-white shadow-md">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          <span>{prod.videoDuration}</span>
+                        </span>
+                      </div>
+
+                      {/* Bottom-Left Highlight Pill */}
+                      <div className="absolute bottom-4 left-4 z-[4] pointer-events-none">
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/80">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                          {prod.mockupContent.highlightPill}
+                        </span>
+                      </div>
+
                       {/* Ambient Bloom Glow on Hover */}
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(34,211,238,0.22),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-[3]" />
 
@@ -389,14 +393,6 @@ export default function FeaturedProductsList() {
                             Watch Demo
                           </span>
                         </div>
-                      </div>
-
-                      {/* Bottom Subtle Pill */}
-                      <div className="absolute bottom-3 left-4 z-[4] pointer-events-none">
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/70">
-                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                          {prod.mockupContent.highlightPill}
-                        </span>
                       </div>
                     </div>
 
