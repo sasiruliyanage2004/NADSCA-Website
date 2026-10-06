@@ -288,8 +288,24 @@ export default function FeaturedProductsList() {
     }
   };
 
+  const videoStructuredData = FEATURED_PRODUCTS.filter((p) => p.videoUrl).map((p) => ({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: `${p.title} — ${p.headline}`,
+    description: p.description,
+    thumbnailUrl: p.thumbnailImage ? `https://nadsca.dev${p.thumbnailImage}` : "https://nadsca.dev/og-image.png",
+    uploadDate: "2026-10-01T00:00:00Z",
+    duration: p.slug === "ohrms" ? "PT1M50S" : "PT2M00S",
+    contentUrl: `https://nadsca.dev${p.videoUrl}`,
+  }));
+
   return (
     <>
+      {/* VideoObject Structured Data for Googlebot & Video Search Indexing */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoStructuredData) }}
+      />
       <section
         id="featured-products"
         className="py-20 lg:py-28 bg-paper dark:bg-[#07090E] border-t border-ink/5 dark:border-white/10 relative scroll-mt-20"

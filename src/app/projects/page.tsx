@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Projects & Featured Products — NADSCA",
   description:
     "Explore platforms NADSCA has designed, engineered, and brought to life across industries. Real products, real systems, real engineering.",
+  alternates: {
+    canonical: "https://nadsca.dev/projects",
+  },
 };
 
 export default function ProjectsPage() {
@@ -18,10 +21,9 @@ export default function ProjectsPage() {
         <AmbientBackground />
         <div className="container-content relative">
           <Reveal className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 text-azure dark:text-cyan-400 text-xs font-mono font-bold tracking-[0.25em] uppercase mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              PROJECTS
-            </div>
+            <p className="text-azure dark:text-azure-light font-semibold text-sm mb-4">
+              Projects &amp; Systems
+            </p>
 
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-ink dark:text-white leading-[1.08] tracking-tight">
               Don&apos;t just take our word for it.{" "}

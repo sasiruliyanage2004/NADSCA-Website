@@ -1,10 +1,11 @@
 import { MetadataRoute } from "next";
+import { BLOG_POSTS } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nadsca.dev";
   const currentDate = new Date().toISOString();
 
-  const routes = [
+  const coreRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}`,
       lastModified: currentDate,
@@ -39,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/blog`,
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
-      priority: 0.8,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/careers`,
@@ -55,5 +56,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return routes;
+  // Dynamically index all blog & insight articles for Googlebot
+  const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: currentDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  }));
+
+  return [...coreRoutes, ...blogRoutes];
 }

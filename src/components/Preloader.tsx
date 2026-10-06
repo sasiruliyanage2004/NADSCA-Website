@@ -9,6 +9,16 @@ export default function Preloader() {
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
+    // If crawler or search bot, bypass preloader immediately so Googlebot captures the full rendered website
+    if (
+      typeof navigator !== "undefined" &&
+      /bot|googlebot|crawler|spider|robot|crawling|lighthouse/i.test(navigator.userAgent)
+    ) {
+      setIsLoading(false);
+      document.body.style.overflow = "";
+      return;
+    }
+
     // Check if user already saw preloader in this session, unless forced via ?preloader=1
     try {
       const isPreview =

@@ -1,9 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Hero3D from "@/components/Hero3D";
 import HeroContent from "@/components/HeroContent";
 import TechMarquee from "@/components/TechMarquee";
 import Counter from "@/components/Counter";
 import Reveal from "@/components/Reveal";
+
+export const metadata: Metadata = {
+  title: "NADSCA — We Engineer Software for What's Next",
+  description:
+    "Founded in 2026, NADSCA builds intelligent, scalable, and practical enterprise software platforms, AI automation, and cloud architecture for modern businesses.",
+  alternates: {
+    canonical: "https://nadsca.dev",
+  },
+};
 
 import CutoutCard from "@/components/CutoutCard";
 import SpotlightBento from "@/components/SpotlightBento";

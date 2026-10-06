@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Services — NADSCA",
   description:
     "Product engineering, data & AI, product design, enterprise systems, and technology consulting services from NADSCA.",
+  alternates: {
+    canonical: "https://nadsca.dev/services",
+  },
 };
 
 const ACCENTS: SpotlightAccent[] = ["azure", "teal", "purple", "blue", "azure"];

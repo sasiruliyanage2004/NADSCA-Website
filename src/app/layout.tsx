@@ -21,9 +21,31 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nadsca.dev"),
-  title: "NADSCA — We Engineer Software for What's Next",
+  title: {
+    default: "NADSCA — We Engineer Software for What's Next",
+    template: "%s | NADSCA",
+  },
   description:
-    "Founded in 2026, NADSCA is a software engineering company focused on building intelligent, scalable, and practical software solutions for modern businesses.",
+    "Founded in 2026, NADSCA is a software engineering company focused on building intelligent, scalable, and practical software solutions for modern businesses. Custom enterprise systems, cloud platforms, and AI automation.",
+  keywords: [
+    "NADSCA",
+    "software engineering",
+    "enterprise software",
+    "AI systems",
+    "cloud architecture",
+    "Sri Lanka tech company",
+    "HRMS platform",
+    "predictive retail POS",
+    "computer vision security",
+    "digital transformation",
+    "full-stack engineering",
+  ],
+  authors: [{ name: "NADSCA Engineering Team", url: "https://nadsca.dev" }],
+  creator: "NADSCA",
+  publisher: "NADSCA",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -36,17 +58,68 @@ export const metadata: Metadata = {
     siteName: "NADSCA",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "NADSCA — We Engineer Software for What's Next",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "NADSCA — We Engineer Software for What's Next",
     description:
       "Intelligent, scalable, and practical software solutions for modern businesses.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+};
+
+const jsonLdData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://nadsca.dev/#organization",
+      "name": "NADSCA",
+      "url": "https://nadsca.dev",
+      "logo": "https://nadsca.dev/logo-stacked-dark.png",
+      "description":
+        "NADSCA is a software engineering company focused on building intelligent, scalable, and practical software solutions for modern businesses.",
+      "foundingDate": "2026",
+      "sameAs": [
+        "https://www.linkedin.com/company/nadsca",
+        "https://github.com/nadsca"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+94781498064",
+        "contactType": "customer service",
+        "email": "contact@nadsca.dev",
+        "availableLanguage": ["English", "Sinhala"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nadsca.dev/#website",
+      "url": "https://nadsca.dev",
+      "name": "NADSCA",
+      "publisher": { "@id": "https://nadsca.dev/#organization" },
+      "inLanguage": "en-US"
+    }
+  ]
 };
 
 export default function RootLayout({
@@ -57,6 +130,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark ${display.variable} ${body.variable}`} suppressHydrationWarning>
       <head>
+        {/* Googlebot Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `

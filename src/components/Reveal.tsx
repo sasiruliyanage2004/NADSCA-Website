@@ -11,7 +11,7 @@ if (typeof window !== "undefined") {
 export default function Reveal({
   children,
   className = "",
-  y = 28,
+  y = 20,
   delay = 0,
 }: {
   children: React.ReactNode;
@@ -24,30 +24,47 @@ export default function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Ensure search crawlers, Googlebot, and reduced-motion users always see content immediately
+    const isBot =
+      typeof navigator !== "undefined" &&
+      /bot|googlebot|crawler|spider|robot|crawling|lighthouse/i.test(
+        navigator.userAgent
+      );
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (isBot || prefersReducedMotion) {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+      return;
+    }
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el,
         {
-          y: y + 8,
+          y: y + 4,
           opacity: 0,
-          scale: 0.99,
+          scale: 0.995,
         },
         {
           y: 0,
           opacity: 1,
           scale: 1,
-          duration: 0.55,
+          duration: 0.5,
           delay,
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 90%",
-            end: "bottom 10%",
-            toggleActions: "play reverse play reverse",
+            start: "top 92%",
+            once: true, // Keep content permanently visible for smooth reading and crawlers
           },
         }
       );
     }, el);
+
     return () => ctx.revert();
   }, [y, delay]);
 

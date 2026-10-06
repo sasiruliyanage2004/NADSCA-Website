@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Careers — NADSCA",
   description:
     "Build technology that matters. Explore open roles and culture at NADSCA.",
+  alternates: {
+    canonical: "https://nadsca.dev/careers",
+  },
 };
 
 const BENEFIT_ICONS = [

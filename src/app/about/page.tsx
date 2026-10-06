@@ -10,6 +10,9 @@ import AboutCTA from "@/components/AboutCTA";
 export const metadata: Metadata = {
   title: "About — NADSCA",
   description: "We engineer software for what's next. Founded in 2026, NADSCA builds intelligent, scalable, and practical software solutions.",
+  alternates: {
+    canonical: "https://nadsca.dev/about",
+  },
 };
 
 const VALUE_ACCENTS: SpotlightAccent[] = ["azure", "teal", "lime", "purple", "blue", "azure"];

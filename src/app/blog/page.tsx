@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Blog & Insights — NADSCA",
   description:
     "Ideas, lessons, and technology shaping what's next. Practical insights from the people building real software, AI systems, and digital products at NADSCA.",
+  alternates: {
+    canonical: "https://nadsca.dev/blog",
+  },
 };
 
 const BADGES = ["FEATURED", "TRENDING", "AI INSIGHT", "SYSTEMS", "DEEP DIVE", "STRATEGY", "ARCHITECTURE", "ANALYTICS"];

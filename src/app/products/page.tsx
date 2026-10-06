@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Products & Solutions — NADSCA",
   description:
     "Production-ready software platforms for enterprise HR, AI security patrolling, intelligent retail POS, and smart inventory distribution.",
+  alternates: {
+    canonical: "https://nadsca.dev/products",
+  },
 };
 
 const ACCENTS: SpotlightAccent[] = ["azure", "teal", "purple", "blue"];

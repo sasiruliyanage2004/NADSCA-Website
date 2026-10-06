@@ -37,7 +37,25 @@ export async function generateMetadata({
   return {
     title: `${article.title} — NADSCA Insights`,
     description: article.excerpt,
+    alternates: {
+      canonical: `https://nadsca.dev/blog/${article.slug}`,
+    },
     openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: `https://nadsca.dev/blog/${article.slug}`,
+      type: "article",
+      images: [
+        {
+          url: article.image,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
       title: article.title,
       description: article.excerpt,
       images: [article.image],
@@ -58,8 +76,39 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     3
   );
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline: article.title,
+    description: article.excerpt,
+    image: `https://nadsca.dev${article.image}`,
+    datePublished: "2026-10-01T00:00:00.000Z",
+    author: {
+      "@type": "Organization",
+      name: article.author,
+      url: "https://nadsca.dev",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "NADSCA",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://nadsca.dev/logo-stacked-dark.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://nadsca.dev/blog/${article.slug}`,
+    },
+  };
+
   return (
     <>
+      {/* Article Structured Data for Googlebot & Google Discover */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <article className="pt-32 sm:pt-40 pb-20 lg:pb-28 bg-mist dark:bg-[#07090E] relative overflow-hidden">
         <AmbientBackground />
 
