@@ -234,7 +234,7 @@ export default function Home() {
             {BLOG_POSTS.slice(0, 3).map((post, i) => (
               <Reveal key={post.slug} delay={i * 0.08}>
                 <CutoutCard
-                  href="/blog"
+                  href={`/blog/${post.slug}`}
                   badge={i === 0 ? "NEW" : i === 1 ? "POPULAR" : "INSIGHT"}
                   tag={post.category.toUpperCase()}
                   title={post.title}

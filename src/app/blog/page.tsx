@@ -70,7 +70,7 @@ export default function BlogPage() {
             {BLOG_POSTS.map((post, i) => (
               <Reveal key={post.slug} delay={(i % 4) * 0.05}>
                 <CutoutCard
-                  href={`/contact?subject=${encodeURIComponent(post.title)}`}
+                  href={`/blog/${post.slug}`}
                   badge={BADGES[i % BADGES.length]}
                   tag={post.category.toUpperCase()}
                   title={post.title}
