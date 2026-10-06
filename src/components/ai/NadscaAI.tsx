@@ -366,22 +366,20 @@ export default function NadscaAI() {
             </div>
           ))}
 
-          {/* Streaming Loading Indicator */}
+          {/* Skeleton Shimmer Loading Indicator */}
           {isLoading && (
             <div className="flex gap-3 justify-start animate-fadeIn">
               <div className="w-6 h-6 rounded-full bg-cyan-400/20 border border-cyan-400/30 flex items-center justify-center text-cyan-300 shrink-0 mt-0.5">
-                <Sparkles className="w-3 h-3" />
+                <Sparkles className="w-3 h-3 animate-pulse text-cyan-300" />
               </div>
-              <div className="rounded-2xl rounded-tl-sm px-4 py-3 bg-white/[0.05] border border-white/10 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" />
-                <span
-                  className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce"
-                  style={{ animationDelay: "150ms" }}
-                />
-                <span
-                  className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce"
-                  style={{ animationDelay: "300ms" }}
-                />
+              <div className="rounded-2xl rounded-tl-sm px-4 py-3.5 bg-white/[0.04] border border-white/10 space-y-2 w-3/4">
+                <div className="flex items-center gap-1.5 mb-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  <span className="text-[10px] font-mono text-cyan-400 font-bold uppercase tracking-wider">Awora synthesizing...</span>
+                </div>
+                <div className="h-2.5 rounded-full skeleton-shimmer w-5/6" />
+                <div className="h-2.5 rounded-full skeleton-shimmer w-full" />
+                <div className="h-2.5 rounded-full skeleton-shimmer w-3/5" />
               </div>
             </div>
           )}
