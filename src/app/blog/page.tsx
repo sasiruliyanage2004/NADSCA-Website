@@ -21,16 +21,12 @@ export default function BlogPage() {
         <AmbientBackground />
         <div className="container-content relative">
           <Reveal className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 text-azure dark:text-cyan-400 text-xs font-mono font-bold tracking-[0.25em] uppercase mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              BLOG &amp; INSIGHTS
-            </div>
+            <p className="text-azure dark:text-azure-light font-semibold text-sm mb-4">
+              Blog &amp; Insights
+            </p>
 
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-ink dark:text-white leading-[1.08] tracking-tight">
-              Ideas, lessons, and technology{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-emerald-400">
-                shaping what&apos;s next.
-              </span>
+              Ideas, lessons, and technology shaping what&apos;s next.
             </h1>
 
             <div className="mt-8 space-y-5 text-base sm:text-lg text-ink/75 dark:text-white/75 leading-relaxed max-w-3xl">
@@ -49,7 +45,7 @@ export default function BlogPage() {
               <div className="pt-3">
                 <a
                   href="#insights"
-                  className="inline-flex items-center gap-2 font-bold text-azure dark:text-cyan-400 hover:underline group text-base"
+                  className="inline-flex items-center gap-2 font-semibold text-azure dark:text-azure-light hover:underline group text-base"
                 >
                   <span>Explore our insights</span>
                   <span className="transition-transform group-hover:translate-y-1 font-mono">↓</span>

@@ -297,10 +297,9 @@ export default function FeaturedProductsList() {
         <div className="container-content">
           {/* Section Header */}
           <Reveal className="max-w-3xl mb-12 lg:mb-16">
-            <div className="inline-flex items-center gap-2 text-azure dark:text-cyan-400 text-xs font-mono font-bold tracking-[0.25em] uppercase mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              FEATURED PRODUCTS
-            </div>
+            <p className="text-azure dark:text-azure-light font-semibold text-sm mb-3">
+              Featured Products
+            </p>
 
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink dark:text-white leading-[1.12] tracking-tight">
               See what we&apos;ve built.
@@ -319,16 +318,13 @@ export default function FeaturedProductsList() {
                 <Reveal key={prod.id} delay={(idx % 2) * 0.08}>
                   <SpotlightCard
                     accent={prod.accent}
-                    className="h-full rounded-[28px] border border-ink/8 dark:border-white/10 bg-white dark:bg-[#0B0F17] hover:border-cyan-400/40 transition-all duration-500 overflow-hidden flex flex-col group shadow-lg hover:shadow-2xl"
+                    className="h-full rounded-[28px] border border-ink/8 dark:border-white/[0.08] bg-white dark:bg-[#0B0F17] hover:border-ink/20 dark:hover:border-white/20 transition-all duration-300 overflow-hidden flex flex-col group shadow-sm hover:shadow-card"
                   >
-                    {/* VIDEO / DASHBOARD THUMBNAIL CONTAINER WITH SKELETON SHIMMER */}
+                    {/* VIDEO / DASHBOARD THUMBNAIL CONTAINER */}
                     <div
                       onClick={() => setActiveModalProduct(prod)}
                       className="relative h-60 sm:h-72 w-full overflow-hidden bg-slate-950 cursor-pointer border-b border-ink/8 dark:border-white/10 group/preview"
                     >
-                      {/* Background Skeleton Shimmer Base */}
-                      <div className="absolute inset-0 skeleton-shimmer z-0" />
-
                       {/* Real Video Thumbnail Image if available */}
                       {prod.thumbnailImage ? (
                         <>
@@ -336,7 +332,7 @@ export default function FeaturedProductsList() {
                             src={prod.thumbnailImage}
                             alt={prod.headline}
                             fill
-                            className="object-cover object-top opacity-85 group-hover/preview:opacity-100 group-hover:scale-105 transition-all duration-700 relative z-[1]"
+                            className="object-cover object-top opacity-90 group-hover/preview:opacity-100 group-hover:scale-[1.02] transition-all duration-700 relative z-[1]"
                             sizes="(max-width: 768px) 100vw, 50vw"
                             priority
                           />
@@ -349,47 +345,42 @@ export default function FeaturedProductsList() {
                             muted
                             playsInline
                             preload="metadata"
-                            className="absolute inset-0 w-full h-full object-cover opacity-75 group-hover/preview:opacity-95 group-hover:scale-105 transition-all duration-700 relative z-[1]"
+                            className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover/preview:opacity-95 group-hover:scale-[1.02] transition-all duration-700 relative z-[1]"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-transparent to-transparent z-[2]" />
                         </>
                       ) : null}
 
-                      {/* Subtle Dark Vignette */}
-                      <div className="absolute inset-0 bg-black/25 group-hover/preview:bg-black/15 transition-colors z-[2]" />
+                      {/* Subtle Vignette Overlay */}
+                      <div className="absolute inset-0 bg-black/20 group-hover/preview:bg-black/10 transition-colors z-[2]" />
 
                       {/* Top-Left Category Tag */}
                       <div className="absolute top-4 left-4 z-[4] pointer-events-none">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-cyan-400 shadow-md">
-                          <Icon className="w-3 h-3 text-cyan-400" />
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[11px] font-medium text-white/90 shadow-sm">
+                          <Icon className="w-3.5 h-3.5 text-white/70" />
                           <span>{prod.categoryTag}</span>
                         </span>
                       </div>
 
                       {/* Bottom-Right Video Duration Badge */}
                       <div className="absolute bottom-4 right-4 z-[4] pointer-events-none">
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono font-bold text-white shadow-md">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                          <span>{prod.videoDuration}</span>
+                        <span className="px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md border border-white/15 text-[11px] font-mono text-white/80 shadow-sm">
+                          {prod.videoDuration}
                         </span>
                       </div>
 
                       {/* Bottom-Left Highlight Pill */}
                       <div className="absolute bottom-4 left-4 z-[4] pointer-events-none">
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/80">
-                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                        <span className="px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md border border-white/10 text-[10px] text-white/70">
                           {prod.mockupContent.highlightPill}
                         </span>
                       </div>
 
-                      {/* Ambient Bloom Glow on Hover */}
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(34,211,238,0.22),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-[3]" />
-
                       {/* Sleek Centered Glassmorphic Play Pill */}
                       <div className="absolute inset-0 flex items-center justify-center p-6 z-[4]">
-                        <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-black/65 border border-white/25 text-white backdrop-blur-xl group-hover:bg-cyan-400 group-hover:text-black group-hover:border-cyan-300 transition-all duration-300 shadow-[0_10px_35px_rgba(0,0,0,0.6)] group-hover:shadow-[0_0_35px_rgba(34,211,238,0.5)] group-hover:scale-105">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 dark:bg-black/65 text-ink dark:text-white border border-black/10 dark:border-white/20 backdrop-blur-md group-hover:scale-105 transition-all duration-300 shadow-md">
                           <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
-                          <span className="text-xs font-mono font-bold tracking-wider uppercase">
+                          <span className="text-xs font-semibold tracking-wide">
                             Watch Demo
                           </span>
                         </div>
@@ -399,9 +390,8 @@ export default function FeaturedProductsList() {
                     {/* CARD CONTENT BODY */}
                     <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                       <div>
-                        {/* Number Index Pill */}
-                        <div className="inline-flex items-center gap-2 text-xs font-mono font-bold text-cyan-400 tracking-wider uppercase mb-3">
-                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                        {/* Number Index */}
+                        <div className="text-xs font-mono font-medium text-azure dark:text-azure-light tracking-wider uppercase mb-2">
                           {prod.number}
                         </div>
 
@@ -415,21 +405,21 @@ export default function FeaturedProductsList() {
                           {prod.description}
                         </p>
 
-                        {/* Key Performance Metric Chips */}
-                        <div className="grid grid-cols-2 gap-3 mb-6">
-                          <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/5 group-hover:border-white/10 transition-colors">
-                            <div className="font-display font-bold text-base sm:text-lg text-cyan-300">
+                        {/* Key Performance Metrics */}
+                        <div className="grid grid-cols-2 gap-3 py-3 px-4 rounded-2xl bg-ink/[0.02] dark:bg-white/[0.02] border border-ink/5 dark:border-white/5 mb-6">
+                          <div>
+                            <div className="font-display font-bold text-base sm:text-lg text-ink dark:text-white">
                               {prod.mockupContent.stat1}
                             </div>
-                            <div className="text-[11px] font-mono text-white/50 truncate">
+                            <div className="text-[11px] text-ink/50 dark:text-white/50 truncate">
                               {prod.mockupContent.stat1Label}
                             </div>
                           </div>
-                          <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/5 group-hover:border-white/10 transition-colors">
-                            <div className="font-display font-bold text-base sm:text-lg text-white">
+                          <div>
+                            <div className="font-display font-bold text-base sm:text-lg text-ink dark:text-white">
                               {prod.mockupContent.stat2}
                             </div>
-                            <div className="text-[11px] font-mono text-white/50 truncate">
+                            <div className="text-[11px] text-ink/50 dark:text-white/50 truncate">
                               {prod.mockupContent.stat2Label}
                             </div>
                           </div>
@@ -441,7 +431,7 @@ export default function FeaturedProductsList() {
                         <button
                           type="button"
                           onClick={() => setActiveModalProduct(prod)}
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-white text-black font-bold text-xs font-mono uppercase tracking-wider hover:bg-cyan-400 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-sm hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ink text-white dark:bg-white dark:text-black font-semibold text-xs tracking-wide hover:opacity-90 transition-opacity"
                         >
                           <Play className="w-3 h-3 fill-current ml-0.5" />
                           <span>Watch Demo</span>
@@ -449,7 +439,7 @@ export default function FeaturedProductsList() {
 
                         <Link
                           href={`/products#${prod.slug}`}
-                          className="inline-flex items-center gap-1 text-xs font-mono font-medium text-ink/50 dark:text-white/50 hover:text-cyan-400 transition-colors group/link"
+                          className="inline-flex items-center gap-1 text-xs font-medium text-ink/60 dark:text-white/60 hover:text-azure dark:hover:text-azure-light transition-colors group/link"
                         >
                           <span>Full Specs</span>
                           <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
@@ -474,20 +464,17 @@ export default function FeaturedProductsList() {
           onWheel={(e) => e.stopPropagation()}
         >
           <div
-            className="relative w-full max-w-3xl rounded-2xl sm:rounded-3xl bg-[#0B0F17] border border-white/20 text-white p-5 sm:p-6 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col my-auto overscroll-contain"
+            className="relative w-full max-w-3xl rounded-2xl sm:rounded-3xl bg-[#0B0F17] border border-white/15 text-white p-5 sm:p-6 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col my-auto overscroll-contain"
             onClick={(e) => e.stopPropagation()}
             onWheel={(e) => e.stopPropagation()}
           >
-            {/* Top Radial Glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-cyan-500/15 blur-3xl pointer-events-none" />
-
             {/* Modal Header */}
             <div className="flex items-center justify-between gap-4 pb-3 sm:pb-4 border-b border-white/10 relative z-10 shrink-0">
               <div>
-                <span className="font-mono text-[11px] font-bold text-cyan-400 tracking-wider uppercase mb-0.5 block">
+                <span className="font-mono text-[11px] font-semibold text-azure-light tracking-wider uppercase mb-0.5 block">
                   {activeModalProduct.number} &middot; VIDEO DEMO
                 </span>
-                <h3 className="font-display text-lg sm:text-xl md:text-2xl font-extrabold text-white tracking-tight">
+                <h3 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight">
                   {activeModalProduct.headline}
                 </h3>
               </div>
@@ -503,39 +490,36 @@ export default function FeaturedProductsList() {
 
             {/* Modal Body */}
             <div className="py-4 overflow-y-auto space-y-4 relative z-10 pr-1">
-              {/* VIDEO PLAYER SCREEN WITH MAGIC UI BACKLIGHT */}
+              {/* VIDEO PLAYER SCREEN */}
               {activeModalProduct.videoUrl ? (
-                <Backlight blur={40} className="w-full my-2">
-                  <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-white/20 aspect-video max-h-[46vh] w-full mx-auto shadow-2xl flex items-center justify-center">
-                    <video
-                      src={activeModalProduct.videoUrl}
-                      poster={activeModalProduct.thumbnailImage}
-                      controls
-                      autoPlay
-                      playsInline
-                      className="w-full h-full object-contain bg-black"
-                    />
-                  </div>
-                </Backlight>
+                <div className="relative rounded-2xl overflow-hidden bg-black border border-white/15 aspect-video max-h-[46vh] w-full mx-auto shadow-2xl flex items-center justify-center my-2">
+                  <video
+                    src={activeModalProduct.videoUrl}
+                    poster={activeModalProduct.thumbnailImage}
+                    controls
+                    autoPlay
+                    playsInline
+                    className="w-full h-full object-contain bg-black"
+                  />
+                </div>
               ) : (
                 /* VIDEO PLAYER SCREEN SIMULATOR */
-                <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-slate-950 border border-white/15 aspect-video max-h-[46vh] w-full mx-auto flex flex-col justify-between shadow-xl group/player">
+                <div className="relative rounded-2xl overflow-hidden bg-slate-950 border border-white/10 aspect-video max-h-[46vh] w-full mx-auto flex flex-col justify-between shadow-xl group/player my-2">
                   {/* Background visualizer */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${activeModalProduct.thumbnailGradient} opacity-90`}
+                    className={`absolute inset-0 bg-gradient-to-br ${activeModalProduct.thumbnailGradient} opacity-80`}
                   />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(14,165,233,0.2),transparent_70%)]" />
-                  <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:2rem_2rem]" />
+                  <div className="absolute inset-0 bg-black/40" />
 
                   {/* Top Video Overlay Bar */}
                   <div className="relative z-10 p-4 flex items-center justify-between text-xs font-mono bg-gradient-to-b from-black/80 to-transparent">
                     <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="font-bold text-white">LIVE DEMO STREAM</span>
+                      <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <span className="font-semibold text-white">INTERACTIVE DEMO</span>
                       <span className="text-white/40">&middot;</span>
-                      <span className="text-cyan-400">{activeModalProduct.title}</span>
+                      <span className="text-white/80">{activeModalProduct.title}</span>
                     </div>
-                    <span className="px-2 py-0.5 rounded bg-white/10 text-white/80 font-bold">1080P 60FPS</span>
+                    <span className="px-2 py-0.5 rounded bg-white/10 text-white/70 font-medium">1080P</span>
                   </div>
 
                   {/* Center Big Play / Walkthrough Trigger */}
@@ -543,26 +527,26 @@ export default function FeaturedProductsList() {
                     <button
                       type="button"
                       onClick={() => setIsPlaying(!isPlaying)}
-                      className="w-20 h-20 rounded-full bg-cyan-400 text-slate-950 flex items-center justify-center shadow-[0_0_40px_rgba(14,165,233,0.6)] hover:scale-110 active:scale-95 transition-all duration-300"
+                      className="w-16 h-16 rounded-full bg-white text-slate-950 flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all duration-300"
                     >
                       {isPlaying ? (
-                        <Pause className="w-8 h-8 fill-current" />
+                        <Pause className="w-6 h-6 fill-current" />
                       ) : (
-                        <Play className="w-8 h-8 fill-current ml-1" />
+                        <Play className="w-6 h-6 fill-current ml-0.5" />
                       )}
                     </button>
-                    <p className="mt-4 text-sm font-medium text-white/90 max-w-md">
+                    <p className="mt-4 text-xs sm:text-sm font-medium text-white/80 max-w-md">
                       {isPlaying
-                        ? "Demo walkthrough active. Reviewing system architecture and modules."
-                        : "Walkthrough paused. Click to resume video stream."}
+                        ? "Demo walkthrough active. Reviewing system architecture."
+                        : "Click to preview interactive stream."}
                     </p>
                   </div>
 
                   {/* Bottom Video Controls Bar */}
                   <div className="relative z-10 p-4 bg-gradient-to-t from-black/90 via-black/60 to-transparent space-y-2">
                     {/* Progress bar */}
-                    <div className="w-full h-1.5 rounded-full bg-white/20 overflow-hidden relative cursor-pointer">
-                      <div className="absolute left-0 top-0 bottom-0 w-2/5 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-full" />
+                    <div className="w-full h-1 rounded-full bg-white/20 overflow-hidden relative cursor-pointer">
+                      <div className="absolute left-0 top-0 bottom-0 w-2/5 bg-white/80 rounded-full" />
                     </div>
 
                     <div className="flex items-center justify-between text-xs font-mono text-white/70 pt-1">
@@ -570,17 +554,17 @@ export default function FeaturedProductsList() {
                         <button
                           type="button"
                           onClick={() => setIsPlaying(!isPlaying)}
-                          className="text-white hover:text-cyan-400 transition-colors"
+                          className="text-white hover:text-white/80 transition-colors"
                         >
-                          {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                          {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
                         </button>
-                        <Volume2 className="w-4 h-4 text-white/60" />
+                        <Volume2 className="w-3.5 h-3.5 text-white/60" />
                         <span>01:28 / {activeModalProduct.videoDuration}</span>
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <span className="text-cyan-400 font-bold">{activeModalProduct.categoryTag}</span>
-                        <Maximize2 className="w-4 h-4 text-white/60" />
+                        <span className="text-white/70">{activeModalProduct.categoryTag}</span>
+                        <Maximize2 className="w-3.5 h-3.5 text-white/60" />
                       </div>
                     </div>
                   </div>
@@ -588,27 +572,27 @@ export default function FeaturedProductsList() {
               )}
 
               {/* Product Description */}
-              <p className="text-white/80 text-base sm:text-lg leading-relaxed">
+              <p className="text-white/75 text-sm sm:text-base leading-relaxed">
                 {activeModalProduct.description}
               </p>
 
               {/* Key System Highlights */}
               <div>
-                <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400 mb-3 flex items-center gap-2">
-                  <MonitorPlay className="w-4 h-4" />
+                <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-white/60 mb-3 flex items-center gap-2">
+                  <MonitorPlay className="w-4 h-4 text-azure-light" />
                   Key System Highlights
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {activeModalProduct.demoHighlights.map((hl) => (
                     <div
                       key={hl.title}
-                      className="p-4 rounded-2xl bg-white/[0.02] border border-white/6 hover:border-white/15 transition-colors"
+                      className="p-4 rounded-2xl bg-white/[0.02] border border-white/6 hover:border-white/12 transition-colors"
                     >
-                      <div className="flex items-center gap-2 font-bold text-sm text-white mb-1">
+                      <div className="flex items-center gap-2 font-semibold text-sm text-white mb-1">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                         <span>{hl.title}</span>
                       </div>
-                      <p className="text-xs sm:text-sm text-white/65 leading-relaxed pl-6">
+                      <p className="text-xs sm:text-sm text-white/60 leading-relaxed pl-6">
                         {hl.description}
                       </p>
                     </div>
@@ -635,9 +619,9 @@ export default function FeaturedProductsList() {
                   <button
                     type="button"
                     onClick={() => handleLaunchAIDemo(activeModalProduct)}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] text-white px-4 py-2.5 text-xs sm:text-sm font-semibold hover:border-cyan-400/40 hover:bg-white/[0.1] transition-all"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] text-white px-4 py-2.5 text-xs sm:text-sm font-semibold hover:border-white/30 hover:bg-white/[0.08] transition-all"
                   >
-                    <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                    <Sparkles className="w-3.5 h-3.5 text-azure-light" />
                     <span>Explore with Awora AI</span>
                   </button>
                 </Magnetic>
@@ -646,9 +630,9 @@ export default function FeaturedProductsList() {
               <Link
                 href={`/products#${activeModalProduct.slug}`}
                 onClick={() => setActiveModalProduct(null)}
-                className="text-xs sm:text-sm font-semibold text-cyan-400 hover:underline flex items-center gap-1.5"
+                className="text-xs sm:text-sm font-medium text-white/70 hover:text-white hover:underline flex items-center gap-1.5 transition-colors"
               >
-                <span>View Full Architecture Specs</span>
+                <span>View Architecture Specs</span>
                 <span>→</span>
               </Link>
             </div>

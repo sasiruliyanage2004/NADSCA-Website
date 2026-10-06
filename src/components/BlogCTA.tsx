@@ -27,7 +27,7 @@ export default function BlogCTA() {
 
       <div className="container-content text-center relative z-10">
         <Reveal>
-          <div className="text-cyan-400 text-xs font-mono font-semibold tracking-widest uppercase mb-4">
+          <div className="text-azure-light text-xs font-mono font-medium tracking-widest uppercase mb-4">
             THOUGHT LEADERSHIP TO EXECUTION
           </div>
 
@@ -35,7 +35,7 @@ export default function BlogCTA() {
             READY TO TURN INSIGHTS INTO PRODUCTION SYSTEMS?
           </h2>
 
-          <p className="text-[17px] sm:text-xl font-semibold text-cyan-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-[17px] sm:text-xl font-medium text-azure-light mt-4 max-w-2xl mx-auto">
             Practical technology built around your business goals.
           </p>
 
@@ -68,9 +68,9 @@ export default function BlogCTA() {
               <button
                 type="button"
                 onClick={triggerAI}
-                className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.05] text-white px-7 py-4 text-[15px] font-medium hover:border-cyan-400/40 hover:bg-white/[0.1] backdrop-blur-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.05] text-white px-7 py-4 text-[15px] font-medium hover:border-white/30 hover:bg-white/[0.08] backdrop-blur-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
               >
-                <Sparkles className="w-4 h-4 text-cyan-400" />
+                <Sparkles className="w-4 h-4 text-azure-light" />
                 <span>Ask Awora AI</span>
               </button>
             </Magnetic>
