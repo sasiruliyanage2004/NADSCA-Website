@@ -446,12 +446,12 @@ export default function FeaturedProductsList() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 bg-slate-950/85 backdrop-blur-md transition-all duration-300 animate-in fade-in overscroll-contain"
+          className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 md:p-8 bg-black/90 backdrop-blur-xl transition-all duration-300 animate-in fade-in overscroll-contain"
           onClick={() => setActiveModalProduct(null)}
           onWheel={(e) => e.stopPropagation()}
         >
           <div
-            className="relative w-full max-w-3xl rounded-2xl sm:rounded-3xl bg-[#0B0F17] border border-white/20 text-white p-5 sm:p-6 shadow-2xl overflow-hidden max-h-[85vh] flex flex-col my-auto overscroll-contain"
+            className="relative w-full max-w-3xl rounded-2xl sm:rounded-3xl bg-[#0B0F17] border border-white/20 text-white p-5 sm:p-6 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col my-auto overscroll-contain"
             onClick={(e) => e.stopPropagation()}
             onWheel={(e) => e.stopPropagation()}
           >
