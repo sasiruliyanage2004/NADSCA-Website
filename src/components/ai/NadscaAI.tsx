@@ -80,6 +80,20 @@ export default function NadscaAI() {
     };
   }, [isOpen, messages.length]);
 
+  // Lock Lenis smooth scroll while Awora AI is open so background page does not scroll
+  useEffect(() => {
+    if (isOpen) {
+      if (typeof window !== "undefined" && (window as any).__lenis) {
+        (window as any).__lenis.stop();
+      }
+      return () => {
+        if (typeof window !== "undefined" && (window as any).__lenis) {
+          (window as any).__lenis.start();
+        }
+      };
+    }
+  }, [isOpen]);
+
   const sendMessage = React.useCallback(
     async (textToSend?: string) => {
       const query = (textToSend || input).trim();
@@ -206,6 +220,8 @@ export default function NadscaAI() {
 
       {/* ─── FLOATING AI ASSISTANT PANEL ─── */}
       <div
+        data-lenis-prevent="true"
+        onWheel={(e) => e.stopPropagation()}
         className={`fixed z-[200] transition-all duration-300 ease-out ${
           isOpen
             ? "opacity-100 scale-100 pointer-events-auto"
@@ -260,7 +276,10 @@ export default function NadscaAI() {
         {/* Panel Message Area */}
         <div
           ref={messagesContainerRef}
+          data-lenis-prevent="true"
+          onWheel={(e) => e.stopPropagation()}
           className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5 text-sm overscroll-contain"
+          style={{ overscrollBehavior: "contain" }}
         >
           {/* Welcome Screen when no interaction */}
           {!hasInteracted && messages.length === 0 && (
