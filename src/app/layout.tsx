@@ -103,11 +103,17 @@ const jsonLdData = {
         "https://www.linkedin.com/company/nadsca",
         "https://github.com/nadsca"
       ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#16/17, “White Whales”, Malalage Mawatha, Dharmarama Road, Malamulla West",
+        "addressLocality": "Panadura",
+        "addressCountry": "LK"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+94781498064",
+        "telephone": "+94 76 538 3500",
         "contactType": "customer service",
-        "email": "contact@nadsca.dev",
+        "email": "info@nadsca.com",
         "availableLanguage": ["English", "Sinhala"]
       }
     },
