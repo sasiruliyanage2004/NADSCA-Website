@@ -15,27 +15,14 @@ interface HubNode {
 }
 
 const HUBS: HubNode[] = [
-  { id: "cmbo", name: "Colombo", country: "Sri Lanka", lat: 6.9271, lng: 79.8612, latency: "4ms", status: "PRIMARY LAB", role: "NADSCA HQ & Core R&D" },
-  { id: "sin", name: "Singapore", country: "Singapore", lat: 1.3521, lng: 103.8198, latency: "14ms", status: "ONLINE", role: "APAC Edge Cluster" },
-  { id: "tok", name: "Tokyo", country: "Japan", lat: 35.6762, lng: 139.6503, latency: "28ms", status: "ONLINE", role: "East Asia Gateway" },
-  { id: "lon", name: "London", country: "United Kingdom", lat: 51.5074, lng: -0.1278, latency: "18ms", status: "ONLINE", role: "Europe West DC" },
-  { id: "fra", name: "Frankfurt", country: "Germany", lat: 50.1109, lng: 8.6821, latency: "16ms", status: "ONLINE", role: "Central EU Backbone" },
-  { id: "iad", name: "N. Virginia", country: "United States", lat: 38.9072, lng: -77.0369, latency: "22ms", status: "ONLINE", role: "US-East Hyperscale" },
-  { id: "sfo", name: "San Francisco", country: "United States", lat: 37.7749, lng: -122.4194, latency: "34ms", status: "ONLINE", role: "US-West Silicon Valley" },
-  { id: "syd", name: "Sydney", country: "Australia", lat: -33.8688, lng: 151.2093, latency: "48ms", status: "ONLINE", role: "Oceania Edge" },
+  { id: "cmbo", name: "Colombo • Galle", country: "Sri Lanka", lat: 6.9271, lng: 79.8612, latency: "< 2ms", status: "PRIMARY SITE", role: "Our Servers • Local Clients" },
+  { id: "canada", name: "Canada", country: "North America", lat: 45.4215, lng: -75.6972, latency: "180ms", status: "CLIENT REGION", role: "Served from Colombo" },
+  { id: "usa", name: "USA", country: "North America", lat: 38.9072, lng: -77.0369, latency: "174ms", status: "CLIENT REGION", role: "Served from Colombo" },
 ];
 
 const CONNECTIONS: [string, string][] = [
-  ["cmbo", "sin"],
-  ["sin", "tok"],
-  ["cmbo", "lon"],
-  ["lon", "fra"],
-  ["fra", "iad"],
-  ["iad", "sfo"],
-  ["sfo", "tok"],
-  ["sin", "syd"],
-  ["lon", "iad"],
-  ["cmbo", "fra"],
+  ["cmbo", "canada"],
+  ["cmbo", "usa"],
 ];
 
 function latLngToVector3(lat: number, lng: number, radius: number): THREE.Vector3 {
@@ -509,87 +496,86 @@ export default function NetworkGlobe3D() {
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Col: Info & Live Telemetry HUD */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-azure/10 dark:bg-azure/20 border border-azure/20 text-azure dark:text-azure-light text-xs font-mono font-semibold">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            LIVE DISTRIBUTED TOPOLOGY
-          </div>
-
           <div>
-            <h3 className="font-display text-2xl md:text-4xl text-white font-medium tracking-tight leading-tight">
-              Global Anycast Edge &amp; High-Speed Mesh
+            <span className="text-azure dark:text-azure-light font-mono font-semibold text-xs tracking-widest uppercase mb-3 block">
+              WHERE WE SERVE FROM
+            </span>
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl text-white font-medium tracking-tight leading-tight mb-4">
+              Our servers. Our team. Clients from Galle to North America.
             </h3>
-            <p className="mt-3 text-white/70 text-sm md:text-base leading-relaxed">
-              Every NADSCA deployment runs across an ultra-low latency mesh interconnecting 8 worldwide strategic zones. Traffic is routed via anycast BGP to the geographically nearest node with sub-15ms p99 latency.
+            <p className="text-white/70 text-sm sm:text-[15px] leading-relaxed mb-6">
+              Every application we deliver runs on servers we own and manage in Colombo. The same platform, the same support team, and the same security standards serve clients in Galle, Colombo, Canada and the USA.
             </p>
           </div>
 
-          {/* Real-Time Metrics HUD */}
-          <div className="grid grid-cols-2 gap-3.5 pt-2">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-md">
-              <div className="text-[11px] font-mono text-white/50 uppercase tracking-wider">Global P99 Ping</div>
-              <div className="font-display text-2xl text-emerald-400 mt-1 font-semibold">
-                {networkStats.p99Latency}
-              </div>
-              <div className="text-[10px] text-white/40 mt-0.5">Optimized BGP routes</div>
+          {/* Real-Time Metrics HUD (3 Badges) */}
+          <div className="grid grid-cols-3 gap-2.5 pt-2">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-md">
+              <div className="text-[10px] font-mono text-white/50 uppercase tracking-wider">PRIMARY SITE</div>
+              <div className="font-display text-lg sm:text-xl text-emerald-400 mt-1 font-bold">Colombo</div>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-md">
-              <div className="text-[11px] font-mono text-white/50 uppercase tracking-wider">Mesh Throughput</div>
-              <div className="font-display text-2xl text-azure-light mt-1 font-semibold">
-                {networkStats.throughput}
-              </div>
-              <div className="text-[10px] text-white/40 mt-0.5">Active data ingress</div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-md">
+              <div className="text-[10px] font-mono text-white/50 uppercase tracking-wider">HOSTING</div>
+              <div className="font-display text-lg sm:text-xl text-white mt-1 font-bold">Own Servers</div>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-md">
+              <div className="text-[10px] font-mono text-white/50 uppercase tracking-wider">CLIENT REGIONS</div>
+              <div className="font-display text-lg sm:text-xl text-cyan-400 mt-1 font-bold">Asia &amp; N. America</div>
             </div>
           </div>
 
-          {/* Active Nodes Selector */}
+          {/* Clients We Serve Pills */}
           <div className="pt-2">
-            <div className="text-xs font-mono text-white/60 mb-2.5 uppercase tracking-wider flex items-center justify-between">
-              <span>Strategic Metro Hubs</span>
-              <span className="text-[10px] text-emerald-400 font-bold">100% HEALTHY</span>
+            <div className="text-[11px] font-mono text-white/50 uppercase tracking-wider mb-2">
+              CLIENTS WE SERVE
             </div>
             <div className="flex flex-wrap gap-2">
-              {HUBS.map((hub) => {
-                const isSelected = activeHub.id === hub.id;
-                return (
-                  <button
-                    key={hub.id}
-                    onClick={() => setActiveHub(hub)}
-                    type="button"
-                    className={`px-3 py-1.5 rounded-xl text-xs font-mono transition-all duration-200 flex items-center gap-1.5 ${
-                      isSelected
-                        ? "bg-azure text-white shadow-[0_0_16px_rgba(30,127,232,0.5)] font-bold scale-105"
-                        : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/5"
-                    }`}
-                  >
-                    <span
-                      className={`w-1.5 h-1.5 rounded-full ${
-                        isSelected ? "bg-white" : "bg-emerald-400"
-                      }`}
-                    />
-                    {hub.name}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Focused Hub Telemetry Card */}
-          <div className="rounded-2xl border border-azure/30 bg-azure/10 p-4 font-mono text-xs text-white/90 space-y-1.5">
-            <div className="flex items-center justify-between text-azure-light font-bold">
-              <span>{activeHub.name} ({activeHub.country})</span>
-              <span className="text-emerald-400">{activeHub.status}</span>
-            </div>
-            <div className="text-white/70 text-[11px]">{activeHub.role}</div>
-            <div className="flex items-center justify-between text-[11px] text-white/50 pt-1 border-t border-white/10">
-              <span>Edge Round-Trip:</span>
-              <span className="text-white font-semibold">{activeHub.latency}</span>
+              {["• Galle", "• Colombo", "• Canada", "• USA"].map((item) => (
+                <span
+                  key={item}
+                  className="px-3 py-1 rounded-xl bg-white/[0.05] border border-white/10 text-xs font-mono text-white/80"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Right Col: 3D Holographic Globe Canvas */}
         <div className="lg:col-span-7 relative h-[420px] md:h-[540px] flex items-center justify-center">
+          {/* Top HUD Overlay */}
+          <div className="pointer-events-none absolute top-4 inset-x-6 z-20 flex items-center justify-between text-[11px] font-mono">
+            <span className="flex items-center gap-1.5 text-cyan-400 font-medium">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              CLIENT CONNECTIONS
+            </span>
+            <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              ALL SERVED FROM COLOMBO
+            </span>
+          </div>
+
+          {/* Colombo / Galle Marker Overlay */}
+          <div className="pointer-events-none absolute top-[34%] left-[24%] z-20">
+            <div className="px-2.5 py-1.5 rounded-xl bg-[#070A10]/85 border border-cyan-400/40 backdrop-blur-md font-mono text-left shadow-xl">
+              <div className="text-[11px] font-bold text-white tracking-wide">COLOMBO • GALLE</div>
+              <div className="text-[8px] text-cyan-300 font-medium">OUR SERVERS • LOCAL CLIENTS</div>
+            </div>
+          </div>
+
+          {/* North America Marker Overlay */}
+          <div className="pointer-events-none absolute bottom-[32%] right-[22%] z-20 flex gap-2">
+            <div className="px-2.5 py-1 rounded-lg bg-[#070A10]/85 border border-white/20 backdrop-blur-md font-mono text-[10px] font-bold text-white tracking-wide shadow-xl">
+              CANADA
+            </div>
+            <div className="px-2.5 py-1 rounded-lg bg-[#070A10]/85 border border-white/20 backdrop-blur-md font-mono text-[10px] font-bold text-white tracking-wide shadow-xl">
+              USA
+            </div>
+          </div>
+
           {/* 3D WebGL Canvas Container */}
           <div
             ref={mountRef}
@@ -598,10 +584,10 @@ export default function NetworkGlobe3D() {
             role="region"
           />
 
-          {/* User Hint Pill */}
-          <div className="pointer-events-none absolute bottom-4 right-4 z-20 px-3.5 py-1.5 rounded-full bg-black/60 border border-white/10 text-[11px] font-mono text-white/75 backdrop-blur-md flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-azure animate-pulse" />
-            <span>Drag to rotate 3D mesh</span>
+          {/* Bottom HUD Overlay */}
+          <div className="pointer-events-none absolute bottom-4 inset-x-6 z-20 flex items-center justify-between text-[10px] font-mono text-white/40">
+            <span>ENGINEERED BY NADSCA</span>
+            <span>ILLUSTRATIVE, REGIONS APPROXIMATE</span>
           </div>
         </div>
       </div>

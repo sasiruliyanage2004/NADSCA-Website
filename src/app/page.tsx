@@ -21,9 +21,8 @@ import ArchitecturePipeline from "@/components/ArchitecturePipeline";
 import ArchitectureSimulator from "@/components/ArchitectureSimulator";
 import Testimonials from "@/components/Testimonials";
 import ScrollBackground from "@/components/ScrollBackground";
-import Card3DTilt from "@/components/Card3DTilt";
 import NetworkGlobe3D from "@/components/NetworkGlobe3D";
-import { PROJECTS, BLOG_POSTS } from "@/lib/data";
+import { BLOG_POSTS } from "@/lib/data";
 import GiantMarquee from "@/components/GiantMarquee";
 import PartnersStrip from "@/components/PartnersStrip";
 import Magnetic from "@/components/Magnetic";
@@ -102,14 +101,7 @@ export default function Home() {
       {/* Global Distributed Infrastructure 3D Mesh */}
       <section className="py-24 lg:py-28 bg-transparent relative overflow-hidden">
         <div className="container-content relative z-10">
-          <Reveal className="max-w-2xl mb-12">
-            <p className="text-azure font-semibold text-sm mb-3 tracking-wide">GLOBAL INFRASTRUCTURE</p>
-            <h2 className="font-display text-4xl md:text-5xl text-ink dark:text-white leading-tight">
-              High-throughput edge mesh, engineered across 8 global nodes.
-            </h2>
-          </Reveal>
-
-          <Reveal delay={0.1}>
+          <Reveal>
             <NetworkGlobe3D />
           </Reveal>
         </div>
@@ -159,7 +151,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="font-display text-3xl">
-                    <Counter to={120} suffix="+" />
+                    <Counter to={2} />
                   </div>
                   <div className="text-white/50 text-sm mt-1">Products shipped</div>
                 </div>
@@ -179,49 +171,6 @@ export default function Home() {
               </div>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Featured projects */}
-      <section className="py-28 lg:py-32 bg-transparent relative">
-        <div className="container-content">
-          <Reveal className="flex flex-wrap items-end justify-between gap-6 mb-14">
-            <div className="max-w-xl">
-              <p className="text-azure font-semibold text-sm mb-3">Selected work</p>
-              <h2 className="font-display text-4xl md:text-5xl text-ink dark:text-white leading-tight">
-                Real products, real results.
-              </h2>
-            </div>
-            <Link href="/projects" className="text-ink dark:text-white font-semibold text-sm border-b-2 border-lime pb-1">
-              View all projects
-            </Link>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PROJECTS.slice(0, 3).map((p, i) => (
-              <Reveal key={p.name} delay={i * 0.08}>
-                <Card3DTilt maxTilt={8} scale={1.02} className="h-full rounded-2xl">
-                  <Link
-                    href="/projects"
-                    className="block h-full rounded-2xl overflow-hidden border border-ink/8 dark:border-white/10 group cursor-pointer transition-transform hover:-translate-y-1 bg-paper dark:bg-[#0D1118]"
-                    data-cursor="view"
-                    data-cursor-text="EXPLORE"
-                  >
-                    <div className="h-44 bg-brand-gradient-soft relative">
-                      <div className="absolute inset-0 bg-ink-gradient opacity-90 group-hover:opacity-80 transition-opacity" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="font-display text-2xl text-white/90">{p.name}</span>
-                      </div>
-                    </div>
-                    <div className="p-6 bg-paper dark:bg-[#0D1118]">
-                      <p className="text-xs font-semibold text-teal mb-2">{p.category}</p>
-                      <p className="text-ink/70 dark:text-white/70 text-[15px] leading-relaxed">{p.result}</p>
-                    </div>
-                  </Link>
-                </Card3DTilt>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
