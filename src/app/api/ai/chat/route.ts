@@ -85,7 +85,7 @@ export async function POST(req: NextRequest) {
       },
     });
   } catch (error) {
-    console.error("Awora AI API error:", error);
+    console.error("AVORA_AI API error:", error);
     return NextResponse.json(
       {
         reply:

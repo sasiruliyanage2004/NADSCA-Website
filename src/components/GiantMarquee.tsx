@@ -17,26 +17,33 @@ export default function GiantMarquee() {
     gsap.to(containerRef.current?.children as HTMLCollection, {
       xPercent: -100,
       repeat: -1,
-      duration: 20,
+      duration: 24,
       ease: "linear",
     });
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden flex items-center py-20 bg-black border-y border-white/[0.02]">
+    <div className="relative w-full overflow-hidden flex items-center py-20 bg-black border-y border-white/[0.04]">
       <div 
         ref={containerRef}
-        className="flex whitespace-nowrap opacity-[0.03] dark:opacity-[0.04] select-none pointer-events-none"
+        className="flex whitespace-nowrap opacity-[0.08] dark:opacity-[0.10] select-none pointer-events-none"
       >
-        <div ref={textRef} className="flex shrink-0">
-          <h2 className="text-[12vw] md:text-[8vw] font-display font-bold text-white px-8 uppercase tracking-tighter">
-            WE BUILD SYSTEMS THAT SCALE â€¢ 
+        <div ref={textRef} className="flex shrink-0 items-center">
+          <h2 className="text-[10vw] md:text-[6.5vw] font-display font-bold text-white px-8 uppercase tracking-tighter flex items-center gap-6">
+            <span>WE SERVE THE BEST TO BE THE BEST</span>
+            <span className="text-azure text-[0.5em]">&bull;</span>
           </h2>
-          <h2 className="text-[12vw] md:text-[8vw] font-display font-bold text-white px-8 uppercase tracking-tighter">
-            ZERO TECH DEBT â€¢ 
+          <h2 className="text-[10vw] md:text-[6.5vw] font-display font-bold text-white px-8 uppercase tracking-tighter flex items-center gap-6">
+            <span>WE BUILD SYSTEMS THAT SCALE</span>
+            <span className="text-teal text-[0.5em]">&bull;</span>
           </h2>
-          <h2 className="text-[12vw] md:text-[8vw] font-display font-bold text-white px-8 uppercase tracking-tighter">
-            ENGINEERING EXCELLENCE â€¢ 
+          <h2 className="text-[10vw] md:text-[6.5vw] font-display font-bold text-white px-8 uppercase tracking-tighter flex items-center gap-6">
+            <span>ZERO TECH DEBT</span>
+            <span className="text-azure text-[0.5em]">&bull;</span>
+          </h2>
+          <h2 className="text-[10vw] md:text-[6.5vw] font-display font-bold text-white px-8 uppercase tracking-tighter flex items-center gap-6">
+            <span>ENGINEERING EXCELLENCE</span>
+            <span className="text-teal text-[0.5em]">&bull;</span>
           </h2>
         </div>
       </div>

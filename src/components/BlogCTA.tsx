@@ -9,10 +9,10 @@ export default function BlogCTA() {
   const triggerAI = () => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
-        new CustomEvent("open-awora-ai", {
+        new CustomEvent("open-avora-ai", {
           detail: {
             initialMessage:
-              "Hi Awora, I've been reading NADSCA's engineering insights and would like to explore how these technologies can be applied to our business.",
+              "Hi AVORA_AI, I've been reading NADSCA's engineering insights and would like to explore how these technologies can be applied to our business.",
           },
         })
       );
@@ -71,7 +71,7 @@ export default function BlogCTA() {
                 className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.05] text-white px-7 py-4 text-[15px] font-medium hover:border-white/30 hover:bg-white/[0.08] backdrop-blur-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
               >
                 <Sparkles className="w-4 h-4 text-azure-light" />
-                <span>Ask Awora AI</span>
+                <span>Ask AVORA_AI</span>
               </button>
             </Magnetic>
           </div>

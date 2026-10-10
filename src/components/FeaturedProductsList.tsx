@@ -278,9 +278,9 @@ export default function FeaturedProductsList() {
   const handleLaunchAIDemo = (product: FeaturedProduct) => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
-        new CustomEvent("open-awora-ai", {
+        new CustomEvent("open-avora-ai", {
           detail: {
-            initialMessage: `Hi Awora, can you walk me through an interactive walkthrough and technical demo of ${product.headline} (${product.number})?`,
+            initialMessage: `Hi AVORA_AI, can you walk me through an interactive walkthrough and technical demo of ${product.headline} (${product.number})?`,
           },
         })
       );
@@ -638,7 +638,7 @@ export default function FeaturedProductsList() {
                     className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] text-white px-4 py-2.5 text-xs sm:text-sm font-semibold hover:border-white/30 hover:bg-white/[0.08] transition-all"
                   >
                     <Sparkles className="w-3.5 h-3.5 text-azure-light" />
-                    <span>Explore with Awora AI</span>
+                    <span>Explore with AVORA_AI</span>
                   </button>
                 </Magnetic>
               </div>

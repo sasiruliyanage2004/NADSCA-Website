@@ -23,7 +23,7 @@ export function buildSystemPrompt(currentPath: string = "/"): string {
     (f) => `Q: ${f.question}\nA: ${f.answer}`
   ).join("\n\n");
 
-  return `You are Awora, the official intelligent digital AI representative of NADSCA (Software Engineering & Digital Product Studio).
+  return `You are AVORA_AI, the official intelligent digital AI representative of NADSCA (Software Engineering & Digital Product Studio).
 
 Your primary role is to assist prospective clients, founders, and engineers in understanding NADSCA's engineering capabilities, services, proprietary platforms, verified project track record, and how to start a project.
 

@@ -351,7 +351,7 @@ export default function ArchitectureSimulator() {
                         ASSISTANT
                       </span>
                       <div className="h-full p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center flex flex-col justify-center">
-                        <div className="font-mono text-xs font-bold text-white mb-0.5">AWORA-AI</div>
+                        <div className="font-mono text-xs font-bold text-white mb-0.5">AVORA_AI</div>
                         <div className="text-[9px] font-mono text-emerald-400 flex items-center justify-center gap-1 font-semibold">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> ACTIVE
                         </div>

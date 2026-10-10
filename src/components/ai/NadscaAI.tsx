@@ -80,7 +80,7 @@ export default function NadscaAI() {
     };
   }, [isOpen, messages.length]);
 
-  // Lock Lenis smooth scroll while Awora AI is open so background page does not scroll
+  // Lock Lenis smooth scroll while AVORA_AI is open so background page does not scroll
   useEffect(() => {
     if (isOpen) {
       if (typeof window !== "undefined" && (window as any).__lenis) {
@@ -122,7 +122,7 @@ export default function NadscaAI() {
           }),
         })
           .then((res) => {
-            if (!res.ok) throw new Error("Failed to reach Awora AI service.");
+            if (!res.ok) throw new Error("Failed to reach AVORA_AI service.");
             return res.json();
           })
           .then((data) => {
@@ -168,10 +168,12 @@ export default function NadscaAI() {
       }
     };
 
+    window.addEventListener("open-avora-ai", handleOpenEvent);
     window.addEventListener("open-awora-ai", handleOpenEvent);
     window.addEventListener("open-nadsca-ai", handleOpenEvent);
     window.addEventListener("open-natle-ai", handleOpenEvent);
     return () => {
+      window.removeEventListener("open-avora-ai", handleOpenEvent);
       window.removeEventListener("open-awora-ai", handleOpenEvent);
       window.removeEventListener("open-nadsca-ai", handleOpenEvent);
       window.removeEventListener("open-natle-ai", handleOpenEvent);
@@ -190,7 +192,7 @@ export default function NadscaAI() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="group relative flex items-center gap-3 p-3.5 sm:px-4 sm:py-3 rounded-full bg-black/80 hover:bg-black border border-white/20 hover:border-cyan-400/50 backdrop-blur-2xl shadow-[0_10px_35px_rgba(0,0,0,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 outline-none"
-          aria-label={isOpen ? "Close Awora AI" : "Open Awora AI"}
+          aria-label={isOpen ? "Close AVORA_AI" : "Open AVORA_AI"}
           data-cursor="ask"
         >
           {/* Ambient Glow */}
@@ -203,7 +205,7 @@ export default function NadscaAI() {
 
           {/* Label (Desktop) */}
           <span className="relative hidden sm:inline-flex items-center gap-1.5 text-xs font-mono font-semibold tracking-wider uppercase text-white group-hover:text-cyan-200 transition-colors">
-            <span>Awora</span>
+            <span>AVORA_AI</span>
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
           </span>
         </button>
@@ -239,7 +241,7 @@ export default function NadscaAI() {
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-display text-sm font-bold text-white tracking-tight">
-                  AWORA — NADSCA AI
+                  AVORA_AI — NADSCA AI
                 </h3>
                 <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
@@ -289,7 +291,7 @@ export default function NadscaAI() {
                   <Bot className="w-6 h-6" />
                 </div>
                 <h4 className="font-display text-xl font-bold text-white tracking-tight">
-                  Hi, I&apos;m Awora.
+                  Hi, I&apos;m AVORA_AI.
                 </h4>
                 <p className="text-white/70 leading-relaxed text-sm">
                   I&apos;m NADSCA&apos;s intelligent AI assistant. I can help you explore our software engineering practices, review verified client case studies, examine our technology standards, or start your next software project.
@@ -375,7 +377,7 @@ export default function NadscaAI() {
               <div className="rounded-2xl rounded-tl-sm px-4 py-3.5 bg-white/[0.04] border border-white/10 space-y-2 w-3/4">
                 <div className="flex items-center gap-1.5 mb-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                  <span className="text-[10px] font-mono text-cyan-400 font-bold uppercase tracking-wider">Awora synthesizing...</span>
+                  <span className="text-[10px] font-mono text-cyan-400 font-bold uppercase tracking-wider">AVORA_AI synthesizing...</span>
                 </div>
                 <div className="h-2.5 rounded-full skeleton-shimmer w-5/6" />
                 <div className="h-2.5 rounded-full skeleton-shimmer w-full" />

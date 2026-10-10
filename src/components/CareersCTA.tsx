@@ -9,10 +9,10 @@ export default function CareersCTA() {
   const triggerAI = () => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
-        new CustomEvent("open-awora-ai", {
+        new CustomEvent("open-avora-ai", {
           detail: {
             initialMessage:
-              "Hi Awora, tell me about engineering culture, open opportunities, and what it's like to build systems at NADSCA.",
+              "Hi AVORA_AI, tell me about engineering culture, open opportunities, and what it's like to build systems at NADSCA.",
           },
         })
       );
@@ -67,7 +67,7 @@ export default function CareersCTA() {
                 className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.05] text-white px-7 py-4 text-[15px] font-medium hover:border-cyan-400/40 hover:bg-white/[0.1] backdrop-blur-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
               >
                 <Sparkles className="w-4 h-4 text-cyan-400" />
-                <span>Ask Awora AI</span>
+                <span>Ask AVORA_AI</span>
               </button>
             </Magnetic>
           </div>

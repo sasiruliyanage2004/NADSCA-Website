@@ -25,15 +25,16 @@ export interface AIResponsePayload {
 function queryKnowledgeEngine(query: string, currentPath: string): AIResponsePayload {
   const q = query.toLowerCase().trim();
 
-  // Awora identity / name
+  // AVORA_AI identity / name
   if (
     q.includes("who are you") ||
     q.includes("your name") ||
+    q.includes("avora") ||
     q.includes("awora") ||
     q.includes("what is your name")
   ) {
     return {
-      reply: `I am **Awora**, the intelligent digital AI assistant for NADSCA. I can help you explore our software engineering practices, review verified case studies, understand our technical architectures, or get in touch with our team.`,
+      reply: `I am **AVORA_AI**, the intelligent digital AI assistant for NADSCA. I can help you explore our software engineering practices, review verified case studies, understand our technical architectures, or get in touch with our team.`,
       quickActions: [
         { label: "About NADSCA", href: "/about" },
         { label: "Our Services", href: "/services" },

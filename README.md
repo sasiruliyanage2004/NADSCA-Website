@@ -29,7 +29,7 @@ We prioritize extreme performance, hardware acceleration, and enterprise-grade s
 * **Typography:** Inter (Display & Body typography)
 * **3D & WebGL:** Three.js with custom GLSL Shaders (Hero Aurora Mesh & Interactive Globe)
 * **Motion & Animation:** GSAP (ScrollTrigger) & Lenis (Smooth Scroll)
-* **AI Engine:** Awora AI (Embedded deterministic & LLM-powered studio assistant)
+* **AI Engine:** AVORA_AI (Embedded deterministic & LLM-powered studio assistant)
 * **Security:** Cloudflare Turnstile (Anti-bot protection on Contact Forms)
 * **Icons:** Lucide React
 
@@ -38,7 +38,7 @@ We prioritize extreme performance, hardware acceleration, and enterprise-grade s
 ## ✦ Key Features
 
 * **Calm, High-End Enterprise Aesthetic:** Deep charcoal surfaces (`#06080F`), subtle borders, and gentle ambient lighting.
-* **Awora AI Assistant:** Interactive digital studio assistant with verified knowledge grounding.
+* **AVORA_AI Assistant:** Interactive digital studio assistant with verified knowledge grounding.
 * **Hardware-Accelerated Layouts:** Horizontal GSAP execution pipelines and interactive spotlight bento grids.
 * **SEO & Googlebot Optimization:** Complete server-side rendering, JSON-LD schema markup (`Organization`, `WebSite`, `TechArticle`, `VideoObject`), bot bypass for instant content indexing, and canonical URLs.
 * **Uncompromised Security:** Form submissions protected by non-intrusive Cloudflare Turnstile CAPTCHA.

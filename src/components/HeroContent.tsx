@@ -71,7 +71,7 @@ export default function HeroContent() {
   const openAI = () => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
-        new CustomEvent("open-awora-ai", {
+        new CustomEvent("open-avora-ai", {
           detail: { prompt: "How can NADSCA partner with us to design, build, and scale high-performance software and AI platforms?" },
         })
       );
@@ -133,7 +133,7 @@ export default function HeroContent() {
               data-cursor="ask"
             >
               <Sparkles className="w-4 h-4 text-cyan-500 dark:text-cyan-400" />
-              <span>Ask AWORA AI</span>
+              <span>Ask AVORA_AI</span>
             </button>
           </Magnetic>
         </div>

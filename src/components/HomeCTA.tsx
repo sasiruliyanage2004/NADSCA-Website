@@ -10,7 +10,7 @@ export default function HomeCTA() {
   const triggerAI = () => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
-        new CustomEvent("open-awora-ai", {
+        new CustomEvent("open-avora-ai", {
           detail: { prompt: "I'd like to discuss building a project with NADSCA." },
         })
       );
@@ -55,7 +55,7 @@ export default function HomeCTA() {
                   data-cursor="ask"
                 >
                   <Sparkles className="w-4 h-4 text-cyan-400" />
-                  <span>Ask Awora AI</span>
+                  <span>Ask AVORA_AI</span>
                 </button>
               </Magnetic>
             </div>

@@ -127,7 +127,7 @@ export default function Footer() {
   const triggerAI = (promptText?: string) => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
-        new CustomEvent("open-awora-ai", {
+        new CustomEvent("open-avora-ai", {
           detail: {
             prompt: promptText || "I'd like to discuss an engineering engagement with NADSCA.",
           },
@@ -203,7 +203,7 @@ export default function Footer() {
                     data-cursor="ask"
                   >
                     <Sparkles className="w-4 h-4 text-cyan-400" />
-                    <span>Ask Awora AI</span>
+                    <span>Ask AVORA_AI</span>
                   </button>
                 </Magnetic>
               </div>
