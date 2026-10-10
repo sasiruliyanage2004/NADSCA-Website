@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ShieldCheck, Zap, Cpu, Network, Layers, Sparkles } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Zap, Cpu, Network, Layers, Sparkles, Server, Database, Check } from "lucide-react";
 
 interface CardSpec {
   id: string;
@@ -23,56 +23,56 @@ const STACK_CARDS: CardSpec[] = [
   {
     id: "ingress",
     num: "01",
-    kicker: "STAGE 01 // 04 • GLOBAL ANYCAST",
-    title: "Global Anycast Edge Ingress",
-    subtitle: "Low-latency TLS 1.3 handshakes terminating at 300+ edge locations",
+    kicker: "STAGE 01 // 04 • ON-PREM INGRESS",
+    title: "Zero-Downtime On-Premises Infrastructure",
+    subtitle: "Fully self-managed servers, built for continuous availability",
     description:
-      "Incoming requests are intercepted at the nearest metropolitan point of presence via BGP Anycast routing. TLS 1.3 termination, bot verification, and line-rate DDoS scrubbing occur entirely at the network edge before traffic enters our private fiber backbone.",
-    accent: "#1E7FE8",
-    glow: "rgba(30, 127, 232, 0.25)",
+      "We design, host, and operate our own servers in-house, giving us complete control over performance, security, and data. Redundant systems, automatic failover, and rolling updates keep services online around the clock, so maintenance and hardware faults never interrupt users.",
+    accent: "#00E5FF",
+    glow: "rgba(0, 229, 255, 0.25)",
     metrics: [
-      { label: "Handshake Overhead", value: "< 1.2ms" },
-      { label: "DDoS Capacity", value: "Multi-Tbps" },
-      { label: "Edge Proximity", value: "95% < 15ms" },
+      { label: "Availability", value: "Zero Downtime" },
+      { label: "Infrastructure", value: "100% Self-Managed" },
+      { label: "Data Control", value: "Fully On-Prem" },
     ],
-    tech: ["BGP Anycast", "TLS 1.3 / QUIC", "Cloudflare Fabric", "eBPF Scrubbing"],
-    icon: <Network className="w-5 h-5 text-cyan-400" />,
+    tech: ["Own Servers", "High Availability", "Auto Failover", "24/7 Monitoring"],
+    icon: <Server className="w-5 h-5 text-cyan-400" />,
   },
   {
     id: "gateway",
     num: "02",
-    kicker: "STAGE 02 // 04 • SEMANTIC ROUTING",
-    title: "Semantic Routing & API Gateway",
-    subtitle: "Zero-copy gRPC deserialization and intelligent request dispatching",
+    kicker: "STAGE 02 // 04 • SMART ROUTING",
+    title: "Secure API Gateway & Smart Routing",
+    subtitle: "One controlled entry point for every application we build and run",
     description:
-      "The gateway decomposes incoming payloads, validates cryptographic JWT tokens in sub-milliseconds, and dispatches traffic across internal microservices using high-throughput gRPC over HTTP/2 with distributed OpenTelemetry tracing and zero memory allocations.",
+      "Every request to our software passes through a gateway we built and operate on our own servers. It verifies who is calling, applies access rules, and sends each request to the right service, so applications stay secure, fast, and easy to scale without relying on third-party platforms.",
     accent: "#00C4B4",
     glow: "rgba(0, 196, 180, 0.25)",
     metrics: [
-      { label: "Routing Latency", value: "< 0.6ms" },
-      { label: "Throughput", value: "180,000 req/s" },
-      { label: "Token Validation", value: "Sub-ms" },
+      { label: "Authentication", value: "Every Request Verified" },
+      { label: "Routing", value: "Automatic & Intelligent" },
+      { label: "Visibility", value: "Full Request Tracing" },
     ],
-    tech: ["Go Microservices", "gRPC / Protobuf", "Envoy Proxy", "OpenTelemetry"],
+    tech: ["Custom Gateway", "Access Control", "Smart Routing", "End-to-End Tracing"],
     icon: <Zap className="w-5 h-5 text-teal-400" />,
   },
   {
     id: "state",
     num: "03",
-    kicker: "STAGE 03 // 04 • VECTOR & STATE",
-    title: "Distributed State & Vector Engine",
-    subtitle: "Multi-tenant HNSW vector search with ACID transactional state",
+    kicker: "STAGE 03 // 04 • RELIABLE DATA",
+    title: "Reliable Data on PostgreSQL",
+    subtitle: "Enterprise-grade PostgreSQL, hosted and managed on our own servers",
     description:
-      "High-dimensional vector embeddings are queried across sharded indices in parallel with transactional relational state. We guarantee strict ACID consistency, sub-5ms cosine similarity indexing, and automated multi-region active-active replication.",
+      "Client data lives in PostgreSQL databases that we host and manage ourselves, having moved from Microsoft SQL Server. Fully transactional storage means data is never left half-saved, while replication and regular backups keep information safe and available even if hardware fails.",
     accent: "#6366F1",
     glow: "rgba(99, 102, 241, 0.25)",
     metrics: [
-      { label: "Vector Search P99", value: "4.2ms" },
-      { label: "Replication Factor", value: "3x Multi-AZ" },
-      { label: "Cache Hit Ratio", value: "97.4%" },
+      { label: "Data Integrity", value: "Fully Transactional" },
+      { label: "Protection", value: "Replicated & Backed Up" },
+      { label: "Licensing", value: "No Vendor Lock-In" },
     ],
-    tech: ["Milvus / Qdrant", "PostgreSQL / Raft", "Redis Enterprise", "HNSW Indices"],
-    icon: <Layers className="w-5 h-5 text-indigo-400" />,
+    tech: ["PostgreSQL", "Self-Hosted", "Replication", "Automated Backups"],
+    icon: <Database className="w-5 h-5 text-indigo-400" />,
   },
   {
     id: "compute",
@@ -131,7 +131,7 @@ export default function ArchitecturePipeline() {
         lastActiveIdx = active;
         setActiveStageIndex(active);
         if (activeLabelRef.current) {
-          activeLabelRef.current.textContent = `STAGE 0${active + 1} OF 0${N} • ${STACK_CARDS[active].title.toUpperCase()}`;
+          activeLabelRef.current.textContent = `STAGE 0${active + 1} OF 0${N} • ${STACK_CARDS[active].kicker.replace(/^STAGE \d+ \/\/ \d+ • /, "")}`;
         }
       }
 
@@ -376,7 +376,7 @@ export default function ArchitecturePipeline() {
                 ref={activeLabelRef}
                 className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/80 font-medium"
               >
-                STAGE 01 OF 04 • EDGE INGRESS
+                STAGE 01 OF 04 • ON-PREM INGRESS
               </span>
               <div className="w-32 h-1.5 bg-white/10 rounded-full overflow-hidden">
                 <div
@@ -497,49 +497,114 @@ export default function ArchitecturePipeline() {
                 {/* Dynamic Center Stage Hologram */}
                 <div className="flex-1 flex items-center justify-center my-4">
                   {idx === 0 && (
-                    <div className="relative w-44 h-44 flex items-center justify-center">
-                      <div className="absolute inset-0 rounded-full border border-cyan-400/20 animate-ping opacity-30" />
-                      <div className="absolute inset-4 rounded-full border border-cyan-400/30 animate-spin [animation-duration:14s]" />
-                      <div className="absolute inset-10 rounded-full border border-dashed border-cyan-400/40" />
-                      <div className="relative p-5 rounded-2xl bg-cyan-500/10 border border-cyan-400/40 backdrop-blur-md text-center">
-                        <Network className="w-8 h-8 text-cyan-400 mx-auto mb-1.5" />
-                        <span className="text-[11px] font-mono font-bold text-white block">ANYCAST</span>
-                        <span className="text-[9px] font-mono text-cyan-400">300+ PoPs</span>
+                    <div className="relative w-full max-w-[280px] flex flex-col items-center justify-center">
+                      {/* Center Circle with ON-PREM and Server icon */}
+                      <div className="relative w-32 h-32 flex items-center justify-center mb-2.5">
+                        <div className="absolute inset-0 rounded-full border border-cyan-400/20" />
+                        <div className="absolute inset-2 rounded-full border border-cyan-400/30" />
+                        <div className="relative w-22 h-22 px-3 py-2.5 rounded-2xl bg-cyan-950/40 border border-cyan-400/40 backdrop-blur-md flex flex-col items-center justify-center text-center">
+                          <Server className="w-7 h-7 text-cyan-400 mb-1" />
+                          <span className="text-[11px] font-mono font-bold text-white block tracking-wider">ON-PREM</span>
+                          <span className="text-[9px] font-mono text-cyan-300">Self-Managed</span>
+                        </div>
+                      </div>
+
+                      {/* Two server status boxes */}
+                      <div className="grid grid-cols-2 gap-2 w-full mb-2">
+                        <div className="px-2.5 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 font-mono text-[10px]">
+                          <div className="text-white/80 font-medium">Server A</div>
+                          <div className="text-emerald-400 flex items-center gap-1.5 text-[9px] font-semibold mt-0.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            ACTIVE
+                          </div>
+                        </div>
+                        <div className="px-2.5 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 font-mono text-[10px]">
+                          <div className="text-white/80 font-medium">Server B</div>
+                          <div className="text-emerald-400 flex items-center gap-1.5 text-[9px] font-semibold mt-0.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            ACTIVE
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Automatic Failover Ready Banner */}
+                      <div className="w-full py-1.5 px-3 rounded-xl bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 font-mono text-[10px] font-semibold flex items-center justify-center gap-1.5 tracking-wider">
+                        <Zap className="w-3.5 h-3.5 text-cyan-400" />
+                        <span>AUTOMATIC FAILOVER READY</span>
                       </div>
                     </div>
                   )}
 
                   {idx === 1 && (
-                    <div className="w-full max-w-[280px] p-4 rounded-2xl bg-white/[0.02] border border-teal-400/20">
-                      <div className="flex items-center justify-between font-mono text-[10px] text-teal-300 pb-2 border-b border-white/10 mb-3">
-                        <span>gRPC INGRESS STREAM</span>
-                        <span>0.6ms</span>
+                    <div className="w-full max-w-[280px] p-3.5 rounded-2xl bg-white/[0.02] border border-teal-400/20 flex flex-col justify-between">
+                      {/* Header */}
+                      <div className="flex items-center gap-2.5 pb-2.5 border-b border-white/10 mb-2.5">
+                        <ShieldCheck className="w-5 h-5 text-cyan-400 shrink-0" />
+                        <div>
+                          <div className="font-mono text-[11px] font-bold text-white uppercase tracking-wider">API GATEWAY</div>
+                          <div className="font-mono text-[9px] text-cyan-300">Running on our own servers</div>
+                        </div>
                       </div>
-                      <div className="space-y-2 font-mono text-[10px]">
-                        <div className="flex justify-between items-center bg-white/[0.03] p-1.5 rounded">
-                          <span className="text-white/60">POST /api/v2/stream</span>
-                          <span className="text-teal-400">200 OK</span>
+
+                      {/* 3 Steps */}
+                      <div className="space-y-1.5 font-mono text-[10px] mb-2.5">
+                        <div className="flex justify-between items-center bg-white/[0.03] px-2.5 py-1.5 rounded-lg border border-white/5">
+                          <span className="text-white/80">1 Request received</span>
+                          <span className="text-emerald-400 font-bold">OK</span>
                         </div>
-                        <div className="flex justify-between items-center bg-white/[0.03] p-1.5 rounded">
-                          <span className="text-white/60">JWT Signature Validate</span>
-                          <span className="text-emerald-400">VALID</span>
+                        <div className="flex justify-between items-center bg-white/[0.03] px-2.5 py-1.5 rounded-lg border border-white/5">
+                          <span className="text-white/80">2 Identity verified</span>
+                          <span className="text-cyan-400 font-bold">VALID</span>
                         </div>
-                        <div className="flex justify-between items-center bg-white/[0.03] p-1.5 rounded">
-                          <span className="text-white/60">Dispatch to Go-Mesh</span>
-                          <span className="text-teal-400">0.2ms</span>
+                        <div className="flex justify-between items-center bg-white/[0.03] px-2.5 py-1.5 rounded-lg border border-white/5">
+                          <span className="text-white/80">3 Routed to the right service</span>
+                          <span className="text-emerald-400 font-bold">DONE</span>
                         </div>
+                      </div>
+
+                      {/* Every Step Traced Banner */}
+                      <div className="w-full py-1.5 px-3 rounded-xl bg-teal-500/10 border border-teal-400/30 text-teal-300 font-mono text-[10px] font-semibold flex items-center justify-center gap-1.5 tracking-wider">
+                        <Zap className="w-3.5 h-3.5 text-teal-400" />
+                        <span>EVERY STEP TRACED END TO END</span>
                       </div>
                     </div>
                   )}
 
                   {idx === 2 && (
-                    <div className="relative w-44 h-44 flex items-center justify-center">
-                      <div className="absolute inset-0 rounded-2xl border border-indigo-500/20 rotate-45" />
-                      <div className="absolute inset-6 rounded-2xl border border-indigo-400/30 -rotate-12" />
-                      <div className="relative p-5 rounded-2xl bg-indigo-500/10 border border-indigo-400/40 backdrop-blur-md text-center">
-                        <Layers className="w-8 h-8 text-indigo-400 mx-auto mb-1.5" />
-                        <span className="text-[11px] font-mono font-bold text-white block">HNSW VECTOR</span>
-                        <span className="text-[9px] font-mono text-indigo-300">Sub-5ms Cosine</span>
+                    <div className="relative w-full max-w-[280px] flex flex-col items-center justify-center">
+                      {/* Center Circle with POSTGRESQL and Database icon */}
+                      <div className="relative w-32 h-32 flex items-center justify-center mb-2.5">
+                        <div className="absolute inset-0 rounded-full border border-indigo-400/20" />
+                        <div className="absolute inset-2 rounded-full border border-indigo-400/30" />
+                        <div className="relative w-22 h-22 px-3 py-2.5 rounded-2xl bg-indigo-950/40 border border-indigo-400/40 backdrop-blur-md flex flex-col items-center justify-center text-center">
+                          <Database className="w-7 h-7 text-indigo-400 mb-1" />
+                          <span className="text-[11px] font-mono font-bold text-white block tracking-wider">POSTGRESQL</span>
+                          <span className="text-[9px] font-mono text-indigo-300">Self-Hosted</span>
+                        </div>
+                      </div>
+
+                      {/* Primary and Replica status boxes */}
+                      <div className="grid grid-cols-2 gap-2 w-full mb-2">
+                        <div className="px-2.5 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 font-mono text-[10px]">
+                          <div className="text-white/80 font-medium">Primary</div>
+                          <div className="text-emerald-400 flex items-center gap-1.5 text-[9px] font-semibold mt-0.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            ACTIVE
+                          </div>
+                        </div>
+                        <div className="px-2.5 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 font-mono text-[10px]">
+                          <div className="text-white/80 font-medium">Replica</div>
+                          <div className="text-cyan-400 flex items-center gap-1.5 text-[9px] font-semibold mt-0.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                            IN SYNC
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Data Protected By Backups Banner */}
+                      <div className="w-full py-1.5 px-3 rounded-xl bg-indigo-500/10 border border-indigo-400/30 text-indigo-300 font-mono text-[10px] font-semibold flex items-center justify-center gap-1.5 tracking-wider">
+                        <ShieldCheck className="w-3.5 h-3.5 text-indigo-400" />
+                        <span>DATA PROTECTED BY BACKUPS</span>
                       </div>
                     </div>
                   )}

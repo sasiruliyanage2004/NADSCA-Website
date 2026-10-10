@@ -54,10 +54,6 @@ export default function SpotlightBento() {
                   <span className="text-azure dark:text-azure-light text-xs font-mono font-semibold tracking-widest uppercase">
                     CORE ARCHITECTURE
                   </span>
-                  <div className="flex items-center gap-2 text-xs font-mono text-ink/50 dark:text-white/50">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                    P99 LATENCY &lt; 14ms
-                  </div>
                 </div>
 
                 <h3 className="font-display text-2xl md:text-3xl text-ink dark:text-white mb-4">
@@ -70,7 +66,7 @@ export default function SpotlightBento() {
                 {/* Architecture Pillars Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-2">
                   <div className="rounded-2xl border border-ink/5 dark:border-white/10 bg-mist/80 dark:bg-white/[0.04] p-5">
-                    <div className="font-mono text-xs text-azure dark:text-azure-light font-semibold mb-2">01 / FRONTEND</div>
+                    <div className="font-mono text-xs text-azure dark:text-azure-light font-semibold mb-2">FRONTEND</div>
                     <div className="text-ink dark:text-white text-sm font-semibold mb-1">Modern Web & Mobile</div>
                     <p className="text-ink/60 dark:text-white/60 text-xs leading-relaxed">
                       Next.js App Router, React Server Components, and native iOS/Android with sub-100ms hydration.
@@ -78,7 +74,7 @@ export default function SpotlightBento() {
                   </div>
 
                   <div className="rounded-2xl border border-ink/5 dark:border-white/10 bg-mist/80 dark:bg-white/[0.04] p-5">
-                    <div className="font-mono text-xs text-teal dark:text-teal-400 font-semibold mb-2">02 / BACKEND</div>
+                    <div className="font-mono text-xs text-teal dark:text-teal-400 font-semibold mb-2">BACKEND</div>
                     <div className="text-ink dark:text-white text-sm font-semibold mb-1">Distributed Microservices</div>
                     <p className="text-ink/60 dark:text-white/60 text-xs leading-relaxed">
                       Go, Rust, and Node.js microservices interconnected via low-latency gRPC and message queues.
@@ -86,7 +82,7 @@ export default function SpotlightBento() {
                   </div>
 
                   <div className="rounded-2xl border border-ink/5 dark:border-white/10 bg-mist/80 dark:bg-white/[0.04] p-5">
-                    <div className="font-mono text-xs text-emerald-600 dark:text-emerald-400 font-semibold mb-2">03 / PERFORMANCE</div>
+                    <div className="font-mono text-xs text-emerald-600 dark:text-emerald-400 font-semibold mb-2">PERFORMANCE</div>
                     <div className="text-ink dark:text-white text-sm font-semibold mb-1">Global Edge Delivery</div>
                     <p className="text-ink/60 dark:text-white/60 text-xs leading-relaxed">
                       Anycast routing, automated Redis caching layers, and zero-downtime rolling releases.
@@ -267,21 +263,18 @@ export default function SpotlightBento() {
                   Replace brittle legacy tools with secure internal platforms, automated compliance protocols, and cryptographically verified data pipelines.
                 </p>
 
-                {/* Compliance Matrix */}
-                <div className="grid grid-cols-2 gap-2.5">
-                  {[
-                    { name: "SOC 2 Type II", status: "Verified" },
-                    { name: "ISO 27001", status: "Certified" },
-                    { name: "HIPAA / GDPR", status: "Compliant" },
-                    { name: "End-to-End TLS", status: "Enforced" },
-                  ].map((item) => (
-                    <div key={item.name} className="rounded-xl border border-ink/5 dark:border-white/10 bg-mist/80 dark:bg-white/[0.04] p-3 font-mono text-xs">
-                      <div className="text-ink dark:text-white font-semibold mb-0.5">{item.name}</div>
-                      <div className="text-emerald-600 dark:text-emerald-400 text-[10px] flex items-center gap-1 font-semibold">
-                        <span>✓</span> {item.status}
-                      </div>
-                    </div>
-                  ))}
+                {/* Compliance - ISO 27001 */}
+                <div className="rounded-xl border border-ink/5 dark:border-white/10 bg-mist/80 dark:bg-white/[0.04] p-3.5 font-mono text-xs">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-ink dark:text-white font-semibold text-sm">ISO 27001</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 font-medium">
+                      In Progress
+                    </span>
+                  </div>
+                  <div className="text-amber-600 dark:text-amber-400 text-xs flex items-center gap-1.5 font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                    Under Certification Process
+                  </div>
                 </div>
               </div>
 
